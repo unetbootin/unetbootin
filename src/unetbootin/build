@@ -6,6 +6,6 @@ rm release/*
 
 ./mkpotfile
 ./build-windows
-make clean
-./build-linux
+#make clean
+#./build-linux
 

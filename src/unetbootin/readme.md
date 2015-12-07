@@ -3,27 +3,27 @@ UNetbootin
 
 ### Homepage and Downloads
 
-http://unetbootin.github.io/
+http://unetbootin.sourceforge.net/
 
 ### Github
 
-https://github.com/unetbootin/unetbootin
+https://github.com/gkovacs/unetbootin
 
 ### Source
 
-See the src/unetbootin directory, ie https://github.com/unetbootin/unetbootin/tree/master/src/unetbootin
+See the src/unetbootin directory, ie https://github.com/gkovacs/unetbootin/tree/master/src/unetbootin
 
 ### Bug Tracker
 
-https://github.com/unetbootin/unetbootin/issues
+http://launchpad.net/unetbootin
 
 ### Building
 
-https://sourceforge.net/p/unetbootin/wiki/compile/
+http://sourceforge.net/apps/trac/unetbootin/wiki/compile
 
 ### Contributing
 
-https://sourceforge.net/p/unetbootin/wiki/development/
+http://sourceforge.net/apps/trac/unetbootin/wiki/development
 
 ### Licence
 
@@ -31,5 +31,5 @@ GNU GPL v2 and above
 
 ### Contact
 
-[Geza Kovacs](http://gkovacs.com)
+[Geza Kovacs](http://gkovacs.github.com)
 

@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Unetbootin</string>
+   <string> Remix OS USB Tool</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
@@ -347,7 +347,7 @@
               <string>Select disk image file</string>
              </property>
              <property name="text">
-              <string>...</string>
+              <string>Browse</string>
              </property>
             </widget>
            </item>
@@ -372,7 +372,7 @@
               <string>Select initrd file</string>
              </property>
              <property name="text">
-              <string>...</string>
+              <string>Browse</string>
              </property>
             </widget>
            </item>
@@ -397,7 +397,7 @@
               <string>Select syslinux.cfg or isolinux.cfg file</string>
              </property>
              <property name="text">
-              <string>...</string>
+              <string>Browse</string>
              </property>
             </widget>
            </item>
@@ -556,6 +556,13 @@
             <number>300</number>
            </property>
            <item>
+            <widget class="QPushButton" name="frebootbutton">
+             <property name="text">
+              <string>Reboot Now</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="fexitbutton">
              <property name="text">
               <string>Exit</string>
@@ -671,7 +678,7 @@
         <item>
          <widget class="QLabel" name="sdesc4">
           <property name="text">
-           <string>4. Installation Complete</string>
+           <string>4. Installation Complete, Reboot</string>
           </property>
          </widget>
         </item>

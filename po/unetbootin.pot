@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-21 03:48-0400\n"
+"POT-Creation-Date: 2015-12-07 11:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: lconvert 4.4.3\n"
+"X-Generator: lconvert 4.5.0\n"
 
 #. ts-context QObject
 #: main.cpp:266
@@ -19,97 +19,135 @@ msgid "LeftToRight"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4323
+#: unetbootin.cpp:214 unetbootin.cpp:315 unetbootin.cpp:316 unetbootin.cpp:385
+#: unetbootin.cpp:589 unetbootin.cpp:3499 unetbootin.cpp:3512
+#: unetbootin.cpp:3694 unetbootin.cpp:4356
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4327
+#: unetbootin.cpp:216 unetbootin.cpp:312 unetbootin.cpp:313 unetbootin.cpp:387
+#: unetbootin.cpp:593 unetbootin.cpp:775 unetbootin.cpp:795 unetbootin.cpp:1049
+#: unetbootin.cpp:1624 unetbootin.cpp:1711 unetbootin.cpp:2640
+#: unetbootin.cpp:2683 unetbootin.cpp:3503 unetbootin.cpp:3529
+#: unetbootin.cpp:3698 unetbootin.cpp:4022 unetbootin.cpp:4360
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3549
+#: unetbootin.cpp:217 unetbootin.cpp:234 unetbootin.cpp:235 unetbootin.cpp:351
+#: unetbootin.cpp:707 unetbootin.cpp:714 unetbootin.cpp:715 unetbootin.cpp:3588
 #, fuzzy
 msgid "ISO"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3541
+#: unetbootin.cpp:218 unetbootin.cpp:230 unetbootin.cpp:231 unetbootin.cpp:357
+#: unetbootin.cpp:545 unetbootin.cpp:546 unetbootin.cpp:707 unetbootin.cpp:719
+#: unetbootin.cpp:720 unetbootin.cpp:3580
 #, fuzzy
 msgid "Floppy"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:302
+#: unetbootin.cpp:251 unetbootin.cpp:257 unetbootin.cpp:261 unetbootin.cpp:265
+#: unetbootin.cpp:269 unetbootin.cpp:275 unetbootin.cpp:303
 #, fuzzy
 msgid "either"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:281
+#: unetbootin.cpp:282
 #, fuzzy
 msgid "LiveUSB persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:296
+#: unetbootin.cpp:297
 #, fuzzy
 msgid "FAT32-formatted USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:300
+#: unetbootin.cpp:301
 #, fuzzy
 msgid "EXT2-formatted USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:676
+#: unetbootin.cpp:523
+#, fuzzy
+msgid "Remix OS USB Tool"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:532
+#, fuzzy
+msgid ""
+"<h1>Welcome to Remix OS USB Tool.</h1>Directions on how to prepare your USB "
+"flash drive for Remix OS:<ol><li>Select an ISO file to load below.<li>Select "
+"a FAT formatted USB flash drive to install and press OK to begin "
+"installation.</ol>"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:548
+#, fuzzy
+msgid "ISO File"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:549
+#, fuzzy
+msgid "USB Disk"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:707
 #, fuzzy
 msgid "Open Disk Image File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:676
+#: unetbootin.cpp:707
 #, fuzzy
 msgid "All Files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:710
+#: unetbootin.cpp:729 unetbootin.cpp:741 unetbootin.cpp:753
 #, fuzzy
 msgid "All Files (*)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:694
+#: unetbootin.cpp:729
 #, fuzzy
 msgid "Open Kernel File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:702
+#: unetbootin.cpp:741
 #, fuzzy
 msgid "Open Initrd File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:710
+#: unetbootin.cpp:753
 #, fuzzy
 msgid "Open Bootloader Config File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:732
+#: unetbootin.cpp:779
 #, fuzzy
 msgid "Insert a USB flash drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:733
+#: unetbootin.cpp:780
 #, fuzzy
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
@@ -117,13 +155,13 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:752
+#: unetbootin.cpp:799
 #, fuzzy
 msgid "%1 not mounted"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:753
+#: unetbootin.cpp:800
 #, fuzzy
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
@@ -131,85 +169,85 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:768
+#: unetbootin.cpp:815
 #, fuzzy
 msgid "Select a distro"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:769
+#: unetbootin.cpp:816
 #, fuzzy
 msgid "You must select a distribution to load."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:783
+#: unetbootin.cpp:830
 #, fuzzy
 msgid "Select a disk image file"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:784
+#: unetbootin.cpp:831
 #, fuzzy
 msgid "You must select a disk image file to load."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:798
+#: unetbootin.cpp:845
 #, fuzzy
 msgid "Select a kernel and/or initrd file"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:799
+#: unetbootin.cpp:846
 #, fuzzy
 msgid "You must select a kernel and/or initrd file to load."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:813
+#: unetbootin.cpp:860
 #, fuzzy
 msgid "Diskimage file not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:814
+#: unetbootin.cpp:861
 #, fuzzy
 msgid "The specified diskimage file %1 does not exist."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:828
+#: unetbootin.cpp:875
 #, fuzzy
 msgid "Kernel file not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:829
+#: unetbootin.cpp:876
 #, fuzzy
 msgid "The specified kernel file %1 does not exist."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:843
+#: unetbootin.cpp:890
 #, fuzzy
 msgid "Initrd file not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:844
+#: unetbootin.cpp:891
 #, fuzzy
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:948
+#: unetbootin.cpp:995
 #, fuzzy
 msgid "%1 exists, overwrite?"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:949
+#: unetbootin.cpp:996
 #, fuzzy
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
@@ -218,13 +256,13 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:975
+#: unetbootin.cpp:1022
 #, fuzzy
 msgid "%1 is out of space, abort installation?"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:976
+#: unetbootin.cpp:1023
 #, fuzzy
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
@@ -233,127 +271,127 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1070
+#: unetbootin.cpp:1117
 #, fuzzy
 msgid "Locating kernel file in %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1121
+#: unetbootin.cpp:1168
 #, fuzzy
 msgid "Copying kernel file from %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1127
+#: unetbootin.cpp:1174
 #, fuzzy
 msgid "Locating initrd file in %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1168
+#: unetbootin.cpp:1215
 #, fuzzy
 msgid "Copying initrd file from %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1263
+#: unetbootin.cpp:1221 unetbootin.cpp:1301
 #, fuzzy
 msgid "Extracting bootloader configuration"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1521
+#: unetbootin.cpp:1530 unetbootin.cpp:1556
 #, fuzzy
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1785
+#: unetbootin.cpp:1810
 #, fuzzy
 msgid "Copying file, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2602
+#: unetbootin.cpp:1811 unetbootin.cpp:2625
 #, fuzzy
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2603
+#: unetbootin.cpp:1812 unetbootin.cpp:2626
 #, fuzzy
 msgid "<b>Destination:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1788
+#: unetbootin.cpp:1813
 #, fuzzy
 msgid "<b>Copied:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1826
+#: unetbootin.cpp:1851
 #, fuzzy
 msgid "Extracting files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1827
+#: unetbootin.cpp:1852
 #, fuzzy
 msgid "<b>Archive:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1828
+#: unetbootin.cpp:1853
 #, fuzzy
 msgid "<b>Source:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1829
+#: unetbootin.cpp:1854
 #, fuzzy
 msgid "<b>Destination:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1830
+#: unetbootin.cpp:1855
 #, fuzzy
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1833
+#: unetbootin.cpp:1858
 #, fuzzy
 msgid "<b>Source:</b> %1 (%2)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1834
+#: unetbootin.cpp:1859
 #, fuzzy
 msgid "<b>Destination:</b> %1%2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1835
+#: unetbootin.cpp:1860
 #, fuzzy
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2601
+#: unetbootin.cpp:2624
 #, fuzzy
 msgid "Downloading files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2604
+#: unetbootin.cpp:2627
 #, fuzzy
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2728
+#: unetbootin.cpp:2751
 #, fuzzy
 msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
@@ -361,37 +399,37 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2766
+#: unetbootin.cpp:2774 unetbootin.cpp:2789
 #, fuzzy
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2781
+#: unetbootin.cpp:2804
 #, fuzzy
 msgid "<b>Copied:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2872
+#: unetbootin.cpp:2895
 #, fuzzy
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2876
+#: unetbootin.cpp:2899
 #, fuzzy
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3149
+#: unetbootin.cpp:3172
 #, fuzzy
 msgid "%1 not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3150
+#: unetbootin.cpp:3173
 #, fuzzy
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
@@ -399,67 +437,67 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3441
+#: unetbootin.cpp:3480
 #, fuzzy
 msgid "(Current)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3442
+#: unetbootin.cpp:3481
 #, fuzzy
 msgid "(Done)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3734
+#: unetbootin.cpp:3773
 #, fuzzy
 msgid "Configuring grub2 on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3746
+#: unetbootin.cpp:3785
 #, fuzzy
 msgid "Configuring grldr on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3774
+#: unetbootin.cpp:3813
 #, fuzzy
 msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4069
+#: unetbootin.cpp:4111
 #, fuzzy
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4104
+#: unetbootin.cpp:4146
 #, fuzzy
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4275
+#: unetbootin.cpp:4308
 #, fuzzy
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4280
+#: unetbootin.cpp:4313
 #, fuzzy
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4325
+#: unetbootin.cpp:4358
 #, fuzzy
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4330
+#: unetbootin.cpp:4363
 #, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
@@ -467,7 +505,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4333
+#: unetbootin.cpp:4366
 #, fuzzy
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
@@ -475,99 +513,19 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:47
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
-"install iso file on the root directory of your hard drive or USB drive. "
-"These can be obtained from cdimage.ubuntu.com"
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:261
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'mirrors.kernel.org' when prompted for a server, and enter "
-"'/centos/%1/os/%2' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:318
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
-"directory of your hard drive or USB drive. These can be obtained from "
-"cdimage.debian.org"
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:395
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/development/%1/os' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:401
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:756
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/factory/repo/oss' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:762
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/distribution/%1/repo/oss' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:764
+#: distrover.cpp:19 unetbootin.cpp:811
 #, fuzzy
 msgid "== Select Distribution =="
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:24
+#: distrover.cpp:19 distrover.cpp:23
 #, fuzzy
 msgid "== Select Version =="
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:23
+#: distrover.cpp:20
 #, fuzzy
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
@@ -578,7 +536,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:28
+#: distrover.cpp:25
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -589,7 +547,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:33
+#: distrover.cpp:30
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -600,7 +558,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:38
+#: distrover.cpp:35
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -611,7 +569,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:43
+#: distrover.cpp:40
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -622,7 +580,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:48
+#: distrover.cpp:45
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -634,7 +592,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:53
+#: distrover.cpp:50
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -648,7 +606,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:59
+#: distrover.cpp:56
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -659,7 +617,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:64
+#: distrover.cpp:61
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -670,7 +628,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:69
+#: distrover.cpp:66
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -681,7 +639,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:74
+#: distrover.cpp:71
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -695,7 +653,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:79
+#: distrover.cpp:76
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -707,7 +665,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:84
+#: distrover.cpp:81
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -719,7 +677,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:89
+#: distrover.cpp:86
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -732,7 +690,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:94
+#: distrover.cpp:91
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -744,7 +702,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:103
+#: distrover.cpp:101
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -753,7 +711,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:117
+#: distrover.cpp:114
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -764,7 +722,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:122
+#: distrover.cpp:119
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -775,7 +733,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:127
+#: distrover.cpp:124
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -786,7 +744,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:132
+#: distrover.cpp:129
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -802,7 +760,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:137
+#: distrover.cpp:134
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -813,7 +771,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:142
+#: distrover.cpp:139
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -825,7 +783,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:147
+#: distrover.cpp:144
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -841,7 +799,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:152
+#: distrover.cpp:149
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -855,7 +813,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:157
+#: distrover.cpp:154
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -867,7 +825,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:162
+#: distrover.cpp:159
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -878,7 +836,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:172
+#: distrover.cpp:169
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -891,7 +849,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:177
+#: distrover.cpp:174
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -902,7 +860,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:182
+#: distrover.cpp:179
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -914,7 +872,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:187
+#: distrover.cpp:184
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -924,7 +882,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:192
+#: distrover.cpp:189
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -936,7 +894,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:202
+#: distrover.cpp:199
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -948,7 +906,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:207
+#: distrover.cpp:204
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -961,7 +919,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:214
+#: distrover.cpp:209
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -974,7 +932,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:224
+#: distrover.cpp:221
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -985,7 +943,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:229
+#: distrover.cpp:226
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -996,7 +954,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:234
+#: distrover.cpp:231
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1007,7 +965,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:14
+#: distrover.cpp:236 distrovercust.cpp:12
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1018,7 +976,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:244
+#: distrover.cpp:241
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1030,7 +988,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:254
+#: distrover.cpp:251
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1046,7 +1004,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:259
+#: distrover.cpp:256
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1057,7 +1015,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:264
+#: distrover.cpp:261
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1073,7 +1031,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:269
+#: distrover.cpp:266
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1084,7 +1042,87 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:36
+#: distrolst.cpp:50
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
+"install iso file on the root directory of your hard drive or USB drive. "
+"These can be obtained from cdimage.ubuntu.com"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:264
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'mirrors.kernel.org' when prompted for a server, and enter "
+"'/centos/%1/os/%2' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:321
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
+"directory of your hard drive or USB drive. These can be obtained from "
+"cdimage.debian.org"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:405
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/development/%1/os' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:411
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:766
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/factory/repo/oss' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:772
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/distribution/%1/repo/oss' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrovercust.cpp:33
 #, fuzzy
 msgid ""
 "<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
@@ -1095,7 +1133,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:44
+#: distrovercust.cpp:41
 #, fuzzy
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
@@ -1109,7 +1147,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:56
+#: distrovercust.cpp:53
 #, fuzzy
 msgid ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
@@ -1120,7 +1158,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:64
+#: distrovercust.cpp:61
 #, fuzzy
 msgid ""
 "<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
@@ -1131,7 +1169,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:72
+#: distrovercust.cpp:69
 #, fuzzy
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
@@ -1144,7 +1182,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:80
+#: distrovercust.cpp:77
 #, fuzzy
 msgid ""
 "<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
@@ -1157,7 +1195,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:88
+#: distrovercust.cpp:85
 #, fuzzy
 msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
@@ -1169,7 +1207,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:96
+#: distrovercust.cpp:93
 #, fuzzy
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
@@ -1180,13 +1218,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:20
-#, fuzzy
-msgid "Unetbootin"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:65
+#: unetbootin.ui:44 unetbootin.ui:65
 #, fuzzy
 msgid "Select from a list of supported distributions"
 msgstr ""
@@ -1222,7 +1254,13 @@ msgid "&Custom"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:430
+#: unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
+#, fuzzy
+msgid "Browse"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:414 unetbootin.ui:430
 #, fuzzy
 msgid ""
 "Space to reserve for user files which are preserved across reboots. Works "
@@ -1303,7 +1341,7 @@ msgid "4. Installation Complete, Reboot"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:496
+#: unetbootin.ui:477 unetbootin.ui:496
 #, fuzzy
 msgid "Select the target drive to install to"
 msgstr ""
@@ -1315,7 +1353,7 @@ msgid "Dri&ve:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:470
+#: unetbootin.ui:451 unetbootin.ui:470
 #, fuzzy
 msgid "Select the installation target type"
 msgstr ""
@@ -1339,7 +1377,7 @@ msgid "Select disk image file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:400
+#: unetbootin.ui:286
 #, fuzzy
 msgid "..."
 msgstr ""
@@ -1357,9 +1395,15 @@ msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:258
+#: unetbootin.ui:207 unetbootin.ui:258
 #, fuzzy
 msgid "Specify a kernel file to load"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:20
+#, fuzzy
+msgid " Remix OS USB Tool"
 msgstr ""
 
 #. ts-context unetbootinui
@@ -1369,7 +1413,7 @@ msgid "Select kernel file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:312
+#: unetbootin.ui:293 unetbootin.ui:312
 #, fuzzy
 msgid "Specify an initrd file to load"
 msgstr ""
@@ -1387,7 +1431,7 @@ msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:321
+#: unetbootin.ui:226 unetbootin.ui:321
 #, fuzzy
 msgid "Specify parameters and options to pass to the kernel"
 msgstr ""

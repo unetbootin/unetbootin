@@ -203,6 +203,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	#ifdef Q_OS_UNIX
 	isext2 = false;
 	#endif
+
 	secondlayer->setEnabled(false);
 	secondlayer->hide();
 	firstlayer->setEnabled(true);
@@ -517,6 +518,36 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		InitrdFileSelector->hide();
 		radioLayout->removeItem(verticalSpacer);
 	}
+
+    // @jide
+	this->setWindowTitle(QString(tr("Remix OS USB Tool")));
+    radioDistro->setEnabled(false);
+    radioDistro->hide();
+    distroselect->setEnabled(false);
+    distroselect->hide();
+    dverselect->setEnabled(false);
+    dverselect->hide();
+    intromessage->move(intromessage->x(), intromessage->y()+20);
+    //intromessage->resize(intromessage->width(), intromessage->height() + 20);
+    intromessage->setText(QString(tr(
+            "<h1>Welcome to Remix OS USB Tool.</h1>"
+            "Directions on how to prepare your USB flash drive for Remix OS:"
+            "<ol><li>Select an ISO file to load below."
+            "<li>Select a FAT formatted USB flash drive to install and press OK to begin installation."
+            "</ol>")));
+
+    this->radioFloppy->setChecked(true);
+    persistenceMBlabel->hide();
+    persistencelabel->hide();
+    persistencevalue->hide();
+    labeltype->hide();
+    typeselect->hide();
+	if (diskimagetypeselect->findText(tr("Floppy")) != -1) {
+		diskimagetypeselect->removeItem(diskimagetypeselect->findText(tr("Floppy")));
+    }
+    radioFloppy->setText(QString(tr("ISO File")));
+    labeldrive->setText(QString(tr("USB Disk")));
+    diskimagetypeselect->hide();
 	return false;
 }
 
@@ -878,6 +909,11 @@ void unetbootin::on_fexitbutton_clicked()
 	close();
 }
 
+void unetbootin::on_frebootbutton_clicked()
+{
+	sysreboot();
+}
+
 QString unetbootin::displayfisize(quint64 fisize)
 {
 	if (fisize < 10000)
@@ -985,7 +1021,7 @@ bool unetbootin::ignoreoutofspaceprompt(QString destindir)
 	overwritefilemsgbx.setIcon(QMessageBox::Warning);
 	overwritefilemsgbx.setWindowTitle(QString(tr("%1 is out of space, abort installation?")).arg(destindir));
 	overwritefilemsgbx.setText(QString(tr("The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to ignore this error and attempt to continue installation, and 'No to All' to ignore all out-of-space errors.")).arg(destindir));
-	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::NoToAll | QMessageBox::No);
+	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No);
 	switch (overwritefilemsgbx.exec())
 	{
 		case QMessageBox::Yes:
@@ -2713,6 +2749,8 @@ void unetbootin::showDownloadFailedScreen(const QString &fileurl)
 	rebootlayer->setEnabled(true);
 	rebootlayer->show();
 	rebootmsgtext->setText(tr("Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.").arg(nameDistro).arg(nameVersion).arg(fileurl));
+	this->frebootbutton->setEnabled(false);
+	this->frebootbutton->hide();
 	this->downloadFailed = true;
 	if (exitOnCompletion)
 	{
@@ -2903,6 +2941,25 @@ QPair<QString, int> unetbootin::filterBestMatch(QStringList ufStringList, QList<
 	return qMakePair(hRegxMatchString, hRegxMatch);
 }
 
+void unetbootin::sysreboot()
+{
+	#ifdef Q_OS_WIN32
+	HANDLE hToken;
+	TOKEN_PRIVILEGES tkp;
+	OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken);
+	LookupPrivilegeValue(NULL, SE_SHUTDOWN_NAME, &tkp.Privileges[0].Luid);
+	tkp.PrivilegeCount = 1;
+	tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
+	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
+	#endif
+	#ifdef Q_OS_LINUX
+	callexternapp("init", "6 &");
+	#endif
+#ifdef Q_OS_MAC
+callexternapp("shutdown", "-r now &");
+#endif
+}
 
 QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 {
@@ -4298,15 +4355,17 @@ void unetbootin::fininstall()
 	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
 	if (installType == tr("Hard Disk"))
 	{
-		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
 	}
 	if (installType == tr("USB Drive"))
 	{
 #ifndef Q_OS_MAC
-		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
 #endif
 #ifdef Q_OS_MAC
 		rebootmsgtext->setText(tr("The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
+		this->frebootbutton->setEnabled(false);
+		this->frebootbutton->hide();
 #endif
 	}
     finishLogging();
