@@ -105,7 +105,7 @@
     <message>
         <location filename="unetbootin.cpp" line="532"/>
         <source>&lt;h1&gt;Welcome to Remix OS USB Tool.&lt;/h1&gt;Directions on how to prepare your USB flash drive for Remix OS:&lt;ol&gt;&lt;li&gt;Select an ISO file to load below.&lt;li&gt;Select a FAT formatted USB flash drive to install and press OK to begin installation.&lt;/ol&gt;</source>
-        <translation>&lt;h1&gt;欢迎使用 Remix OS USB 工具&lt;/h1&gt;如何为 Remix OS 准备你的U盘:&lt;ol&gt;&lt;li&gt;在下面选择一个ISO文件加载.&lt;li&gt;选择一个以FAT32格式化的U盘， 点击 OK开始安装.&lt;/ol&gt;</translation>
+        <translation type="unfinished">&lt;h1&gt;欢迎使用 Remix OS USB 工具&lt;/h1&gt;如何准备你的 Remix OS U盘？&lt;ol&gt;&lt;li&gt;在下面选择一个 ISO 文件加载&lt;li&gt;选择一个已格式化为 FAT32  的 U 盘，然后，点击 OK 开始安装&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="548"/>
