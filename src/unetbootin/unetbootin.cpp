@@ -3774,7 +3774,7 @@ void unetbootin::runinsthdd()
 		writegrub2cfg();
 		if (!QFile::exists("/boot/grub/menu.lst")) // grub2-only
 		{
-			QSettings install(QSettings::SystemScope, "UNetbootin");
+			QSettings install(QSettings::SystemScope, "Remix OS");
 			install.setValue("Location", "/");
 			fininstall();
 			return;
@@ -3899,7 +3899,7 @@ void unetbootin::runinsthdd()
 	#ifdef Q_OS_WIN32
 	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	install.setValue("Location", targetDrive);
-	install.setValue("DisplayName", "UNetbootin");
+	install.setValue("DisplayName", "Remix OS");
 	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	//QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
 	//runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
@@ -3923,7 +3923,7 @@ void unetbootin::runinsthdd()
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-	QSettings install(QSettings::SystemScope, "UNetbootin");
+	QSettings install(QSettings::SystemScope, "Remix OS");
 	install.setValue("Location", "/");
 	#endif
 	fininstall();
@@ -4221,7 +4221,7 @@ void unetbootin::runinstusb()
 	{
 	QString syslinuxcfgtxt = QString("default menu.c32\n"
 	"prompt 0\n"
-	"menu title UNetbootin\n"
+	"menu title Remix OS\n"
 	"timeout 100\n\n"
 #ifndef NODEFAULTBOOT
 	"label unetbootindefault\n"
