@@ -4222,7 +4222,7 @@ void unetbootin::runinstusb()
 	QString syslinuxcfgtxt = QString("default menu.c32\n"
 	"prompt 0\n"
 	"menu title Remix OS\n"
-	"timeout 100\n\n"
+	"timeout 0\n\n"
 #ifndef NODEFAULTBOOT
 	"label unetbootindefault\n"
 	"menu label Default\n"

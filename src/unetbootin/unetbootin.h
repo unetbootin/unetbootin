@@ -10,6 +10,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef UNETBOOTIN_H
 #define UNETBOOTIN_H
 
+// region @jide no default menu item
+#define NODEFAULTBOOT 1
+// endregion
+
 #include <QtCore>
 #include <QtGui>
 #include <QtNetwork>
