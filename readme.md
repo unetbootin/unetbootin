@@ -1,35 +1,18 @@
-UNetbootin
+Remix OS USB Tool
 ----------
 
-### Homepage and Downloads
+### Background
+This Remix OS UBS Tool is built on the [Unetbooin](http://unetbootin.github.io) open-source project. The details of the Unetbooin project can be found in followings.
 
-http://unetbootin.github.io/
+Remix OS UBS Tool is designed for users to flash Remix OS for PC onto a USB Flash Drive. 
 
-### Github
+### Where can I download Remix OS USB Tool?
+It can be found in the Remix OS for PC release pacakge. Please download it from [here] (http://www.jide.com/en/remixos-for-pc#downloadNow)
 
-https://github.com/unetbootin/unetbootin
-
-### Source
-
-See the src/unetbootin directory, ie https://github.com/unetbootin/unetbootin/tree/master/src/unetbootin
-
-### Bug Tracker
-
-https://github.com/unetbootin/unetbootin/issues
-
-### Building
-
-https://sourceforge.net/p/unetbootin/wiki/compile/
-
-### Contributing
-
-https://sourceforge.net/p/unetbootin/wiki/development/
+### Contact us? 
+Please submit a [support ticket](http://support.jide.com/hc/en-us/requests/new)
 
 ### Licence
-
 GNU GPL v2 and above
 
-### Contact
-
-[Geza Kovacs](http://gkovacs.com)
 
