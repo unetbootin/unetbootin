@@ -1,99 +1,88 @@
-
-
-Table of Content:
-
-A. MD5 Verification
-
-B. How to Launch Remix OS for PC
-
-C. Requirements
-
-D. Feedback
 
 
-===========================================
-
-
-A. MD5 Verification
-
-To ensure you are using the official version, please visit the “Download” section of http://www.jide.com/en/remixos-for-pc
-
-
-===========================================
-
+Table of Content:
 
-B. How to Launch Remix OS for PC
-1 Download Remix OS for PC package, which contains the Remix OS for PC ROM & USB Tool
-
-
-2 Inject flash drive into your PC
-
-3 Open Remix OS USB Tool and follow the directions to install Remix OS for PC on your flash drive
-
-4 Reboot your PC.
+A. MD5 Verification
 
-5 Press F12 while booting and enter Boot Menu.
-
-6 Select "USB Storage Device" as boot option under Legacy Mode. 
-
-7 Select either "Guest Mode" or "Resident Mode" to start Remix OS.
+B. How to launch Remix OS for PC
 
-
-
-If the above instructions do not work for your PC, please refer to these links:
-
-http://www.boot-disk.com/boot_priority.htm
-
-http://www.dummies.com/how-to/content/change-the-boot-order-on-your-pc.html
-
-http://pcsupport.about.com/od/fixtheproblem/ss/bootorderchange.htm
-
-http://pcsupport.about.com/od/tipstricks/ht/bootusbflash.htm
-
-https://craftedflash.com/info/how-boot-computer-from-usb-flash-drive
-
-
-
-For Mac users, please see this link:
-
-https://support.apple.com/en-us/HT201663
-
-
-
-For Linux：
-
-
-1. Install Unetbootin
-sudo apt-get install unetbootin
-
-
-2. Installation
-- Inject flash drive into your PC
-- sudo unetbootin
-- click “...” and choose the ROM
-- click “OK” to start
-
+C. Feedback
 
 ===========================================
-
-
-
-C. Requirements:
-
-
-1 A USB 3.0 flash drive that supports FAT32 format, with a minimum capacity of 8GB and a recommended writing speed of 20MB/s 
-
-2 A PC with USB legacy boot option. 
-
-
-===========================================
-
 
 
-D. Feedback:
-
+A. MD5 Verification
+
+To ensure you are using the official version, please visit the Download section of http://www.jide.com/en/remixos-for-pc
+
+
+===========================================
+
+
+B. How to launch Remix OS for PC
+
+-For Hard Disk Installation:
+
+NOTE: Currently, installation tool only supports Windows 7, Windows 8 or Windows 10, with a minimum capacity of 8GB. Other system users, please install on USB flash drive.
+
+1. Download the Remix OS for PC package, which contains the Remix OS for PC ROM & Installation Tool. 
+
+2. Open the Remix OS Installation Tool and follow the instructions to install Remix OS for PC on your hard disk. 
+
+3. Reboot your PC. 
+
+For UEFI, press special key (F12 for Dell, F9 for HP, F12 for Lenovo, Option Key for MAC) while booting to enter boot menu and ensure that Secure Boot is disabled.
+
+4. Select Remix OS in Windows Boot Menu.
+
+
+
+-For USB Flash Drive Installation:
+
+NOTE: A USB 3.0 flash drive that supports FAT32 format, with a minimum capacity of 8GB and a recommended writing speed of 20MB/s.
+
+1. All data on your USB flash drive will be erased. Please backup the data in your USB flash drive before you start the installation.  
+
+2. Download the Remix OS for PC package, which contains the Remix OS for PC ROM & Installation Tool
+
+3. Insert USB flash drive into your PC
+
+4. Open the Remix OS Installation Tool and follow the instructions to install Remix OS for PC on your USB flash drive. 
+
+5. Reboot your PC.
+
+6. Press special key(F12 for Dell, F9 for HP, F12 for Lenovo, Option Key for MAC) while booting and enter Boot Menu. 
+
+For UEFI, ensure that Secure Boot is disabled.
+
+7. Select "USB Storage Device" under boot option.
+
+8. Select either "Guest Mode" or "Resident Mode" to start Remix OS.
+
+
+If the above booting instructions do not work for your PC, please refer to these links:
+
+http://www.boot-disk.com/boot_priority.htm
+https://craftedflash.com/info/how-boot-computer-from-usb-flash-drive
+
+For Mac users, please see this link:
+https://support.apple.com/en-us/HT201663
+
+
+===========================================
+
+
+
+
+C. Feedback:
+
 Share your feedback with the link below
 https://docs.google.com/forms/d/16QlPRKeEih18YJj8I_duZKO54vZkUWa-vIds5TanIm8/viewform
-
 
-===========================================
+Join our Google group for further discussion with the link below
+https://groups.google.com/forum/#!forum/remix-os-for-pc
+
+
+
+===========================================
+

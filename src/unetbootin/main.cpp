@@ -8,162 +8,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 */
 
 #include "unetbootin.h"
+static const QString REMIXOS_HDD_INSTALL_DIR = "RemixOS";
 
 #ifdef Q_OS_WIN32
 
-void configsysUndo(QString uninstPathL)
-{
-	if (!QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL))))
-	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
-		QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
-	}
-	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)).toLocal8Bit(), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
-}
 
-void bootiniUndo(QString uninstPathL)
-{
-	if (!QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL))))
-		{
-			QFile::remove(QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)));
-			QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)));
-		}
-	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)).utf16()), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
-}
 
-void vistabcdUndo(QString uninstPathL)
-{
-	QSettings vdtustor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-	QVariant warch64varL(QVariant::Bool);
-	warch64varL = vdtustor.value("WArch64");
-	bool warch64L = warch64varL.value<bool>();
-	if (warch64L)
-	{
-		unetbootin::callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
-	}
-	else
-	{
-		unetbootin::callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
-	}
-	vdtustor.remove("WArch64");
-}
 
 #endif
-
-void clearOutDir(QString pDirToDel)
-{
-	QDir dirToDel(pDirToDel);
-	QStringList rmfileList = dirToDel.entryList(QDir::Files);
-	for (int i = 0; i < rmfileList.size(); ++i)
-	{
-		QFile::setPermissions(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmfileList.at(i))), QFile::WriteOther);
-		QFile::remove(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmfileList.at(i))));
-	}
-	dirToDel.rmdir(pDirToDel);
-}
-
-void ubnUninst()
-{
-	#ifdef Q_OS_UNIX
-	QSettings chkinstL(QSettings::SystemScope, "UNetbootin");
-	QString uninstPath = "/";
-	QString uninstsubDir = QDir::toNativeSeparators(QString("%1boot/").arg(uninstPath));
-	if (QFile::exists(QString("%1ubninit").arg(uninstsubDir)))
-		QFile::remove(QString("%1ubninit").arg(uninstsubDir));
-	if (QFile::exists(QString("%1ubnkern").arg(uninstsubDir)))
-		QFile::remove(QString("%1ubnkern").arg(uninstsubDir));
-	if (QFile::exists(QString("%1grub/menu.lst.bak").arg(uninstsubDir)))
-	{
-		if (QFile::exists(QString("%1grub/menu.lst").arg(uninstsubDir)))
-		{
-			QFile::remove(QString("%1grub/menu.lst").arg(uninstsubDir));
-		}
-		QFile::rename(QString("%1grub/menu.lst.bak").arg(uninstsubDir), QString("%1grub/menu.lst").arg(uninstsubDir));
-	}
-	if (QFile::exists(QString("%1grub/grub.cfg.bak").arg(uninstsubDir)))
-	{
-		if (QFile::exists(QString("%1grub/grub.cfg").arg(uninstsubDir)))
-		{
-			QFile::remove(QString("%1grub/grub.cfg").arg(uninstsubDir));
-		}
-		QFile::rename(QString("%1grub/grub.cfg.bak").arg(uninstsubDir), QString("%1grub/grub.cfg").arg(uninstsubDir));
-	}
-	#endif
-	#ifdef Q_OS_WIN32
-	QSettings autostrt("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
- 	if (autostrt.contains("UNetbootin Uninstaller"))
- 	{
- 		autostrt.remove("UNetbootin Uninstaller");
-	}
-	QSettings chkinstL("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-	QVariant uninstvar(QVariant::String);
-	uninstvar = chkinstL.value("Location");
-	QString uninstPath = uninstvar.value<QString>();
-	QString uninstsubDir = QDir::toNativeSeparators(QString("%1unetbtin/").arg(uninstPath));
-	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
-	{
-		configsysUndo(uninstPath);
-	}
-	else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
-	{
-		bootiniUndo(uninstPath);
-	}
-	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
-	{
-		vistabcdUndo(uninstPath);
-	}
-	else
-	{
-		configsysUndo(uninstPath);
-		bootiniUndo(uninstPath);
-		vistabcdUndo(uninstPath);
-	}
-	#endif
-	if (QFile::exists(QString("%1ubnfilel.txt").arg(uninstsubDir)))
-	{
-		QFile ubnfilelF(QString("%1ubnfilel.txt").arg(uninstsubDir));
-		ubnfilelF.open(QIODevice::ReadOnly | QIODevice::Text);
-		QTextStream ubnfilelS(&ubnfilelF);
-		while (!ubnfilelS.atEnd())
-		{
-			QFile::remove(QString("%1%2").arg(uninstPath).arg(ubnfilelS.readLine()));
-		}
-		ubnfilelF.close();
-		QFile::remove(QString("%1ubnfilel.txt").arg(uninstsubDir));
-	}
-	if (QFile::exists(QString("%1ubnpathl.txt").arg(uninstsubDir)))
-	{
-		QFile ubnpathlF(QString("%1ubnpathl.txt").arg(uninstsubDir));
-		ubnpathlF.open(QIODevice::ReadOnly | QIODevice::Text);
-		QTextStream ubnpathlS(&ubnpathlF);
-		QDir unrdir(uninstPath);
-		while (!ubnpathlS.atEnd())
-		{
-			unrdir.rmdir(ubnpathlS.readLine());
-		}
-		ubnpathlF.close();
-		QFile::remove(QString("%1ubnpathl.txt").arg(uninstsubDir));
-	}
-	#ifdef Q_OS_WIN32
-	clearOutDir(QDir::toNativeSeparators(QString("%1unetbtin").arg(uninstPath)));
-	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(uninstPath)));
-	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(uninstPath)));
-	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(uninstPath)));
-	#endif
-	chkinstL.clear();
-	QMessageBox finmsgb;
-	finmsgb.setIcon(QMessageBox::Information);
-	finmsgb.setWindowTitle(uninstaller::tr("Uninstallation Complete"));
-	finmsgb.setText(uninstaller::tr("%1 has been uninstalled.").arg(UNETBOOTINB));
- 	finmsgb.setStandardButtons(QMessageBox::Ok);
- 	switch (finmsgb.exec())
- 	{
- 		case QMessageBox::Ok:
- 			break;
-		default:
-			break;
- 	}
-}
 
 QString checkforgraphicalsu(QString graphicalsu)
 {
@@ -347,35 +199,19 @@ int main(int argc, char **argv)
 		}
 	}
 	#endif
-	#ifdef Q_OS_WIN32
-	QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-	#endif
-	#ifdef Q_OS_LINUX
-	QSettings chkinst(QSettings::SystemScope, "UNetbootin");
-	#endif
-#ifndef Q_OS_MAC
-	if (chkinst.contains("Location"))
-	{
-		QMessageBox uninstmsgb;
-		uninstmsgb.setIcon(QMessageBox::Information);
-		uninstmsgb.setWindowTitle(uninstaller::tr("%1 Uninstaller").arg(UNETBOOTINB));
-		uninstmsgb.setText(uninstaller::tr("%1 is currently installed. Remove the existing version?").arg(UNETBOOTINB));
- 		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
- 		switch (uninstmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
- 			{
- 				ubnUninst();
-			}
-			case QMessageBox::Cancel:
-				break;
-	 		default:
-				break;
- 		}
-		return 0;
-	}
-#endif
 	unetbootin unetbootin;
+    QString selfName = QString(argv[0]);
+	if (selfName.contains("Uninstall")) {
+        if (unetbootin::CHECK_INSTALL_NO_INSTALLED == unetbootin.checkInstall()) {
+            QMessageBox uninstmsgb;
+            uninstmsgb.setIcon(QMessageBox::Warning);
+            uninstmsgb.setWindowTitle(uninstaller::tr("%1 Uninstaller").arg(UNETBOOTINB));
+            uninstmsgb.setText(uninstaller::tr("%1 is not installed.").arg(UNETBOOTINB));
+            uninstmsgb.setStandardButtons(QMessageBox::Ok);
+            uninstmsgb.exec();
+        }
+        return 0;
+	}
 	unetbootin.appNlang = tnapplang;
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();

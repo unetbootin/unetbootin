@@ -108,10 +108,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #endif
 
 #ifndef UNETBOOTINB
-#define UNETBOOTINB "UNetbootin"
+#define UNETBOOTINB "Remix OS"
 #define STDUNETBOOTIN
 //#define USBINSTALL
 #endif
+#define HDDINSTALL
 
 class customver : public QObject
 {
@@ -342,6 +343,18 @@ public:
 	void mvFile(const QString &fn, const QString &outfn);
 	void mvFile(QFile &fn, QFile &outfn);
 	void showDownloadFailedScreen(const QString &fileurl);
+    //@jide
+    const static int CHECK_INSTALL_NO_INSTALLED = 0;
+    const static int CHECK_INSTALL_UNINSTALLED = 1;
+    const static int CHECK_INSTALL_UNINSTALL_CANCELLED = 2;
+    const static int INSTALL_EFI_SUCCESS = 0;
+    const static int INSTALL_EFI_NOT_SUPPORT = 1;
+    const static int INSTALL_EFI_FAILED = 2;
+    int checkInstall();
+    void ubnUninst();
+    int installEfi();
+    int uninstallEfi();
+    QString getAvailableDriveLetter();
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
@@ -363,6 +376,7 @@ public slots:
 	void on_okbutton_clicked();
 	void killApplication();
 };
+
 
 #endif
 

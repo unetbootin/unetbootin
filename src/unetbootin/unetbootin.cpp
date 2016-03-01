@@ -9,6 +9,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #include "unetbootin.h"
 
+#ifdef Q_OS_WIN32
+#include "remixosudisk.h"
+#include "cpu-features-link-time.h"
+#endif
+
 static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
 << QRegExp("isolinux.cfg$", Qt::CaseInsensitive)
@@ -65,30 +70,42 @@ static const QList<QRegExp> ignoredtypesinitrdRL = QList<QRegExp>()
 << QRegExp("bzImage$", Qt::CaseInsensitive);
 
 static const QString SALT_DETECTED = "*SaLT*";
+static const QString REMIXOS_HDD_INSTALL_DIR = "RemixOS";
+
+void DBG_INFO(QString str) {
+    QString logPath = QString("%1\\remixos_install.log").arg(QDir::rootPath());
+	QFile logfile(logPath);
+	logfile.open(QIODevice::Append);
+    logfile.write(str.toAscii());
+    logfile.write("\r\n");
+    logfile.close();
+}
 
 void callexternappT::run()
 {
 	#ifdef Q_OS_WIN32
-	SHELLEXECUTEINFO ShExecInfo = {0};
-	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
-	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
-	ShExecInfo.hwnd = NULL;
+    SHELLEXECUTEINFO shExecInfo = {0};
+    shExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+    shExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+    shExecInfo.hwnd = NULL;
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
 	{
-		ShExecInfo.lpVerb = NULL;
+        shExecInfo.lpVerb = NULL;
 	}
 	else
 	{
-		ShExecInfo.lpVerb = L"runas";
+        shExecInfo.lpVerb = L"runas";
 	}
-	ShExecInfo.lpFile = LPWSTR(execFile.utf16());
-	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
-	ShExecInfo.lpDirectory = NULL;
-	ShExecInfo.nShow = SW_HIDE;
-	ShExecInfo.hInstApp = NULL;
-	ShellExecuteEx(&ShExecInfo);
-	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
-	retnValu = "";
+    shExecInfo.lpFile = LPWSTR(execFile.utf16());
+    shExecInfo.lpParameters = LPWSTR(execParm.utf16());
+    shExecInfo.lpDirectory = NULL;
+    shExecInfo.nShow = SW_HIDE;
+    shExecInfo.hInstApp = NULL;
+    ShellExecuteEx(&shExecInfo);
+    WaitForSingleObject(shExecInfo.hProcess,INFINITE);
+    DWORD exitCode = 0;
+    GetExitCodeProcess(shExecInfo.hProcess, &exitCode);
+	retnValu = QString("%1").arg(exitCode);
 	#endif
 	#ifdef Q_OS_UNIX
 	QProcess lnexternapp;
@@ -519,34 +536,40 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		radioLayout->removeItem(verticalSpacer);
 	}
 
-    // @jide
-	this->setWindowTitle(QString(tr("Remix OS USB Tool")));
-    radioDistro->setEnabled(false);
-    radioDistro->hide();
-    distroselect->setEnabled(false);
-    distroselect->hide();
-    dverselect->setEnabled(false);
-    dverselect->hide();
-    intromessage->move(intromessage->x(), intromessage->y()+20);
-    //intromessage->resize(intromessage->width(), intromessage->height() + 20);
-    intromessage->setText(QString(tr(
-            "<h1>Welcome to Remix OS USB Tool.</h1>"
-            "Directions on how to prepare your USB flash drive for Remix OS:"
-            "<ol><li>Select an ISO file to load below."
-            "<li>Select a FAT formatted USB flash drive to install and press OK to begin installation."
-            "</ol>")));
+	// @jide
+	this->setWindowTitle(QString(tr("Remix OS Installation Tool")));
+	radioDistro->setEnabled(false);
+	radioDistro->hide();
+	distroselect->setEnabled(false);
+	distroselect->hide();
+	dverselect->setEnabled(false);
+	dverselect->hide();
+	intromessage->move(intromessage->x(), intromessage->y()+20);
+	intromessage->resize(intromessage->width(), intromessage->height() + 20);
+	intromessage->setText(QString(tr(
+                    "<h2>Installation Steps:</h2>"
+                    "<ol>"
+                    "<li>Under \"ISO file\", choose the Remix OS for PC ISO file"
+                    "<li>Under \"Type\", choose \"USB drive\" for USB flash drive installation or choose \"Hard Disk\" for hard disk installation"
+                    "<li>Under \"Drive\", choose the drive to install the OS on"
+                    "<li>Press \"Ok\" to proceed with installation"
+                    "</ol>"
+                    "For system requirements or further information, please visit: <a href=\"http://www.jide.com/remixos-for-pc\">http://www.jide.com/remixos-for-pc</a>")));
 
-    this->radioFloppy->setChecked(true);
-    persistenceMBlabel->hide();
-    persistencelabel->hide();
-    persistencevalue->hide();
-    labeltype->hide();
-    typeselect->hide();
+
+	this->radioFloppy->setChecked(true);
+	persistenceMBlabel->hide();
+	persistencelabel->hide();
+	persistencevalue->hide();
+
+	//labeltype->hide();
+    //typeselect->hide();
+
 	if (diskimagetypeselect->findText(tr("Floppy")) != -1) {
 		diskimagetypeselect->removeItem(diskimagetypeselect->findText(tr("Floppy")));
     }
     radioFloppy->setText(QString(tr("ISO File")));
-    labeldrive->setText(QString(tr("USB Disk")));
+    // labeldrive->setText(QString(tr("USB Disk")));
     diskimagetypeselect->hide();
 	return false;
 }
@@ -589,10 +612,23 @@ QStringList unetbootin::listsanedrives()
 	if (typeselect->currentText() == tr("Hard Disk"))
 	{
 		fulldrivelist.append(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+		#ifdef Q_OS_WIN32
+		QFileInfoList extdrivesList = QDir::drives();
+		for (int i = 0; i < extdrivesList.size(); ++i)
+		{
+			if (QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()) != QDir::toNativeSeparators(QDir::rootPath().toUpper()) && !QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()).contains("A:") && !QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()).contains("B:"))
+			{
+				if (GetDriveType(LPWSTR(extdrivesList.at(i).path().toUpper().utf16())) == 3)
+				{
+					fulldrivelist.append(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
+				}
+			}
+		}
+		#endif
 	}
 	else if (typeselect->currentText() == tr("USB Drive"))
-	{
-		#ifdef Q_OS_WIN32
+    {
+        #ifdef Q_OS_WIN32
 		QFileInfoList extdrivesList = QDir::drives();
 		for (int i = 0; i < extdrivesList.size(); ++i)
 		{
@@ -757,7 +793,7 @@ void unetbootin::on_CfgFileSelector_clicked()
     );
 	OptionEnter->clear();
 	QString cfgoptstxt = getcfgkernargs(nameCfg, "", QStringList(), QStringList());
-	if (cfgoptstxt.isEmpty())
+    if (cfgoptstxt.isEmpty())
 	{
 		cfgoptstxt = getgrubcfgargs(nameCfg);
 	}
@@ -770,8 +806,36 @@ void unetbootin::on_cancelbutton_clicked()
 	close();
 }
 
+bool supportSSE4() {
+    uint32_t flags = android_getCpuFeatures_link_time();
+    return (flags & ANDROID_CPU_X86_FEATURE_SSE4_1) != 0;
+}
+
 void unetbootin::on_okbutton_clicked()
 {
+	if (typeselect->currentIndex() == typeselect->findText(tr("Hard Disk")))
+	{
+        if (checkInstall() == CHECK_INSTALL_UNINSTALL_CANCELLED) {
+            return;
+        }
+        if (!supportSSE4()) {
+            QMessageBox unotenoughinputmsgb;
+            unotenoughinputmsgb.setIcon(QMessageBox::Warning);
+            unotenoughinputmsgb.setWindowTitle(tr("Warning"));
+            unotenoughinputmsgb.setText(tr("For your CPU, please make sure you are using 32-bit version of Remix OS for PC."));
+            unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+            switch (unotenoughinputmsgb.exec())
+            {
+                case QMessageBox::Ok:
+                    break;
+                case QMessageBox::Cancel:
+                    return;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty() && !testingDownload)
 	{
 		QMessageBox unotenoughinputmsgb;
@@ -1052,16 +1116,21 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 	QString destindir = QFileInfo(destinfileL).dir().absolutePath();
 	QString destinfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(destinfileL).fileName());
 	QString filepathfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(filepath).fileName());
-	if (QFile::exists(filepathfilename))
-	{
-		if (!overwritefileprompt(filepathfilename))
-			return false;
-	}
-	if (QFile::exists(destinfilename))
-	{
-		if (!overwritefileprompt(destinfilename))
-			return false;
-	}
+
+    // @jide don't show overrite prompt
+    //
+    if (QFile::exists(filepathfilename))
+    {
+        //if (!overwritefileprompt(filepathfilename))
+        //    return false;
+        rmFile(filepathfilename);
+    }
+    if (QFile::exists(destinfilename))
+    {
+        //if (!overwritefileprompt(destinfilename))
+        //    return false;
+        rmFile(destinfilename);
+    }
 	#ifdef Q_OS_WIN32
 	if (sevzcommand.isEmpty())
 	{
@@ -1689,8 +1758,10 @@ void unetbootin::extractiso(QString isofile)
 	}
 	ubnpathlF.close();
     QStringList extractedfiles;
-    if (!skipExtraction)
-      extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first, filepathnames);
+    if (!skipExtraction) {
+      extractedfiles = extractallfiles(isofile, QDir::toNativeSeparators(QString("%1").arg(targetDrive)), listfilesizedirpair.first, filepathnames);
+      //extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first, filepathnames);
+    }
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(targetPath)));
 	if (ubnfilelF.exists())
 	{
@@ -1855,11 +1926,19 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 	pdesc1->setText(tr("<b>Extracted:</b> 0 of %1 files").arg(filelist.size()));
 	for (int i = 0; i < filelist.size(); ++i)
 	{
+        QString targetPath = dirxfilesto;
+        QString filepath = filelist.at(i);
+        if (installType == tr("Hard Disk")) {
+            if (filepath.contains("efi/boot") || filepath.contains("isolinux")) {
+                continue;
+            }
+            targetPath = QDir::toNativeSeparators(QString("%1%2/").arg(dirxfilesto).arg(REMIXOS_HDD_INSTALL_DIR));
+        }
 		pdesc3->setText(tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(displayfisize(filesizelist.second.at(i))));
-		pdesc2->setText(tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(outputfilelist.at(i)));
+		pdesc2->setText(tr("<b>Destination:</b> %1%2").arg(targetPath).arg(outputfilelist.at(i)));
 		pdesc1->setText(tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
 		tprogress->setValue(i);
-		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(outputfilelist.at(i)), archivefile))
+		if (extractfile(filelist.at(i), QString("%1%2").arg(targetPath).arg(outputfilelist.at(i)), archivefile))
 		{
 			extractedfiles.append(filelist.at(i));
 		}
@@ -3388,7 +3467,7 @@ void unetbootin::vistabcdEdit()
 			vbcdIdTL = vbcdIdTLSL.at(0);
 		vbcdTmpInF.close();
 	}
-	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\RemixOS", QSettings::NativeFormat);
 	vdtistor.setValue("WArch64", warch64);
 	QFile vbcdEditF2(QString("%1vbcdedt2.bat").arg(targetPath));
 	vbcdEditF2.open(QIODevice::ReadWrite | QIODevice::Text);
@@ -3477,6 +3556,67 @@ QString unetbootin::instTempfl(QString srcfName, QString dstfType)
 
 void unetbootin::runinst()
 {
+    targetDrive = driveselect->currentText();
+    installType = typeselect->currentText();
+#ifdef Q_OS_WIN32
+    WCHAR wszDrive[MAX_PATH + 1];
+    wmemset(wszDrive, 0, MAX_PATH + 1);
+    targetDrive.toWCharArray(wszDrive);
+    RemixOSUDisk remixOSUdisk(wszDrive);
+
+    if (installType == tr("USB Drive"))
+    {
+        if(!remixOSUdisk.IsValidUDisk())
+        {
+            QMessageBox unotenoughinputmsgb;
+            unotenoughinputmsgb.setIcon(QMessageBox::Critical);
+            unotenoughinputmsgb.setWindowTitle(tr("Select a high capacity usb drive"));
+            unotenoughinputmsgb.setText(tr("The USB drive capacity must be larger than 8 GB."));
+            unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+            switch (unotenoughinputmsgb.exec())
+            {
+                case QMessageBox::Ok:
+                    break;
+                default:
+                    break;
+            }
+            return;
+        }
+
+        if(!remixOSUdisk.IsRemixOSUDisk())
+        {
+            QMessageBox unotenoughinputmsgb;
+            unotenoughinputmsgb.setIcon(QMessageBox::Information);
+            unotenoughinputmsgb.setWindowTitle(tr("Information"));
+            unotenoughinputmsgb.setText(tr("All the data on your USB flash drive will be erased. Please backup your data before proceeding."));
+            unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+            switch (unotenoughinputmsgb.exec())
+            {
+                case QMessageBox::Cancel:
+                    return;
+                default:
+                    break;
+            }
+        }
+
+        if(!remixOSUdisk.PrepareUDisk())
+        {
+            QMessageBox unotenoughinputmsgb;
+            unotenoughinputmsgb.setIcon(QMessageBox::Critical);
+            unotenoughinputmsgb.setWindowTitle(tr("Error"));
+            unotenoughinputmsgb.setText(tr("Fail to create a multiple partitions in the USB flash drive."));
+            unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+            switch (unotenoughinputmsgb.exec())
+            {
+                case QMessageBox::Ok:
+                    break;
+                default:
+                    break;
+            }
+            return;
+        }
+    }
+#endif
 	this->trcurrent = tr("(Current)");
 	this->trdone = tr("(Done)");
 	firstlayer->setEnabled(false);
@@ -3489,8 +3629,6 @@ void unetbootin::runinst()
 	progresslayer->show();
 	sdesc1->setText(QString("<b>%1 %2</b>").arg(sdesc1->text()).arg(trcurrent));
 	tprogress->setValue(0);
-	installType = typeselect->currentText();
-	targetDrive = driveselect->currentText();
 	persistenceSpaceMB = this->persistencevalue->value();
 	QString ginstallDir;
 	QString installDir;
@@ -3498,11 +3636,11 @@ void unetbootin::runinst()
 	#ifdef Q_OS_WIN32
 	if (installType == tr("Hard Disk"))
 	{
-		ginstallDir = "unetbtin/";
+		ginstallDir = REMIXOS_HDD_INSTALL_DIR + QString("/");
 	}
 	if (installType == tr("USB Drive"))
 	{
-		ginstallDir = "";
+        ginstallDir = "";
 	}
 	installDir = ginstallDir;
 	targetDev = QString("%1").arg(targetDrive).remove("\\");
@@ -3526,7 +3664,7 @@ void unetbootin::runinst()
 		}
 		devluid = getdevluid(targetDev);
 	}
-	if (installType == tr("USB Drive"))
+    if (installType == tr("USB Drive"))
 	{
 		targetDev = driveselect->currentText();
 		devluid = getdevluid(targetDev);
@@ -3640,7 +3778,7 @@ void unetbootin::runinst()
 			ishdmedia = true;
 		}
 		if (nameVersion.contains("_x64"))
-		{
+        {
 			nameVersion.remove("_x64");
 			isarch64 = true;
 		}
@@ -3687,6 +3825,34 @@ void unetbootin::runinst()
 		}
 	}
 	instDetType();
+    #ifdef Q_OS_WIN32
+    if (installType == tr("USB Drive"))
+    {
+        if(!remixOSUdisk.UpdateUDisk())
+        {
+            QString trfailed = tr("(failed)");
+            sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trfailed));
+
+            QMessageBox unotenoughinputmsgb;
+            unotenoughinputmsgb.setIcon(QMessageBox::Critical);
+            unotenoughinputmsgb.setWindowTitle(tr("Error"));
+            unotenoughinputmsgb.setText(tr("Fail to create a multiple partitions in the USB flash drive."));
+            unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+            switch (unotenoughinputmsgb.exec())
+            {
+                case QMessageBox::Ok:
+                    break;
+                default:
+                    break;
+            }
+            return;
+        }
+        else
+        {
+            sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
+        }
+    }
+    #endif
 }
 
 void unetbootin::instDetType()
@@ -3783,12 +3949,12 @@ void unetbootin::runinsthdd()
 	#endif
 	#ifdef Q_OS_WIN32
 	pdesc1->setText(tr("Configuring grldr on %1").arg(targetDev));
-	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR))))
 	{
-		rmFile(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+		rmFile(QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR)));
 	}
-	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
-	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
+	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR)));
+	QFile::setPermissions(QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR)), QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive))))
 	{
 		overwritefileprompt(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
@@ -3858,7 +4024,7 @@ void unetbootin::runinsthdd()
 	#endif
 #ifndef NODEFAULTBOOT
 	"\ntitle "UNETBOOTINB"\n"
-	#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN32
 	"find --set-root %3\n"
 	#endif
 	#ifdef Q_OS_UNIX
@@ -3878,16 +4044,28 @@ void unetbootin::runinsthdd()
 	{
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
 		{
+            // @jide
+            QString title = QString(extraoptionsPL.second.first.at(i)).remove("^");
+            if (title.startsWith("Guest mode")) {
+                // don't install Guest mode for HDD
+                continue;
+            }
+
+            QString kernelArgs = QString(extraoptionsPL.second.second.at(i));
+            kernelArgs = kernelArgs.replace(QString("SRC="), QString("SRC=") + REMIXOS_HDD_INSTALL_DIR + QString("/"));
+
+
 			menulstxt.append(QString("\ntitle %1\n"
 			#ifdef Q_OS_WIN32
-			"find --set-root %2\n"
+			"find --set-root %5%2\n"
 			#endif
 			#ifdef Q_OS_UNIX
 			"root %5\n"
 			#endif
-			"kernel %2 %4\n"
-			"initrd %3\n"
-			"boot\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^")).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(extraoptionsPL.second.second.at(i))
+			"kernel %5%2 %4\n"
+			"initrd %5%3\n"
+			"boot\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^")).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(kernelArgs)
+                    .arg(QString("/") + REMIXOS_HDD_INSTALL_DIR)
 			#ifdef Q_OS_UNIX
 			.arg(getGrubNotation(targetDev))
 			#endif
@@ -3896,13 +4074,15 @@ void unetbootin::runinsthdd()
 	}
 	menulstout << menulstxt << endl;
 	menulst.close();
+
+    bool installFailed = false;
 	#ifdef Q_OS_WIN32
-	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\RemixOS", QSettings::NativeFormat);
 	install.setValue("Location", targetDrive);
 	install.setValue("DisplayName", "Remix OS");
-	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR)));
 	//QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-	//runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	//runonce.setValue("RemixOS Uninstaller", QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR)));
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysEdit();
@@ -3913,13 +4093,23 @@ void unetbootin::runinsthdd()
 	}
 	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA) //|| QSysInfo::WindowsVersion == QSysInfo::WV_WINDOWS7) // TODO when upgrading to latest Qt
 	{
-		vistabcdEdit();
+        int result = installEfi();
+        if (result == INSTALL_EFI_NOT_SUPPORT) {
+            vistabcdEdit();
+        } else if (result == INSTALL_EFI_FAILED) {
+            installFailed = true;
+        }
 	}
 	else
 	{
-		configsysEdit();
-		bootiniEdit();
-		vistabcdEdit();
+        int result = installEfi();
+        if (result == INSTALL_EFI_NOT_SUPPORT) {
+            configsysEdit();
+            bootiniEdit();
+            vistabcdEdit();
+        } else if (result == INSTALL_EFI_FAILED) {
+            installFailed = true;
+        }
 	}
 	#endif
 	#ifdef Q_OS_UNIX
@@ -3927,6 +4117,20 @@ void unetbootin::runinsthdd()
 	install.setValue("Location", "/");
 	#endif
 	fininstall();
+    if (installFailed) {
+        QMessageBox failureMessageBox;
+        failureMessageBox.setIcon(QMessageBox::Warning);
+        failureMessageBox.setWindowTitle(tr("Installation Failed"));
+        failureMessageBox.setText(tr("Installation failed. Please restart your device and try install again"));
+        failureMessageBox.setStandardButtons(QMessageBox::Ok);
+        switch (failureMessageBox.exec())
+        {
+            case QMessageBox::Ok:
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 void unetbootin::rmFile(QFile &fn)
@@ -4240,6 +4444,9 @@ void unetbootin::runinstusb()
 			"kernel %2\n"
 			"append %6%3 %4\n").arg(extraoptionsPL.second.first.at(i)).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(extraoptionsPL.second.second.at(i)).arg(QString("ubnentry%1").arg(i)).arg(slinitrdLine));
 		}
+#ifdef Q_OS_WIN32
+        syslinuxcfgtxt.replace("CREATE_DATA_IMG=1", "USB_DATA_PARTITION=1");
+#endif
 	}
     writeTextToFile(syslinuxcfgtxt, QString("%1syslinux.cfg").arg(targetPath));
 	}
@@ -4352,9 +4559,9 @@ void unetbootin::fininstall()
 	rebootlayer->setEnabled(true);
 	rebootlayer->show();
 	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
-	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
 	if (installType == tr("Hard Disk"))
 	{
+        sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
 		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
 	}
 	if (installType == tr("USB Drive"))
@@ -4375,4 +4582,389 @@ void unetbootin::fininstall()
 		QApplication::exit();
 		exit(0);
 	}
+}
+
+void configsysUndo(QString uninstPathL)
+{
+	if (!QFile::copy(QDir::toNativeSeparators(QString("%1%2/config.sys").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
+		QFile::copy(QDir::toNativeSeparators(QString("%1%2/config.sys").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
+	}
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)).toLocal8Bit(), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
+}
+
+void bootiniUndo(QString uninstPathL)
+{
+	if (!QFile::copy(QDir::toNativeSeparators(QString("%1%2/boot.ini").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)), QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL))))
+		{
+			QFile::remove(QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)));
+			QFile::copy(QDir::toNativeSeparators(QString("%1%2/boot.ini").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)), QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)));
+		}
+	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)).utf16()), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
+}
+
+void vistabcdUndo(QString uninstPathL)
+{
+	QSettings vdtustor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\RemixOS", QSettings::NativeFormat);
+	QVariant warch64varL(QVariant::Bool);
+	warch64varL = vdtustor.value("WArch64");
+	bool warch64L = warch64varL.value<bool>();
+	if (warch64L)
+	{
+		unetbootin::callexternapp(QDir::toNativeSeparators(QString("%1%2/emtxfile.exe").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)), QDir::toNativeSeparators(QString("%1%2/vbcdundo.bat runas").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)));
+	}
+	else
+	{
+		unetbootin::callexternapp(QDir::toNativeSeparators(QString("%1%2/vbcdundo.bat").arg(uninstPathL).arg(REMIXOS_HDD_INSTALL_DIR)), "");
+	}
+	vdtustor.remove("WArch64");
+}
+
+bool removeDir(const QString &dirName) {
+#ifdef Q_OS_WIN32
+    bool result = true;
+    QDir dir(dirName);
+
+    if (dir.exists(dirName)) {
+        Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
+            if (info.isDir()) {
+                result = removeDir(info.absoluteFilePath());
+            }
+            else {
+                DBG_INFO(QString("remove %1").arg(info.absoluteFilePath()));
+                result = QFile::remove(info.absoluteFilePath());
+            }
+
+            if (!result) {
+                return result;
+            }
+        }
+        DBG_INFO(QString("remove %1").arg(dirName));
+        result = dir.rmdir(dirName);
+    }
+
+    return result;
+#else
+    return false;
+#endif
+
+}
+void clearOutDir(QString pDirToDel)
+{
+	QDir dirToDel(pDirToDel);
+	QStringList rmfileList = dirToDel.entryList(QDir::Files);
+	for (int i = 0; i < rmfileList.size(); ++i)
+	{
+        if (rmfileList.at(i).contains("data.img")) {
+            continue;
+        }
+		QFile::setPermissions(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmfileList.at(i))), QFile::WriteOther);
+		QFile::remove(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmfileList.at(i))));
+	}
+	QStringList rmDirList = dirToDel.entryList(QDir::Dirs);
+	for (int i = 0; i < rmDirList.size(); ++i){
+        if (rmDirList.at(i).startsWith(".")) {
+            continue;
+        }
+        DBG_INFO(QString("clear %1").arg(rmDirList.at(i)));
+        removeDir(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmDirList.at(i))));
+    }
+	dirToDel.rmdir(pDirToDel);
+}
+
+
+void unetbootin::ubnUninst()
+{
+	#ifdef Q_OS_UNIX
+	QSettings chkinstL(QSettings::SystemScope, "RemixOS");
+	QString uninstPath = "/";
+	QString uninstsubDir = QDir::toNativeSeparators(QString("%1boot/").arg(uninstPath));
+	if (QFile::exists(QString("%1ubninit").arg(uninstsubDir)))
+		QFile::remove(QString("%1ubninit").arg(uninstsubDir));
+	if (QFile::exists(QString("%1ubnkern").arg(uninstsubDir)))
+		QFile::remove(QString("%1ubnkern").arg(uninstsubDir));
+	if (QFile::exists(QString("%1grub/menu.lst.bak").arg(uninstsubDir)))
+	{
+		if (QFile::exists(QString("%1grub/menu.lst").arg(uninstsubDir)))
+		{
+			QFile::remove(QString("%1grub/menu.lst").arg(uninstsubDir));
+		}
+		QFile::rename(QString("%1grub/menu.lst.bak").arg(uninstsubDir), QString("%1grub/menu.lst").arg(uninstsubDir));
+	}
+	if (QFile::exists(QString("%1grub/grub.cfg.bak").arg(uninstsubDir)))
+	{
+		if (QFile::exists(QString("%1grub/grub.cfg").arg(uninstsubDir)))
+		{
+			QFile::remove(QString("%1grub/grub.cfg").arg(uninstsubDir));
+		}
+		QFile::rename(QString("%1grub/grub.cfg.bak").arg(uninstsubDir), QString("%1grub/grub.cfg").arg(uninstsubDir));
+	}
+	#endif
+	#ifdef Q_OS_WIN32
+	QSettings autostrt("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
+ 	if (autostrt.contains("RemixOS Uninstaller"))
+ 	{
+ 		autostrt.remove("RemixOS Uninstaller");
+	}
+	QSettings chkinstL("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\RemixOS", QSettings::NativeFormat);
+	QVariant uninstvar(QVariant::String);
+	uninstvar = chkinstL.value("Location");
+	QString uninstPath = uninstvar.value<QString>();
+	QString uninstsubDir = QDir::toNativeSeparators(QString("%1%2/").arg(uninstPath).arg(REMIXOS_HDD_INSTALL_DIR));
+	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
+	{
+		configsysUndo(uninstPath);
+	}
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
+	{
+		bootiniUndo(uninstPath);
+	}
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
+	{
+        if (INSTALL_EFI_NOT_SUPPORT == uninstallEfi()) {
+            vistabcdUndo(uninstPath);
+        }
+	}
+	else
+	{
+        if (INSTALL_EFI_NOT_SUPPORT == uninstallEfi()) {
+            configsysUndo(uninstPath);
+            bootiniUndo(uninstPath);
+            vistabcdUndo(uninstPath);
+        }
+	}
+	#endif
+	if (QFile::exists(QString("%1ubnfilel.txt").arg(uninstsubDir)))
+	{
+		QFile ubnfilelF(QString("%1ubnfilel.txt").arg(uninstsubDir));
+		ubnfilelF.open(QIODevice::ReadOnly | QIODevice::Text);
+		QTextStream ubnfilelS(&ubnfilelF);
+		while (!ubnfilelS.atEnd())
+		{
+			QFile::remove(QString("%1%2").arg(uninstPath).arg(ubnfilelS.readLine()));
+		}
+		ubnfilelF.close();
+		QFile::remove(QString("%1ubnfilel.txt").arg(uninstsubDir));
+	}
+	if (QFile::exists(QString("%1ubnpathl.txt").arg(uninstsubDir)))
+	{
+		QFile ubnpathlF(QString("%1ubnpathl.txt").arg(uninstsubDir));
+		ubnpathlF.open(QIODevice::ReadOnly | QIODevice::Text);
+		QTextStream ubnpathlS(&ubnpathlF);
+		QDir unrdir(uninstPath);
+		while (!ubnpathlS.atEnd())
+		{
+			unrdir.rmdir(ubnpathlS.readLine());
+		}
+		ubnpathlF.close();
+		QFile::remove(QString("%1ubnpathl.txt").arg(uninstsubDir));
+	}
+	#ifdef Q_OS_WIN32
+	clearOutDir(QDir::toNativeSeparators(QString("%1%2").arg(uninstPath).arg(REMIXOS_HDD_INSTALL_DIR)));
+	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(uninstPath)));
+	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(uninstPath)));
+	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(uninstPath)));
+	#endif
+	chkinstL.clear();
+	QMessageBox finmsgb;
+	finmsgb.setIcon(QMessageBox::Information);
+	finmsgb.setWindowTitle(uninstaller::tr("Uninstallation Complete"));
+	finmsgb.setText(uninstaller::tr("%1 has been uninstalled.").arg(UNETBOOTINB));
+ 	finmsgb.setStandardButtons(QMessageBox::Ok);
+ 	switch (finmsgb.exec())
+ 	{
+ 		case QMessageBox::Ok:
+ 			break;
+		default:
+			break;
+ 	}
+}
+
+int unetbootin::checkInstall()
+{
+	#ifdef Q_OS_WIN32
+	QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\RemixOS", QSettings::NativeFormat);
+	#endif
+	#ifdef Q_OS_LINUX
+	QSettings chkinst(QSettings::SystemScope, "RemixOS");
+	#endif
+#ifndef Q_OS_MAC
+    if (chkinst.contains("Location"))
+    {
+        QMessageBox uninstmsgb;
+        uninstmsgb.setIcon(QMessageBox::Information);
+        uninstmsgb.setWindowTitle(uninstaller::tr("%1 Uninstaller").arg(UNETBOOTINB));
+        uninstmsgb.setText(uninstaller::tr("%1 is currently installed. Remove the existing version?").arg(UNETBOOTINB));
+        uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        switch (uninstmsgb.exec())
+        {
+            case QMessageBox::Ok:
+                {
+                    ubnUninst();
+                    return CHECK_INSTALL_UNINSTALLED;
+                }
+            case QMessageBox::Cancel:
+                return CHECK_INSTALL_UNINSTALL_CANCELLED;
+            default:
+                break;
+        }
+    }
+#endif
+    return CHECK_INSTALL_NO_INSTALLED;
+}
+
+QString unetbootin::getAvailableDriveLetter() {
+    QFileInfoList extdrivesList = QDir::drives();
+    for (char i = 'Z'; i >= 'D'; i--) {
+        QString drive = QString("%1:\\").arg(i);
+		for (int j = 0; j < extdrivesList.size(); j++)
+		{
+			if (QDir::toNativeSeparators(extdrivesList.at(j).path().toUpper()) == drive) {
+                break;
+            }
+        }
+        return QString("%1:").arg(i);
+    }
+    return QString("");
+}
+
+
+void RasiePrivileges(void)
+{
+    HANDLE hToken;
+    TOKEN_PRIVILEGES tkp;
+
+    if (!OpenProcessToken(GetCurrentProcess(),  TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken))
+    {
+        DBG_INFO("Failed OpenProcessToken\n");
+        return;
+    }
+
+    LookupPrivilegeValue(NULL, SE_SYSTEM_ENVIRONMENT_NAME, &tkp.Privileges[0].Luid);
+    tkp.PrivilegeCount = 1;
+    tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+    DWORD len;
+    AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, NULL, &len);
+
+    if (GetLastError() != ERROR_SUCCESS)
+    {
+        DBG_INFO("Failed RasiePrivileges()\n");
+        return;
+    }
+}
+
+void mountEFI(QString drive) {
+    RasiePrivileges();
+    unetbootin::callexternapp("mountvol", drive + " /S");
+}
+
+void unmountEFI(QString drive) {
+    RasiePrivileges();
+    unetbootin::callexternapp("mountvol", drive + " /D");
+}
+
+
+
+int unetbootin::installEfi() {
+#ifdef Q_OS_WIN32
+    if (installType != tr("Hard Disk")) {
+        DBG_INFO("not hard disk");
+        return INSTALL_EFI_NOT_SUPPORT;
+    }
+
+    QString drive = getAvailableDriveLetter();
+    if (drive.isEmpty()) {
+        DBG_INFO("drive empty");
+        return INSTALL_EFI_NOT_SUPPORT;
+    }
+
+    QString efitoolcommand = instTempfl("efitool.exe", "exe");
+
+    DBG_INFO(QString("checkefi").arg(drive));
+    QString mode = unetbootin::callexternapp(efitoolcommand, "--type checkefi --drive " + drive);
+    DBG_INFO(QString("checkefi result:%1").arg(mode));
+    if (mode == "0") {
+        // EFI OK
+    } else if (mode == "1") {
+        return INSTALL_EFI_NOT_SUPPORT;
+    } else if (mode == "2") {
+        return INSTALL_EFI_FAILED;
+    } else {
+        return INSTALL_EFI_NOT_SUPPORT;
+    }
+
+    QString srcBaseDir = QString("%1/%2/%3").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR).arg("efi/RemixOS/");
+    DBG_INFO(QString("srcBaseDir %1").arg(srcBaseDir));
+    QString targetBaseDir = QString("%1/%2").arg(drive).arg("efi/RemixOS/");
+    DBG_INFO(QString("targetBaseDir %1").arg(targetBaseDir));
+	QStringList efiFileList = QStringList()
+        << "grub.cfg"
+        << "bootx64.efi"
+        << "bootia32.efi"
+        << "gcdia32.efi"
+        << "grubx64.efi"
+        << "exfat32.mod"
+        << "exfat64.mod"
+        << "ntfs32.mod"
+        << "ntfs64.mod";
+    QDir destDir(targetBaseDir);
+    destDir.mkpath(".");
+    for (int i = 0; i < efiFileList.size(); i++) {
+        QString src = QDir::toNativeSeparators(QString("%1/%2").arg(srcBaseDir).arg(efiFileList.at(i)));
+        QString dest = QDir::toNativeSeparators(QString("%1/%2").arg(targetBaseDir).arg(efiFileList.at(i)));
+        QFile destFile(dest);
+        if (destFile.exists()) {
+            destFile.remove();
+        }
+
+        DBG_INFO(QString("copy %1 -> %2").arg(src).arg(dest));
+        if (!QFile::copy(src,dest)) {
+            DBG_INFO("failed");
+        }
+    }
+
+    DBG_INFO(QString("install efi"));
+    QString result = unetbootin::callexternapp(efitoolcommand, "--type install --drive " + drive);
+    DBG_INFO(result);
+    return INSTALL_EFI_SUCCESS;
+#else
+    return INSTALL_EFI_NOT_SUPPORT;
+#endif
+}
+
+
+int unetbootin::uninstallEfi() {
+#ifdef Q_OS_WIN32
+    QString drive = getAvailableDriveLetter();
+    if (drive.isEmpty()) {
+        DBG_INFO("drive empty");
+        return INSTALL_EFI_NOT_SUPPORT;
+    }
+    QString efitoolcommand = instTempfl("efitool.exe", "exe");
+
+    DBG_INFO(QString("checkefi").arg(drive));
+    QString mode = unetbootin::callexternapp(efitoolcommand, "--type checkefi --drive " + drive);
+    DBG_INFO(QString("checkefi result:%1").arg(mode));
+    if (mode == "0") {
+        // EFI OK
+    } else if (mode == "1") {
+        return INSTALL_EFI_NOT_SUPPORT;
+    } else if (mode == "2") {
+        return INSTALL_EFI_FAILED;
+    } else {
+        return INSTALL_EFI_NOT_SUPPORT;
+    }
+
+    QString targetBaseDir = QString("%1/%2").arg(drive).arg("efi/RemixOS/");
+    removeDir(targetBaseDir);
+
+    DBG_INFO(QString("uninstall efi"));
+    QString result = unetbootin::callexternapp(efitoolcommand, "--type remove --drive " + drive);
+    DBG_INFO(result);
+    return INSTALL_EFI_SUCCESS;
+#else
+    return INSTALL_EFI_NOT_SUPPORT;
+#endif
 }

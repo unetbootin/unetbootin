@@ -12,21 +12,21 @@ PRODUCTVERSION 1,1,1,1
   {
   BLOCK "040904E4"
    {
-VALUE "CompanyName", "Geza Kovacs"
+VALUE "CompanyName", "Jide Technology Co., Ltd"
 
 VALUE "FileVersion", " "
 
-VALUE "FileDescription", "UNetbootin - Universal Netboot Installer - http://unetbootin.sourceforge.net"
+VALUE "FileDescription", "Remix OS Installation Tool http://www.jide.com/remixos-for-pc"
 
-VALUE "InternalName", "UNetbootin - Universal Netboot Installer"
+VALUE "InternalName", "Remix OS Installation Tool http://www.jide.com/remixos-for-pc"
 
-VALUE "LegalCopyright", "Copyright - Geza Kovacs - License - GNU GPL v2+"
+VALUE "LegalCopyright", "Copyright - Jide Technology Co., Ltd - License - GNU GPL v2+"
 
 VALUE "LegalTrademarks", " "
 
-VALUE "OriginalFilename", "unetbootin.exe"
+VALUE "OriginalFilename", "remixos-installation-tool.exe"
 
-VALUE "ProductName", "UNetbootin - Universal Netboot Installer"
+VALUE "ProductName", "Remix OS Installation Tool"
 
 VALUE "ProductVersion", " "
 

@@ -2,9 +2,308 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ca_ES">
 <context>
+    <name></name>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Disc dur</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Disc USB</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Disquet</translation>
+    </message>
+    <message>
+        <source>either</source>
+        <translation type="obsolete">o bé</translation>
+    </message>
+    <message>
+        <source>LiveUSB persistence</source>
+        <translation type="obsolete">Persistència al dispositiu USB autònom</translation>
+    </message>
+    <message>
+        <source>FAT32-formatted USB drive</source>
+        <translation type="obsolete">Dispositiu USB amb format FAT32</translation>
+    </message>
+    <message>
+        <source>EXT2-formatted USB drive</source>
+        <translation type="obsolete">Dispositiu USB amb format EXT2</translation>
+    </message>
+    <message>
+        <source>Open Disk Image File</source>
+        <translation type="obsolete">Obre un fitxer d&apos;imatge de disc</translation>
+    </message>
+    <message>
+        <source>All Files</source>
+        <translation type="obsolete">Tots els fitxers</translation>
+    </message>
+    <message>
+        <source>Open Kernel File</source>
+        <translation type="obsolete">Obre el fitxer de nucli</translation>
+    </message>
+    <message>
+        <source>All Files (*)</source>
+        <translation type="obsolete">Tots els fitxers (*)</translation>
+    </message>
+    <message>
+        <source>Open Initrd File</source>
+        <translation type="obsolete">Obre el fitxer initrd</translation>
+    </message>
+    <message>
+        <source>Open Bootloader Config File</source>
+        <translation type="obsolete">Obre el fitxer de configuració del carregador de l&apos;arrencada</translation>
+    </message>
+    <message>
+        <source>Insert a USB flash drive</source>
+        <translation type="obsolete">Inseriu una unitat flash USB</translation>
+    </message>
+    <message>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation type="obsolete">No s&apos;ha trobat cap unitat flash USB . Si heu inserit un dispositiu USB, proveu de formatar-lo com a FAT32.</translation>
+    </message>
+    <message>
+        <source>%1 not mounted</source>
+        <translation type="obsolete">%1 sense muntar</translation>
+    </message>
+    <message>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation type="obsolete">Primer munteu la unitat USB %1 a un punt de muntatge. La majoria de les distribucions ho fan automàticament si la retireu i la torneu a inserir.</translation>
+    </message>
+    <message>
+        <source>Select a distro</source>
+        <translation type="obsolete">Seleccioneu una distribució</translation>
+    </message>
+    <message>
+        <source>You must select a distribution to load.</source>
+        <translation type="obsolete">Seleccioneu una distribució per carregar</translation>
+    </message>
+    <message>
+        <source>Select a disk image file</source>
+        <translation type="obsolete">Seleccioneu un fitxer d&apos;imatge de disc</translation>
+    </message>
+    <message>
+        <source>You must select a disk image file to load.</source>
+        <translation type="obsolete">Seleccioneu un fitxer d&apos;imatge de disc per carregar.</translation>
+    </message>
+    <message>
+        <source>Select a kernel and/or initrd file</source>
+        <translation type="obsolete">Seleccioneu un nucli i/o el fitxer initrd</translation>
+    </message>
+    <message>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation type="obsolete">Seleccioneu un nucli i/o un fitxer initrd per carregar-los.</translation>
+    </message>
+    <message>
+        <source>Diskimage file not found</source>
+        <translation type="obsolete">No s&apos;ha trobat el fitxer d&apos;imatge de disc</translation>
+    </message>
+    <message>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation type="obsolete">El fitxer d&apos;imatge de disc %1 indicat no existeix.</translation>
+    </message>
+    <message>
+        <source>Kernel file not found</source>
+        <translation type="obsolete">No s&apos;ha trobat el fitxer del nucli</translation>
+    </message>
+    <message>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation type="obsolete">El fitxer del nucli %1 indicat no existeix.</translation>
+    </message>
+    <message>
+        <source>Initrd file not found</source>
+        <translation type="obsolete">No s&apos;ha trobat el fitxer initrd</translation>
+    </message>
+    <message>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation type="obsolete">El fitxer initrd %1 indicat no existeix.</translation>
+    </message>
+    <message>
+        <source>%1 exists, overwrite?</source>
+        <translation type="obsolete">%1 ja existeix. El voleu sobreescriure?</translation>
+    </message>
+    <message>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation type="obsolete">El fitxer %1 ja existeix. Premeu «Sí a tot» per sobreescriure&apos;l i evitar la mateixa pregunta, «Sí» per sobreescriure els fitxers individualment, i «No» per conservar la versió existent. En cas de dubte premeu «Sí a tot».</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="obsolete">No hi ha prou espai a %1, voleu aturar la instal·lació?</translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="obsolete">No hi ha prou espai a la carpeta %1. Premeu «Sí» per aturar la instal·lació, «No» per ignorar aquest error i intentar continuar, i «No a tot» per ignorar tots els errors de manca d&apos;espai.</translation>
+    </message>
+    <message>
+        <source>Locating kernel file in %1</source>
+        <translation type="obsolete">S&apos;està localitzant el fitxer del nucli a %1</translation>
+    </message>
+    <message>
+        <source>Copying kernel file from %1</source>
+        <translation type="obsolete">S&apos;està copiant el fitxer del nucli des de %1</translation>
+    </message>
+    <message>
+        <source>Locating initrd file in %1</source>
+        <translation type="obsolete">S&apos;està localitzant el fitxer initrd a %1</translation>
+    </message>
+    <message>
+        <source>Copying initrd file from %1</source>
+        <translation type="obsolete">S&apos;està copiant el fitxer initrd des de %1</translation>
+    </message>
+    <message>
+        <source>Extracting bootloader configuration</source>
+        <translation type="obsolete">S&apos;està extraient la configuració del carregador de l&apos;arrencada</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;està extraient el fitxer ISO comprimit:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Copying file, please wait...</source>
+        <translation type="obsolete">S&apos;està copiant els fitxers...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Destinació:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;ha copiat:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">S&apos;està extraient els fitxers, espereu...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Arxiu:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Origen:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Destinació:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;ha extret:&lt;/b&gt; 0 of %1 files</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Destinació:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;ha extret:&lt;/b&gt; %1 of %2 files</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">S&apos;està descarregant els fitxers, espereu...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;ha descarregat:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
+        <translation type="obsolete">Ha fallat la descàrrega de %1 %2 de %3. Intenteu baixar-vos el fitxer ISO directament des del lloc web i subministreu-lo mitjançant l&apos;opció «diskimage».</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;ha descarregat:&lt;/b&gt; %1 de %2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;S&apos;ha copiat:&lt;/b&gt; %1 de %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">S&apos;està cercant a &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 coincidències de &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">No s&apos;ha trobat %1</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">No s&apos;ha trobat %1. És necessari per al mode d&apos;instal·lació %2.
+Instal·leu el paquet «%3» o l&apos;equivalent de la vostra distribució.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Actual)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Fet)</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">S&apos;està configurant el grub2 a %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">S&apos;està configurant el grldr a %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">S&apos;està configurant el grub a %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">S&apos;està instal·lant syslinux a %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">S&apos;està instal·lant extlinux a %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">S&apos;està sincronitzant els fitxers de sistema</translation>
+    </message>
+    <message>
+        <source>Setting up persistence</source>
+        <translation type="obsolete">Configura la persistència</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Després d&apos;arrencar de nou, seleccioneu la </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Després d&apos;arrencar de nou, seleccioneu l&apos;opció d&apos;arrencada des de l&apos;USB al menú de la BIOS.%1
+Voleu arrencar de nou ara?</translation>
+    </message>
+    <message>
+        <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
+        <translation type="obsolete">El dispositiu USB que s&apos;ha creat no arrencarà a un Mac. Inseriu-lo a un PC i seleccioneu l&apos;opció d&apos;engegada des del dispositiu USB a la BIOS.%1</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="266"/>
+        <location filename="main.cpp" line="270"/>
         <source>LeftToRight</source>
         <translation>D&apos;esquerra a dreta</translation>
     </message>
@@ -12,446 +311,482 @@
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="315"/>
-        <location filename="unetbootin.cpp" line="316"/>
-        <location filename="unetbootin.cpp" line="385"/>
-        <location filename="unetbootin.cpp" line="589"/>
-        <location filename="unetbootin.cpp" line="3499"/>
-        <location filename="unetbootin.cpp" line="3512"/>
-        <location filename="unetbootin.cpp" line="3694"/>
-        <location filename="unetbootin.cpp" line="4356"/>
+        <location filename="unetbootin.cpp" line="219"/>
+        <location filename="unetbootin.cpp" line="321"/>
+        <location filename="unetbootin.cpp" line="322"/>
+        <location filename="unetbootin.cpp" line="391"/>
+        <location filename="unetbootin.cpp" line="607"/>
+        <location filename="unetbootin.cpp" line="1893"/>
+        <location filename="unetbootin.cpp" line="3596"/>
+        <location filename="unetbootin.cpp" line="3609"/>
+        <location filename="unetbootin.cpp" line="3819"/>
+        <location filename="unetbootin.cpp" line="4495"/>
         <source>Hard Disk</source>
-        <translation>Disc dur</translation>
+        <translation type="unfinished">Disc dur</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="216"/>
-        <location filename="unetbootin.cpp" line="312"/>
-        <location filename="unetbootin.cpp" line="313"/>
-        <location filename="unetbootin.cpp" line="387"/>
-        <location filename="unetbootin.cpp" line="593"/>
-        <location filename="unetbootin.cpp" line="775"/>
-        <location filename="unetbootin.cpp" line="795"/>
-        <location filename="unetbootin.cpp" line="1049"/>
-        <location filename="unetbootin.cpp" line="1624"/>
-        <location filename="unetbootin.cpp" line="1711"/>
-        <location filename="unetbootin.cpp" line="2640"/>
-        <location filename="unetbootin.cpp" line="2683"/>
-        <location filename="unetbootin.cpp" line="3503"/>
-        <location filename="unetbootin.cpp" line="3529"/>
-        <location filename="unetbootin.cpp" line="3698"/>
-        <location filename="unetbootin.cpp" line="4022"/>
-        <location filename="unetbootin.cpp" line="4360"/>
+        <location filename="unetbootin.cpp" line="318"/>
+        <location filename="unetbootin.cpp" line="319"/>
+        <location filename="unetbootin.cpp" line="393"/>
+        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="806"/>
+        <location filename="unetbootin.cpp" line="826"/>
+        <location filename="unetbootin.cpp" line="1080"/>
+        <location filename="unetbootin.cpp" line="1655"/>
+        <location filename="unetbootin.cpp" line="1744"/>
+        <location filename="unetbootin.cpp" line="2678"/>
+        <location filename="unetbootin.cpp" line="2721"/>
+        <location filename="unetbootin.cpp" line="3526"/>
+        <location filename="unetbootin.cpp" line="3600"/>
+        <location filename="unetbootin.cpp" line="3626"/>
+        <location filename="unetbootin.cpp" line="3788"/>
+        <location filename="unetbootin.cpp" line="3823"/>
+        <location filename="unetbootin.cpp" line="4159"/>
+        <location filename="unetbootin.cpp" line="4500"/>
         <source>USB Drive</source>
-        <translation>Disc USB</translation>
+        <translation type="unfinished">Disc USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="217"/>
-        <location filename="unetbootin.cpp" line="234"/>
-        <location filename="unetbootin.cpp" line="235"/>
-        <location filename="unetbootin.cpp" line="351"/>
-        <location filename="unetbootin.cpp" line="707"/>
-        <location filename="unetbootin.cpp" line="714"/>
-        <location filename="unetbootin.cpp" line="715"/>
-        <location filename="unetbootin.cpp" line="3588"/>
-        <source>ISO</source>
-        <translation>ISO</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="230"/>
-        <location filename="unetbootin.cpp" line="231"/>
+        <location filename="unetbootin.cpp" line="223"/>
+        <location filename="unetbootin.cpp" line="240"/>
+        <location filename="unetbootin.cpp" line="241"/>
         <location filename="unetbootin.cpp" line="357"/>
-        <location filename="unetbootin.cpp" line="545"/>
-        <location filename="unetbootin.cpp" line="546"/>
-        <location filename="unetbootin.cpp" line="707"/>
-        <location filename="unetbootin.cpp" line="719"/>
-        <location filename="unetbootin.cpp" line="720"/>
-        <location filename="unetbootin.cpp" line="3580"/>
+        <location filename="unetbootin.cpp" line="738"/>
+        <location filename="unetbootin.cpp" line="745"/>
+        <location filename="unetbootin.cpp" line="746"/>
+        <location filename="unetbootin.cpp" line="3685"/>
+        <source>ISO</source>
+        <translation type="unfinished">ISO</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <location filename="unetbootin.cpp" line="237"/>
+        <location filename="unetbootin.cpp" line="363"/>
+        <location filename="unetbootin.cpp" line="563"/>
+        <location filename="unetbootin.cpp" line="564"/>
+        <location filename="unetbootin.cpp" line="738"/>
+        <location filename="unetbootin.cpp" line="750"/>
+        <location filename="unetbootin.cpp" line="751"/>
+        <location filename="unetbootin.cpp" line="3677"/>
         <source>Floppy</source>
-        <translation>Disquet</translation>
+        <translation type="unfinished">Disquet</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="251"/>
         <location filename="unetbootin.cpp" line="257"/>
-        <location filename="unetbootin.cpp" line="261"/>
-        <location filename="unetbootin.cpp" line="265"/>
-        <location filename="unetbootin.cpp" line="269"/>
+        <location filename="unetbootin.cpp" line="263"/>
+        <location filename="unetbootin.cpp" line="267"/>
+        <location filename="unetbootin.cpp" line="271"/>
         <location filename="unetbootin.cpp" line="275"/>
-        <location filename="unetbootin.cpp" line="303"/>
+        <location filename="unetbootin.cpp" line="281"/>
+        <location filename="unetbootin.cpp" line="309"/>
         <source>either</source>
-        <translation>o bé</translation>
+        <translation type="unfinished">o bé</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="282"/>
+        <location filename="unetbootin.cpp" line="288"/>
         <source>LiveUSB persistence</source>
-        <translation>Persistència al dispositiu USB autònom</translation>
+        <translation type="unfinished">Persistència al dispositiu USB autònom</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="297"/>
+        <location filename="unetbootin.cpp" line="303"/>
         <source>FAT32-formatted USB drive</source>
-        <translation>Dispositiu USB amb format FAT32</translation>
+        <translation type="unfinished">Dispositiu USB amb format FAT32</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="301"/>
+        <location filename="unetbootin.cpp" line="307"/>
         <source>EXT2-formatted USB drive</source>
-        <translation>Dispositiu USB amb format EXT2</translation>
+        <translation type="unfinished">Dispositiu USB amb format EXT2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="523"/>
-        <source>Remix OS USB Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="532"/>
-        <source>&lt;h1&gt;Welcome to Remix OS USB Tool.&lt;/h1&gt;Directions on how to prepare your USB flash drive for Remix OS:&lt;ol&gt;&lt;li&gt;Select an ISO file to load below.&lt;li&gt;Select a FAT formatted USB flash drive to install and press OK to begin installation.&lt;/ol&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="548"/>
+        <location filename="unetbootin.cpp" line="566"/>
         <source>ISO File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="549"/>
-        <source>USB Disk</source>
+        <location filename="unetbootin.cpp" line="529"/>
+        <source>Remix OS Installation Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="707"/>
+        <location filename="unetbootin.cpp" line="538"/>
+        <source>&lt;h2&gt;Instructions: &lt;/h2&gt;You can install Remix OS in your hard disk alongside with your Windows system or to prepare a USB flash drive of Remix OS for PC. &lt;h2&gt;Requirements:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Hard disk installation: OS supported - Windows 7, Windows 8 or Windows 10 with a minimum capacity of 8GB&lt;li&gt;USB flash drive installation: a minimum capacity of 8GB and a recommended writing speed of 20MB/s.&lt;/ol&gt;&lt;h2&gt;Steps:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Select the image file&lt;li&gt;Select type of installation - UBS / Hard disk&lt;li&gt;Select the drive letter of your hard disk or your USB drive. &lt;li&gt;Press OK to start the installation&lt;/ol&gt;For more information, please visit: &lt;a href=&quot;http://www.jide.com/remixos-for-pc&quot;&gt;http://www.jide.com/remixos-for-pc&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="738"/>
         <source>Open Disk Image File</source>
-        <translation>Obre un fitxer d&apos;imatge de disc</translation>
+        <translation type="unfinished">Obre un fitxer d&apos;imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="707"/>
+        <location filename="unetbootin.cpp" line="738"/>
         <source>All Files</source>
-        <translation>Tots els fitxers</translation>
+        <translation type="unfinished">Tots els fitxers</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="729"/>
-        <location filename="unetbootin.cpp" line="741"/>
-        <location filename="unetbootin.cpp" line="753"/>
+        <location filename="unetbootin.cpp" line="760"/>
+        <location filename="unetbootin.cpp" line="772"/>
+        <location filename="unetbootin.cpp" line="784"/>
         <source>All Files (*)</source>
-        <translation>Tots els fitxers (*)</translation>
+        <translation type="unfinished">Tots els fitxers (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="729"/>
+        <location filename="unetbootin.cpp" line="760"/>
         <source>Open Kernel File</source>
-        <translation>Obre el fitxer de nucli</translation>
+        <translation type="unfinished">Obre el fitxer de nucli</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="741"/>
+        <location filename="unetbootin.cpp" line="772"/>
         <source>Open Initrd File</source>
-        <translation>Obre el fitxer initrd</translation>
+        <translation type="unfinished">Obre el fitxer initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="753"/>
+        <location filename="unetbootin.cpp" line="784"/>
         <source>Open Bootloader Config File</source>
-        <translation>Obre el fitxer de configuració del carregador de l&apos;arrencada</translation>
+        <translation type="unfinished">Obre el fitxer de configuració del carregador de l&apos;arrencada</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="779"/>
+        <location filename="unetbootin.cpp" line="810"/>
         <source>Insert a USB flash drive</source>
-        <translation>Inseriu una unitat flash USB</translation>
+        <translation type="unfinished">Inseriu una unitat flash USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="780"/>
+        <location filename="unetbootin.cpp" line="811"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>No s&apos;ha trobat cap unitat flash USB . Si heu inserit un dispositiu USB, proveu de formatar-lo com a FAT32.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>%1 not mounted</source>
-        <translation>%1 sense muntar</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="800"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Primer munteu la unitat USB %1 a un punt de muntatge. La majoria de les distribucions ho fan automàticament si la retireu i la torneu a inserir.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="815"/>
-        <source>Select a distro</source>
-        <translation>Seleccioneu una distribució</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="816"/>
-        <source>You must select a distribution to load.</source>
-        <translation>Seleccioneu una distribució per carregar</translation>
+        <translation type="unfinished">No s&apos;ha trobat cap unitat flash USB . Si heu inserit un dispositiu USB, proveu de formatar-lo com a FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="830"/>
-        <source>Select a disk image file</source>
-        <translation>Seleccioneu un fitxer d&apos;imatge de disc</translation>
+        <source>%1 not mounted</source>
+        <translation type="unfinished">%1 sense muntar</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="831"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>Seleccioneu un fitxer d&apos;imatge de disc per carregar.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="845"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>Seleccioneu un nucli i/o el fitxer initrd</translation>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation type="unfinished">Primer munteu la unitat USB %1 a un punt de muntatge. La majoria de les distribucions ho fan automàticament si la retireu i la torneu a inserir.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="846"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Seleccioneu un nucli i/o un fitxer initrd per carregar-los.</translation>
+        <source>Select a distro</source>
+        <translation type="unfinished">Seleccioneu una distribució</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="860"/>
-        <source>Diskimage file not found</source>
-        <translation>No s&apos;ha trobat el fitxer d&apos;imatge de disc</translation>
+        <location filename="unetbootin.cpp" line="847"/>
+        <source>You must select a distribution to load.</source>
+        <translation type="unfinished">Seleccioneu una distribució per carregar</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="861"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>El fitxer d&apos;imatge de disc %1 indicat no existeix.</translation>
+        <source>Select a disk image file</source>
+        <translation type="unfinished">Seleccioneu un fitxer d&apos;imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="875"/>
-        <source>Kernel file not found</source>
-        <translation>No s&apos;ha trobat el fitxer del nucli</translation>
+        <location filename="unetbootin.cpp" line="862"/>
+        <source>You must select a disk image file to load.</source>
+        <translation type="unfinished">Seleccioneu un fitxer d&apos;imatge de disc per carregar.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="876"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>El fitxer del nucli %1 indicat no existeix.</translation>
+        <source>Select a kernel and/or initrd file</source>
+        <translation type="unfinished">Seleccioneu un nucli i/o el fitxer initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="890"/>
-        <source>Initrd file not found</source>
-        <translation>No s&apos;ha trobat el fitxer initrd</translation>
+        <location filename="unetbootin.cpp" line="877"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation type="unfinished">Seleccioneu un nucli i/o un fitxer initrd per carregar-los.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="891"/>
+        <source>Diskimage file not found</source>
+        <translation type="unfinished">No s&apos;ha trobat el fitxer d&apos;imatge de disc</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="892"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation type="unfinished">El fitxer d&apos;imatge de disc %1 indicat no existeix.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="906"/>
+        <source>Kernel file not found</source>
+        <translation type="unfinished">No s&apos;ha trobat el fitxer del nucli</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="907"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation type="unfinished">El fitxer del nucli %1 indicat no existeix.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="921"/>
+        <source>Initrd file not found</source>
+        <translation type="unfinished">No s&apos;ha trobat el fitxer initrd</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="922"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>El fitxer initrd %1 indicat no existeix.</translation>
+        <translation type="unfinished">El fitxer initrd %1 indicat no existeix.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="995"/>
+        <location filename="unetbootin.cpp" line="1026"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 ja existeix. El voleu sobreescriure?</translation>
+        <translation type="unfinished">%1 ja existeix. El voleu sobreescriure?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="996"/>
+        <location filename="unetbootin.cpp" line="1027"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>El fitxer %1 ja existeix. Premeu «Sí a tot» per sobreescriure&apos;l i evitar la mateixa pregunta, «Sí» per sobreescriure els fitxers individualment, i «No» per conservar la versió existent. En cas de dubte premeu «Sí a tot».</translation>
+        <translation type="unfinished">El fitxer %1 ja existeix. Premeu «Sí a tot» per sobreescriure&apos;l i evitar la mateixa pregunta, «Sí» per sobreescriure els fitxers individualment, i «No» per conservar la versió existent. En cas de dubte premeu «Sí a tot».</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1022"/>
+        <location filename="unetbootin.cpp" line="1053"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>No hi ha prou espai a %1, voleu aturar la instal·lació?</translation>
+        <translation type="unfinished">No hi ha prou espai a %1, voleu aturar la instal·lació?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1023"/>
+        <location filename="unetbootin.cpp" line="1054"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>No hi ha prou espai a la carpeta %1. Premeu «Sí» per aturar la instal·lació, «No» per ignorar aquest error i intentar continuar, i «No a tot» per ignorar tots els errors de manca d&apos;espai.</translation>
+        <translation type="unfinished">No hi ha prou espai a la carpeta %1. Premeu «Sí» per aturar la instal·lació, «No» per ignorar aquest error i intentar continuar, i «No a tot» per ignorar tots els errors de manca d&apos;espai.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1117"/>
+        <location filename="unetbootin.cpp" line="1148"/>
         <source>Locating kernel file in %1</source>
-        <translation>S&apos;està localitzant el fitxer del nucli a %1</translation>
+        <translation type="unfinished">S&apos;està localitzant el fitxer del nucli a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1168"/>
+        <location filename="unetbootin.cpp" line="1199"/>
         <source>Copying kernel file from %1</source>
-        <translation>S&apos;està copiant el fitxer del nucli des de %1</translation>
+        <translation type="unfinished">S&apos;està copiant el fitxer del nucli des de %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1174"/>
+        <location filename="unetbootin.cpp" line="1205"/>
         <source>Locating initrd file in %1</source>
-        <translation>S&apos;està localitzant el fitxer initrd a %1</translation>
+        <translation type="unfinished">S&apos;està localitzant el fitxer initrd a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1215"/>
+        <location filename="unetbootin.cpp" line="1246"/>
         <source>Copying initrd file from %1</source>
-        <translation>S&apos;està copiant el fitxer initrd des de %1</translation>
+        <translation type="unfinished">S&apos;està copiant el fitxer initrd des de %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1221"/>
-        <location filename="unetbootin.cpp" line="1301"/>
+        <location filename="unetbootin.cpp" line="1252"/>
+        <location filename="unetbootin.cpp" line="1332"/>
         <source>Extracting bootloader configuration</source>
-        <translation>S&apos;està extraient la configuració del carregador de l&apos;arrencada</translation>
+        <translation type="unfinished">S&apos;està extraient la configuració del carregador de l&apos;arrencada</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1530"/>
-        <location filename="unetbootin.cpp" line="1556"/>
+        <location filename="unetbootin.cpp" line="1561"/>
+        <location filename="unetbootin.cpp" line="1587"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;S&apos;està extraient el fitxer ISO comprimit:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;està extraient el fitxer ISO comprimit:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1810"/>
+        <location filename="unetbootin.cpp" line="1843"/>
         <source>Copying file, please wait...</source>
-        <translation>S&apos;està copiant els fitxers...</translation>
+        <translation type="unfinished">S&apos;està copiant els fitxers...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1811"/>
-        <location filename="unetbootin.cpp" line="2625"/>
+        <location filename="unetbootin.cpp" line="1844"/>
+        <location filename="unetbootin.cpp" line="2663"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1812"/>
-        <location filename="unetbootin.cpp" line="2626"/>
+        <location filename="unetbootin.cpp" line="1845"/>
+        <location filename="unetbootin.cpp" line="2664"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Destinació:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Destinació:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1813"/>
+        <location filename="unetbootin.cpp" line="1846"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;S&apos;ha copiat:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;ha copiat:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1851"/>
+        <location filename="unetbootin.cpp" line="1884"/>
         <source>Extracting files, please wait...</source>
-        <translation>S&apos;està extraient els fitxers, espereu...</translation>
+        <translation type="unfinished">S&apos;està extraient els fitxers, espereu...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1852"/>
+        <location filename="unetbootin.cpp" line="1885"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Arxiu:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Arxiu:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1853"/>
+        <location filename="unetbootin.cpp" line="1886"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Origen:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Origen:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1854"/>
+        <location filename="unetbootin.cpp" line="1887"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Destinació:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Destinació:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1855"/>
+        <location filename="unetbootin.cpp" line="1888"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;S&apos;ha extret:&lt;/b&gt; 0 of %1 files</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;ha extret:&lt;/b&gt; 0 of %1 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1858"/>
+        <location filename="unetbootin.cpp" line="1896"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1859"/>
+        <location filename="unetbootin.cpp" line="1897"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Destinació:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Destinació:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1860"/>
+        <location filename="unetbootin.cpp" line="1898"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;S&apos;ha extret:&lt;/b&gt; %1 of %2 files</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;ha extret:&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2624"/>
+        <location filename="unetbootin.cpp" line="2662"/>
         <source>Downloading files, please wait...</source>
-        <translation>S&apos;està descarregant els fitxers, espereu...</translation>
+        <translation type="unfinished">S&apos;està descarregant els fitxers, espereu...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2627"/>
+        <location filename="unetbootin.cpp" line="2665"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;S&apos;ha descarregat:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;ha descarregat:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2751"/>
-        <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation>Ha fallat la descàrrega de %1 %2 de %3. Intenteu baixar-vos el fitxer ISO directament des del lloc web i subministreu-lo mitjançant l&apos;opció «diskimage».</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2774"/>
         <location filename="unetbootin.cpp" line="2789"/>
+        <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
+        <translation type="unfinished">Ha fallat la descàrrega de %1 %2 de %3. Intenteu baixar-vos el fitxer ISO directament des del lloc web i subministreu-lo mitjançant l&apos;opció «diskimage».</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2812"/>
+        <location filename="unetbootin.cpp" line="2827"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;S&apos;ha descarregat:&lt;/b&gt; %1 de %2</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;ha descarregat:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2804"/>
+        <location filename="unetbootin.cpp" line="2842"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;S&apos;ha copiat:&lt;/b&gt; %1 de %2</translation>
+        <translation type="unfinished">&lt;b&gt;S&apos;ha copiat:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2895"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>S&apos;està cercant a &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">S&apos;està cercant a &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2899"/>
+        <location filename="unetbootin.cpp" line="2937"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 coincidències de &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 coincidències de &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3172"/>
+        <location filename="unetbootin.cpp" line="3210"/>
         <source>%1 not found</source>
-        <translation>No s&apos;ha trobat %1</translation>
+        <translation type="unfinished">No s&apos;ha trobat %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3173"/>
+        <location filename="unetbootin.cpp" line="3211"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>No s&apos;ha trobat %1. És necessari per al mode d&apos;instal·lació %2.
+        <translation type="unfinished">No s&apos;ha trobat %1. És necessari per al mode d&apos;instal·lació %2.
 Instal·leu el paquet «%3» o l&apos;equivalent de la vostra distribució.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3480"/>
+        <location filename="unetbootin.cpp" line="3532"/>
+        <source>Select a high capacity usb drive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3533"/>
+        <source>The USB drive capacity must be larger than 8 GB.</source>
+        <oldsource>The USB drive capacity is less then 8GB!</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3549"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3550"/>
+        <source>All the data on your USB flash drive will be erased. Please backup your data before proceeding.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3565"/>
+        <location filename="unetbootin.cpp" line="3797"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3566"/>
+        <location filename="unetbootin.cpp" line="3798"/>
+        <source>Fail to create a multiple partitions in the USB flash drive.</source>
+        <oldsource>It is failed to create a multiple partition in the USB drive.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3579"/>
         <source>(Current)</source>
-        <translation>(Actual)</translation>
+        <translation type="unfinished">(Actual)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3481"/>
+        <location filename="unetbootin.cpp" line="3580"/>
         <source>(Done)</source>
-        <translation>(Fet)</translation>
+        <translation type="unfinished">(Fet)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3773"/>
+        <location filename="unetbootin.cpp" line="3792"/>
+        <source>(failed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3898"/>
         <source>Configuring grub2 on %1</source>
-        <translation>S&apos;està configurant el grub2 a %1</translation>
+        <translation type="unfinished">S&apos;està configurant el grub2 a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3785"/>
+        <location filename="unetbootin.cpp" line="3910"/>
         <source>Configuring grldr on %1</source>
-        <translation>S&apos;està configurant el grldr a %1</translation>
+        <translation type="unfinished">S&apos;està configurant el grldr a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3813"/>
+        <location filename="unetbootin.cpp" line="3938"/>
         <source>Configuring grub on %1</source>
-        <translation>S&apos;està configurant el grub a %1</translation>
+        <translation type="unfinished">S&apos;està configurant el grub a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4111"/>
+        <location filename="unetbootin.cpp" line="4248"/>
         <source>Installing syslinux to %1</source>
-        <translation>S&apos;està instal·lant syslinux a %1</translation>
+        <translation type="unfinished">S&apos;està instal·lant syslinux a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4146"/>
+        <location filename="unetbootin.cpp" line="4283"/>
         <source>Installing extlinux to %1</source>
-        <translation>S&apos;està instal·lant extlinux a %1</translation>
+        <translation type="unfinished">S&apos;està instal·lant extlinux a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4308"/>
+        <location filename="unetbootin.cpp" line="4448"/>
         <source>Syncing filesystems</source>
-        <translation>S&apos;està sincronitzant els fitxers de sistema</translation>
+        <translation type="unfinished">S&apos;està sincronitzant els fitxers de sistema</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4313"/>
+        <location filename="unetbootin.cpp" line="4453"/>
         <source>Setting up persistence</source>
-        <translation>Configura la persistència</translation>
+        <translation type="unfinished">Configura la persistència</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4358"/>
+        <location filename="unetbootin.cpp" line="4498"/>
         <source>After rebooting, select the </source>
-        <translation>Després d&apos;arrencar de nou, seleccioneu la </translation>
+        <translation type="unfinished">Després d&apos;arrencar de nou, seleccioneu la </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4363"/>
+        <location filename="unetbootin.cpp" line="4503"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Després d&apos;arrencar de nou, seleccioneu l&apos;opció d&apos;arrencada des de l&apos;USB al menú de la BIOS.%1
+        <translation type="unfinished">Després d&apos;arrencar de nou, seleccioneu l&apos;opció d&apos;arrencada des de l&apos;USB al menú de la BIOS.%1
 Voleu arrencar de nou ara?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4366"/>
+        <location filename="unetbootin.cpp" line="4506"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation>El dispositiu USB que s&apos;ha creat no arrencarà a un Mac. Inseriu-lo a un PC i seleccioneu l&apos;opció d&apos;engegada des del dispositiu USB a la BIOS.%1</translation>
+        <translation type="unfinished">El dispositiu USB que s&apos;ha creat no arrencarà a un Mac. Inseriu-lo a un PC i seleccioneu l&apos;opció d&apos;engegada des del dispositiu USB a la BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="50"/>
@@ -504,7 +839,7 @@ Voleu arrencar de nou ara?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="19"/>
-        <location filename="unetbootin.cpp" line="811"/>
+        <location filename="unetbootin.cpp" line="842"/>
         <source>== Select Distribution ==</source>
         <translation>== Trieu la distribució ==</translation>
     </message>
@@ -985,34 +1320,40 @@ Voleu arrencar de nou ara?</translation>
 <context>
     <name>uninstaller</name>
     <message>
-        <location filename="main.cpp" line="156"/>
+        <location filename="main.cpp" line="160"/>
         <source>Uninstallation Complete</source>
         <translation>Desinstal·lació completa</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="157"/>
+        <location filename="main.cpp" line="161"/>
         <source>%1 has been uninstalled.</source>
         <translation>S&apos;ha desinstal·lat %1.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="322"/>
+        <location filename="main.cpp" line="326"/>
         <source>Must run as root</source>
         <translation>S&apos;ha d&apos;executar com a usuari primari</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="324"/>
+        <location filename="main.cpp" line="328"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 s&apos;ha d&apos;executar com a usuari primari. Tanqueu i torneu a executar-lo utilitzant &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;o bé&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="361"/>
+        <location filename="main.cpp" line="366"/>
+        <location filename="main.cpp" line="385"/>
         <source>%1 Uninstaller</source>
         <translation>Desinstal·lador de l&apos;%1</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="362"/>
+        <location filename="main.cpp" line="367"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 ja està instal·lat. Voleu suprimir la versió actual?</translation>
+    </message>
+    <message>
+        <location filename="main.cpp" line="386"/>
+        <source>%1 is not installed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

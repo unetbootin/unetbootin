@@ -4,13 +4,15 @@ DEPENDPATH += .
 INCLUDEPATH += .
 CONFIG += release \
     static
-HEADERS += unetbootin.h
+HEADERS += unetbootin.h \
+    remixosudisk.h
 FORMS += unetbootin.ui
 SOURCES += main.cpp \
     unetbootin.cpp \
     distrolst.cpp \
     distrover.cpp \
-    distrovercust.cpp
+    distrovercust.cpp \
+    remixosudisk.cpp
 QT += core \
     gui \
     network
