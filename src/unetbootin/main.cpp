@@ -8,6 +8,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 */
 
 #include "unetbootin.h"
+#include "version.h"
+#include "ganalytics.hpp"
 static const QString REMIXOS_HDD_INSTALL_DIR = "RemixOS";
 
 #ifdef Q_OS_WIN32
@@ -32,6 +34,9 @@ QString checkforgraphicalsu(QString graphicalsu)
 int main(int argc, char **argv)
 {
 	QApplication app(argc, argv, true);
+    app.setApplicationName("remixos-installation-tool");
+    app.setApplicationVersion(VER_PRODUCTVERSION_STR);
+
 	QTranslator custranldr;
 	QTranslator translator;
 	QString tnapplang;
@@ -199,10 +204,10 @@ int main(int argc, char **argv)
 		}
 	}
 	#endif
-	unetbootin unetbootin;
+	unetbootin unet(0, &app);
     QString selfName = QString(argv[0]);
 	if (selfName.contains("Uninstall")) {
-        if (unetbootin::CHECK_INSTALL_NO_INSTALLED == unetbootin.checkInstall()) {
+        if (unetbootin::CHECK_INSTALL_NO_INSTALLED == unet.checkInstall()) {
             QMessageBox uninstmsgb;
             uninstmsgb.setIcon(QMessageBox::Warning);
             uninstmsgb.setWindowTitle(uninstaller::tr("%1 Uninstaller").arg(UNETBOOTINB));
@@ -212,9 +217,10 @@ int main(int argc, char **argv)
         }
         return 0;
 	}
-	unetbootin.appNlang = tnapplang;
-	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
-	unetbootin.appLoc = app.applicationFilePath();
+	unet.appNlang = tnapplang;
+	unet.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
+	unet.appLoc = app.applicationFilePath();
+
 	QIcon icon;
 	icon.addFile(":/unetbootin_16.png", QSize(16,16));
 	icon.addFile(":/unetbootin_22.png", QSize(22,22));
@@ -225,11 +231,13 @@ int main(int argc, char **argv)
 	icon.addFile("/usr/share/pixmaps/unetbootin.png");
 	icon.addFile("/usr/share/pixmaps/unetbootin.xpm");
 #endif
-	unetbootin.setWindowIcon(icon);
-	QObject::connect(&app, SIGNAL(lastWindowClosed()), &unetbootin, SLOT(killApplication()));
-	bool automate = unetbootin.ubninitialize(oppairs);
-	unetbootin.show();
+	unet.setWindowIcon(icon);
+	QObject::connect(&app, SIGNAL(lastWindowClosed()), &unet, SLOT(killApplication()));
+	bool automate = unet.ubninitialize(oppairs);
+	unet.show();
+
 	if (automate)
-		QTimer::singleShot(0, &unetbootin, SLOT(on_okbutton_clicked()));
+		QTimer::singleShot(0, &unet, SLOT(on_okbutton_clicked()));
 	return app.exec();
 }
+

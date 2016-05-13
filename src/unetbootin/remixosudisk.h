@@ -9,6 +9,7 @@
 #define DISK_SIGNATURE 3272027600
 #define REMIXOS_SYS_LABEL L"REMIXOSSYS"
 #define REMIXOS_SHARE_LABEL L"REMIX_OS"
+#define REMIXOS_DATA_LABEL L"REMIXOS"
 #define ARRAYSIZE(a) (sizeof(a)/sizeof(a[0]))
 
 typedef struct {
@@ -23,10 +24,14 @@ class RemixOSUDisk
 public:
     RemixOSUDisk(WCHAR* wszDrive);
 
+    void Initialize();
+
     BOOL IsValidUDisk();
     BOOL IsRemixOSUDisk();
     BOOL PrepareUDisk();
     BOOL UpdateUDisk();
+
+    void FormatDataPartition(BOOL bFormat);
 
 private:
     RemixOSUDisk(){}
@@ -38,6 +43,7 @@ private:
     BOOL CreateDiskInUDisk();
     BOOL CreateDrivesInUDisk(int type);
 
+    BOOL m_bFormat;
     BOOL m_bValidUDisk;
     BOOL m_bRemixOSUDisk;
     WCHAR m_wszDrive[MAX_PATH + 1];

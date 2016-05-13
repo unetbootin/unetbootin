@@ -1,5 +1,6 @@
 #define RT_MANIFEST 24 
 #define APP_MANIFEST 1
+#include "version.h"
 
 APP_MANIFEST RT_MANIFEST unetbootin.exe.manifest
 IDI_ICON1 ICON DISCARDABLE "unetbootin.ico"
@@ -28,7 +29,7 @@ VALUE "OriginalFilename", "remixos-installation-tool.exe"
 
 VALUE "ProductName", "Remix OS Installation Tool"
 
-VALUE "ProductVersion", " "
+VALUE "ProductVersion", VER_PRODUCTVERSION_STR
 
    }
   }

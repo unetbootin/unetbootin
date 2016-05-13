@@ -114,6 +114,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #endif
 #define HDDINSTALL
 
+class GAnalytics;
+
 class customver : public QObject
 {
 	Q_OBJECT
@@ -130,6 +132,7 @@ public:
 	QString execFile;
 	QString execParm;
 	QString retnValu;
+    int iShow;
 	void run();
 };
 
@@ -184,12 +187,21 @@ public slots:
 	void sAppendSelfUrlInfoList(QUrlInfo curDirUrl);
 };
 
+class GAWorker : public QObject {
+    Q_OBJECT
+private:
+    GAnalytics* analytics;
+public slots:
+    void init(QCoreApplication* app);
+    void sendEvent(QString category, QString action, QString label, int value);
+};
+
 class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
 
 public:
-	unetbootin(QWidget *parent = 0);
+	unetbootin(QWidget *parent, QCoreApplication* app);
 	QString trcurrent;
 	QString trdone;
 	QString appNlang;
@@ -293,7 +305,7 @@ public:
 	QString fileFilterNetDir(QStringList ldfDirStringUrlList, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
 	QPair<QString, int> filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList);
 	void sysreboot();
-	static QString callexternapp(QString xexecFile, QString xexecParm);
+    static QString callexternapp(QString xexecFile, QString xexecParm, int iShow = SW_HIDE);
 	static QString callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin);
 	QString getdevluid(QString voldrive);
 	QString getlabel(QString voldrive);
@@ -324,6 +336,9 @@ public:
 	void configsysEdit();
 	void bootiniEdit();
 	void vistabcdEdit();
+    void removeRemixOsBcdedit(bool warch64);
+    void copyBootIni(QString target, QString source);
+    int getBootMode();
 	#endif
 	void instIndvfl(QString srcfName, QString dstfName);
 	QString instTempfl(QString srcfName, QString dstfType);
@@ -350,11 +365,41 @@ public:
     const static int INSTALL_EFI_SUCCESS = 0;
     const static int INSTALL_EFI_NOT_SUPPORT = 1;
     const static int INSTALL_EFI_FAILED = 2;
+    const static int LEGACY_MODE =  16001;
+    const static int UEFI_MODE =  16000;
+    const static int SECURE_BOOT_ENABLE = 16002;
+    const static int BIT_LOCKER_ON = 16005;
+    const static int BOOT_MANAGER_NOT_FOUND = 16011;
+    const static int INSTALL_TYPE = 0;
+    const static int REMOVE_TYPE = 1;
+    GAWorker ga_worker;
+    QThread ga_worker_thread;
+    QCoreApplication *app;
     int checkInstall();
+    int checkInstall(bool);
     void ubnUninst();
     int installEfi();
     int uninstallEfi();
+    void generateGAClientID();
+    void generateMetaFile();
     QString getAvailableDriveLetter();
+    const static int BUTTON_DISABLE = 0;
+    const static int BUTTON_HIDE = 1;
+    int do_okbutton();
+    #ifdef Q_OS_WIN32
+    bool preinstallationCheckHDD(const QString &targetDrive);
+    bool preinstallationCheckUSB(const QString &targetDrive, void *pUDisk);
+    int checkSecureBoot();
+    int checkBitLocker(const QString &drive);
+    int saveWindowsBootManager(const QString &bcdFile, QString &bmWindowsPath);
+    int getWindowsBootManager(QVariant &bmWindowsPath);
+    int updateBootManager(const QString &bmPath);
+    int getWindowsBootManagerFromBcdedit(const QString &bcdFile, QString &bmWindowsPath);
+    QString getEfiTool();
+    QString getEfiFile(const QString &baseDir);
+    bool createDataImage();
+    QString systemDrive;
+    #endif
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
@@ -375,6 +420,9 @@ public slots:
 	void cpprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 	void on_okbutton_clicked();
 	void killApplication();
+signals:
+    void ga_init(QCoreApplication*app);
+    void ga_sendEvent(QString category, QString action, QString label, int value);
 };
 
 

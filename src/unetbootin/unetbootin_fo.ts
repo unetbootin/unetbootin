@@ -270,490 +270,650 @@ Reboot now?</source>
     </message>
 </context>
 <context>
+    <name>DataImageConfigDialog</name>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="26"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="39"/>
+        <source>A larger system size is recommended because you can install more apps.</source>
+        <oldsource>A larger system size is recommended as it allows you to install more apps.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="56"/>
+        <source>Choose system size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="66"/>
+        <source>16GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="74"/>
+        <source>32GB(Recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="61"/>
+        <source>8GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.cpp" line="13"/>
+        <source>16GB(Recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.cpp" line="15"/>
+        <source>32GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="270"/>
+        <location filename="main.cpp" line="123"/>
         <source>LeftToRight</source>
         <translation>Vinstru til høgru</translation>
     </message>
 </context>
 <context>
+    <name>WaitingDialog</name>
+    <message>
+        <location filename="waitingdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="waitingdialog.ui" line="26"/>
+        <source>Installation on FAT32 format hard disk will take a while. Please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="219"/>
-        <location filename="unetbootin.cpp" line="321"/>
-        <location filename="unetbootin.cpp" line="322"/>
-        <location filename="unetbootin.cpp" line="391"/>
-        <location filename="unetbootin.cpp" line="607"/>
-        <location filename="unetbootin.cpp" line="1893"/>
-        <location filename="unetbootin.cpp" line="3596"/>
-        <location filename="unetbootin.cpp" line="3609"/>
-        <location filename="unetbootin.cpp" line="3819"/>
-        <location filename="unetbootin.cpp" line="4495"/>
+        <location filename="unetbootin.cpp" line="258"/>
+        <location filename="unetbootin.cpp" line="359"/>
+        <location filename="unetbootin.cpp" line="360"/>
+        <location filename="unetbootin.cpp" line="429"/>
+        <location filename="unetbootin.cpp" line="639"/>
+        <location filename="unetbootin.cpp" line="844"/>
+        <location filename="unetbootin.cpp" line="1019"/>
+        <location filename="unetbootin.cpp" line="2039"/>
+        <location filename="unetbootin.cpp" line="3768"/>
+        <location filename="unetbootin.cpp" line="3781"/>
+        <location filename="unetbootin.cpp" line="3968"/>
+        <location filename="unetbootin.cpp" line="4011"/>
+        <location filename="unetbootin.cpp" line="4729"/>
+        <location filename="unetbootin.cpp" line="5099"/>
         <source>Hard Disk</source>
         <translation type="unfinished">Harðdiskur</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="318"/>
-        <location filename="unetbootin.cpp" line="319"/>
-        <location filename="unetbootin.cpp" line="393"/>
-        <location filename="unetbootin.cpp" line="624"/>
-        <location filename="unetbootin.cpp" line="806"/>
-        <location filename="unetbootin.cpp" line="826"/>
-        <location filename="unetbootin.cpp" line="1080"/>
-        <location filename="unetbootin.cpp" line="1655"/>
-        <location filename="unetbootin.cpp" line="1744"/>
-        <location filename="unetbootin.cpp" line="2678"/>
-        <location filename="unetbootin.cpp" line="2721"/>
-        <location filename="unetbootin.cpp" line="3526"/>
-        <location filename="unetbootin.cpp" line="3600"/>
-        <location filename="unetbootin.cpp" line="3626"/>
-        <location filename="unetbootin.cpp" line="3788"/>
-        <location filename="unetbootin.cpp" line="3823"/>
-        <location filename="unetbootin.cpp" line="4159"/>
-        <location filename="unetbootin.cpp" line="4500"/>
+        <location filename="unetbootin.cpp" line="260"/>
+        <location filename="unetbootin.cpp" line="356"/>
+        <location filename="unetbootin.cpp" line="357"/>
+        <location filename="unetbootin.cpp" line="431"/>
+        <location filename="unetbootin.cpp" line="656"/>
+        <location filename="unetbootin.cpp" line="869"/>
+        <location filename="unetbootin.cpp" line="890"/>
+        <location filename="unetbootin.cpp" line="1011"/>
+        <location filename="unetbootin.cpp" line="1035"/>
+        <location filename="unetbootin.cpp" line="1221"/>
+        <location filename="unetbootin.cpp" line="1801"/>
+        <location filename="unetbootin.cpp" line="1890"/>
+        <location filename="unetbootin.cpp" line="2827"/>
+        <location filename="unetbootin.cpp" line="2870"/>
+        <location filename="unetbootin.cpp" line="3772"/>
+        <location filename="unetbootin.cpp" line="3798"/>
+        <location filename="unetbootin.cpp" line="4016"/>
+        <location filename="unetbootin.cpp" line="4393"/>
+        <location filename="unetbootin.cpp" line="4734"/>
         <source>USB Drive</source>
         <translation type="unfinished">Geymi</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="223"/>
-        <location filename="unetbootin.cpp" line="240"/>
-        <location filename="unetbootin.cpp" line="241"/>
-        <location filename="unetbootin.cpp" line="357"/>
-        <location filename="unetbootin.cpp" line="738"/>
-        <location filename="unetbootin.cpp" line="745"/>
-        <location filename="unetbootin.cpp" line="746"/>
-        <location filename="unetbootin.cpp" line="3685"/>
+        <location filename="unetbootin.cpp" line="261"/>
+        <location filename="unetbootin.cpp" line="278"/>
+        <location filename="unetbootin.cpp" line="279"/>
+        <location filename="unetbootin.cpp" line="395"/>
+        <location filename="unetbootin.cpp" line="770"/>
+        <location filename="unetbootin.cpp" line="777"/>
+        <location filename="unetbootin.cpp" line="778"/>
+        <location filename="unetbootin.cpp" line="3857"/>
         <source>ISO</source>
         <translation type="unfinished">ISO</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <location filename="unetbootin.cpp" line="237"/>
-        <location filename="unetbootin.cpp" line="363"/>
-        <location filename="unetbootin.cpp" line="563"/>
-        <location filename="unetbootin.cpp" line="564"/>
-        <location filename="unetbootin.cpp" line="738"/>
-        <location filename="unetbootin.cpp" line="750"/>
-        <location filename="unetbootin.cpp" line="751"/>
-        <location filename="unetbootin.cpp" line="3677"/>
+        <location filename="unetbootin.cpp" line="262"/>
+        <location filename="unetbootin.cpp" line="274"/>
+        <location filename="unetbootin.cpp" line="275"/>
+        <location filename="unetbootin.cpp" line="401"/>
+        <location filename="unetbootin.cpp" line="595"/>
+        <location filename="unetbootin.cpp" line="596"/>
+        <location filename="unetbootin.cpp" line="770"/>
+        <location filename="unetbootin.cpp" line="782"/>
+        <location filename="unetbootin.cpp" line="783"/>
+        <location filename="unetbootin.cpp" line="3849"/>
         <source>Floppy</source>
         <translation type="unfinished">Diskil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="257"/>
-        <location filename="unetbootin.cpp" line="263"/>
-        <location filename="unetbootin.cpp" line="267"/>
-        <location filename="unetbootin.cpp" line="271"/>
-        <location filename="unetbootin.cpp" line="275"/>
-        <location filename="unetbootin.cpp" line="281"/>
+        <location filename="unetbootin.cpp" line="295"/>
+        <location filename="unetbootin.cpp" line="301"/>
+        <location filename="unetbootin.cpp" line="305"/>
         <location filename="unetbootin.cpp" line="309"/>
+        <location filename="unetbootin.cpp" line="313"/>
+        <location filename="unetbootin.cpp" line="319"/>
+        <location filename="unetbootin.cpp" line="347"/>
         <source>either</source>
         <translation type="unfinished">annahvørt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="288"/>
+        <location filename="unetbootin.cpp" line="326"/>
         <source>LiveUSB persistence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="303"/>
+        <location filename="unetbootin.cpp" line="341"/>
         <source>FAT32-formatted USB drive</source>
         <translation type="unfinished">FAT32-forniðaður geymi</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="307"/>
+        <location filename="unetbootin.cpp" line="345"/>
         <source>EXT2-formatted USB drive</source>
         <translation type="unfinished">EXT2-forsniðaður geymi</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="566"/>
+        <location filename="unetbootin.cpp" line="576"/>
+        <source>&lt;h2&gt;Installation Steps:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Under &quot;ISO file&quot;, choose the Remix OS for PC ISO file&lt;li&gt;Under &quot;Type&quot;, choose &quot;USB drive&quot; for USB flash drive installation or choose &quot;Hard Disk&quot; for hard disk installation&lt;li&gt;Under &quot;Drive&quot;, choose the drive to install the OS on&lt;li&gt;Press &quot;Ok&quot; to proceed with installation&lt;/ol&gt;For system requirements or further information, please visit: &lt;a href=&quot;http://www.jide.com/remixos-for-pc&quot;&gt;http://www.jide.com/remixos-for-pc&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="598"/>
         <source>ISO File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="529"/>
+        <location filename="unetbootin.cpp" line="567"/>
         <source>Remix OS Installation Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="538"/>
-        <source>&lt;h2&gt;Instructions: &lt;/h2&gt;You can install Remix OS in your hard disk alongside with your Windows system or to prepare a USB flash drive of Remix OS for PC. &lt;h2&gt;Requirements:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Hard disk installation: OS supported - Windows 7, Windows 8 or Windows 10 with a minimum capacity of 8GB&lt;li&gt;USB flash drive installation: a minimum capacity of 8GB and a recommended writing speed of 20MB/s.&lt;/ol&gt;&lt;h2&gt;Steps:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Select the image file&lt;li&gt;Select type of installation - UBS / Hard disk&lt;li&gt;Select the drive letter of your hard disk or your USB drive. &lt;li&gt;Press OK to start the installation&lt;/ol&gt;For more information, please visit: &lt;a href=&quot;http://www.jide.com/remixos-for-pc&quot;&gt;http://www.jide.com/remixos-for-pc&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="738"/>
+        <location filename="unetbootin.cpp" line="770"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished">Lat upp diskmyndafílu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="738"/>
+        <location filename="unetbootin.cpp" line="770"/>
         <source>All Files</source>
         <translation type="unfinished">Allar fílur</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="760"/>
-        <location filename="unetbootin.cpp" line="772"/>
-        <location filename="unetbootin.cpp" line="784"/>
+        <location filename="unetbootin.cpp" line="792"/>
+        <location filename="unetbootin.cpp" line="804"/>
+        <location filename="unetbootin.cpp" line="816"/>
         <source>All Files (*)</source>
         <translation type="unfinished">Allar fílur (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="760"/>
+        <location filename="unetbootin.cpp" line="792"/>
         <source>Open Kernel File</source>
         <translation type="unfinished">Lat upp kjarnufílu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="772"/>
+        <location filename="unetbootin.cpp" line="804"/>
         <source>Open Initrd File</source>
         <translation type="unfinished">Lat upp Initrd fílu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="784"/>
+        <location filename="unetbootin.cpp" line="816"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished">Lat upp byrjunarløðara samansetingafílu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="810"/>
+        <location filename="unetbootin.cpp" line="852"/>
+        <location filename="unetbootin.cpp" line="5381"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="853"/>
+        <source>For your CPU, please make sure you are using 32-bit version of Remix OS for PC.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="873"/>
         <source>Insert a USB flash drive</source>
         <translation type="unfinished">Set inn ein geyma</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="811"/>
+        <location filename="unetbootin.cpp" line="874"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation type="unfinished">Eingin geymi funnin. Um tú longu hevur sett ein geyma inn, royn at endursniða hann sum FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="830"/>
+        <location filename="unetbootin.cpp" line="894"/>
         <source>%1 not mounted</source>
         <translation type="unfinished">%1 ikki ísett</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="831"/>
+        <location filename="unetbootin.cpp" line="895"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation type="unfinished">Tú mást fyrst seta geyman í %1 eitt ísetingastað. Tær flestu linux útgávurnar gerða hetta sjálvvirknar, eftir at tú tekur geyman út og setur hann inn aftur.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="846"/>
+        <location filename="unetbootin.cpp" line="910"/>
         <source>Select a distro</source>
         <translation type="unfinished">Vel ein linux útgávu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="847"/>
+        <location filename="unetbootin.cpp" line="911"/>
         <source>You must select a distribution to load.</source>
         <translation type="unfinished">Tú mást velja eina linux útgávu at løða.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="861"/>
+        <location filename="unetbootin.cpp" line="925"/>
         <source>Select a disk image file</source>
         <translation type="unfinished">Vel eina diskmyndafílu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="862"/>
+        <location filename="unetbootin.cpp" line="926"/>
         <source>You must select a disk image file to load.</source>
         <translation type="unfinished">Tú mást velja eina diskmyndafílu at løða.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="876"/>
+        <location filename="unetbootin.cpp" line="941"/>
         <source>Select a kernel and/or initrd file</source>
         <translation type="unfinished">Vel ein kjarna og/ella initrd fílu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="877"/>
+        <location filename="unetbootin.cpp" line="942"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation type="unfinished">Tú mást velja ein kjarna og/ella initrd fílu at løða.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="891"/>
+        <location filename="unetbootin.cpp" line="956"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished">Diskmyndafíla ikki funnin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="892"/>
+        <location filename="unetbootin.cpp" line="957"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished">Tann tilskilaða diskmyndafílan %1 finnst ikki.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="906"/>
+        <location filename="unetbootin.cpp" line="971"/>
         <source>Kernel file not found</source>
         <translation type="unfinished">Kjarnufíla ikki funnin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="907"/>
+        <location filename="unetbootin.cpp" line="972"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished">Tann tilskilaða kjarnufílan %1 finnst ikki.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="921"/>
+        <location filename="unetbootin.cpp" line="986"/>
         <source>Initrd file not found</source>
         <translation type="unfinished">Initrd fílan er ikki funnin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="922"/>
+        <location filename="unetbootin.cpp" line="987"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished">Tann tilskilaða initrd fían %1 finnst ikki.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1026"/>
+        <location filename="unetbootin.cpp" line="1167"/>
         <source>%1 exists, overwrite?</source>
         <translation type="unfinished">%1 finnst, skriva omaná?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1027"/>
+        <location filename="unetbootin.cpp" line="1168"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation type="unfinished">Fílan %1 finnst longu. Trýst &apos;Ja til alt&apos; fyri at skriva omaná, og ikki verða ámint/ur aftur, &apos;Ja&apos; fyri at skriva omaná fílur á einum einstøkum føri, og &apos;Nei&apos; fyri at varveita núverandi útgávu. Er tú í iva, trýst &apos;Ja til alt&apos;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1053"/>
+        <location filename="unetbootin.cpp" line="1194"/>
         <source>%1 is out of space, abort installation?</source>
         <translation type="unfinished">%1 hevur ikki pláss, gevst við innlegging?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1054"/>
+        <location filename="unetbootin.cpp" line="1195"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation type="unfinished">Fíluskráin %1 hevur ikki pláss. Trýst &apos;Ja&apos; fyri at gevast við innlegging. &apos;Nei&apos; fyri at síggja burtur frá hesari villu, og royna at halda á við innlegging; og &apos;Nei til allt&apos; fyri at síggja burtur frá øllum pláss-trots-villum.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1148"/>
+        <location filename="unetbootin.cpp" line="1294"/>
         <source>Locating kernel file in %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1199"/>
+        <location filename="unetbootin.cpp" line="1345"/>
         <source>Copying kernel file from %1</source>
         <translation type="unfinished">Avriti kjarnufílu av %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1205"/>
+        <location filename="unetbootin.cpp" line="1351"/>
         <source>Locating initrd file in %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1246"/>
+        <location filename="unetbootin.cpp" line="1392"/>
         <source>Copying initrd file from %1</source>
         <translation type="unfinished">Avriti intrd-fílu av %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1252"/>
-        <location filename="unetbootin.cpp" line="1332"/>
+        <location filename="unetbootin.cpp" line="1398"/>
+        <location filename="unetbootin.cpp" line="1478"/>
         <source>Extracting bootloader configuration</source>
         <translation type="unfinished">Pakki byrjunaðarløðara samanseting út</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1561"/>
-        <location filename="unetbootin.cpp" line="1587"/>
+        <location filename="unetbootin.cpp" line="1707"/>
+        <location filename="unetbootin.cpp" line="1733"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Pakki út stappaða iso:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1843"/>
+        <location filename="unetbootin.cpp" line="1989"/>
         <source>Copying file, please wait...</source>
         <translation type="unfinished">Avriti fílu, vinarliga bíða...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1844"/>
-        <location filename="unetbootin.cpp" line="2663"/>
+        <location filename="unetbootin.cpp" line="1990"/>
+        <location filename="unetbootin.cpp" line="2812"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">&lt;b&gt;Kelda:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1845"/>
-        <location filename="unetbootin.cpp" line="2664"/>
+        <location filename="unetbootin.cpp" line="1991"/>
+        <location filename="unetbootin.cpp" line="2813"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Móttøkustaður:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1846"/>
+        <location filename="unetbootin.cpp" line="1992"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;Avritað:&lt;/b&gt; 0 být</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1884"/>
+        <location filename="unetbootin.cpp" line="2030"/>
         <source>Extracting files, please wait...</source>
         <translation type="unfinished">Pakki út fílur, vinarliga bíða...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1885"/>
+        <location filename="unetbootin.cpp" line="2031"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Skjalasavn:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1886"/>
+        <location filename="unetbootin.cpp" line="2032"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Kelda:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1887"/>
+        <location filename="unetbootin.cpp" line="2033"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Móttøkustaður:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1888"/>
+        <location filename="unetbootin.cpp" line="2034"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation type="unfinished">&lt;b&gt;Útpakkað:&lt;/b&gt; 0 of %1 fílur</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1896"/>
+        <location filename="unetbootin.cpp" line="2045"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation type="unfinished">&lt;b&gt;Kelda:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1897"/>
+        <location filename="unetbootin.cpp" line="2046"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation type="unfinished">&lt;b&gt;Móttøkustaður:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1898"/>
+        <location filename="unetbootin.cpp" line="2047"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation type="unfinished">&lt;b&gt;Útpakkað:&lt;/b&gt; %1 of %2 fílur</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2662"/>
+        <location filename="unetbootin.cpp" line="2811"/>
         <source>Downloading files, please wait...</source>
         <translation type="unfinished">Niðurtaki fílur, vinarliga bíða...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2665"/>
+        <location filename="unetbootin.cpp" line="2814"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;Niðurtikið:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2789"/>
+        <location filename="unetbootin.cpp" line="2938"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2812"/>
-        <location filename="unetbootin.cpp" line="2827"/>
+        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2976"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation type="unfinished">&lt;b&gt;Niðurtikið:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2842"/>
+        <location filename="unetbootin.cpp" line="2991"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation type="unfinished">&lt;b&gt;Avritað:&lt;/b&gt; %1 av %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2933"/>
+        <location filename="unetbootin.cpp" line="3082"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">Leiti í &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2937"/>
+        <location filename="unetbootin.cpp" line="3086"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished">%1/%2 samsvar í &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3210"/>
+        <location filename="unetbootin.cpp" line="3360"/>
         <source>%1 not found</source>
         <translation type="unfinished">%1 ikki funnin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3211"/>
+        <location filename="unetbootin.cpp" line="3361"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3532"/>
+        <location filename="unetbootin.cpp" line="5271"/>
+        <source>Please turn off Secure Boot and BitLocker before proceed to installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5287"/>
+        <location filename="unetbootin.cpp" line="5331"/>
+        <source>Please turn off Secure Boot before proceed to installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5303"/>
+        <source>Please turn off BitLocker before proceed to installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5347"/>
         <source>Select a high capacity usb drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3533"/>
+        <location filename="unetbootin.cpp" line="5348"/>
         <source>The USB drive capacity must be larger than 8 GB.</source>
         <oldsource>The USB drive capacity is less then 8GB!</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3549"/>
+        <location filename="unetbootin.cpp" line="5365"/>
+        <location filename="unetbootin.cpp" line="5525"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3550"/>
+        <location filename="unetbootin.cpp" line="5366"/>
         <source>All the data on your USB flash drive will be erased. Please backup your data before proceeding.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3565"/>
-        <location filename="unetbootin.cpp" line="3797"/>
+        <location filename="unetbootin.cpp" line="5382"/>
+        <source>Remix OS has been already installed on this USB flash drive. To reinstall it, would you like to ERASE all the existing data? </source>
+        <oldsource>Please backup the data before proceed. ALL the data on the UBS flash drive will be erased during installation.  Click &quot;Ok&quot; to proceed the installation.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5526"/>
+        <source>User data may not be compatible with a different version of Remix OS. To reinstall a different version of Remix OS, erasing the old user data is recommended.
+Would you like to ERASE the old user data on your device? </source>
+        <oldsource>User data may not be compatible with a different version of Remix OS. To reinstall a different version of Remix OS, erasing the old user data is recommended.
+Would you like to ERASE the old user data on your flash drive? </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5551"/>
+        <location filename="unetbootin.cpp" line="5567"/>
+        <location filename="unetbootin.cpp" line="5625"/>
+        <source>Creating data image return failed.(%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5557"/>
+        <source>There is not enough space available on the disk to complete the installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5597"/>
+        <source>System size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5609"/>
+        <source>The file system of the hard disk you selected is not supported. The file systems supported are FAT32, exFAT and NTFS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5614"/>
+        <source>Installation on %1 format hard disk will take a while. Please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5616"/>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1044"/>
+        <location filename="unetbootin.cpp" line="5270"/>
+        <location filename="unetbootin.cpp" line="5286"/>
+        <location filename="unetbootin.cpp" line="5302"/>
+        <location filename="unetbootin.cpp" line="5330"/>
+        <location filename="unetbootin.cpp" line="5397"/>
+        <location filename="unetbootin.cpp" line="5551"/>
+        <location filename="unetbootin.cpp" line="5557"/>
+        <location filename="unetbootin.cpp" line="5567"/>
+        <location filename="unetbootin.cpp" line="5609"/>
+        <location filename="unetbootin.cpp" line="5625"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3566"/>
-        <location filename="unetbootin.cpp" line="3798"/>
+        <location filename="unetbootin.cpp" line="1045"/>
+        <location filename="unetbootin.cpp" line="5398"/>
         <source>Fail to create a multiple partitions in the USB flash drive.</source>
         <oldsource>It is failed to create a multiple partition in the USB drive.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3579"/>
+        <location filename="unetbootin.cpp" line="4740"/>
+        <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3751"/>
         <source>(Current)</source>
         <translation type="unfinished">(Núverandi)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3580"/>
+        <location filename="unetbootin.cpp" line="3752"/>
         <source>(Done)</source>
         <translation type="unfinished">(Liðugt)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3792"/>
+        <location filename="unetbootin.cpp" line="1039"/>
         <source>(failed)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3898"/>
+        <location filename="unetbootin.cpp" line="4092"/>
         <source>Configuring grub2 on %1</source>
         <translation type="unfinished">Samanseti grub2 á %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3910"/>
+        <location filename="unetbootin.cpp" line="4104"/>
         <source>Configuring grldr on %1</source>
         <translation type="unfinished">Samanseti grldr á %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3938"/>
+        <location filename="unetbootin.cpp" line="4132"/>
         <source>Configuring grub on %1</source>
         <translation type="unfinished">Samanseti grub á %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4248"/>
+        <location filename="unetbootin.cpp" line="4289"/>
+        <source>Installation Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="4290"/>
+        <source>Installation failed. Please restart your device and try install again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="4482"/>
         <source>Installing syslinux to %1</source>
         <translation type="unfinished">Innleggi syslinux á %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4283"/>
+        <location filename="unetbootin.cpp" line="4517"/>
         <source>Installing extlinux to %1</source>
         <translation type="unfinished">Innleggi extlinux á %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4448"/>
+        <location filename="unetbootin.cpp" line="4682"/>
         <source>Syncing filesystems</source>
         <translation type="unfinished">Stevjavni fílukervi</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4453"/>
+        <location filename="unetbootin.cpp" line="4687"/>
         <source>Setting up persistence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4498"/>
+        <location filename="unetbootin.cpp" line="4732"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">Eftir endurbyrjan, vel </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4503"/>
+        <location filename="unetbootin.cpp" line="4737"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Eftir endurbyrjan, vel USB/geymu byrjanarkostin í BIOS byrjanarvalmyndini.%1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="4506"/>
-        <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="50"/>
@@ -800,7 +960,7 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="distrover.cpp" line="19"/>
-        <location filename="unetbootin.cpp" line="842"/>
+        <location filename="unetbootin.cpp" line="906"/>
         <source>== Select Distribution ==</source>
         <translation></translation>
     </message>
@@ -1281,38 +1441,38 @@ Reboot now?</source>
 <context>
     <name>uninstaller</name>
     <message>
-        <location filename="main.cpp" line="160"/>
+        <location filename="unetbootin.cpp" line="4954"/>
         <source>Uninstallation Complete</source>
         <translation>Av-innlegging fullfgjørd</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="161"/>
+        <location filename="unetbootin.cpp" line="4955"/>
         <source>%1 has been uninstalled.</source>
         <translation>%1 er vorðin av-innløgd</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="326"/>
+        <location filename="main.cpp" line="179"/>
         <source>Must run as root</source>
         <translation>Má koyra sum rót</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="328"/>
+        <location filename="main.cpp" line="181"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="366"/>
-        <location filename="main.cpp" line="385"/>
+        <location filename="main.cpp" line="213"/>
+        <location filename="unetbootin.cpp" line="5017"/>
         <source>%1 Uninstaller</source>
         <translation>%1 av-innleggjari</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="367"/>
+        <location filename="unetbootin.cpp" line="5018"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 er innlagt í løtuni. Tak burtur tí núverandi útgávuna?</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="386"/>
+        <location filename="main.cpp" line="214"/>
         <source>%1 is not installed.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,5 +1,21 @@
 #include "remixosudisk.h"
 
+void ExecuteShell(wchar_t *parameters)
+{
+    SHELLEXECUTEINFO shExecInfo = {0};
+    shExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+    shExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+    shExecInfo.hwnd = NULL;
+    shExecInfo.lpVerb = NULL;
+    shExecInfo.lpFile = L"cmd.exe";
+    shExecInfo.lpParameters = parameters;
+    shExecInfo.lpDirectory = NULL;
+    shExecInfo.nShow = SW_HIDE;
+    shExecInfo.hInstApp = NULL;
+    ShellExecuteEx(&shExecInfo);
+    WaitForSingleObject(shExecInfo.hProcess,INFINITE);
+}
+
 /*
  * construct and initialize
  */
@@ -13,7 +29,16 @@ RemixOSUDisk::RemixOSUDisk(WCHAR* wszDrive)
     wcsncpy(m_wszDrive, wszDrive, MAX_PATH);
     m_bValidUDisk = FALSE;
     m_bRemixOSUDisk = FALSE;
+    m_bFormat = FALSE;
+}
 
+void RemixOSUDisk::FormatDataPartition(BOOL bFormat)
+{
+    m_bFormat = bFormat;
+}
+
+void RemixOSUDisk::Initialize()
+{
     if(GetPhysicalDiskName())
     {
         m_bValidUDisk = CheckUDisk();
@@ -68,7 +93,9 @@ BOOL RemixOSUDisk::GetPhysicalDiskName()
         swprintf(m_wszPhysicalName, L"\\\\.\\PhysicalDrive%d", devnr.DeviceNumber);
     }
     else
+    {
         bResult = FALSE;
+    }
 
     CloseHandle(hDevice);
 
@@ -420,28 +447,26 @@ BOOL RemixOSUDisk::PrepareUDisk()
     {
         return FALSE;
     }
+    if(m_bFormat)
+    {
+        WCHAR wszCmdLine[MAX_PATH];
+        wmemset(wszCmdLine, 0, MAX_PATH);
+        wsprintf(wszCmdLine, L" /C format %c: /Q /FS:FAT32 /Y", m_wszDrive[0]);
+        ExecuteShell(wszCmdLine);
+        SetVolumeLabelW(m_wszDrive, REMIXOS_DATA_LABEL);
+    }
+
     bResult = CreateDrivesInUDisk(2);
     if(!bResult)
     {
         return FALSE;
     }
-    if (!m_bRemixOSUDisk)
+    if (!m_bRemixOSUDisk || m_bFormat)
     {
         WCHAR wszCmdLine[MAX_PATH];
         wmemset(wszCmdLine, 0, MAX_PATH);
         wsprintf(wszCmdLine, L" /C format %c: /Q /FS:FAT32 /Y", m_wszDrive[0]);
-        SHELLEXECUTEINFO shExecInfo = {0};
-        shExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
-        shExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
-        shExecInfo.hwnd = NULL;
-        shExecInfo.lpVerb = NULL;
-        shExecInfo.lpFile = L"cmd.exe";
-        shExecInfo.lpParameters = wszCmdLine;
-        shExecInfo.lpDirectory = NULL;
-        shExecInfo.nShow = SW_HIDE;
-        shExecInfo.hInstApp = NULL;
-        ShellExecuteEx(&shExecInfo);
-        WaitForSingleObject(shExecInfo.hProcess,INFINITE);
+        ExecuteShell(wszCmdLine);
     }
 
     SetVolumeLabelW(m_wszDrive, REMIXOS_SYS_LABEL);
@@ -452,7 +477,9 @@ BOOL RemixOSUDisk::PrepareUDisk()
 BOOL RemixOSUDisk::UpdateUDisk()
 {
     if(!m_bValidUDisk)
+    {
         return FALSE;
+    }
 
     BOOL bResult = FALSE;
 
@@ -461,23 +488,12 @@ BOOL RemixOSUDisk::UpdateUDisk()
     {
         return FALSE;
     }
-    if (!m_bRemixOSUDisk)
+    if (!m_bRemixOSUDisk || m_bFormat)
     {
         WCHAR wszCmdLine[MAX_PATH];
         wmemset(wszCmdLine, 0, MAX_PATH);
         wsprintf(wszCmdLine, L" /C format %c: /Q /FS:FAT32 /Y", m_wszDrive[0]);
-        SHELLEXECUTEINFO shExecInfo = {0};
-        shExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
-        shExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
-        shExecInfo.hwnd = NULL;
-        shExecInfo.lpVerb = NULL;
-        shExecInfo.lpFile = L"cmd.exe";
-        shExecInfo.lpParameters = wszCmdLine;
-        shExecInfo.lpDirectory = NULL;
-        shExecInfo.nShow = SW_HIDE;
-        shExecInfo.hInstApp = NULL;
-        ShellExecuteEx(&shExecInfo);
-        WaitForSingleObject(shExecInfo.hProcess,INFINITE);
+        ExecuteShell(wszCmdLine);
     }
     SetVolumeLabelW(m_wszDrive, REMIXOS_SHARE_LABEL);
 

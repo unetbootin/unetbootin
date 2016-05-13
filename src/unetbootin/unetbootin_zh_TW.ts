@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_TW">
+<TS version="2.0" language="zh_TW">
 <context>
     <name></name>
     <message>
@@ -258,6 +258,18 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="obsolete">(完成)</translation>
     </message>
     <message>
+        <source>(failed)</source>
+        <translation type="obsolete">(失敗)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="obsolete">錯誤</translation>
+    </message>
+    <message>
+        <source>Fail to create a multiple partitions in the USB flash drive.</source>
+        <translation type="obsolete">USB 隨身碟 創建多個數據區失敗</translation>
+    </message>
+    <message>
         <source>Configuring grub2 on %1</source>
         <translation type="obsolete">正在設定 %1 上的 grub2</translation>
     </message>
@@ -301,100 +313,167 @@ Reboot now?</source>
     </message>
 </context>
 <context>
+    <name>DataImageConfigDialog</name>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="26"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="39"/>
+        <source>A larger system size is recommended because you can install more apps.</source>
+        <oldsource>A larger system size is recommended as it allows you to install more apps.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="56"/>
+        <source>Choose system size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="66"/>
+        <source>16GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="74"/>
+        <source>32GB(Recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.ui" line="61"/>
+        <source>8GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.cpp" line="13"/>
+        <source>16GB(Recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dataimageconfigdialog.cpp" line="15"/>
+        <source>32GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="270"/>
+        <location filename="main.cpp" line="123"/>
         <source>LeftToRight</source>
         <translation>由左至右</translation>
     </message>
 </context>
 <context>
+    <name>WaitingDialog</name>
+    <message>
+        <location filename="waitingdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="waitingdialog.ui" line="26"/>
+        <source>Installation on FAT32 format hard disk will take a while. Please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="219"/>
-        <location filename="unetbootin.cpp" line="321"/>
-        <location filename="unetbootin.cpp" line="322"/>
-        <location filename="unetbootin.cpp" line="391"/>
-        <location filename="unetbootin.cpp" line="607"/>
-        <location filename="unetbootin.cpp" line="1893"/>
-        <location filename="unetbootin.cpp" line="3596"/>
-        <location filename="unetbootin.cpp" line="3609"/>
-        <location filename="unetbootin.cpp" line="3819"/>
-        <location filename="unetbootin.cpp" line="4495"/>
+        <location filename="unetbootin.cpp" line="258"/>
+        <location filename="unetbootin.cpp" line="359"/>
+        <location filename="unetbootin.cpp" line="360"/>
+        <location filename="unetbootin.cpp" line="429"/>
+        <location filename="unetbootin.cpp" line="639"/>
+        <location filename="unetbootin.cpp" line="844"/>
+        <location filename="unetbootin.cpp" line="1019"/>
+        <location filename="unetbootin.cpp" line="2039"/>
+        <location filename="unetbootin.cpp" line="3768"/>
+        <location filename="unetbootin.cpp" line="3781"/>
+        <location filename="unetbootin.cpp" line="3968"/>
+        <location filename="unetbootin.cpp" line="4011"/>
+        <location filename="unetbootin.cpp" line="4729"/>
+        <location filename="unetbootin.cpp" line="5099"/>
         <source>Hard Disk</source>
         <translation type="unfinished">硬碟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="318"/>
-        <location filename="unetbootin.cpp" line="319"/>
-        <location filename="unetbootin.cpp" line="393"/>
-        <location filename="unetbootin.cpp" line="624"/>
-        <location filename="unetbootin.cpp" line="806"/>
-        <location filename="unetbootin.cpp" line="826"/>
-        <location filename="unetbootin.cpp" line="1080"/>
-        <location filename="unetbootin.cpp" line="1655"/>
-        <location filename="unetbootin.cpp" line="1744"/>
-        <location filename="unetbootin.cpp" line="2678"/>
-        <location filename="unetbootin.cpp" line="2721"/>
-        <location filename="unetbootin.cpp" line="3526"/>
-        <location filename="unetbootin.cpp" line="3600"/>
-        <location filename="unetbootin.cpp" line="3626"/>
-        <location filename="unetbootin.cpp" line="3788"/>
-        <location filename="unetbootin.cpp" line="3823"/>
-        <location filename="unetbootin.cpp" line="4159"/>
-        <location filename="unetbootin.cpp" line="4500"/>
+        <location filename="unetbootin.cpp" line="260"/>
+        <location filename="unetbootin.cpp" line="356"/>
+        <location filename="unetbootin.cpp" line="357"/>
+        <location filename="unetbootin.cpp" line="431"/>
+        <location filename="unetbootin.cpp" line="656"/>
+        <location filename="unetbootin.cpp" line="869"/>
+        <location filename="unetbootin.cpp" line="890"/>
+        <location filename="unetbootin.cpp" line="1011"/>
+        <location filename="unetbootin.cpp" line="1035"/>
+        <location filename="unetbootin.cpp" line="1221"/>
+        <location filename="unetbootin.cpp" line="1801"/>
+        <location filename="unetbootin.cpp" line="1890"/>
+        <location filename="unetbootin.cpp" line="2827"/>
+        <location filename="unetbootin.cpp" line="2870"/>
+        <location filename="unetbootin.cpp" line="3772"/>
+        <location filename="unetbootin.cpp" line="3798"/>
+        <location filename="unetbootin.cpp" line="4016"/>
+        <location filename="unetbootin.cpp" line="4393"/>
+        <location filename="unetbootin.cpp" line="4734"/>
         <source>USB Drive</source>
         <translation type="unfinished">USB 磁碟機</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="223"/>
-        <location filename="unetbootin.cpp" line="240"/>
-        <location filename="unetbootin.cpp" line="241"/>
-        <location filename="unetbootin.cpp" line="357"/>
-        <location filename="unetbootin.cpp" line="738"/>
-        <location filename="unetbootin.cpp" line="745"/>
-        <location filename="unetbootin.cpp" line="746"/>
-        <location filename="unetbootin.cpp" line="3685"/>
+        <location filename="unetbootin.cpp" line="261"/>
+        <location filename="unetbootin.cpp" line="278"/>
+        <location filename="unetbootin.cpp" line="279"/>
+        <location filename="unetbootin.cpp" line="395"/>
+        <location filename="unetbootin.cpp" line="770"/>
+        <location filename="unetbootin.cpp" line="777"/>
+        <location filename="unetbootin.cpp" line="778"/>
+        <location filename="unetbootin.cpp" line="3857"/>
         <source>ISO</source>
         <translation type="unfinished">ISO 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <location filename="unetbootin.cpp" line="237"/>
-        <location filename="unetbootin.cpp" line="363"/>
-        <location filename="unetbootin.cpp" line="563"/>
-        <location filename="unetbootin.cpp" line="564"/>
-        <location filename="unetbootin.cpp" line="738"/>
-        <location filename="unetbootin.cpp" line="750"/>
-        <location filename="unetbootin.cpp" line="751"/>
-        <location filename="unetbootin.cpp" line="3677"/>
+        <location filename="unetbootin.cpp" line="262"/>
+        <location filename="unetbootin.cpp" line="274"/>
+        <location filename="unetbootin.cpp" line="275"/>
+        <location filename="unetbootin.cpp" line="401"/>
+        <location filename="unetbootin.cpp" line="595"/>
+        <location filename="unetbootin.cpp" line="596"/>
+        <location filename="unetbootin.cpp" line="770"/>
+        <location filename="unetbootin.cpp" line="782"/>
+        <location filename="unetbootin.cpp" line="783"/>
+        <location filename="unetbootin.cpp" line="3849"/>
         <source>Floppy</source>
         <translation type="unfinished">磁片</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="257"/>
-        <location filename="unetbootin.cpp" line="263"/>
-        <location filename="unetbootin.cpp" line="267"/>
-        <location filename="unetbootin.cpp" line="271"/>
-        <location filename="unetbootin.cpp" line="275"/>
-        <location filename="unetbootin.cpp" line="281"/>
+        <location filename="unetbootin.cpp" line="295"/>
+        <location filename="unetbootin.cpp" line="301"/>
+        <location filename="unetbootin.cpp" line="305"/>
         <location filename="unetbootin.cpp" line="309"/>
+        <location filename="unetbootin.cpp" line="313"/>
+        <location filename="unetbootin.cpp" line="319"/>
+        <location filename="unetbootin.cpp" line="347"/>
         <source>either</source>
         <translation type="unfinished">或是</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="288"/>
+        <location filename="unetbootin.cpp" line="326"/>
         <source>LiveUSB persistence</source>
         <translation type="unfinished">LiveUSB 資料儲存</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="303"/>
+        <location filename="unetbootin.cpp" line="341"/>
         <source>FAT32-formatted USB drive</source>
         <translation type="unfinished">格式化為 FAT32 檔案系統的 USB 磁碟機</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="307"/>
+        <location filename="unetbootin.cpp" line="345"/>
         <source>EXT2-formatted USB drive</source>
         <translation type="unfinished">格式化為 EXT2 檔案系統的 USB 磁碟機</translation>
     </message>
@@ -407,7 +486,7 @@ Reboot now?</source>
         <translation type="obsolete">&lt;h1&gt;歡迎使用 Remix OS USB 工具&lt;/h1&gt;如何準備你的 Remix OS U盤？ &lt;ol&gt;&lt;li&gt;在下面選擇一個 ISO 文件加載&lt;li&gt;選擇一個已格式化為 FAT32 的 U 盤，然後，點擊 OK 開始安裝&lt;/ol&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="566"/>
+        <location filename="unetbootin.cpp" line="598"/>
         <source>ISO File</source>
         <translation type="unfinished">ISO 文件</translation>
     </message>
@@ -416,319 +495,402 @@ Reboot now?</source>
         <translation type="obsolete">U盤</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="529"/>
+        <location filename="unetbootin.cpp" line="567"/>
         <source>Remix OS Installation Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="538"/>
-        <source>&lt;h2&gt;Instructions: &lt;/h2&gt;You can install Remix OS in your hard disk alongside with your Windows system or to prepare a USB flash drive of Remix OS for PC. &lt;h2&gt;Requirements:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Hard disk installation: OS supported - Windows 7, Windows 8 or Windows 10 with a minimum capacity of 8GB&lt;li&gt;USB flash drive installation: a minimum capacity of 8GB and a recommended writing speed of 20MB/s.&lt;/ol&gt;&lt;h2&gt;Steps:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Select the image file&lt;li&gt;Select type of installation - UBS / Hard disk&lt;li&gt;Select the drive letter of your hard disk or your USB drive. &lt;li&gt;Press OK to start the installation&lt;/ol&gt;For more information, please visit: &lt;a href=&quot;http://www.jide.com/remixos-for-pc&quot;&gt;http://www.jide.com/remixos-for-pc&lt;/a&gt;</source>
+        <location filename="unetbootin.cpp" line="576"/>
+        <source>&lt;h2&gt;Installation Steps:&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Under &quot;ISO file&quot;, choose the Remix OS for PC ISO file&lt;li&gt;Under &quot;Type&quot;, choose &quot;USB drive&quot; for USB flash drive installation or choose &quot;Hard Disk&quot; for hard disk installation&lt;li&gt;Under &quot;Drive&quot;, choose the drive to install the OS on&lt;li&gt;Press &quot;Ok&quot; to proceed with installation&lt;/ol&gt;For system requirements or further information, please visit: &lt;a href=&quot;http://www.jide.com/remixos-for-pc&quot;&gt;http://www.jide.com/remixos-for-pc&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="738"/>
+        <location filename="unetbootin.cpp" line="770"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished">開啟映像檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="738"/>
+        <location filename="unetbootin.cpp" line="770"/>
         <source>All Files</source>
         <translation type="unfinished">所有檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="760"/>
-        <location filename="unetbootin.cpp" line="772"/>
-        <location filename="unetbootin.cpp" line="784"/>
+        <location filename="unetbootin.cpp" line="792"/>
+        <location filename="unetbootin.cpp" line="804"/>
+        <location filename="unetbootin.cpp" line="816"/>
         <source>All Files (*)</source>
         <translation type="unfinished">所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="760"/>
+        <location filename="unetbootin.cpp" line="792"/>
         <source>Open Kernel File</source>
         <translation type="unfinished">開啟核心檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="772"/>
+        <location filename="unetbootin.cpp" line="804"/>
         <source>Open Initrd File</source>
         <translation type="unfinished">開啟 Initrd 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="784"/>
+        <location filename="unetbootin.cpp" line="816"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished">開啟開機管理設定檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="810"/>
+        <location filename="unetbootin.cpp" line="852"/>
+        <location filename="unetbootin.cpp" line="5381"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="853"/>
+        <source>For your CPU, please make sure you are using 32-bit version of Remix OS for PC.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="873"/>
         <source>Insert a USB flash drive</source>
         <translation type="unfinished">插入 USB 隨身碟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="811"/>
+        <location filename="unetbootin.cpp" line="874"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation type="unfinished">找不到 USB 隨身碟。如果已經插入，試著格式化成 FAT32 檔案系統。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="830"/>
+        <location filename="unetbootin.cpp" line="894"/>
         <source>%1 not mounted</source>
         <translation type="unfinished">尚未掛載 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="831"/>
+        <location filename="unetbootin.cpp" line="895"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation type="unfinished">必須先掛載 USB 隨身碟 %1。大部分的系統會在移除並重新插入 USB 隨身碟後自動掛載。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="846"/>
+        <location filename="unetbootin.cpp" line="910"/>
         <source>Select a distro</source>
         <translation type="unfinished">選擇發行套件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="847"/>
+        <location filename="unetbootin.cpp" line="911"/>
         <source>You must select a distribution to load.</source>
         <translation type="unfinished">必須選擇發行套件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="861"/>
+        <location filename="unetbootin.cpp" line="925"/>
         <source>Select a disk image file</source>
         <translation type="unfinished">選擇映像檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="862"/>
+        <location filename="unetbootin.cpp" line="926"/>
         <source>You must select a disk image file to load.</source>
         <translation type="unfinished">必須選擇映像檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="876"/>
+        <location filename="unetbootin.cpp" line="941"/>
         <source>Select a kernel and/or initrd file</source>
         <translation type="unfinished">選擇核心及／或 initrd 檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="877"/>
+        <location filename="unetbootin.cpp" line="942"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation type="unfinished">必須選擇要載入的核心及／或 initrd 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="891"/>
+        <location filename="unetbootin.cpp" line="956"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished">找不到映像檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="892"/>
+        <location filename="unetbootin.cpp" line="957"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished">沒有指定的 %1 映像檔。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="906"/>
+        <location filename="unetbootin.cpp" line="971"/>
         <source>Kernel file not found</source>
         <translation type="unfinished">找不到核心檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="907"/>
+        <location filename="unetbootin.cpp" line="972"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished">沒有指定的 %1 核心檔案。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="921"/>
+        <location filename="unetbootin.cpp" line="986"/>
         <source>Initrd file not found</source>
         <translation type="unfinished">找不到 initrd 檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="922"/>
+        <location filename="unetbootin.cpp" line="987"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished">沒有指定的 %1 initrd 檔案。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1026"/>
+        <location filename="unetbootin.cpp" line="1167"/>
         <source>%1 exists, overwrite?</source>
         <translation type="unfinished">已有 %1，要覆寫嗎？</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1027"/>
+        <location filename="unetbootin.cpp" line="1168"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation type="unfinished">已有 %1 檔案。請按下「全部皆是(Yes to All)」以覆蓋該檔案，並在之後不再提示；或按「是(Yes)」只覆蓋這個檔案；或按「否(No)」以保留目前版本。如果不知道要怎做，請按「全部皆是」。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1053"/>
+        <location filename="unetbootin.cpp" line="1194"/>
         <source>%1 is out of space, abort installation?</source>
         <translation type="unfinished">%1 磁碟空間不足，是否要放棄安裝？</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1054"/>
+        <location filename="unetbootin.cpp" line="1195"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation type="unfinished">資料夾 %1 已滿。請按「是(Yes)」中止安裝；「否(No)」跳過這個錯誤並嘗試繼續安裝；或按「全部皆否(No to All)」忽略所有空間不足訊息。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1148"/>
+        <location filename="unetbootin.cpp" line="1294"/>
         <source>Locating kernel file in %1</source>
         <translation type="unfinished">正自 %1 尋找核心檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1199"/>
+        <location filename="unetbootin.cpp" line="1345"/>
         <source>Copying kernel file from %1</source>
         <translation type="unfinished">正從 %1 複製核心檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1205"/>
+        <location filename="unetbootin.cpp" line="1351"/>
         <source>Locating initrd file in %1</source>
         <translation type="unfinished">正自 %1 尋找 initrd 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1246"/>
+        <location filename="unetbootin.cpp" line="1392"/>
         <source>Copying initrd file from %1</source>
         <translation type="unfinished">正從 %1 複製 initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1252"/>
-        <location filename="unetbootin.cpp" line="1332"/>
+        <location filename="unetbootin.cpp" line="1398"/>
+        <location filename="unetbootin.cpp" line="1478"/>
         <source>Extracting bootloader configuration</source>
         <translation type="unfinished">正提取開機管理程式設定</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1561"/>
-        <location filename="unetbootin.cpp" line="1587"/>
+        <location filename="unetbootin.cpp" line="1707"/>
+        <location filename="unetbootin.cpp" line="1733"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;自映像檔提取：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1843"/>
+        <location filename="unetbootin.cpp" line="1989"/>
         <source>Copying file, please wait...</source>
         <translation type="unfinished">正複製檔案，請稍等...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1844"/>
-        <location filename="unetbootin.cpp" line="2663"/>
+        <location filename="unetbootin.cpp" line="1990"/>
+        <location filename="unetbootin.cpp" line="2812"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">&lt;b&gt;來源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1845"/>
-        <location filename="unetbootin.cpp" line="2664"/>
+        <location filename="unetbootin.cpp" line="1991"/>
+        <location filename="unetbootin.cpp" line="2813"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;目的地：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1846"/>
+        <location filename="unetbootin.cpp" line="1992"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;已複製了&lt;/b&gt; 0 個位元組</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1884"/>
+        <location filename="unetbootin.cpp" line="2030"/>
         <source>Extracting files, please wait...</source>
         <translation type="unfinished">正提取檔案，請稍等...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1885"/>
+        <location filename="unetbootin.cpp" line="2031"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;來源檔：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1886"/>
+        <location filename="unetbootin.cpp" line="2032"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;來源：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1887"/>
+        <location filename="unetbootin.cpp" line="2033"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;目的地：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1888"/>
+        <location filename="unetbootin.cpp" line="2034"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation type="unfinished">&lt;b&gt;已提取：&lt;/b&gt;%1 中之 0 個檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1896"/>
+        <location filename="unetbootin.cpp" line="2045"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation type="unfinished">&lt;b&gt;來源：&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1897"/>
+        <location filename="unetbootin.cpp" line="2046"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation type="unfinished">&lt;b&gt;目的地：&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1898"/>
+        <location filename="unetbootin.cpp" line="2047"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation type="unfinished">&lt;b&gt;已提取：&lt;/b&gt; %2 中之 %1 個檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2662"/>
+        <location filename="unetbootin.cpp" line="2811"/>
         <source>Downloading files, please wait...</source>
         <translation type="unfinished">正下載檔案，請稍等...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2665"/>
+        <location filename="unetbootin.cpp" line="2814"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;已下載：&lt;/b&gt; 0 個位元組</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2789"/>
+        <location filename="unetbootin.cpp" line="2938"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
         <translation type="unfinished">未能自 %3 下載 %1 %2。請直接自網站下載 ISO 檔並以「映像檔」選項提供。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2812"/>
-        <location filename="unetbootin.cpp" line="2827"/>
+        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2976"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation type="unfinished">&lt;b&gt;已下載：&lt;/b&gt;%2 中之 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2842"/>
+        <location filename="unetbootin.cpp" line="2991"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation type="unfinished">&lt;b&gt;已複製了&lt;/b&gt; %2 中之 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2933"/>
+        <location filename="unetbootin.cpp" line="3082"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">正在搜尋 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2937"/>
+        <location filename="unetbootin.cpp" line="3086"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished">&lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt; 有 %1/%2 個符合</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3210"/>
+        <location filename="unetbootin.cpp" line="3360"/>
         <source>%1 not found</source>
         <translation type="unfinished">找不到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3211"/>
+        <location filename="unetbootin.cpp" line="3361"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation type="unfinished">找不到 %1。%2 安裝模式必須要使用它。
 請安裝 &quot;%3&quot; 套件或是您的發行版當中的類似程式。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3532"/>
+        <location filename="unetbootin.cpp" line="5271"/>
+        <source>Please turn off Secure Boot and BitLocker before proceed to installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5287"/>
+        <location filename="unetbootin.cpp" line="5331"/>
+        <source>Please turn off Secure Boot before proceed to installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5303"/>
+        <source>Please turn off BitLocker before proceed to installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5347"/>
         <source>Select a high capacity usb drive</source>
         <translation type="unfinished">請選擇一個大容量U盤</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3533"/>
+        <location filename="unetbootin.cpp" line="5348"/>
         <source>The USB drive capacity must be larger than 8 GB.</source>
         <oldsource>The USB drive capacity is less then 8GB!</oldsource>
         <translation type="unfinished">USB 隨身碟容量必須大於 8GB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3549"/>
+        <location filename="unetbootin.cpp" line="5365"/>
+        <location filename="unetbootin.cpp" line="5525"/>
         <source>Information</source>
         <translation type="unfinished">通知</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3550"/>
+        <location filename="unetbootin.cpp" line="5366"/>
         <source>All the data on your USB flash drive will be erased. Please backup your data before proceeding.</source>
         <translation type="unfinished">安裝過程中，U 盤中的所有數據將被清空。請先備份你的數據。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3565"/>
-        <location filename="unetbootin.cpp" line="3797"/>
+        <location filename="unetbootin.cpp" line="5382"/>
+        <source>Remix OS has been already installed on this USB flash drive. To reinstall it, would you like to ERASE all the existing data? </source>
+        <oldsource>Please backup the data before proceed. ALL the data on the UBS flash drive will be erased during installation.  Click &quot;Ok&quot; to proceed the installation.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5526"/>
+        <source>User data may not be compatible with a different version of Remix OS. To reinstall a different version of Remix OS, erasing the old user data is recommended.
+Would you like to ERASE the old user data on your device? </source>
+        <oldsource>User data may not be compatible with a different version of Remix OS. To reinstall a different version of Remix OS, erasing the old user data is recommended.
+Would you like to ERASE the old user data on your flash drive? </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5551"/>
+        <location filename="unetbootin.cpp" line="5567"/>
+        <location filename="unetbootin.cpp" line="5625"/>
+        <source>Creating data image return failed.(%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5557"/>
+        <source>There is not enough space available on the disk to complete the installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5597"/>
+        <source>System size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5609"/>
+        <source>The file system of the hard disk you selected is not supported. The file systems supported are FAT32, exFAT and NTFS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5614"/>
+        <source>Installation on %1 format hard disk will take a while. Please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="5616"/>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1044"/>
+        <location filename="unetbootin.cpp" line="5270"/>
+        <location filename="unetbootin.cpp" line="5286"/>
+        <location filename="unetbootin.cpp" line="5302"/>
+        <location filename="unetbootin.cpp" line="5330"/>
+        <location filename="unetbootin.cpp" line="5397"/>
+        <location filename="unetbootin.cpp" line="5551"/>
+        <location filename="unetbootin.cpp" line="5557"/>
+        <location filename="unetbootin.cpp" line="5567"/>
+        <location filename="unetbootin.cpp" line="5609"/>
+        <location filename="unetbootin.cpp" line="5625"/>
         <source>Error</source>
         <translation type="unfinished">錯誤</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3566"/>
-        <location filename="unetbootin.cpp" line="3798"/>
+        <location filename="unetbootin.cpp" line="1045"/>
+        <location filename="unetbootin.cpp" line="5398"/>
         <source>Fail to create a multiple partitions in the USB flash drive.</source>
         <oldsource>It is failed to create a multiple partition in the USB drive.</oldsource>
         <translation type="unfinished">USB 隨身碟 創建多個數據區失敗</translation>
@@ -739,69 +901,79 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="obsolete">在U盤創建多個數據區失敗！</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3579"/>
+        <location filename="unetbootin.cpp" line="3751"/>
         <source>(Current)</source>
         <translation type="unfinished">(正在進行)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3580"/>
+        <location filename="unetbootin.cpp" line="3752"/>
         <source>(Done)</source>
         <translation type="unfinished">(完成)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3792"/>
+        <location filename="unetbootin.cpp" line="1039"/>
         <source>(failed)</source>
         <translation type="unfinished">(失敗)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3898"/>
+        <location filename="unetbootin.cpp" line="4092"/>
         <source>Configuring grub2 on %1</source>
         <translation type="unfinished">正在設定 %1 上的 grub2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3910"/>
+        <location filename="unetbootin.cpp" line="4104"/>
         <source>Configuring grldr on %1</source>
         <translation type="unfinished">正在設定 %1 上的 grldr</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3938"/>
+        <location filename="unetbootin.cpp" line="4132"/>
         <source>Configuring grub on %1</source>
         <translation type="unfinished">正在設定 %1 上的 grub</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4248"/>
+        <location filename="unetbootin.cpp" line="4289"/>
+        <source>Installation Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="4290"/>
+        <source>Installation failed. Please restart your device and try install again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="4482"/>
         <source>Installing syslinux to %1</source>
         <translation type="unfinished">安裝 syslinux 至 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4283"/>
+        <location filename="unetbootin.cpp" line="4517"/>
         <source>Installing extlinux to %1</source>
         <translation type="unfinished">將 extlinux 安裝至 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4448"/>
+        <location filename="unetbootin.cpp" line="4682"/>
         <source>Syncing filesystems</source>
         <translation type="unfinished">正在同步檔案系統</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4453"/>
+        <location filename="unetbootin.cpp" line="4687"/>
         <source>Setting up persistence</source>
         <translation type="unfinished">正在設定資料儲存</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4498"/>
+        <location filename="unetbootin.cpp" line="4732"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">重新開機後，請選擇 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4503"/>
+        <location filename="unetbootin.cpp" line="4737"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">重新開機後，請在 BIOS 開機選單選擇以 USB 開機。%1
 要現在重新開機嗎?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4506"/>
+        <location filename="unetbootin.cpp" line="4740"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation type="unfinished">製作出來的 USB 裝置無法在 Mac 電腦開腦。將之插入 PC，並在 BIOS 開機選單選「USB 開機」。%1</translation>
     </message>
@@ -856,7 +1028,7 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="distrover.cpp" line="19"/>
-        <location filename="unetbootin.cpp" line="842"/>
+        <location filename="unetbootin.cpp" line="906"/>
         <source>== Select Distribution ==</source>
         <translation>== 選擇發行版 ==</translation>
     </message>
@@ -1337,38 +1509,38 @@ Reboot now?</source>
 <context>
     <name>uninstaller</name>
     <message>
-        <location filename="main.cpp" line="160"/>
+        <location filename="unetbootin.cpp" line="4954"/>
         <source>Uninstallation Complete</source>
         <translation>移除完成</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="161"/>
+        <location filename="unetbootin.cpp" line="4955"/>
         <source>%1 has been uninstalled.</source>
         <translation>已經移除 %1。</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="326"/>
+        <location filename="main.cpp" line="179"/>
         <source>Must run as root</source>
         <translation>必須以 root 身份執行</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="328"/>
+        <location filename="main.cpp" line="181"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 必須以 root 身份執行。將之關閉，並以以下方法重新執行：&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;或：&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="366"/>
-        <location filename="main.cpp" line="385"/>
+        <location filename="main.cpp" line="213"/>
+        <location filename="unetbootin.cpp" line="5017"/>
         <source>%1 Uninstaller</source>
         <translation>移除 %1</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="367"/>
+        <location filename="unetbootin.cpp" line="5018"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>已安裝 %1。要移除現有版本？</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="386"/>
+        <location filename="main.cpp" line="214"/>
         <source>%1 is not installed.</source>
         <translation type="unfinished"></translation>
     </message>

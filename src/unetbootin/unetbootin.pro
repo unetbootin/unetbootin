@@ -5,14 +5,23 @@ INCLUDEPATH += .
 CONFIG += release \
     static
 HEADERS += unetbootin.h \
-    remixosudisk.h
-FORMS += unetbootin.ui
+    remixosudisk.h \
+    ganalytics.hpp \
+    dataimageconfigdialog.h \
+    waitingdialog.h \
+    constant.h
+
+FORMS += unetbootin.ui \
+    dataimageconfigdialog.ui \
+    waitingdialog.ui
 SOURCES += main.cpp \
     unetbootin.cpp \
     distrolst.cpp \
     distrover.cpp \
     distrovercust.cpp \
-    remixosudisk.cpp
+    remixosudisk.cpp \
+    dataimageconfigdialog.cpp \
+    waitingdialog.cpp
 QT += core \
     gui \
     network

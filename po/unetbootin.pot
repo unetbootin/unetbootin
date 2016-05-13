@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 22:25+0800\n"
+"POT-Creation-Date: 2016-04-13 19:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,14 +12,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: lconvert 4.5.0\n"
 
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:14
+#, fuzzy
+msgid "Dialog"
+msgstr ""
+
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:26
+#, fuzzy
+msgid "Ok"
+msgstr ""
+
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:42
+#, fuzzy
+msgid ""
+"A larger system size is recommended as it allows you to install more apps."
+msgstr ""
+
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:51
+#, fuzzy
+msgid "Choose system size:"
+msgstr ""
+
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:65
+#, fuzzy
+msgid "16GB(Recommended)"
+msgstr ""
+
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:58
+#, fuzzy
+msgid "8GB"
+msgstr ""
+
+#. ts-context DataImageConfigDialog
+#: dataimageconfigdialog.ui:75
+#, fuzzy
+msgid "32GB"
+msgstr ""
+
 #. ts-context QObject
-#: main.cpp:270
+#: main.cpp:123
 #, fuzzy
 msgid "LeftToRight"
 msgstr ""
 
+#. ts-context WaitingDialog
+#: waitingdialog.ui:14
+#, fuzzy
+msgid "Dialog"
+msgstr ""
+
+#. ts-context WaitingDialog
+#: waitingdialog.ui:26
+#, fuzzy
+msgid ""
+"Installation on FAT32 format hard disk will take a while. Please wait..."
+msgstr ""
+
 #. ts-context unetbootin
-#: distrover.cpp:19 unetbootin.cpp:842
+#: distrover.cpp:19 unetbootin.cpp:903
 #, fuzzy
 msgid "== Select Distribution =="
 msgstr ""
@@ -724,136 +780,148 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:219 unetbootin.cpp:321 unetbootin.cpp:322 unetbootin.cpp:391
-#: unetbootin.cpp:607 unetbootin.cpp:1893 unetbootin.cpp:3596
-#: unetbootin.cpp:3609 unetbootin.cpp:3819 unetbootin.cpp:4495
+#: unetbootin.cpp:255 unetbootin.cpp:356 unetbootin.cpp:357 unetbootin.cpp:426
+#: unetbootin.cpp:636 unetbootin.cpp:841 unetbootin.cpp:1016
+#: unetbootin.cpp:2036 unetbootin.cpp:3685 unetbootin.cpp:3698
+#: unetbootin.cpp:3882 unetbootin.cpp:4600 unetbootin.cpp:4962
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:318 unetbootin.cpp:319 unetbootin.cpp:393 unetbootin.cpp:624
-#: unetbootin.cpp:806 unetbootin.cpp:826 unetbootin.cpp:1080
-#: unetbootin.cpp:1655 unetbootin.cpp:1744 unetbootin.cpp:2678
-#: unetbootin.cpp:2721 unetbootin.cpp:3526 unetbootin.cpp:3600
-#: unetbootin.cpp:3626 unetbootin.cpp:3788 unetbootin.cpp:3823
-#: unetbootin.cpp:4159 unetbootin.cpp:4500
+#: unetbootin.cpp:257 unetbootin.cpp:353 unetbootin.cpp:354 unetbootin.cpp:428
+#: unetbootin.cpp:653 unetbootin.cpp:866 unetbootin.cpp:887 unetbootin.cpp:1008
+#: unetbootin.cpp:1032 unetbootin.cpp:1218 unetbootin.cpp:1798
+#: unetbootin.cpp:1887 unetbootin.cpp:2824 unetbootin.cpp:2867
+#: unetbootin.cpp:3689 unetbootin.cpp:3715 unetbootin.cpp:3887
+#: unetbootin.cpp:4264 unetbootin.cpp:4605
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:223 unetbootin.cpp:240 unetbootin.cpp:241 unetbootin.cpp:357
-#: unetbootin.cpp:738 unetbootin.cpp:745 unetbootin.cpp:746 unetbootin.cpp:3685
+#: unetbootin.cpp:258 unetbootin.cpp:275 unetbootin.cpp:276 unetbootin.cpp:392
+#: unetbootin.cpp:767 unetbootin.cpp:774 unetbootin.cpp:775 unetbootin.cpp:3774
 #, fuzzy
 msgid "ISO"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:224 unetbootin.cpp:236 unetbootin.cpp:237 unetbootin.cpp:363
-#: unetbootin.cpp:563 unetbootin.cpp:564 unetbootin.cpp:738 unetbootin.cpp:750
-#: unetbootin.cpp:751 unetbootin.cpp:3677
+#: unetbootin.cpp:259 unetbootin.cpp:271 unetbootin.cpp:272 unetbootin.cpp:398
+#: unetbootin.cpp:592 unetbootin.cpp:593 unetbootin.cpp:767 unetbootin.cpp:779
+#: unetbootin.cpp:780 unetbootin.cpp:3766
 #, fuzzy
 msgid "Floppy"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:257 unetbootin.cpp:263 unetbootin.cpp:267 unetbootin.cpp:271
-#: unetbootin.cpp:275 unetbootin.cpp:281 unetbootin.cpp:309
+#: unetbootin.cpp:292 unetbootin.cpp:298 unetbootin.cpp:302 unetbootin.cpp:306
+#: unetbootin.cpp:310 unetbootin.cpp:316 unetbootin.cpp:344
 #, fuzzy
 msgid "either"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:288
+#: unetbootin.cpp:323
 #, fuzzy
 msgid "LiveUSB persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:303
+#: unetbootin.cpp:338
 #, fuzzy
 msgid "FAT32-formatted USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:307
+#: unetbootin.cpp:342
 #, fuzzy
 msgid "EXT2-formatted USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:566
+#: unetbootin.cpp:573
+#, fuzzy
+msgid ""
+"<h2>Installation Steps:</h2><ol><li>Under \"ISO file\", choose the Remix OS "
+"for PC ISO file<li>Under \"Type\", choose \"USB drive\" for USB flash drive "
+"installation or choose \"Hard Disk\" for hard disk installation<li>Under "
+"\"Drive\", choose the drive to install the OS on<li>Press \"Ok\" to proceed "
+"with installation</ol>For system requirements or further information, please "
+"visit: <a "
+"href=\"http://www.jide.com/remixos-for-pc\">http://www.jide.com/remixos-for-pc</a>"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:595
 #, fuzzy
 msgid "ISO File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:529
+#: unetbootin.cpp:564
 #, fuzzy
 msgid "Remix OS Installation Tool"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:538
-#, fuzzy
-msgid ""
-"<h2>Instructions: </h2>You can install Remix OS in your hard disk alongside "
-"with your Windows system or to prepare a USB flash drive of Remix OS for PC. "
-"<h2>Requirements:</h2><ol><li>Hard disk installation: OS supported - Windows "
-"7, Windows 8 or Windows 10 with a minimum capacity of 8GB<li>USB flash drive "
-"installation: a minimum capacity of 8GB and a recommended writing speed of "
-"20MB/s.</ol><h2>Steps:</h2><ol><li>Select the image file<li>Select type of "
-"installation - UBS / Hard disk<li>Select the drive letter of your hard disk "
-"or your USB drive. <li>Press OK to start the installation</ol>For more "
-"information, please visit: <a "
-"href=\"http://www.jide.com/remixos-for-pc\">http://www.jide.com/remixos-for-pc</a>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:738
+#: unetbootin.cpp:767
 #, fuzzy
 msgid "Open Disk Image File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:738
+#: unetbootin.cpp:767
 #, fuzzy
 msgid "All Files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:760
+#: unetbootin.cpp:789
 #, fuzzy
 msgid "Open Kernel File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:760 unetbootin.cpp:772 unetbootin.cpp:784
+#: unetbootin.cpp:789 unetbootin.cpp:801 unetbootin.cpp:813
 #, fuzzy
 msgid "All Files (*)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:772
+#: unetbootin.cpp:801
 #, fuzzy
 msgid "Open Initrd File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:784
+#: unetbootin.cpp:813
 #, fuzzy
 msgid "Open Bootloader Config File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:810
+#: unetbootin.cpp:849 unetbootin.cpp:5232
+#, fuzzy
+msgid "Warning"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:850
+#, fuzzy
+msgid ""
+"For your CPU, please make sure you are using 32-bit version of Remix OS for "
+"PC."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:870
 #, fuzzy
 msgid "Insert a USB flash drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:811
+#: unetbootin.cpp:871
 #, fuzzy
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
@@ -861,13 +929,13 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:830
+#: unetbootin.cpp:891
 #, fuzzy
 msgid "%1 not mounted"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:831
+#: unetbootin.cpp:892
 #, fuzzy
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
@@ -875,85 +943,85 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:846
+#: unetbootin.cpp:907
 #, fuzzy
 msgid "Select a distro"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:847
+#: unetbootin.cpp:908
 #, fuzzy
 msgid "You must select a distribution to load."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:861
+#: unetbootin.cpp:922
 #, fuzzy
 msgid "Select a disk image file"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:862
+#: unetbootin.cpp:923
 #, fuzzy
 msgid "You must select a disk image file to load."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:876
+#: unetbootin.cpp:938
 #, fuzzy
 msgid "Select a kernel and/or initrd file"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:877
+#: unetbootin.cpp:939
 #, fuzzy
 msgid "You must select a kernel and/or initrd file to load."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:891
+#: unetbootin.cpp:953
 #, fuzzy
 msgid "Diskimage file not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:892
+#: unetbootin.cpp:954
 #, fuzzy
 msgid "The specified diskimage file %1 does not exist."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:906
+#: unetbootin.cpp:968
 #, fuzzy
 msgid "Kernel file not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:907
+#: unetbootin.cpp:969
 #, fuzzy
 msgid "The specified kernel file %1 does not exist."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:921
+#: unetbootin.cpp:983
 #, fuzzy
 msgid "Initrd file not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:922
+#: unetbootin.cpp:984
 #, fuzzy
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1026
+#: unetbootin.cpp:1164
 #, fuzzy
 msgid "%1 exists, overwrite?"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1027
+#: unetbootin.cpp:1165
 #, fuzzy
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
@@ -962,13 +1030,13 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1053
+#: unetbootin.cpp:1191
 #, fuzzy
 msgid "%1 is out of space, abort installation?"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1054
+#: unetbootin.cpp:1192
 #, fuzzy
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
@@ -977,127 +1045,127 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1148
+#: unetbootin.cpp:1291
 #, fuzzy
 msgid "Locating kernel file in %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1199
+#: unetbootin.cpp:1342
 #, fuzzy
 msgid "Copying kernel file from %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1205
+#: unetbootin.cpp:1348
 #, fuzzy
 msgid "Locating initrd file in %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1246
+#: unetbootin.cpp:1389
 #, fuzzy
 msgid "Copying initrd file from %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1252 unetbootin.cpp:1332
+#: unetbootin.cpp:1395 unetbootin.cpp:1475
 #, fuzzy
 msgid "Extracting bootloader configuration"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1561 unetbootin.cpp:1587
+#: unetbootin.cpp:1704 unetbootin.cpp:1730
 #, fuzzy
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1843
+#: unetbootin.cpp:1986
 #, fuzzy
 msgid "Copying file, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1844 unetbootin.cpp:2663
+#: unetbootin.cpp:1987 unetbootin.cpp:2809
 #, fuzzy
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1845 unetbootin.cpp:2664
+#: unetbootin.cpp:1988 unetbootin.cpp:2810
 #, fuzzy
 msgid "<b>Destination:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1846
+#: unetbootin.cpp:1989
 #, fuzzy
 msgid "<b>Copied:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1884
+#: unetbootin.cpp:2027
 #, fuzzy
 msgid "Extracting files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1885
+#: unetbootin.cpp:2028
 #, fuzzy
 msgid "<b>Archive:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1886
+#: unetbootin.cpp:2029
 #, fuzzy
 msgid "<b>Source:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1887
+#: unetbootin.cpp:2030
 #, fuzzy
 msgid "<b>Destination:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1888
+#: unetbootin.cpp:2031
 #, fuzzy
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1896
+#: unetbootin.cpp:2042
 #, fuzzy
 msgid "<b>Source:</b> %1 (%2)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1897
+#: unetbootin.cpp:2043
 #, fuzzy
 msgid "<b>Destination:</b> %1%2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1898
+#: unetbootin.cpp:2044
 #, fuzzy
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2662
+#: unetbootin.cpp:2808
 #, fuzzy
 msgid "Downloading files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2665
+#: unetbootin.cpp:2811
 #, fuzzy
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2789
+#: unetbootin.cpp:2935
 #, fuzzy
 msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
@@ -1105,37 +1173,37 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2812 unetbootin.cpp:2827
+#: unetbootin.cpp:2958 unetbootin.cpp:2973
 #, fuzzy
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2842
+#: unetbootin.cpp:2988
 #, fuzzy
 msgid "<b>Copied:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2933
+#: unetbootin.cpp:3079
 #, fuzzy
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2937
+#: unetbootin.cpp:3083
 #, fuzzy
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3210
+#: unetbootin.cpp:3357
 #, fuzzy
 msgid "%1 not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3211
+#: unetbootin.cpp:3358
 #, fuzzy
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
@@ -1143,26 +1211,45 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3532
+#: unetbootin.cpp:5127
+#, fuzzy
+msgid ""
+"Please turn off Secure Boot and BitLocker before proceed to installation."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5143 unetbootin.cpp:5182
+#, fuzzy
+msgid "Please turn off Secure Boot before proceed to installation."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5159
+#, fuzzy
+msgid "Please turn off BitLocker before proceed to installation"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5198
 #, fuzzy
 msgid "Select a high capacity usb drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3533
+#: unetbootin.cpp:5199
 #, fuzzy
-#| msgid "The usb drive capacity is less then 8GB!"
-msgid "The USB drive capacity is less then 8GB!"
+#| msgid "The USB drive capacity is less then 8GB!"
+msgid "The USB drive capacity must be larger than 8 GB."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3549
+#: unetbootin.cpp:5216 unetbootin.cpp:5380
 #, fuzzy
 msgid "Information"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3550
+#: unetbootin.cpp:5217
 #, fuzzy
 msgid ""
 "All the data on your USB flash drive will be erased. Please backup your data "
@@ -1170,85 +1257,163 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3565 unetbootin.cpp:3797
+#: unetbootin.cpp:5233
+#, fuzzy
+#| msgid ""
+#| "Please backup the data before proceed. ALL the data on the UBS flash "
+#| "drive will be erased during installation.  Click \"Ok\" to proceed the "
+#| "installation."
+msgid ""
+"Remix OS has been already installed on this USB flash drive. To reinstall "
+"it, would you like to ERASE all the existing data? "
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5381
+#, fuzzy
+msgid ""
+"User data may not be compatible with a different version of Remix OS. To "
+"reinstall a different version of Remix OS, erasing the old user data is "
+"recommended.\n"
+"Would you like to ERASE the old user data on your flash drive? "
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5406 unetbootin.cpp:5422 unetbootin.cpp:5482
+#: unetbootin.cpp:5493
+#, fuzzy
+msgid "Creating data image return failed.(%1)"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5412
+#, fuzzy
+msgid ""
+"There is not enough space available on the disk to complete the installation."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5452
+#, fuzzy
+msgid "System size"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5464
+#, fuzzy
+msgid ""
+"The file system of the hard disk you selected is not supported. The file "
+"systems supported are FAT32, exFAT and NTFS."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5471
+#, fuzzy
+msgid "Installation on %1 format hard disk will take a while. Please wait..."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:5473
+#, fuzzy
+msgid "Message"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1041 unetbootin.cpp:5126 unetbootin.cpp:5142
+#: unetbootin.cpp:5158 unetbootin.cpp:5181 unetbootin.cpp:5248
+#: unetbootin.cpp:5406 unetbootin.cpp:5412 unetbootin.cpp:5422
+#: unetbootin.cpp:5464 unetbootin.cpp:5482 unetbootin.cpp:5493
 #, fuzzy
 msgid "Error"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3566 unetbootin.cpp:3798
+#: unetbootin.cpp:1042 unetbootin.cpp:5249
 #, fuzzy
-msgid "It is failed to create a multiple partition in the USB drive."
+#| msgid "It is failed to create a multiple partition in the USB drive."
+msgid "Fail to create a multiple partitions in the USB flash drive."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3579
+#: unetbootin.cpp:3668
 #, fuzzy
 msgid "(Current)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3580
+#: unetbootin.cpp:3669
 #, fuzzy
 msgid "(Done)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3792
+#: unetbootin.cpp:1036
 #, fuzzy
 msgid "(failed)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3898
+#: unetbootin.cpp:3963
 #, fuzzy
 msgid "Configuring grub2 on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3910
+#: unetbootin.cpp:3975
 #, fuzzy
 msgid "Configuring grldr on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3938
+#: unetbootin.cpp:4003
 #, fuzzy
 msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4248
+#: unetbootin.cpp:4160
+#, fuzzy
+msgid "Installation Failed"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4161
+#, fuzzy
+msgid "Installation failed. Please restart your device and try install again"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4353
 #, fuzzy
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4283
+#: unetbootin.cpp:4388
 #, fuzzy
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4448
+#: unetbootin.cpp:4553
 #, fuzzy
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4453
+#: unetbootin.cpp:4558
 #, fuzzy
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4498
+#: unetbootin.cpp:4603
 #, fuzzy
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4503
+#: unetbootin.cpp:4608
 #, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
@@ -1256,7 +1421,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4506
+#: unetbootin.cpp:4611
 #, fuzzy
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
@@ -1501,25 +1666,25 @@ msgid "&Options:"
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:160
+#: unetbootin.cpp:4825
 #, fuzzy
 msgid "Uninstallation Complete"
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:161
+#: unetbootin.cpp:4826
 #, fuzzy
 msgid "%1 has been uninstalled."
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:326
+#: main.cpp:179
 #, fuzzy
 msgid "Must run as root"
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:328
+#: main.cpp:181
 #, fuzzy
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
@@ -1527,19 +1692,19 @@ msgid ""
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:366 main.cpp:385
+#: main.cpp:213 unetbootin.cpp:4880
 #, fuzzy
 msgid "%1 Uninstaller"
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:367
+#: unetbootin.cpp:4881
 #, fuzzy
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr ""
 
 #. ts-context uninstaller
-#: main.cpp:386
+#: main.cpp:214
 #, fuzzy
 msgid "%1 is not installed."
 msgstr ""
