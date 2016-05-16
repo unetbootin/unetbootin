@@ -5,9 +5,11 @@ then
 mkdir release
 fi
 
+qtmacd="$(pwd)/qt4-mac"
+
 #lupdate unetbootin.pro
-lrelease unetbootin.pro
-qmake -config release -spec macx-g++
+$qtmacd/bin/lrelease unetbootin.pro
+./qmake-mac
 make
 ./fix-unetbootin-frameworkpaths.rb
 mv unetbootin.app unetbootin-old.app
