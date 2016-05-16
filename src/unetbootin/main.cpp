@@ -293,13 +293,21 @@ int main(int argc, char **argv)
             argsconc += "\"rootcheck=no\"";
             argsconcSingleQuote += "'rootcheck=no'";
 #ifdef Q_OS_LINUX
-			QString gksulocation = checkforgraphicalsu("gksu");
             QString gksuarg1;
             gksuarg1 += QString("bash -c 'QT_X11_NO_MITSHM=1 ");
             gksuarg1 += QString("%1 %2").arg(app.applicationFilePath()).arg(argsconc);
             gksuarg1 += QString("'");
             QStringList gksuargs;
             gksuargs.append(gksuarg1);
+
+            QString pkexeclocation = checkforgraphicalsu("pkexec");
+            if (pkexeclocation != "REQCNOTFOUND" && app.applicationFilePath() == "/usr/bin/unetbootin" && QFile::exists("/usr/share/polkit-1/actions/org.unetbootin.pkexec.unetbootin.policy"))
+            {
+                //QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
+                QProcess::startDetached(QString("%1 %2 %3").arg(pkexeclocation).arg(app.applicationFilePath()).arg(argsconc));
+                return 0;
+            }
+            QString gksulocation = checkforgraphicalsu("gksu");
 			if (gksulocation != "REQCNOTFOUND")
 			{
                 //QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
