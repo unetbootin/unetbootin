@@ -300,6 +300,7 @@ int main(int argc, char **argv)
             QStringList gksuargs;
             gksuargs.append(gksuarg1);
 
+            /*
             QString pkexeclocation = checkforgraphicalsu("pkexec");
             if (pkexeclocation != "REQCNOTFOUND" && app.applicationFilePath() == "/usr/bin/unetbootin" && QFile::exists("/usr/share/polkit-1/actions/org.unetbootin.pkexec.unetbootin.policy"))
             {
@@ -307,6 +308,7 @@ int main(int argc, char **argv)
                 QProcess::startDetached(QString("%1 %2 %3").arg(pkexeclocation).arg(app.applicationFilePath()).arg(argsconc));
                 return 0;
             }
+            */
             QString gksulocation = checkforgraphicalsu("gksu");
 			if (gksulocation != "REQCNOTFOUND")
 			{
