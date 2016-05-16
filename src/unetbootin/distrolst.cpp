@@ -11,13 +11,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define debianrelnamereplace \
 	relname \
 	.replace("unstable", "sid") \
-    .replace("testing", "jessie") \
-    .replace("stable", "wheezy");
+    .replace("testing", "stretch") \
+    .replace("stable", "jessie");
 #endif
 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+    .replace("16.10", "yakkety") \
+    .replace("16.04", "xenial") \
     .replace("15.10", "wily") \
     .replace("15.04", "vivid") \
     .replace("14.10", "utopic") \
