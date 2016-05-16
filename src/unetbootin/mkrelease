@@ -6,6 +6,7 @@ git push origin master --tags
 rsync -e ssh release/unetbootin-source-$revn.tar.gz gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
 rsync -e ssh release/unetbootin-source-$revn.zip gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
 rsync -e ssh release/unetbootin-linux-$revn.bin gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
+rsync -e ssh release/unetbootin-linux64-$revn.bin gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
 rsync -e ssh release/unetbootin-windows-$revn.exe gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
 rsync -e ssh release/unetbootin-mac-$revn.zip gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
 

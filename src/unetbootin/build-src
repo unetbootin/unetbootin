@@ -7,6 +7,6 @@ zip release/unetbootin-source-$rvern.zip README.TXT $(./vcs-ls)
 cp unetbootin.pro unetbootin-pro.bak
 cat unetbootin-pro.bak | grep -v RESOURCES > unetbootin.pro
 echo "DEFINES += NOSTATIC" >> unetbootin.pro
-tar -cvzf release/unetbootin-source-$rvern.tar.gz $(./vcs-ls | grep '\.cpp$') $(./vcs-ls | grep '\.h$') $(./vcs-ls | grep '\.ui$') $(./vcs-ls | grep '\.pro$') $(./vcs-ls | grep '\.ts$') $(./vcs-ls | grep '\.png$' | grep 'unetbootin_') $(./vcs-ls | grep '\.svg$') unetbootin.desktop build-nostatic vcs-revno vcs-name INSTALL README.TXT
+tar -cvzf release/unetbootin-source-$rvern.tar.gz $(./vcs-ls | grep '\.cpp$') $(./vcs-ls | grep '\.h$') $(./vcs-ls | grep '\.ui$') $(./vcs-ls | grep '\.pro$') $(./vcs-ls | grep '\.ts$') $(./vcs-ls | grep '\.png$' | grep 'unetbootin_') $(./vcs-ls | grep '\.svg$') unetbootin.desktop unetbootin.xpm org.unetbootin.pkexec.unetbootin.policy build-nostatic vcs-revno vcs-name INSTALL README.TXT
 mv unetbootin-pro.bak unetbootin.pro
 

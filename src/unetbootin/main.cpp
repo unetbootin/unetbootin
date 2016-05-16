@@ -294,34 +294,44 @@ int main(int argc, char **argv)
             argsconcSingleQuote += "'rootcheck=no'";
 #ifdef Q_OS_LINUX
 			QString gksulocation = checkforgraphicalsu("gksu");
+            QString gksuarg1;
+            gksuarg1 += QString("bash -c 'QT_X11_NO_MITSHM=1 ");
+            gksuarg1 += QString("%1 %2").arg(app.applicationFilePath()).arg(argsconc);
+            gksuarg1 += QString("'");
+            QStringList gksuargs;
+            gksuargs.append(gksuarg1);
 			if (gksulocation != "REQCNOTFOUND")
 			{
-				QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
+                //QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
+                QProcess::startDetached(gksulocation, gksuargs);
 				return 0;
 			}
 			QString kdesulocation = checkforgraphicalsu("kdesu");
 			if (kdesulocation != "REQCNOTFOUND")
 			{
-				QProcess::startDetached(QString("%1 %2 %3").arg(kdesulocation).arg(app.applicationFilePath()).arg(argsconc));
+                //QProcess::startDetached(QString("%1 %2 %3").arg(kdesulocation).arg(app.applicationFilePath()).arg(argsconc));
+                QProcess::startDetached(kdesulocation, gksuargs);
 				return 0;
 			}
 			QString gnomesulocation = checkforgraphicalsu("gnomesu");
 			if (gnomesulocation != "REQCNOTFOUND")
 			{
-				QProcess::startDetached(QString("%1 %2 %3").arg(gnomesulocation).arg(app.applicationFilePath()).arg(argsconc));
+                //QProcess::startDetached(QString("%1 %2 %3").arg(gnomesulocation).arg(app.applicationFilePath()).arg(argsconc));
+                QProcess::startDetached(gnomesulocation, gksuargs);
 				return 0;
 			}
 			QString kdesudolocation = checkforgraphicalsu("kdesudo");
 			if (kdesudolocation != "REQCNOTFOUND")
 			{
-				QProcess::startDetached(QString("%1 %2 %3").arg(kdesudolocation).arg(app.applicationFilePath()).arg(argsconc));
+                //QProcess::startDetached(QString("%1 %2 %3").arg(kdesudolocation).arg(app.applicationFilePath()).arg(argsconc));
+                QProcess::startDetached(kdesudolocation, gksuargs);
 				return 0;
 			}
 			QMessageBox rootmsgb;
 			rootmsgb.setIcon(QMessageBox::Warning);
 			rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
 			rootmsgb.setTextFormat(Qt::RichText);
-			rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su - -c '%1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
+            rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo QT_X11_NO_MITSHM=1 %1</b><br/>or:<br/><b>su -c 'QT_X11_NO_MITSHM=1 %1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
 			rootmsgb.setStandardButtons(QMessageBox::Ok);
 			switch (rootmsgb.exec())
 			{
