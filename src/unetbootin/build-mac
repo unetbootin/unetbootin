@@ -17,6 +17,12 @@ ditto --arch i386 unetbootin-old.app unetbootin.app
 rm -r unetbootin-old.app
 
 revno=$(./vcs-revno)
-zip -r unetbootin-mac-$revno.zip unetbootin.app
-mv unetbootin-mac-$revno.zip release
-
+#zip -r unetbootin-mac-$revno.zip unetbootin.app
+#mv unetbootin-mac-$revno.zip release
+if [ -d unetbootin-mac-dmg/unetbootin.app ]
+then
+rm -rf unetbootin-mac-dmg/unetbootin.app
+fi
+cp -r unetbootin.app unetbootin-mac-dmg
+hdiutil create -volname UNetbootin -srcfolder unetbootin-mac-dmg -ov -format UDZO release/unetbootin-mac-$revno.dmg
+rm -rf unetbootin-mac-dmg/unetbootin.app
