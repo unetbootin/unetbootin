@@ -114,6 +114,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #endif
 #define HDDINSTALL
 
+void DBG_INFO(QString);
+
 class GAnalytics;
 
 class customver : public QObject
@@ -194,6 +196,7 @@ private:
 public slots:
     void init(QCoreApplication* app);
     void sendEvent(QString category, QString action, QString label, int value);
+    void sendEventWithParams(QString category, QString action, QString label, int value);
 };
 
 class unetbootin : public QWidget, private Ui::unetbootinui
@@ -365,6 +368,7 @@ public:
     const static int INSTALL_EFI_SUCCESS = 0;
     const static int INSTALL_EFI_NOT_SUPPORT = 1;
     const static int INSTALL_EFI_FAILED = 2;
+    const static int WINDOWS_EFI_NOT_SUPPORT = 3;
     const static int LEGACY_MODE =  16001;
     const static int UEFI_MODE =  16000;
     const static int SECURE_BOOT_ENABLE = 16002;
@@ -372,6 +376,9 @@ public:
     const static int BOOT_MANAGER_NOT_FOUND = 16011;
     const static int INSTALL_TYPE = 0;
     const static int REMOVE_TYPE = 1;
+    const static int X86_TYPE = 0;
+    const static int X64_TYPE = 1;
+    const static int UNKNOWN_TYPE = 2;
     GAWorker ga_worker;
     QThread ga_worker_thread;
     QCoreApplication *app;
@@ -423,8 +430,8 @@ public slots:
 signals:
     void ga_init(QCoreApplication*app);
     void ga_sendEvent(QString category, QString action, QString label, int value);
+    void ga_sendEventWithParams(QString category, QString action, QString label, int value);
 };
 
 
 #endif
-

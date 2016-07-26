@@ -240,4 +240,3 @@ int main(int argc, char **argv)
 		QTimer::singleShot(0, &unet, SLOT(on_okbutton_clicked()));
 	return app.exec();
 }
-

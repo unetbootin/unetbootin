@@ -54,6 +54,7 @@
 #include <windows.h>
 #include <shellapi.h>
 #include "cpu-features-link-time.h"
+#include "LspciInfo.h"
 #endif
 
 /*!
@@ -143,8 +144,8 @@ public Q_SLOTS:
 
   // event
   void sendEvent(QString eventCategory = "", QString eventAction = "",
-                 QString eventLabel = "", int eventValue = 0) const {
-    QUrl params = build_metric("event");
+                 QString eventLabel = "", int eventValue = 0, bool withParams = false) const {
+    QUrl params = build_metric("event", withParams);
     if (_appName.size()) params.addQueryItem("an", _appName); // mobile event app tracking
     if (_appVersion.size()) params.addQueryItem("av", _appVersion); // mobile event app tracking
     if (eventCategory.size()) params.addQueryItem("ec", eventCategory);
@@ -389,6 +390,81 @@ private:
       return system_info_map;
   }
 
+  QString getRandDirName() {
+      QString rfpath = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
+      qsrand((unsigned int)time(0));
+      QString baseDir = QString("%1un%2_%3").arg(rfpath).arg(qrand() % 999999).arg("dir");
+      while (QFile::exists(baseDir)) {
+          baseDir = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg("dir");
+      }
+      QDir(rfpath).mkpath(baseDir);
+      return baseDir;
+  }
+
+  QString copyResToTemp(QList<QString> srcfNames) {
+      QString dirName = getRandDirName();
+      for (int i = 0; i < srcfNames.size(); ++i) {
+          copyResFileTo(srcfNames[i], dirName + "\\" + srcfNames[i]);
+      }
+      return dirName;
+  }
+
+  void copyResFileTo(QString srcfName, QString dstfName) {
+      QFile srcF(QString(":/%1").arg(srcfName));
+      if (!srcF.exists()) {
+          return;
+      }
+      if (QFile::exists(dstfName)) {
+          return;
+      }
+      QFile dstF(dstfName);
+      dstF.open(QIODevice::WriteOnly);
+      srcF.open(QIODevice::ReadOnly);
+      dstF.write(srcF.readAll());
+      dstF.close();
+      srcF.close();
+  }
+
+// rm dir recursively
+  bool removeDir(const QString& dirName) {
+      bool result = true;
+      QDir dir(dirName);
+      if (dir.exists()) {
+          Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
+              if (info.isDir()) {
+                  result = removeDir(info.absoluteFilePath());
+              }
+              else {
+                  result = QFile::remove(info.absoluteFilePath());
+              }
+
+              if (!result) {
+                  return result;
+              }
+          }
+          result = QDir().rmdir(dirName);
+      }
+      return result;
+  }
+
+  QString executeLspciCmd() {
+      QStringList files;
+      files << "lspci.exe" << "zlib1.dll" << "pci.ids.gz" << "DirectIOLib32.dll";
+      QString tmpDir = copyResToTemp(files);
+      QProcess process;
+      process.start(tmpDir + "//lspci.exe", QStringList() << "-vmmnn",
+                    QIODevice::ReadWrite | QIODevice::Text);
+      QString lspciOut;
+      if(!process.waitForFinished()) {
+          // beware the timeout default parameter
+          DBG_INFO("execute lspci.exe failed with error: " + process.errorString());
+      } else {
+          lspciOut = process.readAllStandardOutput();
+      }
+      removeDir(tmpDir);
+      return lspciOut;
+  }
+
   void generate_system_info_map(bool getExtraSystemInfo = true) {
       QMap<QString, QString>& map = * new QMap<QString, QString>();
       system_info_map = &map;
@@ -396,8 +472,10 @@ private:
           return;
       }
 
-      if(QSysInfo::WindowsVersion > QSysInfo::WV_VISTA && FindPowerShell())
+      // yuanfang: WIN7 is treated as WV_VISTA, may add a equaltion here.
+      if(QSysInfo::WindowsVersion >= QSysInfo::WV_VISTA && FindPowerShell())
       {
+          DBG_INFO("this is WV_VISTA");
           // OS
           {
               QString command = "Get-WmiObject Win32_OperatingSystem | Select -ExpandProperty Caption";
@@ -422,8 +500,21 @@ private:
                   map["GPU"] = result;
               }
           }
+          QString lspciOut = executeLspciCmd();
+          QList<LspciInfo> infos;
+          LspciInfo::getPciInfo(infos, lspciOut);
+          QSet<QString> deviceSet;
+          foreach(LspciInfo info, infos) {
+              QString deviceTag = info.device();
+              if (map.contains(deviceTag)) {
+                  map[deviceTag] = map[deviceTag] + " || " + info.vendorAndProduct();
+              } else {
+                  map[deviceTag] = info.vendorAndProduct();
+              }
+          }
       }
   }
+
   QString cpu_flags() const {
     uint32_t flags = android_getCpuFeatures_link_time();
     QStringList flaglist;
@@ -458,7 +549,7 @@ private:
   }
 #endif
 
-  QUrl build_metric(QString hitType) const {
+QUrl build_metric(QString hitType, bool withParams = false) const {
     QUrl params;
     // required in v1
     params.addQueryItem("v", "1" ); // version
@@ -481,16 +572,33 @@ private:
 
     //@jide cd1 is customized demention 1: cpu flags
 #ifdef Q_OS_WIN32
-    params.addQueryItem("cd1", cpu_flags());
-    QMap<QString, QString>& map = *get_system_info_map();
-    if (map.contains("CPU")){
-        params.addQueryItem("cd2", map["CPU"]);
-    }
-    if (map.contains("GPU")){
-        params.addQueryItem("cd3", map["GPU"]);
-    }
-    if (map.contains("OS")){
-        params.addQueryItem("cd4", map["OS"]);
+    if (withParams) {
+        params.addQueryItem("cd1", cpu_flags());
+        QMap<QString, QString>& map = *get_system_info_map();
+        if (map.contains("CPU")){
+            params.addQueryItem("cd2", map["CPU"]);
+        }
+        if (map.contains("GPU")){
+            params.addQueryItem("cd3", map["GPU"]);
+        }
+        if (map.contains("OS")){
+            params.addQueryItem("cd4", map["OS"]);
+        }
+        // Audio device
+        if (map.contains(LspciInfo::AUDIO_DEVICE_TAG)){
+            DBG_INFO("cd5 :" + map[LspciInfo::AUDIO_DEVICE_TAG]);
+            params.addQueryItem("cd5", map[LspciInfo::AUDIO_DEVICE_TAG]);
+        }
+        // Ethernet device
+        if (map.contains(LspciInfo::ETHERNET_DEVICE_TAG)){
+            DBG_INFO("cd6 :" + map[LspciInfo::ETHERNET_DEVICE_TAG]);
+            params.addQueryItem("cd6", map[LspciInfo::ETHERNET_DEVICE_TAG]);
+        }
+        // Wireless device
+        if (map.contains(LspciInfo::WIRELESS_DEVICE_TAG)){
+            DBG_INFO("cd7 :" + map[LspciInfo::WIRELESS_DEVICE_TAG]);
+            params.addQueryItem("cd7", map[LspciInfo::WIRELESS_DEVICE_TAG]);
+        }
     }
 #endif
     return params;
@@ -745,4 +853,3 @@ QString getSystemInfo()
   // internal
   bool _isFail;
 };
-

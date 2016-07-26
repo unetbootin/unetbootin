@@ -191,23 +191,23 @@ void RemixOSUDisk::GetVolumeSize()
      */
     LONGLONG GB = 1073741824LL;
     m_volumeSize.MBRTable = 1048576LL;
-    m_volumeSize.SystemVolume = 3*GB;
+    m_volumeSize.SystemVolume = 5*GB;
 
     m_volumeSize.ShareVolume = m_diskGeometryEx.DiskSize.QuadPart - m_volumeSize.MBRTable - m_volumeSize.SystemVolume;
 
-    if (m_diskGeometryEx.DiskSize.QuadPart <= 11*GB)
+    if (m_diskGeometryEx.DiskSize.QuadPart <= (8*GB + m_volumeSize.SystemVolume))
     {
-        m_volumeSize.DataVolume = 3.5*GB;
+        m_volumeSize.DataVolume = 1.5*GB;
     }
-    else if (m_diskGeometryEx.DiskSize.QuadPart <= 19*GB)
+    else if (m_diskGeometryEx.DiskSize.QuadPart <= (16*GB + m_volumeSize.SystemVolume))
     {
         m_volumeSize.DataVolume = 8*GB;
     }
-    else if (m_diskGeometryEx.DiskSize.QuadPart <= 35*GB)
+    else if (m_diskGeometryEx.DiskSize.QuadPart <= (32*GB + m_volumeSize.SystemVolume))
     {
         m_volumeSize.DataVolume = 16*GB;
     }
-    else if (m_diskGeometryEx.DiskSize.QuadPart <= 67*GB)
+    else if (m_diskGeometryEx.DiskSize.QuadPart <= (64*GB + m_volumeSize.SystemVolume))
     {
         m_volumeSize.DataVolume = 32*GB;
     }

@@ -207,6 +207,11 @@ void GAWorker::sendEvent(QString category, QString action, QString label, int va
     analytics->sendEvent(category, action, label, value);
 }
 
+void GAWorker::sendEventWithParams(QString category, QString action, QString label, int value) {
+    analytics->sendEvent(category, action, label, value, true);
+}
+
+
 unetbootin::unetbootin(QWidget *parent, QCoreApplication* app)
 	: QWidget(parent)
 {
@@ -219,6 +224,7 @@ unetbootin::unetbootin(QWidget *parent, QCoreApplication* app)
     ga_worker.moveToThread(&ga_worker_thread);
     connect(this, SIGNAL(ga_init(QCoreApplication*)), &ga_worker, SLOT(init(QCoreApplication*)));
     connect(this, SIGNAL(ga_sendEvent(QString, QString, QString, int)), &ga_worker, SLOT(sendEvent(QString, QString, QString, int)));
+    connect(this, SIGNAL(ga_sendEventWithParams(QString, QString, QString, int)), &ga_worker, SLOT(sendEventWithParams(QString, QString, QString, int)));
     this->app = app;
 
     emit ga_init(app);
@@ -1520,7 +1526,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //		if (!grubpcfg.isEmpty())
 //			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "grubenv" << "extlinux.conf" << "grub.cfg";
+    //QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "grubenv" << "extlinux.conf" << "grub.cfg";
+    QStringList syslinuxcfgtypes = QStringList() << "isolinux.cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -4274,6 +4281,11 @@ void unetbootin::runinsthdd()
             QString kernelArgs = QString(extraoptionsPL.second.second.at(i));
             kernelArgs = kernelArgs.replace(QString("SRC="), QString("SRC=") + REMIXOS_HDD_INSTALL_DIR + QString("/"));
 
+            if (kernelArgs.contains("USB_DATA_PARTITION=1") || kernelArgs.contains("DATA_IN_MEM=1"))
+            {
+                //skip /boot/grub.cfg
+                continue;
+            }
 
 			menulstxt.append(QString("\ntitle %1\n"
 			#ifdef Q_OS_WIN32
@@ -4305,39 +4317,54 @@ void unetbootin::runinsthdd()
     //runonce.setValue("RemixOS Uninstaller", QDir::toNativeSeparators(QString("%1%2/UninstallRemixOS.exe").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR)));
     if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
     {
-        emit ga_sendEvent("installation", "install_hdd_configsys", "", 0);
+        emit ga_sendEventWithParams("installation", "install_hdd_configsys", "", 0);
         configsysEdit();
     }
     else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
     {
-        emit ga_sendEvent("installation", "install_hdd_bootini", "", 0);
+        emit ga_sendEventWithParams("installation", "install_hdd_bootini", "", 0);
         bootiniEdit();
     }
     else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA) //|| QSysInfo::WindowsVersion == QSysInfo::WV_WINDOWS7) // TODO when upgrading to latest Qt
     {
         int result = installEfi();
-        if (result == INSTALL_EFI_SUCCESS) {
-            emit ga_sendEvent("installation", "install_hdd_efi", "", 0);
-        } else if (result == INSTALL_EFI_NOT_SUPPORT) {
-            emit ga_sendEvent("installation", "install_hdd_bcd", "", 0);
+        if (result == INSTALL_EFI_SUCCESS)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_efi", "", 0);
+        } else if (result == INSTALL_EFI_NOT_SUPPORT)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_bcd", "", 0);
             vistabcdEdit();
-        } else if (result == INSTALL_EFI_FAILED) {
-            emit ga_sendEvent("installation", "install_hdd_efi", "failed", 0);
+        } else if (result == INSTALL_EFI_FAILED)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_efi", "failed", 0);
+            installFailed = true;
+        } else if (result == WINDOWS_EFI_NOT_SUPPORT)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_efi_not_support", "failed", 0);
             installFailed = true;
         }
     }
     else
     {
         int result = installEfi();
-        if (result == INSTALL_EFI_SUCCESS) {
-            emit ga_sendEvent("installation", "install_hdd_efi", "OK", 0);
-        } else if (result == INSTALL_EFI_NOT_SUPPORT) {
-            emit ga_sendEvent("installation", "install_hdd_others", "", 0);
+        if (result == INSTALL_EFI_SUCCESS)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_efi", "OK", 0);
+        } else if (result == INSTALL_EFI_NOT_SUPPORT)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_others", "", 0);
             configsysEdit();
             bootiniEdit();
             vistabcdEdit();
-        } else if (result == INSTALL_EFI_FAILED) {
-            emit ga_sendEvent("installation", "install_hdd_efi", "failed", 0);
+        } else if (result == INSTALL_EFI_FAILED)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_efi", "failed", 0);
+            installFailed = true;
+        }
+        else if (result == WINDOWS_EFI_NOT_SUPPORT)
+        {
+            emit ga_sendEventWithParams("installation", "install_hdd_efi_not_support", "failed", 0);
             installFailed = true;
         }
     }
@@ -5075,6 +5102,7 @@ int unetbootin::checkInstall(bool isReinstall)
             else
             {
                 DBG_INFO(QString("Couldn't find uninstall program. %1").arg(uninstCommand));
+                uninstallEfi();
             }
         }
         else
@@ -5187,22 +5215,69 @@ int unetbootin::installEfi() {
         return INSTALL_EFI_FAILED;
     }
 
+    //read arch of Remix OS installation iso
+    int arch = UNKNOWN_TYPE;
+    QSettings settings(QString("%1/%2/%3").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR).arg("info.ini"),
+                       QSettings::IniFormat);
+    QString strArch = settings.value("arch").toString();
+    DBG_INFO(strArch);
+    if (strArch == "x86")
+    {
+        arch = X86_TYPE;
+    }
+    else if (strArch == "x86_64")
+    {
+        arch = X64_TYPE;
+    }
+    DBG_INFO(QString("arch=%1").arg(arch));
+
+    //read system type of Windows OS.
+    bool warch64 = false;
+    if (!QProcess::systemEnvironment().filter("ProgramW6432").isEmpty())
+    {
+        warch64 = true;
+    }
+
     QString srcBaseDir = QString("%1/%2/%3").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR).arg("efi/RemixOS/");
     DBG_INFO(QString("srcBaseDir %1").arg(srcBaseDir));
     QString targetBaseDir = QString("%1/%2").arg(drive).arg("efi/RemixOS/");
     DBG_INFO(QString("targetBaseDir %1").arg(targetBaseDir));
-	QStringList efiFileList = QStringList()
-        << "grub.cfg"
-        << "bootx64.efi"
-        << "bootia32.efi"
-        << "gcdia32.efi"
-        << "grubx64.efi"
-        << "exfat32.mod"
-        << "exfat64.mod"
-        << "ntfs32.mod"
-        << "ntfs64.mod";
     QDir destDir(targetBaseDir);
     destDir.mkpath(".");
+
+    QStringList efiFileList = QStringList();
+    QString destGrub = QDir::toNativeSeparators(QString("%1/grub.cfg").arg(targetBaseDir));
+    QString srcGrub = "";
+    if (warch64)
+    {
+        efiFileList.append("bootx64.efi");
+        efiFileList.append("grubx64.efi");
+        efiFileList.append("exfat64.mod");
+        efiFileList.append("ntfs64.mod");
+        srcGrub = QDir::toNativeSeparators(QString("%1/grub64.cfg").arg(srcBaseDir));
+    }
+    else
+    {
+        if (X64_TYPE == arch)
+        {
+            unetbootin::callexternapp(efitoolcommand, QString("--type unmount --drive %1").arg(drive)).toInt();
+            return WINDOWS_EFI_NOT_SUPPORT;
+        }
+        efiFileList.append("bootia32.efi");
+        efiFileList.append("exfat32.mod");
+        efiFileList.append("ntfs32.mod");
+        srcGrub = QDir::toNativeSeparators(QString("%1/grub32.cfg").arg(srcBaseDir));
+    }
+
+    QFile destGrubFile(destGrub);
+    if (destGrubFile.exists()) {
+        destGrubFile.remove();
+    }
+    if (!QFile::copy(srcGrub,destGrub)) {
+        DBG_INFO(QString("copy %1 -> %2 failed").arg(srcGrub).arg(destGrub));
+        return INSTALL_EFI_FAILED;
+    }
+
     for (int i = 0; i < efiFileList.size(); i++) {
         QString src = QDir::toNativeSeparators(QString("%1/%2").arg(srcBaseDir).arg(efiFileList.at(i)));
         QString dest = QDir::toNativeSeparators(QString("%1/%2").arg(targetBaseDir).arg(efiFileList.at(i)));
@@ -5338,6 +5413,7 @@ bool unetbootin::preinstallationCheckHDD(const QString &targetDrive)
         DBG_INFO(QString("skip preinstallationCheckHDD, version:%1").arg(QSysInfo::WindowsVersion));
         return true;
     }
+
     if("" == systemDrive)
     {
         systemDrive = targetDrive;

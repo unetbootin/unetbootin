@@ -5,6 +5,7 @@ INCLUDEPATH += .
 CONFIG += release \
     static
 HEADERS += unetbootin.h \
+    LspciInfo.h \
     remixosudisk.h \
     ganalytics.hpp \
     dataimageconfigdialog.h \
@@ -15,6 +16,7 @@ FORMS += unetbootin.ui \
     dataimageconfigdialog.ui \
     waitingdialog.ui
 SOURCES += main.cpp \
+    LspciInfo.cpp \
     unetbootin.cpp \
     distrolst.cpp \
     distrover.cpp \
