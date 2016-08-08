@@ -12,5 +12,8 @@
         <file>ubnldr</file>
         <file>ubnldr.exe</file>
         <file>ubnldr.mbr</file>
+        <file>jahelper.exe</file>
+        <file>Google.Protobuf.dll</file>
+        <file>Google.Protobuf.xml</file>
     </qresource>
 </RCC>

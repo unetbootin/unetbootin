@@ -191,7 +191,7 @@ public slots:
 
 class GAWorker : public QObject {
     Q_OBJECT
-private:
+public:
     GAnalytics* analytics;
 public slots:
     void init(QCoreApplication* app);

@@ -391,7 +391,7 @@ Would you like to ERASE the old user data on your device? </source>
     </message>
     <message>
         <source>Installation on %1 format hard disk will take a while. Please wait...</source>
-        <translation type="obsolete">安装在 %1 格式的硬盘需要一些时间，请稍后...</translation>
+        <translation type="obsolete">安装在 %1 格式的硬盘需要一些时间，请稍候...</translation>
     </message>
     <message>
         <source>Message</source>
@@ -937,7 +937,7 @@ Would you like to ERASE the old user data on your flash drive? </oldsource>
     <message>
         <location filename="unetbootin.cpp" line="5719"/>
         <source>Installation on %1 format hard disk will take a while. Please wait...</source>
-        <translation type="unfinished">安装在 %1 格式的硬盘需要一些时间，请稍后...</translation>
+        <translation type="unfinished">安装在 %1 格式的硬盘需要一些时间，请稍候...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="5721"/>

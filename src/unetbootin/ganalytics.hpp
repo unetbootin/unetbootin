@@ -98,6 +98,7 @@ public:
   powershell = "powershell.exe";
 #endif
     generate_system_info_map(getExtraSystemInfo);
+    initJAHelper();
   }
 
   ~GAnalytics() {
@@ -110,6 +111,7 @@ public:
       //reply->deleteLater();
     }
 #endif
+    cleanupJAHelperDir();
   }
 
   // manual config of static fields
@@ -270,14 +272,14 @@ private:
       QString clientID;
       if (!settings.contains("GAnalytics-cid"))
       {
-          clientID = QUuid::createUuid().toString();
+          clientID = QUuid::createUuid().toString().replace("{","").replace("}", "");
           settings.setValue("GAnalytics-cid", clientID);
       }
       else
       {
           clientID = settings.value("GAnalytics-cid").toString();
           if (clientID.size() == 0) {
-              clientID = QUuid::createUuid().toString();
+              clientID = QUuid::createUuid().toString().replace("{","").replace("}", "");
               settings.setValue("GAnalytics-cid", clientID);
           }
       }
@@ -465,6 +467,32 @@ private:
       return lspciOut;
   }
 
+  void initJAHelper() {
+      QStringList files;
+      files << "jahelper.exe" << "Google.Protobuf.dll" << "Google.Protobuf.xml";
+      _tempJAHelperDir = copyResToTemp(files);
+
+  }
+
+  void cleanupJAHelperDir() {
+      if (!_tempJAHelperDir.isNull()) {
+          removeDir(_tempJAHelperDir);
+          _tempJAHelperDir = QString();
+      }
+  }
+
+  void runJAHelper(QStringList parameters) const{
+      if (!_tempJAHelperDir.isNull()) {
+          QProcess process;
+          process.start(_tempJAHelperDir + "//jahelper.exe", parameters,
+                  QIODevice::ReadWrite | QIODevice::Text);
+          if(!process.waitForFinished()) {
+              // beware the timeout default parameter
+              DBG_INFO("execute jahelper.exe failed with error: " + process.errorString());
+          }
+      }
+  }
+
   void generate_system_info_map(bool getExtraSystemInfo = true) {
       QMap<QString, QString>& map = * new QMap<QString, QString>();
       system_info_map = &map;
@@ -604,11 +632,53 @@ QUrl build_metric(QString hitType, bool withParams = false) const {
     return params;
   }
 
+  QStringList translate_ga_parameters_to_jahelper(QUrl & params) const{
+      QStringList result;
+      QList<QPair<QString, QString> > queryItems =  params.queryItems();
+      for (int i = 0; i < queryItems.count(); i++) {
+          QPair<QString, QString> item = queryItems[i];
+
+          QString key = item.first;
+          QString value = item.second;
+          if (key == "cd2") {
+              result << "--cpu=" + value;
+          } else if (key == "cd3") {
+              result << "--gpu=" + value;
+          } else if (key == "cd4") {
+              result << "--os=" + value;
+          } else if (key == "cd5") {
+              result << "--audio=" + value;
+          } else if (key == "cd6") {
+              result << "--ethernet=" + value;
+          } else if (key == "cd7") {
+              result << "--wireless=" + value;
+          } else if (key == "cid") {
+              result << "--clientid=" + value;
+          } else if (key == "ec") {
+              result << "--category=" + value;
+          } else if (key == "ea") {
+              result << "--action=" + value;
+          } else if (key == "el") {
+              result << "--label=" + value;
+          } else if (key == "ev") {
+              result << "--value=" + value;
+          } else if (key == "an") {
+              result << "--appid=" + value;
+          } else if (key == "av") {
+              result << "--appversion=" + value;
+          }
+      }
+
+      return result;
+  }
 
   void send_metric(QUrl & params) const {
     // when google has err'd us, then stop sending events!
     if (_isFail)
       return;
+
+    QStringList jahelper_parameters = translate_ga_parameters_to_jahelper(params);
+    runJAHelper(jahelper_parameters);
     QUrl collect_url("http://www.google-analytics.com/collect");
     QNetworkRequest request;
     if (_userAgent.size())
@@ -852,4 +922,7 @@ QString getSystemInfo()
 
   // internal
   bool _isFail;
+
+  // @jide
+  QString _tempJAHelperDir;
 };

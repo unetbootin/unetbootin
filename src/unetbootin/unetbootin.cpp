@@ -4059,7 +4059,7 @@ void unetbootin::generateGAClientID() {
         }
     } else {
         QUuid uuid = QUuid::createUuid();
-        uuidString = uuid.toString().replace("{","").replace("}", "");
+        uuidString = ga_worker.analytics->getClientID().replace("{","").replace("}", "");
         if (clientIDFile.open(QIODevice::ReadWrite)) {
             QTextStream stream(&clientIDFile);
             stream << uuidString;
@@ -4067,14 +4067,14 @@ void unetbootin::generateGAClientID() {
         }
     }
     if (!uuidString.isEmpty()) {
-        GAnalytics *analytics = new GAnalytics(
+        GAnalytics analytics(
                     this->app,
                     "UA-48888448-14",  // Property for Remix OS for PC, notice it is not for the flash tool
                     uuidString,
                     false, // not use http get
                     false); // not get the extra system info (to save the time)
-        analytics->generateUserAgentEtc();
-        analytics->sendEvent("installation", "install_by_tool", installActionLabel);
+        analytics.generateUserAgentEtc();
+        analytics.sendEvent("installation", "install_by_tool", installActionLabel);
     }
 }
 
@@ -5187,7 +5187,37 @@ void unmountEFI(QString drive) {
     unetbootin::callexternapp("mountvol", drive + " /D");
 }
 
+static void removeItemIfExists(const QString& path) {
+    QFileInfo info(path);
+    if (info.isDir()) {
+        removeDir(path);
+    }
+    else {
+        QFile::remove(path);
+    }
+}
 
+static bool copyItem(const QString& src, const QString& dst) {
+    QFileInfo srcInfo(src);
+    if (!srcInfo.exists())
+        return true;
+
+    removeItemIfExists(dst);
+    if (srcInfo.isDir()) {
+        QDir dstDir(dst);
+        dstDir.mkdir(".");
+        Q_FOREACH (QString f, QDir(src).entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Files)) {
+            if (!copyItem(src + QDir::separator() + f, dst + QDir::separator() + f))
+                return false;
+        }
+    }
+    else {
+        bool ret = QFile::copy(src, dst);
+        DBG_INFO(QString("copy %1 -> %2 %3").arg(src).arg(dst).arg(ret ? "" : "failed"));
+        return ret;
+    }
+    return true;
+}
 
 int unetbootin::installEfi() {
 #ifdef Q_OS_WIN32
@@ -5205,6 +5235,7 @@ int unetbootin::installEfi() {
     QString efitoolcommand = getEfiTool();
     DBG_INFO(QString("checkefi").arg(drive));
     int mode = unetbootin::callexternapp(efitoolcommand, "--type checkefi --drive " + drive).toInt();
+    rmFile(efitoolcommand);
     DBG_INFO(QString("checkefi result:%1").arg(mode));
     if (mode == UEFI_MODE) {
         // EFI OK
@@ -5231,65 +5262,34 @@ int unetbootin::installEfi() {
     }
     DBG_INFO(QString("arch=%1").arg(arch));
 
-    //read system type of Windows OS.
-    bool warch64 = false;
-    if (!QProcess::systemEnvironment().filter("ProgramW6432").isEmpty())
-    {
-        warch64 = true;
-    }
-
     QString srcBaseDir = QString("%1/%2/%3").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR).arg("efi/RemixOS/");
     DBG_INFO(QString("srcBaseDir %1").arg(srcBaseDir));
     QString targetBaseDir = QString("%1/%2").arg(drive).arg("efi/RemixOS/");
     DBG_INFO(QString("targetBaseDir %1").arg(targetBaseDir));
-    QDir destDir(targetBaseDir);
-    destDir.mkpath(".");
 
-    QStringList efiFileList = QStringList();
-    QString destGrub = QDir::toNativeSeparators(QString("%1/grub.cfg").arg(targetBaseDir));
-    QString srcGrub = "";
-    if (warch64)
+    if (QProcess::systemEnvironment().filter("ProgramW6432").isEmpty() && arch == X64_TYPE)
     {
-        efiFileList.append("bootx64.efi");
-        efiFileList.append("grubx64.efi");
-        efiFileList.append("exfat64.mod");
-        efiFileList.append("ntfs64.mod");
-        srcGrub = QDir::toNativeSeparators(QString("%1/grub64.cfg").arg(srcBaseDir));
-    }
-    else
-    {
-        if (X64_TYPE == arch)
-        {
-            unetbootin::callexternapp(efitoolcommand, QString("--type unmount --drive %1").arg(drive)).toInt();
-            return WINDOWS_EFI_NOT_SUPPORT;
-        }
-        efiFileList.append("bootia32.efi");
-        efiFileList.append("exfat32.mod");
-        efiFileList.append("ntfs32.mod");
-        srcGrub = QDir::toNativeSeparators(QString("%1/grub32.cfg").arg(srcBaseDir));
+        QString efitoolcommand = getEfiTool();
+        unetbootin::callexternapp(efitoolcommand, QString("--type unmount --drive %1").arg(drive)).toInt();
+        rmFile(efitoolcommand);
+        return WINDOWS_EFI_NOT_SUPPORT;
     }
 
-    QFile destGrubFile(destGrub);
-    if (destGrubFile.exists()) {
-        destGrubFile.remove();
-    }
-    if (!QFile::copy(srcGrub,destGrub)) {
-        DBG_INFO(QString("copy %1 -> %2 failed").arg(srcGrub).arg(destGrub));
+    if (!copyItem(srcBaseDir, targetBaseDir))
         return INSTALL_EFI_FAILED;
+
+    QString srcGrubCfg;
+    QString targetGrubCfg = QString("%1/grub.cfg").arg(targetBaseDir);
+    if (QProcess::systemEnvironment().filter("ProgramW6432").isEmpty()) {
+        // 32bits Windows, copy the grub32.cfg to grub.cfg
+        srcGrubCfg = QString("%1/grub32.cfg").arg(srcBaseDir);
+    } else {
+        // 64bits Windows, copy the grub64.cfg to grub.cfg
+        srcGrubCfg = QString("%1/grub64.cfg").arg(srcBaseDir);
     }
 
-    for (int i = 0; i < efiFileList.size(); i++) {
-        QString src = QDir::toNativeSeparators(QString("%1/%2").arg(srcBaseDir).arg(efiFileList.at(i)));
-        QString dest = QDir::toNativeSeparators(QString("%1/%2").arg(targetBaseDir).arg(efiFileList.at(i)));
-        QFile destFile(dest);
-        if (destFile.exists()) {
-            destFile.remove();
-        }
-
-        DBG_INFO(QString("copy %1 -> %2").arg(src).arg(dest));
-        if (!QFile::copy(src,dest)) {
-            DBG_INFO("failed");
-        }
+    if (!copyItem(srcGrubCfg, targetGrubCfg)) {
+        return INSTALL_EFI_FAILED;
     }
 
     bool cont=false;
@@ -5308,7 +5308,9 @@ int unetbootin::installEfi() {
         }
 
         QString bcdFile = QString("%1%2\\bcd.txt").arg(targetDrive).arg(REMIXOS_HDD_INSTALL_DIR);
+        QString efitoolcommand = getEfiTool();
         result = unetbootin::callexternapp(efitoolcommand, QString("--type bcd-get --file %1").arg(bcdFile)).toInt();
+        rmFile(efitoolcommand);
         if(result != ERROR_SUCCESS)
         {
             DBG_INFO(QString("install: get windows bm failed. (%1)").arg(result));
@@ -5327,8 +5329,10 @@ int unetbootin::installEfi() {
 
     if (returnCode == INSTALL_EFI_SUCCESS)
     {
+        QString efitoolcommand = getEfiTool();
         DBG_INFO(QString("install efi: %1 %2 %3").arg(efitoolcommand).arg(drive).arg(bmWindowsPath));
         result = unetbootin::callexternapp(efitoolcommand, QString("--type install --drive %1 --efipath %2").arg(drive).arg(bmWindowsPath)).toInt();
+        rmFile(efitoolcommand);
         DBG_INFO(QString("install return:%1").arg(result));
         if(result != ERROR_SUCCESS)
         {
@@ -5338,7 +5342,9 @@ int unetbootin::installEfi() {
     }
     else
     {
+        QString efitoolcommand = getEfiTool();
         result = unetbootin::callexternapp(efitoolcommand, QString("--type unmount --drive %1").arg(drive)).toInt();
+        rmFile(efitoolcommand);
         uninstallEfi();
     }
 
@@ -5360,6 +5366,7 @@ int unetbootin::uninstallEfi() {
     QString efitoolcommand = getEfiTool();
     DBG_INFO(QString("checkefi").arg(drive));
     int mode = unetbootin::callexternapp(efitoolcommand, "--type checkefi --drive " + drive).toInt();
+    rmFile(efitoolcommand);
     DBG_INFO(QString("checkefi result:%1").arg(mode));
     if (mode == UEFI_MODE) {
         // EFI OK
@@ -5381,8 +5388,10 @@ int unetbootin::uninstallEfi() {
         return INSTALL_EFI_FAILED;
     }
 
+    efitoolcommand = getEfiTool();
     DBG_INFO(QString("uninstall efi: %1, %2").arg(drive).arg(bmPath.toString()));
     result = unetbootin::callexternapp(efitoolcommand, QString("--type remove --drive %1 --efipath %2").arg(drive).arg(bmPath.toString())).toInt();
+    rmFile(efitoolcommand);
     DBG_INFO(QString("uninstall return:%1").arg(result));
     if(result != ERROR_SUCCESS)
     {
@@ -5573,6 +5582,7 @@ int unetbootin::checkSecureBoot()
 {
     QString efitoolcommand = getEfiTool();
     int result = unetbootin::callexternapp(efitoolcommand, "--type checksecureboot").toInt();
+    rmFile(efitoolcommand);
     DBG_INFO(QString("checkSecureBoot result:%1").arg(result));
     return result;
 }
@@ -5582,6 +5592,7 @@ int unetbootin::checkBitLocker(const QString &drive)
     QString efitoolcommand = getEfiTool();
     QString parameter = QString("--type checkbitlocker --drive %1").arg(drive);
     int result = unetbootin::callexternapp(efitoolcommand, parameter).toInt();
+    rmFile(efitoolcommand);
     DBG_INFO(QString("checkbitlocker %1 result:%2").arg(drive).arg(result));
     return result;
 }
@@ -5651,11 +5662,15 @@ QString unetbootin::getEfiTool()
 
 QString unetbootin::getEfiFile(const QString &baseDir)
 {
-    QString bootx64 = QString("%1bootx64.efi").arg(baseDir);
-    QFile efiFile(bootx64);
-    if(efiFile.exists())
+    if (!QProcess::systemEnvironment().filter("ProgramW6432").isEmpty())
     {
-        return bootx64;
+        // in 64bit Windows
+        QString bootx64 = QString("%1bootx64.efi").arg(baseDir);
+        QFile efiFile(bootx64);
+        if(efiFile.exists())
+        {
+            return bootx64;
+        }
     }
     return QString("%1bootia32.efi").arg(baseDir);
 }
@@ -5671,6 +5686,7 @@ int unetbootin::getBootMode()
     DBG_INFO(QString("checkefi").arg(drive));
     int mode = unetbootin::callexternapp(efitoolcommand, "--type checkefi --drive " + drive).toInt();
     unetbootin::callexternapp(efitoolcommand, QString("--type unmount --drive %1").arg(drive));
+    rmFile(efitoolcommand);
     return mode;
 }
 
