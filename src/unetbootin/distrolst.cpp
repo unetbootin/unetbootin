@@ -200,14 +200,6 @@ if (nameDistro == "xPUD")
 
 if (nameDistro == "Arch Linux")
 {
-	if (isarch64)
-	{
-		cpuarch = "x86_64";
-	}
-	else
-	{
-		cpuarch = "i686";
-	}
 	downloadfile(fileFilterNetDir(QStringList() <<
 	"http://mirrors.kernel.org/archlinux/iso/latest/" <<
 	"http://distro.ibiblio.org/archlinux/iso/latest/" <<
@@ -215,9 +207,7 @@ if (nameDistro == "Arch Linux")
 	, 3072000, 2048576000, QList<QRegExp>() <<
 	QRegExp("^arch", Qt::CaseInsensitive) <<
 	QRegExp("^archlinux", Qt::CaseInsensitive) <<
-	QRegExp(".iso$", Qt::CaseInsensitive) <<
-	QRegExp(cpuarch, Qt::CaseInsensitive) <<
-	QRegExp(relname, Qt::CaseInsensitive)
+	QRegExp(".iso$", Qt::CaseInsensitive)
 	), isotmpf);
 	extractiso(isotmpf);
 }
