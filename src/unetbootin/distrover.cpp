@@ -25,7 +25,7 @@ distroselect->addItem("Arch Linux", (QStringList() << "core" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 	"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 	"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") <<
-"core" << "core_x64" << "netinstall" << "netinstall_x64"));
+"dual"));
 distroselect->addItem("BackTrack", (QStringList() << "5R1-GNOME" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/>"
 	"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
