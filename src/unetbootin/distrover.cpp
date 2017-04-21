@@ -13,6 +13,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 "14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
 "15.10_NetInstall" << "15.10_NetInstall_x64" << "15.10_HdMedia" << "15.10_HdMedia_x64" << "15.10_Live" << "15.10_Live_x64" << \
 "16.04_NetInstall" << "16.04_NetInstall_x64" << "16.04_HdMedia" << "16.04_HdMedia_x64" << "16.04_Live" << "16.04_Live_x64" << \
+"16.10_NetInstall" << "16.10_NetInstall_x64" << "16.10_HdMedia" << "16.10_HdMedia_x64" << "16.10_Live" << "16.10_Live_x64" << \
+"17.04_NetInstall" << "17.04_NetInstall_x64" << "17.04_HdMedia" << "17.04_HdMedia_x64" << "17.04_Live" << "17.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
