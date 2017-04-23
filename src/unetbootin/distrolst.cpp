@@ -1193,7 +1193,7 @@ if (nameDistro == "Zenwalk")
 
 if (nameDistro == "3CX")
 {
-    downloadfile(QString("http://downloads.3cx.com/downloads/3cxpbxiso/debian-8.6.0-amd64-netinst-3cx.iso"), isotmpf);
+    downloadfile(QString("http://unetbootin.sourceforge.net/distros/3CX/pbx_debian_x64.php"), isotmpf);
     extractiso(isotmpf);
 }
 
