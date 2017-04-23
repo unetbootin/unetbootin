@@ -4096,7 +4096,7 @@ void unetbootin::runinstusb()
 			// make active
 			if (sfdiskcommand != "") {
 				// use sfdisk if available
-                callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev).remove("p")));
+				callexternapp(sfdiskcommand, QString("%1 -A %2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev).remove("p")));
 			} else {
 				// use fdisk if sfdisk is unavailable
 				bool isOk = false;
