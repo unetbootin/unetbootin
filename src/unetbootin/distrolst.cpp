@@ -786,17 +786,9 @@ if (nameDistro == "Ophcrack")
 
 if (nameDistro == "Parted Magic")
 {
-	if (relname == "2.1")
-	{
-		downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-kernel", QString("%1ubnkern").arg(targetPath));
-		downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-initrd", QString("%1ubninit").arg(targetPath));
-		kernelOpts = "noapic root=/dev/ram0 init=/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram";	
-	}
-	else
-	{
-        downloadfile("http://partedmagic.com/partedmagic-latest.iso", isotmpf);
-		extractiso(isotmpf);
-	}
+	downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-kernel", QString("%1ubnkern").arg(targetPath));
+	downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-initrd", QString("%1ubninit").arg(targetPath));
+	kernelOpts = "noapic root=/dev/ram0 init=/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram";
 }
 
 if (nameDistro == "PCLinuxOS")

@@ -187,11 +187,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">ht
 	"<b>Description:</b> Ophcrack can crack Windows passwords.<br/>"
 	"<b>Install Notes:</b> Ophcrack is booted and run in live mode; no installation is required to use it.") <<
 "XP-LiveCD-2.0" << "Vista-LiveCD-2.0"));
-distroselect->addItem("Parted Magic", (QStringList() << "Latest_Live" <<
+distroselect->addItem("Parted Magic", (QStringList() << "2.1_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 	"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 	"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
-"2.1_Live" << "Latest_Live"));
+"2.1_Live"));
 //distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
 //unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 //	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
