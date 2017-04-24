@@ -39,3 +39,5 @@ src/unetbootin/*.o
 src/unetbootin/qt4-win
 src/unetbootin/qt4-x11
 src/unetbootin/qt4-mac
+/node_modules
+.getsecret.yaml

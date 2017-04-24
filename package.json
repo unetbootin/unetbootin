@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "getsecret": "^1.0.2",
+    "ghreleases": "^1.0.5",
+    "octokat": "^0.6.4",
+    "shelljs": "^0.7.7"
+  }
+}
