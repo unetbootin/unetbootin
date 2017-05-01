@@ -17,11 +17,11 @@ hdiutil unmount "$1"
 sync
 rawdev=`echo "$1" | sed "s/s[^s]*$//"`
 partnum=`echo "$1" | perl -l -ne '/s[0-9]+(?!.*s)/ && print $&' | perl -l -ne '/[0-9]+/ && print $&'`
+rawdevrdisk=`echo "$rawdev" | sed s/disk/rdisk/`
 echo "partnum: $partnum rawdev: $rawdev"
-fdisk -y -e "$rawdev" << EOR
+fdisk -y -e "$rawdevrdisk" << EOR
 flag $partnum
 write
-y
 quit
 EOR
 echo "writing mbr from $mbrfile to $rawdev"
@@ -31,6 +31,11 @@ diskutil umount "$1"
 sync
 hdiutil unmount "$1"
 sync
-dd if="$mbrfile" of="$rawdev"
+dd if="$mbrfile" of="$rawdevrdisk"
 echo "done writing mbr"
+fdisk -y -e "$rawdevrdisk" << EOR
+flag $partnum
+write
+quit
+EOR
 fi
