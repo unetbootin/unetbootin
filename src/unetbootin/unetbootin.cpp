@@ -557,7 +557,7 @@ bool unetbootin::is_external_drive_macos(const QString &drivename)
 {
 	// drivename: disk3s1
 	QString device_info = callexternapp("diskutil", "info " + drivename);
-	if (device_info.contains('Removable'))
+	if (device_info.contains("External"))
 	{
 		return true;
 	}
