@@ -552,6 +552,19 @@ QStringList unetbootin::listcurdrives()
 	return listsanedrives();
 }
 
+#ifdef Q_OS_MAC
+bool is_external_drive_macos(QString drivename)
+{
+	// drivename: disk3s1
+	QString device_info = callexternapp("diskutil", "info", drivename);
+	if (device_info.contains('Removable'))
+	{
+		return true;
+	}
+	return false;
+}
+#endif
+
 QStringList unetbootin::listsanedrives()
 {
 	QStringList fulldrivelist;
@@ -621,7 +634,9 @@ QString diskutilList = callexternapp("diskutil", "list");
 QStringList usbdevsL = diskutilList.split("\n").filter(QRegExp("(FAT|Microsoft)")).join(" ").split(" ").filter("disk");
 for (int i = 0; i < usbdevsL.size(); ++i)
 {
-	fulldrivelist.append("/dev/"+usbdevsL.at(i));
+	if (is_external_drive_macos(usbdevsL.at(i))) {
+		fulldrivelist.append("/dev/"+usbdevsL.at(i));
+	}
 }
 #endif
 	}
