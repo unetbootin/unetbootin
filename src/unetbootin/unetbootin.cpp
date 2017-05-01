@@ -553,7 +553,7 @@ QStringList unetbootin::listcurdrives()
 }
 
 #ifdef Q_OS_MAC
-bool is_external_drive_macos(QString drivename)
+bool unetbootin::is_external_drive_macos(const QString &drivename)
 {
 	// drivename: disk3s1
 	QString device_info = callexternapp("diskutil", "info " + drivename);

@@ -295,6 +295,7 @@ public:
 #ifdef Q_OS_MAC
 	QString getlabel(QString voldrive, QString diskutilinfo);
 	QString getuuid(QString voldrive, QString diskutilinfo);
+	bool is_external_drive_macos(const QString &drivename);
 #endif
 	void refreshdriveslist();
 	QStringList listcurdrives();
