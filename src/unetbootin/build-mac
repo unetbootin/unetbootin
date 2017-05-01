@@ -16,10 +16,10 @@ qtmacd="$(pwd)/qt4-mac"
 $qtmacd/bin/lrelease unetbootin.pro
 ./qmake-mac
 make
-./fix-unetbootin-frameworkpaths.rb
-mv unetbootin.app unetbootin-old.app
-ditto --arch i386 unetbootin-old.app unetbootin.app
-rm -r unetbootin-old.app
+#./fix-unetbootin-frameworkpaths.rb
+#mv unetbootin.app unetbootin-old.app
+#ditto --arch i386 unetbootin-old.app unetbootin.app
+#rm -r unetbootin-old.app
 
 revno=$(./vcs-revno)
 #zip -r unetbootin-mac-$revno.zip unetbootin.app
