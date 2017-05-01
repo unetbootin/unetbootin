@@ -556,7 +556,7 @@ QStringList unetbootin::listcurdrives()
 bool is_external_drive_macos(QString drivename)
 {
 	// drivename: disk3s1
-	QString device_info = callexternapp("diskutil", "info", drivename);
+	QString device_info = callexternapp("diskutil", "info " + drivename);
 	if (device_info.contains('Removable'))
 	{
 		return true;
