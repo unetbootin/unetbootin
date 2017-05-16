@@ -658,8 +658,8 @@ QRegExp fatfilesystems("FAT|Microsoft");
 
 for (int i = 0; i < filesystemlist.size(); ++i)
 {
-	if (fatfilesystems.indexIn(filesystemlist.at(i),0) != -1) && is_external_drive_macos(usbdevsL.at(i))) {
-		fulldrivelist.append("/dev/"+usbdevsL.at(i));
+	if ((fatfilesystems.indexIn(filesystemlist.at(i),0) != -1) && is_external_drive_macos(drivenamelist.at(i))) {
+		fulldrivelist.append("/dev/"+drivenamelist.at(i));
 	}
 }
 #endif
