@@ -299,6 +299,7 @@ public:
 #endif
 	void refreshdriveslist();
 	QStringList listcurdrives();
+	QStringList matchinglist(QRegExp regex, QString text);
 	QStringList listsanedrives();
 	QStringList listalldrives();
 	void replaceTextInFile(QString repfilepath, QRegExp replaceme, QString replacewith);

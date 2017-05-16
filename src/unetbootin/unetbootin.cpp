@@ -557,13 +557,28 @@ bool unetbootin::is_external_drive_macos(const QString &drivename)
 {
 	// drivename: disk3s1
 	QString device_info = callexternapp("diskutil", "info " + drivename);
-	if (device_info.contains("External"))
+	QStringList internal_is_no = device_info.split("\n").filter(QRegExp("Internal:\\s*No"));
+
+	if (device_info.contains("External") || internal_is_no.size() > 0)
 	{
 		return true;
 	}
 	return false;
 }
 #endif
+
+QStringList unetbootin::matchinglist(QRegExp regex, QString text)
+{
+QStringList matchinglist;
+int pos = 0;
+
+while ((pos = regex.indexIn(text, pos)) != -1) {
+	matchinglist << regex.cap(1);
+	pos += regex.matchedLength();
+}
+
+return matchinglist;
+}
 
 QStringList unetbootin::listsanedrives()
 {
@@ -630,11 +645,20 @@ QStringList unetbootin::listsanedrives()
 				*/
 		#endif
 #ifdef Q_OS_MAC
-QString diskutilList = callexternapp("diskutil", "list");
-QStringList usbdevsL = diskutilList.split("\n").filter(QRegExp("(FAT|Microsoft)")).join(" ").split(" ").filter("disk");
-for (int i = 0; i < usbdevsL.size(); ++i)
+QString systemprofilertext = callexternapp("system_profiler", "SPStorageDataType");
+QRegExp filesystemregex("File System: (.+)\\n");
+QRegExp drivenameregex("BSD Name: (.+)\\n");
+filesystemregex.setMinimal(true);
+drivenameregex.setMinimal(true);
+
+QStringList filesystemlist = matchinglist(filesystemregex, systemprofilertext);
+QStringList drivenamelist = matchinglist(drivenameregex, systemprofilertext);
+
+QRegExp fatfilesystems("FAT|Microsoft");
+
+for (int i = 0; i < filesystemlist.size(); ++i)
 {
-	if (is_external_drive_macos(usbdevsL.at(i))) {
+	if (fatfilesystems.indexIn(filesystemlist.at(i),0) != -1) && is_external_drive_macos(usbdevsL.at(i))) {
 		fulldrivelist.append("/dev/"+usbdevsL.at(i));
 	}
 }
