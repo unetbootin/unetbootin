@@ -8,6 +8,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 */
 
 #include "unetbootin.h"
+// #include <iostream>
 
 static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
@@ -197,6 +198,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
     logFile = 0;
     logStream = 0;
 #ifdef Q_OS_MAC
+    //  std::cout << "1unetbootin::ubninitialize() called" << std::endl  << std::flush;
 	ignoreoutofspace = true;
 #endif
 	dontgeneratesyslinuxcfg = false;
@@ -300,8 +302,9 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
         extlinuxcommand = locatecommand("extlinux", tr("EXT2-formatted USB drive"), "extlinux");
 	#endif
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
-	#endif
+#endif // Q_OS_LINUX
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
+//    std::cout << "ubntmpf: " << (const char*)ubntmpf.toAscii() << std::endl << std::flush;
     #ifdef Q_OS_LINUX
     if (ubntmpf.isEmpty() || ubntmpf == "/")
     {
@@ -396,10 +399,12 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 			int driveidx = this->driveselect->findText(psecond, Qt::MatchFixedString);
 			if (driveidx != -1)
 			{
+//			  std::cout << "this->driveselect->setCurrentIndex(driveidx); driveidx: " << driveidx << std::endl << std::flush;
 				this->driveselect->setCurrentIndex(driveidx);
 			}
 			else
 			{
+//              std::cout << "this->driveselect->addItem(psecond); psecond: " << (const char*)psecond.toAscii() << std::endl << std::flush;
 				this->driveselect->addItem(psecond);
 				this->driveselect->setCurrentIndex(this->driveselect->findText(psecond, Qt::MatchFixedString));
 			}
@@ -539,11 +544,13 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 
 void unetbootin::refreshdriveslist()
 {
+//    std::cout << "unetbootin::refreshdriveslist() called" << std::endl << std::flush;
 	driveselect->clear();
 	QStringList driveslist = listcurdrives();
 	for (int i = 0; i < driveslist.size(); ++i)
 	{
-		driveselect->addItem(driveslist.at(i));
+//	  std::cout << "driveselect->addItem(driveslist.at(i));" << (const char*)(driveslist.at(i).toAscii()) << std::endl << std::flush;
+	    driveselect->addItem(driveslist.at(i));
 	}
 }
 
@@ -555,13 +562,20 @@ QStringList unetbootin::listcurdrives()
 #ifdef Q_OS_MAC
 bool unetbootin::is_external_drive_macos(const QString &drivename)
 {
-	// drivename: disk3s1
-	QString device_info = callexternapp("diskutil", "info " + drivename);
-	if (device_info.contains("External"))
-	{
-		return true;
-	}
-	return false;
+    // drivename: disk3s1
+    QString device_info = callexternapp("diskutil", "info " + drivename);
+    if (device_info.contains("External"))
+    {
+        return true;
+    }
+    // stw "diskutil info" output changed; now look for line "Internal:    No"
+    QStringList infoLines = device_info.split("\n").filter("Internal");
+    for (int i = 0; i < infoLines.size(); i++) {
+        if (infoLines.at(i).contains("No"))
+            return true;
+    }
+
+    return false;
 }
 #endif
 
@@ -770,6 +784,7 @@ void unetbootin::on_okbutton_clicked()
 			default:
 				break;
 		}
+		refreshdriveslist(); // stw give it a chance to detect a new drive
 	}
 #ifdef Q_OS_MAC
     if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED" && !testingDownload)
@@ -4155,8 +4170,9 @@ void unetbootin::runinstusb()
         callexternapp("sync", "");
         callexternapp("hdiutil", "unmount "+targetDev);
         callexternapp("sync", "");
-        callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
-        /*
+	//      callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
+        callexternapp(resourceDir.absoluteFilePath("mkbootable"), "/dev/" + targetDev); // stw 
+       /*
         callexternapp("sync", "");
         callexternapp("diskutil", "umount "+targetDev);
         callexternapp("sync", "");
