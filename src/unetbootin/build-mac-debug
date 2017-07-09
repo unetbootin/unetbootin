@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ ! -d debug ]
+then
+mkdir debug
+fi
+
+if [ ! -d qt4-mac ]
+then
+ln -s ~/qt4-mac
+fi
+
+qtmacd="$(pwd)/qt4-mac"
+
+#lupdate unetbootin.pro
+# stw $qtmacd/bin/lrelease unetbootin.pro
+# stw ./qmake-mac
+make -f Makefile_debug
+#./fix-unetbootin-frameworkpaths.rb
+#mv unetbootin.app unetbootin-old.app
+#ditto --arch i386 unetbootin-old.app unetbootin.app
+#rm -r unetbootin-old.app
+
+revno=$(./vcs-revno)
+
+#zip -r unetbootin-mac-$revno.zip unetbootin.app
+#mv unetbootin-mac-$revno.zip release
+
+if [ -d unetbootin-mac-dmg/unetbootin.app ]
+then
+rm -rf unetbootin-mac-dmg/unetbootin.app
+fi
+cp -r unetbootin.app unetbootin-mac-dmg
+hdiutil create -volname UNetbootin -srcfolder unetbootin-mac-dmg -ov -format UDZO debug/unetbootin-mac-$revno.dmg
+rm -rf unetbootin-mac-dmg/unetbootin.app
