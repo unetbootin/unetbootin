@@ -300,7 +300,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
         extlinuxcommand = locatecommand("extlinux", tr("EXT2-formatted USB drive"), "extlinux");
 	#endif
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
-	#endif
+#endif // Q_OS_LINUX
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
     #ifdef Q_OS_LINUX
     if (ubntmpf.isEmpty() || ubntmpf == "/")
@@ -543,7 +543,7 @@ void unetbootin::refreshdriveslist()
 	QStringList driveslist = listcurdrives();
 	for (int i = 0; i < driveslist.size(); ++i)
 	{
-		driveselect->addItem(driveslist.at(i));
+	    driveselect->addItem(driveslist.at(i));
 	}
 }
 
@@ -555,15 +555,20 @@ QStringList unetbootin::listcurdrives()
 #ifdef Q_OS_MAC
 bool unetbootin::is_external_drive_macos(const QString &drivename)
 {
-	// drivename: disk3s1
-	QString device_info = callexternapp("diskutil", "info " + drivename);
-	QStringList internal_is_no = device_info.split("\n").filter(QRegExp("Internal:\\s*No"));
+    // drivename: disk3s1
+    QString device_info = callexternapp("diskutil", "info " + drivename);
+    if (device_info.contains("External"))
+    {
+        return true;
+    }
+    // stw "diskutil info" output changed; now look for line "Internal:    No"
+    QStringList infoLines = device_info.split("\n").filter("Internal");
+    for (int i = 0; i < infoLines.size(); i++) {
+        if (infoLines.at(i).contains("No"))
+            return true;
+    }
 
-	if (device_info.contains("External") || internal_is_no.size() > 0)
-	{
-		return true;
-	}
-	return false;
+    return false;
 }
 #endif
 
@@ -794,6 +799,7 @@ void unetbootin::on_okbutton_clicked()
 			default:
 				break;
 		}
+		refreshdriveslist(); // stw give it a chance to detect a new drive
 	}
 #ifdef Q_OS_MAC
     if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED" && !testingDownload)
@@ -4179,8 +4185,9 @@ void unetbootin::runinstusb()
         callexternapp("sync", "");
         callexternapp("hdiutil", "unmount "+targetDev);
         callexternapp("sync", "");
-        callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
-        /*
+	//      callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
+        callexternapp(resourceDir.absoluteFilePath("mkbootable"), "/dev/" + targetDev); // stw 
+       /*
         callexternapp("sync", "");
         callexternapp("diskutil", "umount "+targetDev);
         callexternapp("sync", "");
