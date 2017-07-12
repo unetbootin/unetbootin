@@ -8,7 +8,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 */
 
 #include "unetbootin.h"
-// #include <iostream>
 
 static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
@@ -198,7 +197,6 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
     logFile = 0;
     logStream = 0;
 #ifdef Q_OS_MAC
-    //  std::cout << "1unetbootin::ubninitialize() called" << std::endl  << std::flush;
 	ignoreoutofspace = true;
 #endif
 	dontgeneratesyslinuxcfg = false;
@@ -304,7 +302,6 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
 #endif // Q_OS_LINUX
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
-//    std::cout << "ubntmpf: " << (const char*)ubntmpf.toAscii() << std::endl << std::flush;
     #ifdef Q_OS_LINUX
     if (ubntmpf.isEmpty() || ubntmpf == "/")
     {
@@ -399,12 +396,10 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 			int driveidx = this->driveselect->findText(psecond, Qt::MatchFixedString);
 			if (driveidx != -1)
 			{
-//			  std::cout << "this->driveselect->setCurrentIndex(driveidx); driveidx: " << driveidx << std::endl << std::flush;
 				this->driveselect->setCurrentIndex(driveidx);
 			}
 			else
 			{
-//              std::cout << "this->driveselect->addItem(psecond); psecond: " << (const char*)psecond.toAscii() << std::endl << std::flush;
 				this->driveselect->addItem(psecond);
 				this->driveselect->setCurrentIndex(this->driveselect->findText(psecond, Qt::MatchFixedString));
 			}
@@ -544,12 +539,10 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 
 void unetbootin::refreshdriveslist()
 {
-//    std::cout << "unetbootin::refreshdriveslist() called" << std::endl << std::flush;
 	driveselect->clear();
 	QStringList driveslist = listcurdrives();
 	for (int i = 0; i < driveslist.size(); ++i)
 	{
-//	  std::cout << "driveselect->addItem(driveslist.at(i));" << (const char*)(driveslist.at(i).toAscii()) << std::endl << std::flush;
 	    driveselect->addItem(driveslist.at(i));
 	}
 }
