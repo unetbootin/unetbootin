@@ -376,26 +376,22 @@ if (nameDistro == "Elive")
 
 if (nameDistro == "Fedora")
 {
-    QString minorarch = "";
 	if (isarch64)
 	{
 		cpuarch = "x86_64";
-        minorarch = "x86_64";
 	}
 	else
 	{
 		cpuarch = "i386";
-        minorarch = "i686";
 	}
 	if (islivecd)
 	{
         downloadfile(fileFilterNetDir(QStringList() <<
-        "http://download.fedoraproject.org/pub/fedora/linux/releases/"+relname+"/Live/"+cpuarch+"/"
+        "http://download.fedoraproject.org/pub/fedora/linux/releases/"+relname+"/Workstation/"+cpuarch+"/iso/"
         , 524288000, 2233125376, QList<QRegExp>() <<
         QRegExp(".iso$", Qt::CaseInsensitive) <<
         QRegExp("Fedora", Qt::CaseInsensitive) <<
-        QRegExp("Live", Qt::CaseInsensitive) <<
-        QRegExp("LXDE", Qt::CaseInsensitive)
+        QRegExp("Live", Qt::CaseInsensitive)
         ), isotmpf);
         extractiso(isotmpf);
 	}
@@ -403,15 +399,15 @@ if (nameDistro == "Fedora")
 	{
 		if (relname == "rawhide")
 		{
-            downloadfile(QString("download.fedoraproject.org/pub/fedora/linux/development/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-            downloadfile(QString("download.fedoraproject.org/pub/fedora/linux/development/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/development/%1/os' when asked for the folder.").arg(cpuarch);
+            downloadfile(QString("download.fedoraproject.org/pub/fedora/linux/development/rawhide/Workstation/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
+            downloadfile(QString("download.fedoraproject.org/pub/fedora/linux/development/rawhide/Workstation/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedoraproject.org' when prompted for a server, and enter '/pub/fedora/linux/development/rawhide/Workstation/%1/os' when asked for the folder.").arg(cpuarch);
         }
 		else
 		{
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Fedora/%2/os/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Fedora/%2/os/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder.").arg(relname, cpuarch);
+            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Workstation/%2/os/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Workstation/%2/os/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedoraproject.org' when prompted for a server, and enter '/pub/fedora/linux/releases/%1/Workstation/%2/os' when asked for the folder.").arg(relname, cpuarch);
 		}
 		kernelOpts = "splash=silent showopts";
 	}
