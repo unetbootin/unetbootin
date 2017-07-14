@@ -4185,8 +4185,7 @@ void unetbootin::runinstusb()
         callexternapp("sync", "");
         callexternapp("hdiutil", "unmount "+targetDev);
         callexternapp("sync", "");
-	//      callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
-        callexternapp(resourceDir.absoluteFilePath("mkbootable"), "/dev/" + targetDev); // stw 
+        callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
        /*
         callexternapp("sync", "");
         callexternapp("diskutil", "umount "+targetDev);
