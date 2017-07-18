@@ -12,9 +12,11 @@ echo "arg should contain /dev/ e.g. /dev/disk2s1"
 syslinuxcmd=`echo "$0" | sed s/mkbootable/syslinux-mac/g`
 echo "syslinuxcmd: $syslinuxcmd $1"
 "$syslinuxcmd" "$1"
-sync
-diskutil umountDisk force "$1"
-sync
+
+sync # flush to disk before forced unmount
+diskutil unmount "$1"
+diskutil unmountDisk force "$1"
+
 rawdev=`echo "$1" | sed "s/s[^s]*$//"`
 partnum=`echo "$1" | perl -l -ne '/s[0-9]+(?!.*s)/ && print $&' | perl -l -ne '/[0-9]+/ && print $&'`
 rawdevrdisk=`echo "$rawdev" | sed s/disk/rdisk/`
@@ -28,8 +30,9 @@ dd conv=notrunc bs=440 count=1 if="$mbrfile" of="$rawdev"
 echo "2 passed fdisk quit"
 sync
 echo "passed writing mbr"
-diskutil umountDisk force "$1"   # stw it may have got auto mounted after dd
-sleep .5 # Waits 0.5 second.
+sync
+diskutil unmount "$1"
+diskutil unmountDisk force "$1"   # stw it may have got auto mounted after dd
 
 fdisk -y -e "$rawdev" << EOR
 flag $partnum
