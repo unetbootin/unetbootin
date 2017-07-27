@@ -8,6 +8,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 */
 
 #include "unetbootin.h"
+#include "UbUtilities.h"
 
 static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
@@ -68,8 +69,9 @@ static const QString SALT_DETECTED = "*SaLT*";
 
 void callexternappT::run()
 {
+    qDebug() << "callexternappT::run() called; execFile: " << execFile <<"; execParm:"<<execParm<<"; ";
 	#ifdef Q_OS_WIN32
-	SHELLEXECUTEINFO ShExecInfo = {0};
+    SHELLEXECUTEINFO ShExecInfo = {0};
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
 	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
 	ShExecInfo.hwnd = NULL;
@@ -91,11 +93,16 @@ void callexternappT::run()
 	retnValu = "";
 	#endif
 	#ifdef Q_OS_UNIX
-	QProcess lnexternapp;
+    QProcess lnexternapp;
     lnexternapp.start("\"" + execFile + "\" " + execParm);
 	lnexternapp.waitForFinished(-1);
 	retnValu = QString(lnexternapp.readAll());
 	#endif
+//#ifdef Q_OS_MAC
+//    qDebug() << "callexternappT::run() called; no action or code on MacOS!";
+
+//#endif
+
 }
 
 void callexternappWriteToStdinT::run()
@@ -178,6 +185,7 @@ unetbootin::unetbootin(QWidget *parent)
 	setupUi(this);
 }
 
+
 bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 {
     skipExtraction = false;
@@ -194,8 +202,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	testingDownload = false;
 	issalt = false;
 	persistenceSpaceMB = 0;
-    logFile = 0;
-    logStream = 0;
+    UbUtilities::initClass () ; // init logging
 #ifdef Q_OS_MAC
 	ignoreoutofspace = true;
 #endif
@@ -780,11 +787,13 @@ void unetbootin::on_CfgFileSelector_clicked()
 
 void unetbootin::on_cancelbutton_clicked()
 {
-	close();
+    UbUtilities::shutdownClass() ; // flush logging
+    close();
 }
 
 void unetbootin::on_okbutton_clicked()
 {
+    qDebug() << "on_okbutton_clicked()";
     if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty() && !testingDownload)
 	{
 		QMessageBox unotenoughinputmsgb;
@@ -4048,37 +4057,6 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 	.trimmed();
 }
 
-void unetbootin::logText(const QString &text)
-{
-    return;
-    /*
-    if (targetPath.isNull() || targetPath.isEmpty())
-    {
-        loggedLinesNotYetWritten.append(text);
-        return;
-    }
-    if (logStream == 0)
-    {
-        logFile = new QFile(QString("%1unetbootin-log.txt").arg(targetPath));
-        logFile->open(QIODevice::WriteOnly | QIODevice::Text);
-        logStream = new QTextStream(logFile);
-        for (int i = 0; i < loggedLinesNotYetWritten.size(); ++i)
-        {
-            *logStream << loggedLinesNotYetWritten.at(i) << endl;
-        }
-        loggedLinesNotYetWritten.clear();
-    }
-    *logStream << text << endl;
-    */
-}
-
-void unetbootin::finishLogging()
-{
-    if (logFile != 0)
-    {
-        logFile->close();
-    }
-}
 
 void unetbootin::writeTextToFile(const QString &text, const QString &filePath)
 {
@@ -4286,6 +4264,8 @@ void unetbootin::runinstusb()
 
 void unetbootin::killApplication()
 {
+    UbUtilities::shutdownClass() ; // flush logging
+
 	exit(0);
 }
 
@@ -4354,7 +4334,7 @@ void unetbootin::fininstall()
 		rebootmsgtext->setText(tr("The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
 #endif
 	}
-    finishLogging();
+    UbUtilities::shutdownClass(); // finish logging
 	if (exitOnCompletion)
 	{
 		printf("exitstatus:success\n");

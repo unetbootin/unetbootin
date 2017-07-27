@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     unetbootin.cpp \
     distrolst.cpp \
     distrover.cpp \
-    distrovercust.cpp
+    distrovercust.cpp \
+    UbUtilities.cpp
 QT += core \
     gui \
     network
