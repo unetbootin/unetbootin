@@ -699,17 +699,17 @@ QStringList unetbootin::listalldrives()
 	return fulldrivelist;
 }
 
-void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
+void unetbootin::on_typeselect_currentIndexChanged(int)
 {
 	refreshdriveslist();
 }
 
-void unetbootin::on_dverselect_currentIndexChanged()
+void unetbootin::on_dverselect_currentIndexChanged(int)
 {
 	radioDistro->setChecked(true);
 }
 
-void unetbootin::on_diskimagetypeselect_currentIndexChanged()
+void unetbootin::on_diskimagetypeselect_currentIndexChanged(int)
 {
 	radioFloppy->setChecked(true);
 }
@@ -2640,22 +2640,6 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 	connect(networkReply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error),
 			[&](QNetworkReply::NetworkError code){ downloadFailed = true; errorCode = code; });
 
-	dlewait.exec();
-
-	if (!redirectUrl.isEmpty())
-	{
-		downloadfile(redirectUrl.toString(), targetfile, minsize);
-		return;
-	}
-
-	if (downloadFailed)
-	{
-		qDebug() << networkReply->errorString();
-		qDebug() << "Error code: " << errorCode;
-		showDownloadFailedScreen(fileurl);
-		return;
-	}
-
 	QFile dloutfile;
 	if (installType == tr("USB Drive"))
 	{
@@ -2665,10 +2649,32 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 	{
 		dloutfile.setFileName(targetfile);
 	}
-
 	dloutfile.open(QIODevice::WriteOnly);
+
+	connect(networkReply, &QNetworkReply::downloadProgress, [&](qint64, qint64){
+		dloutfile.write(networkReply->readAll());
+	});
+
+	dlewait.exec();
+
+	if (!redirectUrl.isEmpty())
+	{
+		networkReply->deleteLater();
+		downloadfile(redirectUrl.toString(), targetfile, minsize);
+		return;
+	}
+
+	if (downloadFailed)
+	{
+		qDebug() << "Failed to download URL: " << fileurl;
+		qDebug() << "Error code: " << errorCode;
+		qDebug() << "Error string: " << networkReply->errorString();
+		networkReply->deleteLater();
+		showDownloadFailedScreen(fileurl);
+		return;
+	}
+
 	dloutfile.write(networkReply->readAll());
-	networkReply->close();
 	networkReply->deleteLater();
 	dloutfile.close();
 	if (installType == tr("USB Drive"))
@@ -2714,34 +2720,19 @@ void unetbootin::showDownloadFailedScreen(const QString &fileurl)
 	}
 }
 
-void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
-{
- QTime time = QTime::currentTime();
- static int oldsec = 0;
- // refresh the progress bar every second
- if(oldsec != time.second())
- {
-   oldsec = time.second();
-     tprogress->setValue(dlbytes);
-     tprogress->setMaximum(maxbytes);
-   // display the downloaded size with suffix
-     pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
- }
-}
-
 void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 {
- QTime time = QTime::currentTime();
- static int oldsec = 0;
- // refresh the progress bar every second
- if(oldsec != time.second())
- {
-   oldsec = time.second();
-     tprogress->setValue(dlbytes);
-     tprogress->setMaximum(maxbytes);
-   // display the downloaded size with suffix
-     pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
- }
+	QTime time = QTime::currentTime();
+	static int oldsec = 0;
+	// refresh the progress bar every second
+	if(oldsec != time.second())
+	{
+		oldsec = time.second();
+		tprogress->setValue(dlbytes);
+		tprogress->setMaximum(maxbytes);
+		// display the downloaded size with suffix
+		pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
+	}
 }
 
 void unetbootin::cpprogressupdate64(qint64 dlbytes, qint64 maxbytes)
@@ -2761,9 +2752,9 @@ void unetbootin::cpprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 
 QString unetbootin::downloadpagecontents(QUrl pageurl)
 {
-	QNetworkAccessManager _manager;
+	QNetworkAccessManager manager;
 	QNetworkRequest dlurl(pageurl);
-	QNetworkReply * networkReply = _manager.get(dlurl);
+	QNetworkReply * networkReply = manager.get(dlurl);
 	QEventLoop pgwait;
 	QUrl redirectUrl;
 	connect(networkReply, &QNetworkReply::finished, &pgwait, &QEventLoop::quit);
@@ -2773,6 +2764,7 @@ QString unetbootin::downloadpagecontents(QUrl pageurl)
 
 	if (!redirectUrl.isEmpty())
 	{
+		networkReply->deleteLater();
 		return downloadpagecontents(redirectUrl);
 	}
 

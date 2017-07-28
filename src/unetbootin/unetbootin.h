@@ -336,9 +336,9 @@ public:
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
-	void on_typeselect_currentIndexChanged(int typeselectIndex);
-	void on_dverselect_currentIndexChanged();
-	void on_diskimagetypeselect_currentIndexChanged();
+	void on_typeselect_currentIndexChanged(int);
+	void on_dverselect_currentIndexChanged(int);
+	void on_diskimagetypeselect_currentIndexChanged(int);
 	void on_FloppyFileSelector_clicked();
 	void on_KernelFileSelector_clicked();
 	void on_InitrdFileSelector_clicked();
@@ -347,7 +347,6 @@ private slots:
 	void on_fexitbutton_clicked();
 
 public slots:
-	void dlprogressupdate(int dlbytes, int maxbytes);
 	void dlprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 	void cpprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 	void on_okbutton_clicked();
