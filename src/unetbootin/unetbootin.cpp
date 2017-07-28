@@ -12,6 +12,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QProgressDialog>
+#include <QDebug>
 
 static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
@@ -468,8 +469,9 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 				QTextStream out(stdout);
 				for (int i = 1; i < this->distroselect->count(); ++i)
 				{
-					out << this->distroselect->itemText(i);
+					out << this->distroselect->itemText(i) << endl;
 				}
+				out.flush();
 				QApplication::exit();
 				exit(0);
 			}
@@ -478,8 +480,9 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 				QTextStream out(stdout);
 				for (int i = 0; i < this->dverselect->count(); ++i)
 				{
-					out << this->dverselect->itemText(i);
+					out << this->dverselect->itemText(i) << endl;
 				}
+				out.flush();
 				QApplication::exit();
 				exit(0);
 			}
@@ -2629,12 +2632,13 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 
 	QUrl redirectUrl;
 	bool downloadFailed = false;
+	QNetworkReply::NetworkError errorCode;
 
 	connect(networkReply, &QNetworkReply::finished, &dlewait, &QEventLoop::quit);
 	connect(networkReply, &QNetworkReply::downloadProgress, this, &unetbootin::dlprogressupdate64);
-	connect(networkReply, &QNetworkReply::redirected, [&redirectUrl](const QUrl &url){ redirectUrl = url; });
+	connect(networkReply, &QNetworkReply::redirected, [&](const QUrl &url){ redirectUrl = url; });
 	connect(networkReply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error),
-			[&downloadFailed](QNetworkReply::NetworkError){ downloadFailed = true; });
+			[&](QNetworkReply::NetworkError code){ downloadFailed = true; errorCode = code; });
 
 	dlewait.exec();
 
@@ -2646,7 +2650,8 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 
 	if (downloadFailed)
 	{
-		QString errorStr = networkReply->errorString();
+		qDebug() << networkReply->errorString();
+		qDebug() << "Error code: " << errorCode;
 		showDownloadFailedScreen(fileurl);
 		return;
 	}
@@ -2685,7 +2690,8 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 	if (testingDownload)
 	{
 		// Note that this only tests that the first download succeeds
-		printf("exitstatus:downloadcomplete\n");
+		QTextStream out(stdout);
+		out << "exitstatus:downloadcomplete" << endl << flush;
 		QApplication::exit();
 		exit(0);
 	}
@@ -2701,7 +2707,8 @@ void unetbootin::showDownloadFailedScreen(const QString &fileurl)
 	this->downloadFailed = true;
 	if (exitOnCompletion)
 	{
-		printf("exitstatus:downloadfailed\n");
+		QTextStream out(stdout);
+		out << "exitstatus:downloadfailed" << endl << flush;
 		QApplication::exit();
 		exit(0);
 	}
@@ -2777,6 +2784,7 @@ QString unetbootin::downloadpagecontents(QUrl pageurl)
 
 QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize)
 {
+	qDebug() << "lstFtpDirFiles called for " << ldfDirStringUrl;
 	return {};
 /*
 	QUrl ldfDirUrl(ldfDirStringUrl);
@@ -4299,7 +4307,8 @@ void unetbootin::fininstall()
     finishLogging();
 	if (exitOnCompletion)
 	{
-		printf("exitstatus:success\n");
+		QTextStream out(stdout);
+		out << "exitstatus:success" << endl << flush;
 		QApplication::exit();
 		exit(0);
 	}

@@ -474,7 +474,7 @@ if (nameDistro == "Frugalware")
 //	"ftp://ftp12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
 	"http://www12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
 //	"ftp://ftp4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
-	"http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
+	"http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/"; //<<
 //	"ftp://ftp2.frugalware.org/frugalware/pub/frugalware/frugalware-"+relname+"/boot/" <<
 //	"ftp://ftp3.frugalware.org/mirrors/frugalware/pub/frugalware/frugalware-"+relname+"/boot/";
 	downloadfile(fileFilterNetDir(frugalwaremirrorsL
@@ -550,7 +550,7 @@ if (nameDistro == "Kaspersky Rescue Disk")
 	{
 		downloadfile(fileFilterNetDir(QStringList() <<
 		"http://devbuilds.kaspersky-labs.com/devbuilds/RescueDisk/" <<
-		"http://ftp.kaspersky.com/devbuilds/RescueDisk/" <<
+		"http://ftp.kaspersky.com/devbuilds/RescueDisk/" //<<
 //		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
 		, 9288000, 1048576000, QList<QRegExp>() <<
 		QRegExp(".iso$", Qt::CaseInsensitive) <<
@@ -561,7 +561,7 @@ if (nameDistro == "Kaspersky Rescue Disk")
 	{
 		downloadfile(fileFilterNetDir(QStringList() <<
 		"http://devbuilds.kaspersky-labs.com/devbuilds/RescueDisk10/" <<
-		"http://ftp.kaspersky.com/devbuilds/RescueDisk10/" <<
+		"http://ftp.kaspersky.com/devbuilds/RescueDisk10/" //<<
 //		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk10/"
 		, 9288000, 1048576000, QList<QRegExp>() <<
 		QRegExp(".iso$", Qt::CaseInsensitive) <<
