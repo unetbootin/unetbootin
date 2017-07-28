@@ -9,6 +9,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #include "unetbootin.h"
 
+#include <QMessageBox>
+#include <QFileDialog>
+#include <QProgressDialog>
+
 static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
 << QRegExp("isolinux.cfg$", Qt::CaseInsensitive)
@@ -101,8 +105,8 @@ void callexternappT::run()
 void callexternappWriteToStdinT::run()
 {
 	QProcess lnexternapp;
-    lnexternapp.start("\"" + execFile + "\" " + execParm);
-	lnexternapp.write(writeToStdin.toAscii().data());
+	lnexternapp.start("\"" + execFile + "\" " + execParm);
+	lnexternapp.write(writeToStdin.toLatin1().data());
 	lnexternapp.closeWriteChannel();
 	lnexternapp.waitForFinished(-1);
 	retnValu = QString(lnexternapp.readAll());
@@ -133,16 +137,6 @@ void copyfileT::run()
 	emit finished();
 }
 
-ubngetrequestheader::ubngetrequestheader(QString urhost, QString urpath)
-{
-	this->setRequest("GET", urpath);
-	this->setValue("HOST", urhost);
-	this->setValue("User-Agent", "UNetbootin/1.1.1");
-//	this->setValue("User-Agent", "Wget/1.10.2");
-	this->setValue("Accept", "*/*");
-	this->setValue("Connection", "Keep-Alive");
-}
-
 randtmpfile::randtmpfile(QString rfpath, QString rfextn)
 {
 	QString basefn = getrandfilename(rfpath, rfextn);
@@ -159,7 +153,7 @@ QString randtmpfile::getrandfilename(QString rfpath, QString rfextn)
 	}
 	return basefn;
 }
-
+/*
 void nDirListStor::sAppendSelfUrlInfoList(QUrlInfo curDirUrl)
 {
 	if (curDirUrl.isValid() && curDirUrl.isReadable() && curDirUrl.isFile() && curDirUrl.size() > nMinFileSizeBytes && curDirUrl.size() < nMaxFileSizeBytes)
@@ -171,7 +165,7 @@ void nDirListStor::sAppendSelfUrlInfoList(QUrlInfo curDirUrl)
 		nDirFileListSL.append(curDirUrl.name());
 	}
 }
-
+*/
 unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
@@ -471,18 +465,20 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		{
 			if (psecond.contains("listdistros", Qt::CaseInsensitive))
 			{
+				QTextStream out(stdout);
 				for (int i = 1; i < this->distroselect->count(); ++i)
 				{
-					printf("%s\n", this->distroselect->itemText(i).toAscii().constData());
+					out << this->distroselect->itemText(i);
 				}
 				QApplication::exit();
 				exit(0);
 			}
 			else if (psecond.contains("listversions", Qt::CaseInsensitive))
 			{
+				QTextStream out(stdout);
 				for (int i = 0; i < this->dverselect->count(); ++i)
 				{
-					printf("%s\n", this->dverselect->itemText(i).toAscii().constData());
+					out << this->dverselect->itemText(i);
 				}
 				QApplication::exit();
 				exit(0);
@@ -1098,7 +1094,7 @@ bool unetbootin::checkifoutofspace(QString destindir)
 	bool outofspace = false;
 	#ifdef Q_OS_UNIX
 	struct statfs diskstatS;
-	if (!statfs(QString(destindir+"/.").toAscii(), &diskstatS))
+	if (!statfs(QString(destindir+"/.").toLatin1(), &diskstatS))
 	{
 		if (diskstatS.f_bavail * diskstatS.f_bfree < 1024)
 			outofspace = true;
@@ -2620,31 +2616,41 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 	{
 		rmFile(targetfile);
 	}
-	QUrl dlurl(fileurl);
-	bool isftp = false;
-	if (dlurl.scheme() == "ftp")
-	{
-		isftp = true;
-	}
-	QHttp dlhttp;
-	QFtp dlftp;
+	QNetworkAccessManager manager;
+	QNetworkRequest dlurl(fileurl);
+	QNetworkReply * networkReply = manager.get(dlurl);
+
 	QEventLoop dlewait;
 	pdesc5->setText("");
 	pdesc4->setText(tr("Downloading files, please wait..."));
 	pdesc3->setText(tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(fileurl));
 	pdesc2->setText(tr("<b>Destination:</b> %1").arg(targetfile));
 	pdesc1->setText(tr("<b>Downloaded:</b> 0 bytes"));
-	QString realupath = QString(fileurl).remove(0, fileurl.indexOf(QString("://%1").arg(dlurl.host())) + QString("://%1").arg(dlurl.host()).length());
-	if (isftp)
+
+	QUrl redirectUrl;
+	bool downloadFailed = false;
+
+	connect(networkReply, &QNetworkReply::finished, &dlewait, &QEventLoop::quit);
+	connect(networkReply, &QNetworkReply::downloadProgress, this, &unetbootin::dlprogressupdate64);
+	connect(networkReply, &QNetworkReply::redirected, [&redirectUrl](const QUrl &url){ redirectUrl = url; });
+	connect(networkReply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error),
+			[&downloadFailed](QNetworkReply::NetworkError){ downloadFailed = true; });
+
+	dlewait.exec();
+
+	if (!redirectUrl.isEmpty())
 	{
-		connect(&dlftp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
-		connect(&dlftp, SIGNAL(dataTransferProgress(qint64, qint64)), this, SLOT(dlprogressupdate64(qint64, qint64)));
+		downloadfile(redirectUrl.toString(), targetfile, minsize);
+		return;
 	}
-	else
+
+	if (downloadFailed)
 	{
-		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
-		connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
+		QString errorStr = networkReply->errorString();
+		showDownloadFailedScreen(fileurl);
+		return;
 	}
+
 	QFile dloutfile;
 	if (installType == tr("USB Drive"))
 	{
@@ -2654,83 +2660,17 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 	{
 		dloutfile.setFileName(targetfile);
 	}
+
 	dloutfile.open(QIODevice::WriteOnly);
-	if (isftp)
-	{
-		dlftp.connectToHost(dlurl.host());
-		dlftp.login();
-		dlftp.get(realupath, &dloutfile);
-	}
-	else
-	{
-		dlhttp.setHost(dlurl.host());
-		ubngetrequestheader dlrequest(dlurl.host(), realupath);
-		dlhttp.request(dlrequest, 0, &dloutfile);
-	}
-	dlewait.exec();
-	if (!isftp)
-	{
-		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
-		int dlrstatus = dlresponse.statusCode();
-		if (dlrstatus >= 300 && dlrstatus < 400 && dlresponse.hasKey("Location"))
-		{
-			dloutfile.close();
-			rmFile(dloutfile);
-			downloadfile(dlresponse.value("Location"), targetfile, minsize);
-			return;
-		}
-	}
-	if (isftp)
-	{
-		dlftp.close();
-	}
-	else
-	{
-		dlhttp.close();
-	}
+	dloutfile.write(networkReply->readAll());
+	networkReply->close();
+	networkReply->deleteLater();
 	dloutfile.close();
 	if (installType == tr("USB Drive"))
 	{
 		dloutfile.rename(targetfile);
 	}
-    if (QFile(targetfile).size() <= 4096)
-    {
-        QString redirectTargetURL;
-        QFile seeRedirect(targetfile);
-        seeRedirect.open(QIODevice::ReadOnly | QIODevice::Text);
-        QTextStream seeRedirectTextStream(&seeRedirect);
-        while (!seeRedirectTextStream.atEnd())
-        {
-            QString curline = seeRedirectTextStream.readLine();
-            if (curline.contains("content=\"0;url="))
-            {
-                int urlstartidx = curline.indexOf("content=\"0;url=") + QString("content=\"0;url=").size();
-                redirectTargetURL = curline.mid(urlstartidx);
-                if (redirectTargetURL.contains("\""))
-                {
-                    redirectTargetURL = redirectTargetURL.left(redirectTargetURL.indexOf("\""));
-                }
-                break;
-            }
-            if (curline.contains("content='0;url="))
-            {
-                int urlstartidx = curline.indexOf("content='0;url=") + QString("content='0;url=").size();
-                redirectTargetURL = curline.mid(urlstartidx);
-                if (redirectTargetURL.contains("'"))
-                {
-                    redirectTargetURL = redirectTargetURL.left(redirectTargetURL.indexOf("'"));
-                }
-                break;
-            }
-        }
-        seeRedirect.close();
-        if (!redirectTargetURL.isEmpty())
-        {
-            rmFile(targetfile);
-            downloadfile(redirectTargetURL, targetfile, minsize);
-            return;
-        }
-    }
+
 	if (QFile(targetfile).size() < minsize)
 	{
 		// download failed
@@ -2812,31 +2752,33 @@ void unetbootin::cpprogressupdate64(qint64 dlbytes, qint64 maxbytes)
  }
 }
 
-QString unetbootin::downloadpagecontents(QString pageurl)
+QString unetbootin::downloadpagecontents(QUrl pageurl)
 {
-	QUrl pgurl(pageurl);
-	QHttp pghttp;
+	QNetworkAccessManager _manager;
+	QNetworkRequest dlurl(pageurl);
+	QNetworkReply * networkReply = _manager.get(dlurl);
 	QEventLoop pgwait;
-	connect(&pghttp, SIGNAL(done(bool)), &pgwait, SLOT(quit()));
-	pghttp.setHost(pgurl.host());
-	QString realpgupath = QString(pageurl).remove(0, pageurl.indexOf(QString("://%1").arg(pgurl.host())) + QString("://%1").arg(pgurl.host()).length());
-	ubngetrequestheader pgrequest(pgurl.host(), realpgupath);
-	pghttp.request(pgrequest);
+	QUrl redirectUrl;
+	connect(networkReply, &QNetworkReply::finished, &pgwait, &QEventLoop::quit);
+	connect(networkReply, &QNetworkReply::redirected, [&redirectUrl](const QUrl &url){ redirectUrl = url; });
+
 	pgwait.exec();
-	QHttpResponseHeader pgresponse(pghttp.lastResponse());
-	int pgrstatus = pgresponse.statusCode();
-	if (pgrstatus >= 300 && pgrstatus < 400 && pgresponse.hasKey("Location"))
+
+	if (!redirectUrl.isEmpty())
 	{
-		return downloadpagecontents(pgresponse.value("Location"));
+		return downloadpagecontents(redirectUrl);
 	}
-	else
-	{
-		return QString(pghttp.readAll());
-	}
+
+	QString result = networkReply->readAll();
+	networkReply->close();
+	networkReply->deleteLater();
+	return result;
 }
 
 QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize)
 {
+	return {};
+/*
 	QUrl ldfDirUrl(ldfDirStringUrl);
 	QFtp ldfFtp;
 	QEventLoop ldfWait;
@@ -2851,14 +2793,14 @@ QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, 
 	ldfFtp.list(ldfDirUrl.path());
 	ldfWait.exec();
 	ldfFtp.close();
-	return nDirListStorL.nDirFileListSL;
+	return nDirListStorL.nDirFileListSL;*/
 }
 
 QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
 {
 	QStringList relativefilelinksL;
 	QStringList relativelinksLPreFilter =
-		downloadpagecontents(ldfDirStringUrl)
+		downloadpagecontents(QUrl(ldfDirStringUrl))
 		.replace(">", ">\n")
 		.replace("<", "\n<")
 		.split("\n");
@@ -3218,11 +3160,11 @@ int unetbootin::letterToNumber(QChar lettertoconvert)
 {
 	if (lettertoconvert.isLower())
 	{
-		return static_cast<int>(lettertoconvert.toAscii() - 'a');
+		return static_cast<int>(lettertoconvert.toLatin1() - 'a');
 	}
 	if (lettertoconvert.isUpper())
 	{
-		return static_cast<int>(lettertoconvert.toAscii() - 'A');
+		return static_cast<int>(lettertoconvert.toLatin1() - 'A');
 	}
 	else
 	{
@@ -3724,7 +3666,7 @@ void unetbootin::writegrub2cfg()
 	QString menulstxt = QString(
 	"%9\n\n"
 #ifndef NODEFAULTBOOT
-	"\nmenuentry \""UNETBOOTINB"\" {\n"
+	"\nmenuentry \"" UNETBOOTINB"\" {\n"
 	"\tset root=%8\n"
 	"\t%1 %2 %3 %4\n"
 	"\t%5 %6 %7\n"
@@ -3845,7 +3787,7 @@ void unetbootin::runinsthdd()
 	"timeout 10\n"
 	#endif
 #ifndef NODEFAULTBOOT
-	"\ntitle "UNETBOOTINB"\n"
+	"\ntitle " UNETBOOTINB"\n"
 	#ifdef Q_OS_WIN32
 	"find --set-root %3\n"
 	#endif
@@ -4343,7 +4285,7 @@ void unetbootin::fininstall()
 	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
 	if (installType == tr("Hard Disk"))
 	{
-		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the " UNETBOOTINB" menu entry to boot.%1").arg(postinstmsg));
 	}
 	if (installType == tr("USB Drive"))
 	{

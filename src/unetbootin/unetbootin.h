@@ -152,19 +152,13 @@ signals:
 	void finished();
 };
 
-class ubngetrequestheader : public QHttpRequestHeader
-{
-public:
-	ubngetrequestheader(QString urhost, QString urpath);
-};
-
 class randtmpfile : public QFile
 {
 public:
 	randtmpfile(QString rfpath, QString rfextn);
 	static QString getrandfilename(QString rfpath, QString rfextn);
 };
-
+/*
 class nDirListStor : public QObject
 {
 	Q_OBJECT
@@ -178,7 +172,7 @@ public:
 public slots:
 	void sAppendSelfUrlInfoList(QUrlInfo curDirUrl);
 };
-
+*/
 class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
@@ -280,7 +274,7 @@ public:
 	QString searchforgrub2includesfile(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforgrub2includesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
 	void downloadfile(QString fileurl, QString targetfile, int minsize);
-	QString downloadpagecontents(QString pageurl);
+	QString downloadpagecontents(QUrl pageurl);
 	QStringList lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);
 	QStringList lstHttpDirFiles(QString ldfDirStringUrl);
 	QStringList lstNetDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);

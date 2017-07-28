@@ -14,6 +14,7 @@ SOURCES += main.cpp \
     distrovercust.cpp
 QT += core \
     gui \
+    widgets \
     network
 ICON = unetbootin.icns
 TRANSLATIONS += unetbootin.ts \
