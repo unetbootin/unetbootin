@@ -69,7 +69,7 @@ static const QString SALT_DETECTED = "*SaLT*";
 
 void callexternappT::run()
 {
-    qDebug() << "callexternappT::run() called; execFile: " << execFile <<"; execParm:"<<execParm<<"; ";
+    qWarning() << "callexternappT::run() called; execFile: " << execFile <<"; execParm:"<<execParm<<"; ";
 	#ifdef Q_OS_WIN32
     SHELLEXECUTEINFO ShExecInfo = {0};
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
@@ -98,10 +98,6 @@ void callexternappT::run()
 	lnexternapp.waitForFinished(-1);
 	retnValu = QString(lnexternapp.readAll());
 	#endif
-//#ifdef Q_OS_MAC
-//    qDebug() << "callexternappT::run() called; no action or code on MacOS!";
-
-//#endif
 
 }
 
@@ -793,7 +789,7 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
-    qDebug() << "on_okbutton_clicked()";
+    qWarning() << "on_okbutton_clicked()";
     if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty() && !testingDownload)
 	{
 		QMessageBox unotenoughinputmsgb;
@@ -3603,6 +3599,7 @@ void unetbootin::runinst()
 	}
 	else if (radioManual->isChecked())
 	{
+        qWarning() << "runinst() " <<"targetPath: " << targetPath<< "; KernelPath: " << KernelPath ;
 		if (!KernelPath->text().startsWith("http://") && !KernelPath->text().startsWith("ftp://"))
 			QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
 		else
@@ -3617,7 +3614,9 @@ void unetbootin::runinst()
 	{
 		nameDistro = distroselect->currentText();
 		nameVersion = dverselect->currentText();
-		if (nameVersion.contains("_Live"))
+        qWarning() << "runinst() " <<"targetPath: " << targetPath<< "; KernelPath: " << KernelPath << "; nameDistro: "<< nameDistro
+                   << "; nameVersion" << nameVersion;
+        if (nameVersion.contains("_Live"))
 		{
 			nameVersion.remove("_Live");
 			islivecd = true;

@@ -47,35 +47,36 @@ public:
 //	  logMode = noLogMode;
 	};
 
-	~UbUtilities (void) { ourStreamBuf.close(); };
+        ~UbUtilities (void) { ourStreamBuf.close(); };
 
-	static int initClass (void) ;
+        static int initClass (void) ;
 
-	static void shutdownClass() ;
-	
-	static std::ostream& getLogStream(void);
+        static void shutdownClass() ;
 
-	static std::string& getDateTimeString(void) ;
-	
-	static void setLoggingIsActive (bool value);
-	
-	static bool getLoggingIsActive (void) ;
+        static std::ostream& getLogStream(void);
 
-	static void openFileIfNecessary();
-	
-//	static void closeFileIfNecessary();
-	
-  // static void writeLog (void);
-	
-	static void setDefaultFileName (std::string& value);
-	
-//	static void setLogMode (LogMode logModeValue);
-	
-	static std::string& determinePossibleFileName (std::string& fileName ) ;
-	static std::ios_base::fmtflags getDefaultFlags (void) {return _instance->defaultFlags; }
-  static UbUtilities* getInstance (void) ;
-  static void writeLogMsgToFile (QtMsgType type, const char *msg);
+        static std::string& getDateTimeString(void) ;
 
+        static void setLoggingIsActive (bool value);
+
+        static bool getLoggingIsActive (void) ;
+
+        static void openFileIfNecessary();
+
+        //	static void closeFileIfNecessary();
+
+        // static void writeLog (void);
+
+        static void setDefaultFileName (std::string& value);
+
+        //	static void setLogMode (LogMode logModeValue);
+
+        static std::string& determinePossibleFileName (std::string& fileName ) ;
+        static std::ios_base::fmtflags getDefaultFlags (void) {return _instance->defaultFlags; }
+        static UbUtilities* getInstance (void) ;
+        static void writeLogMsgToFile (QtMsgType type, const char *msg);
+        static void logSystemInfo (void);
+        static QString getOsName (void);
 
 };
 
