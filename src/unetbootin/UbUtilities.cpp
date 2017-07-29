@@ -1,6 +1,29 @@
 /*********************************************
 	 Utilities 
 
+Decription:
+Contains logging to file ($HOME/„unetbootinLog.txt“) based on the Qt debugging facility:
+Usage:
+#include <qapplication.h>
+
+qWarning() << „some message“ << someObject;
+
+See QT documentation: e.g.: Both qDebug() and qWarning() are debugging tools. They can be compiled away by defining QT_NO_DEBUG_OUTPUT and QT_NO_WARNING_OUTPUT during compilation.
+The debugging functions QObject::dumpObjectTree() and QObject::dumpObjectInfo() are often useful when an application looks or acts strangely. More useful if you use object names than not, but often useful even without names.
+I use qWarning() because qDebug() is compiled away by QT_NO_DEBUG_OUTPUT which is in the Makefile;
+The code is not release ready! We have to decide following questions:
+* Do we want logging always be active?
+* Where do we want the logging file to reside?
+* Do we want to always start a new file or use an existing old one?
+* How many old log files do we want to keep?
+
+Other questions:
+* How can we output the actual version of unetbootin?
+* How could we implement a version check mechanism for unetbootin?
+
+Todo:
+* log stderr and stdout in callExternApp()
+
 	
 *********************************************/
 
