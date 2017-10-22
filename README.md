@@ -1,7 +1,7 @@
 UNetbootin
 ----------
 
-[![Join the chat at https://gitter.im/unetbootin/unetbootin](https://badges.gitter.im/unetbootin/unetbootin.svg)](https://gitter.im/unetbootin/unetbootin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](http://www.gnu.org/licenses/gpl-2.0)
+[![Join the chat at https://gitter.im/unetbootin/unetbootin](https://badges.gitter.im/unetbootin/unetbootin.svg)](https://gitter.im/unetbootin/unetbootin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](http://www.gnu.org/licenses/gpl-2.0)
 
 ### Homepage and Downloads
 
