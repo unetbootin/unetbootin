@@ -18,6 +18,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+    .replace("17.10", "artful") \
     .replace("17.04", "zesty") \
     .replace("16.10", "yakkety") \
     .replace("16.04", "xenial") \
