@@ -429,7 +429,7 @@ msgid ""
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
 "Le dispositif USB créé ne s'amorcera pas sur un Mac. Insérez-le dans un PC, "
-"et sélectionnez l'option de démarrage sur USB dans le menu de démarrage du "
+"et sélectionnez l'option de démarrage USB dans le menu de démarrage du "
 "BIOS.%1"
 
 #. ts-context unetbootin
