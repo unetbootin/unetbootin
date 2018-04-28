@@ -1,36 +1,43 @@
 #!/bin/bash
 
-echo "mkbootable"
+echo "mkbootable, S0: $0, S1: $1"
 if [ $EUID -ne 0 ]; then
 echo "need admin privileges"
 osascript << EOQ
 do shell script "'$0' $1" with administrator privileges
 EOQ
 else
-echo "$syslinuxcmd $1"
+# echo "$syslinuxcmd $1"
+echo "arg should contain /dev/ e.g. /dev/disk2s1"
 syslinuxcmd=`echo "$0" | sed s/mkbootable/syslinux-mac/g`
+echo "syslinuxcmd: $syslinuxcmd $1"
 "$syslinuxcmd" "$1"
-sync
-diskutil umount "$1"
-sync
-hdiutil unmount "$1"
-sync
+
+sync # flush to disk before forced unmount
+diskutil unmount "$1"
+diskutil unmountDisk force "$1"
+
 rawdev=`echo "$1" | sed "s/s[^s]*$//"`
 partnum=`echo "$1" | perl -l -ne '/s[0-9]+(?!.*s)/ && print $&' | perl -l -ne '/[0-9]+/ && print $&'`
-echo "partnum: $partnum rawdev: $rawdev"
+rawdevrdisk=`echo "$rawdev" | sed s/disk/rdisk/`
+echo "partnum: $partnum, rawdev: $rawdev, rawdevrdisk: $rawdevrdisk"
+
+mbrfile=`echo "$0" | sed s/mkbootable/mbr.bin/g`
+echo "writing mbr from $mbrfile to $rawdev"
+
+# dd conv=notrunc bs=440 count=1 if="$mbrfile" of="$rawdevrdisk"
+dd conv=notrunc bs=440 count=1 if="$mbrfile" of="$rawdev"
+echo "2 passed fdisk quit"
+sync
+echo "passed writing mbr"
+sync
+diskutil unmount "$1"
+diskutil unmountDisk force "$1"   # stw it may have got auto mounted after dd
+
 fdisk -y -e "$rawdev" << EOR
 flag $partnum
 write
-y
 quit
 EOR
-echo "writing mbr from $mbrfile to $rawdev"
-mbrfile=`echo "$0" | sed s/mkbootable/mbr.bin/g`
-sync
-diskutil umount "$1"
-sync
-hdiutil unmount "$1"
-sync
-dd if="$mbrfile" of="$rawdev"
-echo "done writing mbr"
 fi
+echo "2 passed fdisk quit"

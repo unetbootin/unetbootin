@@ -46,7 +46,7 @@ system(build)
 download = <<EOR
 sftp unetbootin-build-mac <<EOT
 cd unetbootin-#{revno}/release
-get unetbootin-mac-#{revno}.zip
+get unetbootin-mac-#{revno}.dmg
 EOT
 EOR
 

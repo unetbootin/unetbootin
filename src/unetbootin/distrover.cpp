@@ -9,10 +9,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef ubuntuverlist
 #define ubuntuverlist \
-"12.04_NetInstall" << "12.04_NetInstall_x64" << "12.04_HdMedia" << "12.04_HdMedia_x64" << "12.04_Live" << "12.04_Live_x64" << \
 "14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
-"15.10_NetInstall" << "15.10_NetInstall_x64" << "15.10_HdMedia" << "15.10_HdMedia_x64" << "15.10_Live" << "15.10_Live_x64" << \
 "16.04_NetInstall" << "16.04_NetInstall_x64" << "16.04_HdMedia" << "16.04_HdMedia_x64" << "16.04_Live" << "16.04_Live_x64" << \
+"16.10_NetInstall" << "16.10_NetInstall_x64" << "16.10_HdMedia" << "16.10_HdMedia_x64" << "16.10_Live" << "16.10_Live_x64" << \
+"17.10_NetInstall" << "17.10_NetInstall_x64" << "17.10_HdMedia" << "17.10_HdMedia_x64" << "17.10_Live_x64" << \
+"18.04_NetInstall" << "18.04_NetInstall_x64" << "18.04_HdMedia" << "18.04_HdMedia_x64" << "18.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
@@ -67,11 +68,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "22_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "26_Live_x64" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-    "21_NetInstall" << "21_NetInstall_x64" << "21_Live" << "21_Live_x64" << "22_NetInstall" << "22_NetInstall_x64" << "22_Live" << "22_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+	"24_NetInstall" << "24_NetInstall_x64" << "24_Live" << "24_Live_x64" << "25_NetInstall" << "25_NetInstall_x64" << "25_Live" << "25_Live_x64" << "26_NetInstall_x64" << "26_Live_x64" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -185,11 +186,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">ht
 	"<b>Description:</b> Ophcrack can crack Windows passwords.<br/>"
 	"<b>Install Notes:</b> Ophcrack is booted and run in live mode; no installation is required to use it.") <<
 "XP-LiveCD-2.0" << "Vista-LiveCD-2.0"));
-distroselect->addItem("Parted Magic", (QStringList() << "Latest_Live" <<
+distroselect->addItem("Parted Magic", (QStringList() << "2.1_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 	"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 	"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
-"2.1_Live" << "Latest_Live"));
+"2.1_Live"));
 //distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
 //unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 //	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
@@ -267,3 +268,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.
 	"<b>Description:</b> Zenwalk is a Slackware-based distribution featuring the XFCE desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "5.2"));
+distroselect->addItem("3CX", (QStringList() << "pbx_debian_x64" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.3cx.com/\">https://www.3cx.com</a><br/>"
+    "<b>Description:</b> 3CX is a specialist, Debian-based Linux distribution designed to run a complete unified communications platform. It provides a complete open standards-based IP PBX and phone system that works with popular SIP trunks and IP phones. It will automatically configure all supported peripherals and it also comes with clients for Windows, OS X, iOS and Android. The ISO image includes a free license for the 3CX PBX edition.<br/>") <<
+"pbx_debian_x64"));

@@ -300,7 +300,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
         extlinuxcommand = locatecommand("extlinux", tr("EXT2-formatted USB drive"), "extlinux");
 	#endif
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
-	#endif
+#endif // Q_OS_LINUX
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
     #ifdef Q_OS_LINUX
     if (ubntmpf.isEmpty() || ubntmpf == "/")
@@ -543,13 +543,46 @@ void unetbootin::refreshdriveslist()
 	QStringList driveslist = listcurdrives();
 	for (int i = 0; i < driveslist.size(); ++i)
 	{
-		driveselect->addItem(driveslist.at(i));
+	    driveselect->addItem(driveslist.at(i));
 	}
 }
 
 QStringList unetbootin::listcurdrives()
 {
 	return listsanedrives();
+}
+
+#ifdef Q_OS_MAC
+bool unetbootin::is_external_drive_macos(const QString &drivename)
+{
+    // drivename: disk3s1
+    QString device_info = callexternapp("diskutil", "info " + drivename);
+    if (device_info.contains("External"))
+    {
+        return true;
+    }
+    // stw "diskutil info" output changed; now look for line "Internal:    No"
+    QStringList infoLines = device_info.split("\n").filter("Internal");
+    for (int i = 0; i < infoLines.size(); i++) {
+        if (infoLines.at(i).contains("No"))
+            return true;
+    }
+
+    return false;
+}
+#endif
+
+QStringList unetbootin::matchinglist(QRegExp regex, QString text)
+{
+QStringList matchinglist;
+int pos = 0;
+
+while ((pos = regex.indexIn(text, pos)) != -1) {
+	matchinglist << regex.cap(1);
+	pos += regex.matchedLength();
+}
+
+return matchinglist;
 }
 
 QStringList unetbootin::listsanedrives()
@@ -617,11 +650,22 @@ QStringList unetbootin::listsanedrives()
 				*/
 		#endif
 #ifdef Q_OS_MAC
-QString diskutilList = callexternapp("diskutil", "list");
-QStringList usbdevsL = diskutilList.split("\n").filter(QRegExp("(FAT|Microsoft)")).join(" ").split(" ").filter("disk");
-for (int i = 0; i < usbdevsL.size(); ++i)
+QString systemprofilertext = callexternapp("system_profiler", "SPStorageDataType");
+QRegExp filesystemregex("File System: (.+)\\n");
+QRegExp drivenameregex("BSD Name: (.+)\\n");
+filesystemregex.setMinimal(true);
+drivenameregex.setMinimal(true);
+
+QStringList filesystemlist = matchinglist(filesystemregex, systemprofilertext);
+QStringList drivenamelist = matchinglist(drivenameregex, systemprofilertext);
+
+QRegExp fatfilesystems("FAT|Microsoft");
+
+for (int i = 0; i < filesystemlist.size(); ++i)
 {
-	fulldrivelist.append("/dev/"+usbdevsL.at(i));
+	if ((fatfilesystems.indexIn(filesystemlist.at(i),0) != -1) && is_external_drive_macos(drivenamelist.at(i))) {
+		fulldrivelist.append("/dev/"+drivenamelist.at(i));
+	}
 }
 #endif
 	}
@@ -755,6 +799,7 @@ void unetbootin::on_okbutton_clicked()
 			default:
 				break;
 		}
+		refreshdriveslist(); // stw give it a chance to detect a new drive
 	}
 #ifdef Q_OS_MAC
     if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED" && !testingDownload)
@@ -4096,7 +4141,7 @@ void unetbootin::runinstusb()
 			// make active
 			if (sfdiskcommand != "") {
 				// use sfdisk if available
-                callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev).remove("p")));
+				callexternapp(sfdiskcommand, QString("%1 -A %2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev).remove("p")));
 			} else {
 				// use fdisk if sfdisk is unavailable
 				bool isOk = false;
@@ -4141,7 +4186,7 @@ void unetbootin::runinstusb()
         callexternapp("hdiutil", "unmount "+targetDev);
         callexternapp("sync", "");
         callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
-        /*
+       /*
         callexternapp("sync", "");
         callexternapp("diskutil", "umount "+targetDev);
         callexternapp("sync", "");
