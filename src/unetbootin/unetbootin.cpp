@@ -4306,7 +4306,7 @@ void unetbootin::fininstall()
 		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
 #endif
 #ifdef Q_OS_MAC
-		rebootmsgtext->setText(tr("The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, hold the option key and select your USB drive to boot from it.%1").arg(postinstmsg));
 #endif
 	}
     finishLogging();
