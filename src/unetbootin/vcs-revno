@@ -1,10 +1,11 @@
 #!/bin/bash
 
 vcsname="$(./vcs-name)"
+offset=30
 
 if [ "$vcsname" == "git" ]
 then
-git log --first-parent --pretty=oneline | wc -l | tr -d ' '
+echo $[`git log --first-parent --pretty=oneline | wc -l | tr -d ' '` + $offset]
 exit 0
 fi
 
