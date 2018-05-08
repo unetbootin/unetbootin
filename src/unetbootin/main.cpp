@@ -327,20 +327,11 @@ int main(int argc, char **argv)
                 QProcess::startDetached(kdesudolocation, gksuargs);
 				return 0;
 			}
-     /*
-     QString pkexeclocation = checkforgraphicalsu("pkexec");
-     if (pkexeclocation != "REQCNOTFOUND" && app.applicationFilePath() == "/usr/bin/unetbootin" && QFile::exists("/usr/share/polkit-1/actions/org.unetbootin.pkexec.unetbootin.policy"))
-     {
-         //QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
-         QProcess::startDetached(QString("%1 %2 %3").arg(pkexeclocation).arg(app.applicationFilePath()).arg(argsconc));
-         return 0;
-     }
-     */
 			QMessageBox rootmsgb;
 			rootmsgb.setIcon(QMessageBox::Warning);
 			rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
 			rootmsgb.setTextFormat(Qt::RichText);
-            rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo QT_X11_NO_MITSHM=1 %1</b><br/>or:<br/><b>su -c 'QT_X11_NO_MITSHM=1 %1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
+            rootmsgb.setText(uninstaller::tr("%2 must be run as root. Run it from the command line using:<br/><b>sudo QT_X11_NO_MITSHM=1 %1</b><br/>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
 			rootmsgb.setStandardButtons(QMessageBox::Ok);
 			switch (rootmsgb.exec())
 			{
@@ -349,6 +340,14 @@ int main(int argc, char **argv)
 				default:
 					break;
 			}
+     QString pkexeclocation = checkforgraphicalsu("pkexec");
+     if (pkexeclocation != "REQCNOTFOUND" && app.applicationFilePath() == "/usr/bin/unetbootin" && QFile::exists("/usr/share/polkit-1/actions/org.unetbootin.pkexec.unetbootin.policy"))
+     {
+         QProcess::startDetached(QString("%1 %2").arg(pkexeclocation).arg(app.applicationFilePath()));
+         //QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
+         //QProcess::startDetached(QString("%1 %2 %3").arg(pkexeclocation).arg(app.applicationFilePath()).arg(argsconc));
+         return 0;
+     }
 #endif
 #ifdef Q_OS_MAC
             /*
