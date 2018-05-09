@@ -1,0 +1,15 @@
+#!/bin/bash
+ 
+if hash gksu 2> /dev/null; then
+gksu env QT_X11_NO_MITSHM=1 unetbootin.elf
+elif hash kdesu 2> /dev/null; then
+kdesu env QT_X11_NO_MITSHM=1 unetbootin.elf
+elif hash gnomesudo 2> /dev/null; then
+gnomesudo env QT_X11_NO_MITSHM=1 unetbootin.elf
+elif hash kdesudo 2> /dev/null; then
+kdesudo env QT_X11_NO_MITSHM=1 unetbootin.elf
+elif hash pkexec 2> /dev/null; then
+pkexec unetbootin
+else
+unetbootin.elf
+fi
