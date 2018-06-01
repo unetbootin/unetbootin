@@ -9,7 +9,7 @@ gnomesudo env QT_X11_NO_MITSHM=1 unetbootin
 elif hash kdesudo 2> /dev/null; then
 kdesudo env QT_X11_NO_MITSHM=1 unetbootin
 elif hash pkexec 2> /dev/null; then
-pkexec unetbootin
+pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY QT_X11_NO_MITSHM=1 unetbootin
 else
 unetbootin
 fi
