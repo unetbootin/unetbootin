@@ -122,7 +122,7 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"Vous devez d'abord monter le disque USB %1sur un point de montage. La "
+"Vous devez d'abord monter le disque USB %1 sur un point de montage. La "
 "plupart des distributions le font automatiquement à la connexion."
 
 #. ts-context unetbootin
@@ -429,7 +429,7 @@ msgid ""
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
 "Le dispositif USB créé ne s'amorcera pas sur un Mac. Insérez-le dans un PC, "
-"et sélectionnez l'option de démarrage sur USB dans le menu de démarrage du "
+"et sélectionnez l'option de démarrage USB dans le menu de démarrage du "
 "BIOS.%1"
 
 #. ts-context unetbootin
