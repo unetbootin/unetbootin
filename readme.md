@@ -21,11 +21,11 @@ https://github.com/unetbootin/unetbootin/issues
 
 ### Building
 
-https://sourceforge.net/p/unetbootin/wiki/compile/
+https://github.com/unetbootin/unetbootin/wiki/compile
 
 ### Contributing
 
-https://sourceforge.net/p/unetbootin/wiki/development/
+https://github.com/unetbootin/unetbootin/wiki/development
 
 ### Licence
 
