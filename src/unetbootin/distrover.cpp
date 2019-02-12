@@ -17,7 +17,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #endif
 
 distroselect->addItem(unetbootin::tr("== Select Distribution =="), (QStringList() << unetbootin::tr("== Select Version ==") <<
-unetbootin::tr("Welcome to <a href=\"https://unetbootin.github.io//\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
+unetbootin::tr("Welcome to <a href=\"https://unetbootin.github.io/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 	"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 	"<li>Select an installation type, and press OK to begin installing.</li></ol>") <<
 unetbootin::tr("== Select Version ==")));
