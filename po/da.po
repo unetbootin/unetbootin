@@ -21,7 +21,7 @@ msgstr ""
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr "Venstre Mod Højre"
+msgstr "Venstre mod højre"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
@@ -76,12 +76,12 @@ msgstr "Alle filer (*)"
 #. ts-context unetbootin
 #: unetbootin.cpp:586
 msgid "Open Kernel File"
-msgstr "Åbn Kernel fil"
+msgstr "Åbn kernel-fil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr "Åbn Initrd fil"
+msgstr "Åbn Initrd-fil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
@@ -91,14 +91,14 @@ msgstr "Åben bootloaderens konfigurationsfil"
 #. ts-context unetbootin
 #: unetbootin.cpp:624
 msgid "Insert a USB flash drive"
-msgstr "Insæt et USB flash drev"
+msgstr "Insæt et USB-flashdrev"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:625
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
-msgstr "Der blev ikke fundet noget USB flash drev. Hvis du allerede har indsat et USB drev, så prøv at genformatere det i FAT32 filsystemet."
+msgstr "Der blev ikke fundet nogle USB-flashdrev. Hvis du allerede har indsat et USB-drev, så prøv at genformatere det i FAT32-filsystemet."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:640
@@ -110,7 +110,7 @@ msgstr "%1 ikke monteret"
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
-msgstr "Du skal først montere USB drevet %1 til et monteringspunkt. De fleste distributioner vil gøre dette automatisk efter at du har fjernet og genindsat USB drevet."
+msgstr "Du skal først montere USB-drevet %1 til et monteringspunkt. De fleste distributioner vil gøre dette automatisk efter at du har fjernet og genindsat USB drevet."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:656
@@ -444,59 +444,59 @@ msgstr "== Vælg version =="
 #. ts-context unetbootin
 #: distrover.cpp:23
 msgid ""
-"Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"Welcome to <a href=\"https://unetbootin.github.io/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
 "version to download from the list above, or manually specify files to load "
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
-msgstr "Velkommen til <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, den Universelle Netboot Installer. Anvendelse:<ol><li>Vælg en distribution og version fra listen oven over til download, eller specificer manuelt filer/filen neden under.</li><li>Vælg installations type, og tryk OK for at begynde installationen.</li></ol>"
+msgstr "Velkommen til <a href=\"https://unetbootin.github.io/\">UNetbootin</a>, den Universelle Netboot Installer. Anvendelse:<ol><li>Vælg en distribution og version fra listen oven over til download, eller specificer manuelt filer/filen neden under.</li><li>Vælg installations type, og tryk OK for at begynde installationen.</li></ol>"
 
 #. ts-context unetbootin
 #: distrover.cpp:28
 #| msgid ""
 #| "<b>Homepage:</b> <a "
-#| "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b>"
+#| "href=\"https://www.archlinux.org/\">https://www.archlinux.org</a><br/><b>Description:</b>"
 #| " Arch Linux is a lightweight distribution optimized for speed and "
 #| "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 #| "installation over the internet (FTP). If interested in a LiveUSB version, "
 #| "see FaunOS."
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b>"
+"href=\"https://www.archlinux.org/\">https://www.archlinux.org</a><br/><b>Description:</b>"
 " Arch Linux is a lightweight distribution optimized for speed and "
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Beskrivelse:</b> Arch Linux er en letvægtig distribution optimeret med henblik på hastighed og fleksibilitet<br/><b>Installationsnoter:</b> Standardversionen understøtter installation over internettet (FTP)."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.archlinux.org/\">https://www.archlinux.org</a><br/><b>Beskrivelse:</b> Arch Linux er en letvægtig distribution optimeret med henblik på hastighed og fleksibilitet<br/><b>Installationsnoter:</b> Standardversionen understøtter installation over internettet (FTP)."
 
 #. ts-context unetbootin
 #: distrover.cpp:34
 msgid ""
-"<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">http://www"
+"<b>Homepage:</b> <a href=\"https://www.backtrack-linux.org/\">http://www"
 ".backtrack-linux.org/</a><br/><b>Description:</b> BackTrack is a "
 "distribution focused on network analysis and penetration "
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode;"
 " no installation is required to use it."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Beskrivelse:</b> BackTrack er en distribution fokuseret på netværksanalyse og penetrationstest.<br/><b>Installationsnoter:</b> BackTrack bliver startet op og kørt i livetilstand; ingen installation er nødvendig for, at bruge det.."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.backtrack-linux.org/\">https://www.backtrack-linux.org/</a><br/><b>Beskrivelse:</b> BackTrack er en distribution fokuseret på netværksanalyse og penetrationstest.<br/><b>Installationsnoter:</b> BackTrack bliver startet op og kørt i livetilstand; ingen installation er nødvendig for, at bruge det.."
 
 #. ts-context unetbootin
 #: distrover.cpp:39
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:</b>"
+"href=\"https://www.centos.org/\">https://www.centos.org</a><br/><b>Description:</b>"
 " CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install Notes:</b> "
 "The default version allows for both installation over the internet (FTP), or"
 " offline installation using pre-downloaded installation ISO files."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Beskrivelse:</b>  CentOS er en gratis Red Hat Enterprise Linux klon.<br/><b>Installations Noter:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.centos.org/\">https://www.centos.org</a><br/><b>Beskrivelse:</b>  CentOS er en gratis Red Hat Enterprise Linux klon.<br/><b>Installations Noter:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
 
 #. ts-context unetbootin
 #: distrover.cpp:44
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description:</b>"
+"href=\"https://clonezilla.org/\">https://clonezilla.org/</a><br/><b>Description:</b>"
 " CloneZilla is a distribution used for disk backup and "
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Beskrivelse:</b> CloneZilla er en distribution beregnet for disk backup and imaging.<br/><b>Installations Noter:</b> CloneZilla bootes og køres i live mode; ingen installation nødvendig for brug."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://clonezilla.org/\">https://clonezilla.org/</a><br/><b>Beskrivelse:</b> CloneZilla er en distribution beregnet for disk backup and imaging.<br/><b>Installations Noter:</b> CloneZilla bootes og køres i live mode; ingen installation nødvendig for brug."
 
 #. ts-context unetbootin
 #: distrover.cpp:49
@@ -513,76 +513,75 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsma
 #: distrover.cpp:54
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:</b>"
+"href=\"https://www.debian.org/\">https://www.debian.org</a><br/><b>Description:</b>"
 " Debian is a community-developed Linux distribution that supports a wide "
 "variety of architectures and offers a large repository of "
 "packages.<br/><b>Install Notes:</b> The NetInstall version allows for "
 "installation over FTP. If you would like to use a pre-downloaded install "
 "iso, use the HdMedia option, and then place the install iso file on the root"
 " directory of your hard drive or USB drive"
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Beskrivelse:</b> Debian er en fællesskabs-udviklet Linux distrobution der understøtter udvidet og varieret arkitekturer, samtidig med et stort biblotek af pakker. <br/><b>Installations Notater:</b> Netinstallations-versionen tillader installation over FTP, hvis du gerne vil bruge en tidligere-hentet installations iso, brug HdMedia muligheden og derefter placer installations iso filen på rod mappen af din hard disk eller USB drev"
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.debian.org/\">https://www.debian.org</a><br/><b>Beskrivelse:</b> Debian er en fællesskabs-udviklet Linux distrobution der understøtter udvidet og varieret arkitekturer, samtidig med et stort biblotek af pakker. <br/><b>Installations Notater:</b> Netinstallations-versionen tillader installation over FTP, hvis du gerne vil bruge en tidligere-hentet installations iso, brug HdMedia muligheden og derefter placer installations iso filen på rod mappen af din hard disk eller USB drev"
 
 #. ts-context unetbootin
 #: distrover.cpp:60
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Description:</b>"
+"<b>Description:</b>"
 " Dreamlinux is a user-friendly Debian-based distribution.<br/><b>Install "
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Beskrivelse:</b>  Dreamlinux er en brugervenlig Debian-baseret distribution.<br/><b>Installation Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation."
+msgstr "<b>Beskrivelse:</b>  Dreamlinux er en brugervenlig Debian-baseret distribution.<br/><b>Installation Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation."
 
 #. ts-context unetbootin
 #: distrover.cpp:65
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Description:</b>"
+"href=\"https://www.freedrweb.com/livecd\">https://www.freedrweb.com/livecd</a><br/><b>Description:</b>"
 " Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that "
 "broke due to malware.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which malware scans can be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Beskrivelse:</b> Dr.Web AntiVirus er et anti-virus emergency kit til gendannelse af systemer der er brudt ned på grund af malware.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan starte malware scanning."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.freedrweb.com/livecd\">https://www.freedrweb.com/livecd</a><br/><b>Beskrivelse:</b> Dr.Web AntiVirus er et anti-virus emergency kit til gendannelse af systemer der er brudt ned på grund af malware.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan starte malware scanning."
 
 #. ts-context unetbootin
 #: distrover.cpp:70
 #| msgid ""
 #| "<b>Homepage:</b> <a "
-#| "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b>"
+#| "href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/><b>Description:</b>"
 #| " Elive is a Debian-based distribution featuring the Enlightenment window "
 #| "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
 #| "Live mode, from which the installer can optionally be launched. This "
 #| "installs the unstable version, not the <a "
-#| "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
+#| "href=\"https://www.elivecd.org/Download/Stable\">Stable version</a>."
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b>"
+"href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/><b>Description:</b>"
 " Elive is a Debian-based distribution featuring the Enlightenment window "
 "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Beskrivelse:</b> Elive er en Debian-baset distribution, som indeholder Enlightenment vindueshåndteringen.<br/><b>Installationsnoter:</b> Live-versionen kan starte i livetilstand, hvorfra installationsprocessen eventuelt kan igangsættes."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/><b>Beskrivelse:</b> Elive er en Debian-baset distribution, som indeholder Enlightenment vindueshåndteringen.<br/><b>Installationsnoter:</b> Live-versionen kan starte i livetilstand, hvorfra installationsprocessen eventuelt kan igangsættes."
 
 #. ts-context unetbootin
 #: distrover.cpp:75
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Description:</b>"
+"href=\"https://getfedora.org/\">https://getfedora.org</a><br/><b>Description:</b>"
 " Fedora is a Red Hat sponsored community distribution which showcases the "
 "latest cutting-edge free/open-source software.<br/><b>Install Notes:</b> The"
 " Live version allows for booting in Live mode, from which the installer can "
 "optionally be launched. The NetInstall version allows for both installation "
 "over the internet (FTP), or offline installation using pre-downloaded "
 "installation ISO files."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Beskrivelse:</b> Fedora er en Red Hat sponseret community distribution indeholdende det sidste nye gratis/åbne software.<br/><b>Install Notes:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. NetInstall versionen tillader installation over FTP og offline installation ved hjælp af forud hentede installations ISO filer."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://getfedora.org/\">https://getfedora.org</a><br/><b>Beskrivelse:</b> Fedora er en Red Hat sponseret community distribution indeholdende det sidste nye gratis/åbne software.<br/><b>Install Notes:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. NetInstall versionen tillader installation over FTP og offline installation ved hjælp af forud hentede installations ISO filer."
 
 #. ts-context unetbootin
 #: distrover.cpp:80
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Description:</b>"
+"href=\"https://www.freebsd.org/\">https://www.freebsd.org</a><br/><b>Description:</b>"
 " FreeBSD is a general-purpose Unix-like operating system designed for "
 "scalability and performance.<br/><b>Install Notes:</b> The default version "
 "allows for both installation over the internet (FTP), or offline "
 "installation using pre-downloaded installation ISO files."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Beskrivelse:</b> FreeBSD er et alsidigt Unix-lignende operativ system designet for skalerbarhed og ydeevne.<br/><b>Install Notes:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.freebsd.org/\">https://www.freebsd.org</a><br/><b>Beskrivelse:</b> FreeBSD er et alsidigt Unix-lignende operativ system designet for skalerbarhed og ydeevne.<br/><b>Install Notes:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
 
 #. ts-context unetbootin
 #: distrover.cpp:85
@@ -599,24 +598,24 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://www.freedos.org/\">http://www.freedo
 #: distrover.cpp:90
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</b>"
+"href=\"https://freenas.org/\">https://freenas.org</a><br/><b>Description:</b>"
 " FreeNAS is an embedded open source NAS (Network-Attached Storage) "
 "distribution based on FreeBSD.<br/><b>Install Notes:</b> The LiveCD version "
 "creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB"
 " key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Beskrivelse:</b> FreeNAS er en embedded open source NAS (Network-Attached Storage) distribution baseret på FreeBSD.<br/><b>Installationsnoter:</b> LiveCD-versionen opretter et RAM drev til FreeNAS, og benytter et FAT-formateret diskettedrev eller USB-nøgle til at gemme konfigurationsfilen. Embedded versionen understøtter installation til hard disk."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://freenas.org/\">https://freenas.org</a><br/><b>Beskrivelse:</b> FreeNAS er en embedded open source NAS (Network-Attached Storage) distribution baseret på FreeBSD.<br/><b>Installationsnoter:</b> LiveCD-versionen opretter et RAM drev til FreeNAS, og benytter et FAT-formateret diskettedrev eller USB-nøgle til at gemme konfigurationsfilen. Embedded versionen understøtter installation til hard disk."
 
 #. ts-context unetbootin
 #: distrover.cpp:95
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:</b>"
+"href=\"https://frugalware.org/\">https://frugalware.org</a><br/><b>Description:</b>"
 " Frugalware is a general-purpose Slackware-based distro for advanced "
 "users.<br/><b>Install Notes:</b> The default option allows for both "
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Beskrivelse:</b> Frugalware er en alsidig Slackware-baseret distribution til avancerede brugere.<br/><b>Installations Noter:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://frugalware.org/\">https://frugalware.org</a><br/><b>Beskrivelse:</b> Frugalware er en alsidig Slackware-baseret distribution til avancerede brugere.<br/><b>Installations Noter:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
 
 #. ts-context unetbootin
 #: distrover.cpp:100
@@ -652,27 +651,27 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnew
 #: distrover.cpp:120
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Description:</b>"
+"href=\"https://sourceforge.net/projects/gujin/\">https://sourceforge.net/projects/gujin</a><br/><b>Description:</b>"
 " Gujin is a graphical boot manager which can bootstrap various volumes and "
 "files.<br/><b>Install Notes:</b> Gujin simply boots and runs; no "
 "installation is required to use it."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Beskrivelse:</b> Gujin er en grafisk boot manager som kan bootstrappe forskellige biblioteker og filer.<br/><b>Install Notes:</b> Gujin bootes og køres i live mode; ingen installation nødvendig for brug."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://sourceforge.net/projects/gujin/\">https://sourceforge.net/projects/gujin</a><br/><b>Beskrivelse:</b> Gujin er en grafisk boot manager som kan bootstrappe forskellige biblioteker og filer.<br/><b>Install Notes:</b> Gujin bootes og køres i live mode; ingen installation nødvendig for brug."
 
 #. ts-context unetbootin
 #: distrover.cpp:125
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b>"
+"href=\"https://support.kaspersky.com/14229/\">https://support.kaspersky.com/14229/</a><br/><b>Description:</b>"
 " Kaspersky Rescue Disk detects and removes malware from your Windows "
 "installation.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which malware scans can be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Beskrivelse:</b> Kaspersky Rescue Disk finder og fjerner malware fra din  Windows installation.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan starte scanning for malware."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://support.kaspersky.com/14229/\">https://support.kaspersky.com/14229/</a><br/><b>Beskrivelse:</b> Kaspersky Rescue Disk finder og fjerner malware fra din  Windows installation.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan starte scanning for malware."
 
 #. ts-context unetbootin
 #: distrover.cpp:130
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Description:</b>"
+"href=\"https://www.kubuntu.org/\">https://www.kubuntu.org</a><br/><b>Description:</b>"
 " Kubuntu is an official Ubuntu derivative featuring the KDE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The "
@@ -681,52 +680,51 @@ msgid ""
 "downloaded alternate (not desktop) install iso, use the HdMedia option, and "
 "then place the alternate install iso file on the root directory of your hard"
 " drive or USB drive"
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Beskrivelse:</b> Kubuntu er en officiel Ubuntu afhængighed med KDE skrivebord funktionen.<br/><b>Installations Notater:</b> Live versionen tillader opstart i Live måde, fra hvilket installationen eventuelt kan køres.\nNetinstallations-metoden tillader installation over FTP og kan installere Kubuntu og andre Ubuntu officiele afhængigheder. Hvis du gerne vil bruge en tidligere-hentet alternativ (ikke skrivebord) installations iso, brug HdMedia muligheden og placer derefter den alternative installations iso fil på rod mappen af din hard disk eller USB drev"
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.kubuntu.org/\">https://www.kubuntu.org</a><br/><b>Beskrivelse:</b> Kubuntu er en officiel Ubuntu afhængighed med KDE skrivebord funktionen.<br/><b>Installations Notater:</b> Live versionen tillader opstart i Live måde, fra hvilket installationen eventuelt kan køres.\nNetinstallations-metoden tillader installation over FTP og kan installere Kubuntu og andre Ubuntu officiele afhængigheder. Hvis du gerne vil bruge en tidligere-hentet alternativ (ikke skrivebord) installations iso, brug HdMedia muligheden og placer derefter den alternative installations iso fil på rod mappen af din hard disk eller USB drev"
 
 #. ts-context unetbootin
 #: distrover.cpp:135
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Description:</b>"
+"href=\"https://linuxconsole.org/\">https://linuxconsole.org</a><br/><b>Description:</b>"
 " LinuxConsole is a desktop distro to play games, easy to install, easy to "
 "use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is latest 1.0 "
 "release."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Beskrivelse:</b> LinuxConsole er en skrivebords-distrobution til at spille spil med, nemt af installere, nemt af bruge og har hurtig opstart.<br/><b>Installations Notater:</b> 1.0.2009 versionen er den seneste 1.0 udgivelse."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://linuxconsole.org/\">https://linuxconsole.org</a><br/><b>Beskrivelse:</b> LinuxConsole er en skrivebords-distrobution til at spille spil med, nemt af installere, nemt af bruge og har hurtig opstart.<br/><b>Installations Notater:</b> 1.0.2009 versionen er den seneste 1.0 udgivelse."
 
 #. ts-context unetbootin
 #: distrover.cpp:140
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</b>"
+"href=\"https://linuxmint.com/\">https://linuxmint.com</a><br/><b>Description:</b>"
 " Linux Mint is a user-friendly Ubuntu-based distribution which includes "
 "additional proprietary codecs and other software by default.<br/><b>Install "
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Beskrivelse:</b> Linux Mint er en brugervenlig Ubuntu-baseret distribution som inkluderer ekstra proprietære codecs og andet software som standard.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://linuxmint.com/\">https://linuxmint.com</a><br/><b>Beskrivelse:</b> Linux Mint er en brugervenlig Ubuntu-baseret distribution som inkluderer ekstra proprietære codecs og andet software som standard.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation."
 
 #. ts-context unetbootin
 #: distrover.cpp:145
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Description:</b>"
+"href=\"https://www.openmandriva.org/\">https://www.openmandriva.org/</a><br/><b>Description:</b>"
 " Mandriva is a user-friendly distro formerly known as Mandrake "
 "Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live"
 " mode, from which the installer can optionally be launched. The NetInstall "
 "version allows for installation over the internet (FTP) or via pre-"
-"downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
+"downloaded <a href=\"https://www.openmandriva.org/en/download\">\"Free\" iso "
 "image files</a>."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Beskrivelse:</b> Mandriva er en brugervenlig distribution tidligere kendt som Mandrake Linux.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. NetInstall versionen tillader installation over internettet (FTP) eller via forud hentede <a href=\"http://www.mandriva.com/en/download\">\"Free\" ISO filer</a>."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.openmandriva.org/\">https://www.openmandriva.org/</a><br/><b>Beskrivelse:</b> Mandriva er en brugervenlig distribution tidligere kendt som Mandrake Linux.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. NetInstall versionen tillader installation over internettet (FTP) eller via forud hentede <a href=\"https://www.openmandriva.org/en/download\">\"Free\" ISO filer</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:151
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</b>"
+"<b>Description:</b>"
 " MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly "
 "version based on KDE, while AntiX is a lightweight version for older "
 "computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
 "from which the installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Beskrivelse:</b> MEPIS er en Debian-baseret distribution. SimplyMEPIS er en brugervenlig version baseret på KDE, mens AntiX er en letvægts version for ældre computere.<br/><b>Installations Noter:</b> MEPIS tillader booting i Live mode, hvorfra man kan vælge at starte installation."
+msgstr "<b>Beskrivelse:</b> MEPIS er en Debian-baseret distribution. SimplyMEPIS er en brugervenlig version baseret på KDE, mens AntiX er en letvægts version for ældre computere.<br/><b>Installations Noter:</b> MEPIS tillader booting i Live mode, hvorfra man kan vælge at starte installation."
 
 #. ts-context unetbootin
 #: distrover.cpp:156
@@ -772,12 +770,12 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/boot
 #: distrover.cpp:171
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Description:</b>"
+"href=\"https://www.opensuse.org/\">https://www.opensuse.org</a><br/><b>Description:</b>"
 " openSUSE is a user-friendly Novell sponsored distribution.<br/><b>Install "
 "Notes:</b> The default version allows for both installation over the "
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Beskrivelse:</b> openSUSE er en brugervenlig Novell sponsoreret distribution.<br/><b>Installations Noter:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.opensuse.org/\">https://www.opensuse.org</a><br/><b>Beskrivelse:</b> openSUSE er en brugervenlig Novell sponsoreret distribution.<br/><b>Installations Noter:</b> Standard versionen tillader både installation over internettet (FTP), og offline installation ved hjælp af forud hentede installations ISO filer."
 
 #. ts-context unetbootin
 #: distrover.cpp:176
@@ -792,12 +790,12 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://o
 #: distrover.cpp:181
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Description:</b>"
+"href=\"https://partedmagic.com/\">https://partedmagic.com</a><br/><b>Description:</b>"
 " Parted Magic includes the GParted partition manager and other system "
 "utilities which can resize, copy, backup, and manipulate disk "
 "partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live"
 " mode; no installation is required to use it."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Beskrivelse:</b> Parted Magic indeholder GParted partition manager og andre værktøjer som kan ændre størrelse, kopiere, tage backup af og manipulere disk partitioner.<br/><b>Installations Noter:</b> Parted Magic bootes og køres i live mode; ingen installation nødvendig for brug."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://partedmagic.com/\">https://partedmagic.com</a><br/><b>Beskrivelse:</b> Parted Magic indeholder GParted partition manager og andre værktøjer som kan ændre størrelse, kopiere, tage backup af og manipulere disk partitioner.<br/><b>Installations Noter:</b> Parted Magic bootes og køres i live mode; ingen installation nødvendig for brug."
 
 #. ts-context unetbootin
 #: distrover.cpp:186
@@ -824,23 +822,23 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://www.puppylinux.com/\">http://www.pup
 #: distrover.cpp:196
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Description:</b>"
+"href=\"https://www.sabayon.org/\">https://www.sabayon.org</a><br/><b>Description:</b>"
 " Sabayon Linux is a Gentoo-based Live DVD distribution which features the "
 "Entropy binary package manager in addition to the source-based "
 "Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The LiteMCE "
 "edition is 2 GB, while the full edition will need an 8 GB USB drive"
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Beskrivelse:</b> Sabayon Linux er en Gentoo-baset Live DVD distribution som anvender Entropy binær pakke manageren foruden den kildebaserede Portage.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. LiteMCE udgaven er på 2 GB, mens den fulde version behøver et 8 GB USB drev."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.sabayon.org/\">https://www.sabayon.org</a><br/><b>Beskrivelse:</b> Sabayon Linux er en Gentoo-baset Live DVD distribution som anvender Entropy binær pakke manageren foruden den kildebaserede Portage.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. LiteMCE udgaven er på 2 GB, mens den fulde version behøver et 8 GB USB drev."
 
 #. ts-context unetbootin
 #: distrover.cpp:201
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
+"href=\"https://www.slax.org/\">https://www.slax.org</a><br/><b>Description:</b>"
 " Slax is a Slackware-based distribution featuring the KDE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Beskrivelse:</b> Slax er en Slackware-baseret distribution der anvender KDE desktoppen.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.slax.org/\">https://www.slax.org</a><br/><b>Beskrivelse:</b> Slax er en Slackware-baseret distribution der anvender KDE desktoppen.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation."
 
 #. ts-context unetbootin
 #: distrover.cpp:206
@@ -867,22 +865,21 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">h
 #: distrover.cpp:216 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Description:</b>"
+"href=\"https://www.supergrubdisk.org\">https://www.supergrubdisk.org</a><br/><b>Description:</b>"
 " Super Grub Disk is a bootloader which can perform a variety of MBR and "
 "bootloader recovery tasks.<br/><b>Install Notes:</b> SGD simply boots and "
 "runs; no installation is required to use it."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Beskrivelse:</b> Super Grub Disk er en bootloader som kan udføre et bredt udvalg af MBR og bootloader reparations opgaver.<br/><b>Installations Noter:</b> SGD simpelthen booter og kører; ingen installation er nødvendig for at bruge den."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.supergrubdisk.org\">https://www.supergrubdisk.org</a><br/><b>Beskrivelse:</b> Super Grub Disk er en bootloader som kan udføre et bredt udvalg af MBR og bootloader reparations opgaver.<br/><b>Installations Noter:</b> SGD simpelthen booter og kører; ingen installation er nødvendig for at bruge den."
 
 #. ts-context unetbootin
 #: distrover.cpp:221
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super_OS</a><br/><b>Description:</b>"
+"<b>Description:</b>"
 " Super OS is an unofficial derivative of Ubuntu which includes additional "
 "software by default. Requires a 2GB USB drive to install.<br/><b>Install "
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b><a href=\"http://hacktolive.org/wiki/Super_OS\">\nhttp://hacktolive.org/wiki/Super_OS</a><br/><b>\nBeskrivelse:</b> Super OS er en uofficiel afhængighed af Ubuntu fra hvilket supplerende software er inkluderet.\nKræver et 2GB USB drev for at installere.<br/><b>Installations Notater:</b>Live versionen tillader opstart i Live måde fra hvilket installationen eventuelt kan køres."
+msgstr "<b>\nBeskrivelse:</b> Super OS er en uofficiel afhængighed af Ubuntu fra hvilket supplerende software er inkluderet.\nKræver et 2GB USB drev for at installere.<br/><b>Installations Notater:</b>Live versionen tillader opstart i Live måde fra hvilket installationen eventuelt kan køres."
 
 #. ts-context unetbootin
 #: distrover.cpp:226
@@ -898,7 +895,7 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://www.sysresccd.org\">http://www.sysre
 #: distrover.cpp:231
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:</b>"
+"href=\"https://www.ubuntu.com/\">https://www.ubuntu.com</a><br/><b>Description:</b>"
 " Ubuntu is a user-friendly Debian-based distribution. It is currently the "
 "most popular Linux desktop distribution.<br/><b>Install Notes:</b> The Live "
 "version allows for booting in Live mode, from which the installer can "
@@ -907,7 +904,7 @@ msgid ""
 "would like to use a pre-downloaded alternate (not desktop) install iso, use "
 "the HdMedia option, and then place the alternate install iso file on the "
 "root directory of your hard drive or USB drive"
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Beskrivelse:</b> Ubuntu er en bruger-venlig Debian-baseret distrobution.<br/><b>Installations Notater:</b> Live versionen tillader opstart i Live måde. fra hvilket installationen eventuelt kan køres. Net-installation versionen tillader installation over FTP, og kan installere Kubuntu og andre officiele Ubuntu afhængigheder. Hvis du gerne vil bruge et hentet alternativ (ikke skrivebord) installations iso brug HdMedia muligheden, og placer den alternative installations iso fil på rod mappen af din hard disk eller USB drev"
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.ubuntu.com/\">https://www.ubuntu.com</a><br/><b>Beskrivelse:</b> Ubuntu er en bruger-venlig Debian-baseret distrobution.<br/><b>Installations Notater:</b> Live versionen tillader opstart i Live måde. fra hvilket installationen eventuelt kan køres. Net-installation versionen tillader installation over FTP, og kan installere Kubuntu og andre officiele Ubuntu afhængigheder. Hvis du gerne vil bruge et hentet alternativ (ikke skrivebord) installations iso brug HdMedia muligheden, og placer den alternative installations iso fil på rod mappen af din hard disk eller USB drev"
 
 #. ts-context unetbootin
 #: distrover.cpp:236
@@ -923,7 +920,7 @@ msgstr "<b>Hjemmeside:</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org<
 #: distrover.cpp:241
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Description:</b>"
+"href=\"https://www.xubuntu.org/\">https://www.xubuntu.org</a><br/><b>Description:</b>"
 " Xubuntu is an official Ubuntu derivative featuring the XFCE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The "
@@ -932,17 +929,17 @@ msgid ""
 "downloaded alternate (not desktop) install iso, use the HdMedia option, and "
 "then place the alternate install iso file on the root directory of your hard"
 " drive or USB drive"
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Beskrivelse:</b> Xubuntu er en officiel Ubuntu afhængiged men XFCE skrivebords-funktionen.<br/><b>Installations Notater:</b> Live versionen tillader opstart i live mode, fra hvilket installeringen eventuelt kan køres. Netinstall versionen tillader installation over FTP, og kan installere Kubuntu og andre Ubuntu officiele afhængigheder. Hvis du gerne vil bruge et hentet alternativ (ikke skrivebord) installations iso, brug HdMedia muligheden også placer den alternative installation iso fil på rod mappen af din hard disk eller USB drev"
+msgstr "<b>Hjemmeside:</b> <a href=\"https://www.xubuntu.org/\">https://www.xubuntu.org</a><br/><b>Beskrivelse:</b> Xubuntu er en officiel Ubuntu afhængiged men XFCE skrivebords-funktionen.<br/><b>Installations Notater:</b> Live versionen tillader opstart i live mode, fra hvilket installeringen eventuelt kan køres. Netinstall versionen tillader installation over FTP, og kan installere Kubuntu og andre Ubuntu officiele afhængigheder. Hvis du gerne vil bruge et hentet alternativ (ikke skrivebord) installations iso, brug HdMedia muligheden også placer den alternative installation iso fil på rod mappen af din hard disk eller USB drev"
 
 #. ts-context unetbootin
 #: distrover.cpp:246
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Description:</b>"
+"href=\"https://zenwalkgnulinux.blogspot.com/\">https://zenwalkgnulinux.blogspot.com</a><br/><b>Description:</b>"
 " Zenwalk is a Slackware-based distribution featuring the XFCE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
-msgstr "<b>Hjemmeside:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Beskrivelse:</b> Zenwalk er en Slackware-baseret distribution indeholdende XFCE desktoppen.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra du kan vælge at starte installationen."
+msgstr "<b>Hjemmeside:</b> <a href=\"https://zenwalkgnulinux.blogspot.com/\">https://zenwalkgnulinux.blogspot.com</a><br/><b>Beskrivelse:</b> Zenwalk er en Slackware-baseret distribution indeholdende XFCE desktoppen.<br/><b>Installations Noter:</b> Live versionen tillader booting i Live mode, hvorfra du kan vælge at starte installationen."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:33
@@ -970,20 +967,20 @@ msgstr "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Hjemmeside:
 #: distrovercust.cpp:53
 #| msgid ""
 #| "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-#| "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b>"
+#| "href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/><b>Description:</b>"
 #| " Elive is a Debian-based distribution featuring the Enlightenment window "
 #| "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
 #| "Live mode, from which the installer can optionally be launched. The Unstable"
-#| " version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
+#| " version, not the <a href=\"https://www.elivecd.org/Download/Stable\">Stable "
 #| "version</a> is installed. This installer is based on <a "
-#| "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+#| "href=\"https://unetbootin.github.io/\">UNetbootin</a>."
 msgid ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b>"
+"href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/><b>Description:</b>"
 " Elive is a Debian-based distribution featuring the Enlightenment window "
 "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
-msgstr "<img src=\":/elive.png\" /><br/><b>Hjemmeside:</b><a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Beskrivelse:</b>Elive er en Debian-baseret distrobution med Enlightenment vindue håndterings-funktion.<br/><b>Installations Notater:</b> Live versionen tillader for opstart i Live mode, fra hvilket installerings-muligheden kan køres."
+msgstr "<img src=\":/elive.png\" /><br/><b>Hjemmeside:</b><a href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/><b>Beskrivelse:</b>Elive er en Debian-baseret distrobution med Enlightenment vindue håndterings-funktion.<br/><b>Installations Notater:</b> Live versionen tillader for opstart i Live mode, fra hvilket installerings-muligheden kan køres."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
@@ -1028,8 +1025,8 @@ msgid ""
 "distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
 "system into RAM and boots from memory, so installation is not required but "
 "optional. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-msgstr "<img src=\":/slitaz.png\" /><br/><b>Hjemmeside:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Beskrivelse:</b> SliTaz er en letvægts, desktop-orienteret micro distribution.<br/><b>Installations Noter:</b> Live versionen læser hele systemet ind i dine RAM og booter fra hukommelsen, så installation er ikke nødvendig, men kan vælges. Denne installer er baseret på <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"href=\"https://unetbootin.github.io/\">UNetbootin</a>."
+msgstr "<img src=\":/slitaz.png\" /><br/><b>Hjemmeside:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Beskrivelse:</b> SliTaz er en letvægts, desktop-orienteret micro distribution.<br/><b>Installations Noter:</b> Live versionen læser hele systemet ind i dine RAM og booter fra hukommelsen, så installation er ikke nødvendig, men kan vælges. Denne installer er baseret på <a href=\"https://unetbootin.github.io/\">UNetbootin</a>."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:93
