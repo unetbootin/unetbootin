@@ -251,7 +251,7 @@ msgstr "<b>Витягую стиснений iso-образ:</b> %1"
 #. ts-context unetbootin
 #: unetbootin.cpp:1745
 msgid "Copying file, please wait..."
-msgstr "Зачекайте будь-ласка, іде копіювання файлу..."
+msgstr "Зачекайте будь ласка, іде копіювання файлу..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1746 unetbootin.cpp:2560
@@ -271,7 +271,7 @@ msgstr "<b>Скопійовано:</b> 0 байтів"
 #. ts-context unetbootin
 #: unetbootin.cpp:1786
 msgid "Extracting files, please wait..."
-msgstr "Витягування файлів, будь-ласка, зачекайте..."
+msgstr "Витягування файлів, будь ласка, зачекайте..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1787
@@ -311,7 +311,7 @@ msgstr "<b>Витягнено:</b> %1 of %2 файлів"
 #. ts-context unetbootin
 #: unetbootin.cpp:2559
 msgid "Downloading files, please wait..."
-msgstr "Завантаження файлів, будь-ласка, зачекайте..."
+msgstr "Завантаження файлів, будь ласка, зачекайте..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2562
