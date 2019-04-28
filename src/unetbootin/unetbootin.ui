@@ -430,7 +430,7 @@
            <string>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</string>
           </property>
           <property name="maximum">
-           <number>9999</number>
+           <number>128000</number>
           </property>
          </widget>
         </item>
