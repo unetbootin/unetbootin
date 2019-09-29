@@ -11,13 +11,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define debianrelnamereplace \
 	relname \
 	.replace("unstable", "sid") \
-    .replace("testing", "stretch") \
-    .replace("stable", "jessie");
+    .replace("testing", "bullseye") \
+    .replace("stable", "buster");
 #endif
 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+    .replace("19.10", "eoan") \
+    .replace("19.04", "disco") \
+    .replace("18.10", "cosmic") \
     .replace("18.04", "bionic") \
     .replace("17.10", "artful") \
     .replace("17.04", "zesty") \

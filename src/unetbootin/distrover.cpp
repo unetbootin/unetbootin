@@ -11,8 +11,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define ubuntuverlist \
 "14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
 "16.04_NetInstall" << "16.04_NetInstall_x64" << "16.04_HdMedia" << "16.04_HdMedia_x64" << "16.04_Live" << "16.04_Live_x64" << \
-"17.10_NetInstall" << "17.10_NetInstall_x64" << "17.10_HdMedia" << "17.10_HdMedia_x64" << "17.10_Live_x64" << \
 "18.04_NetInstall" << "18.04_NetInstall_x64" << "18.04_HdMedia" << "18.04_HdMedia_x64" << "18.04_Live_x64" << \
+"19.04_NetInstall" << "19.04_NetInstall_x64" << "19.04_HdMedia" << "19.04_HdMedia_x64" << "19.04_Live_x64" << \
+"19.10_NetInstall" << "19.10_NetInstall_x64" << "19.10_HdMedia" << "19.10_HdMedia_x64" << "19.10_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
@@ -31,11 +32,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.backtrack-linux.org/\">ht
 	"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
 	"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") <<
 "5R1-GNOME" << "5R1-GNOME_x64" << "5R1-KDE" << "5R1-KDE_x64"));
-distroselect->addItem("CentOS", (QStringList() << "6_Live" <<
+distroselect->addItem("CentOS", (QStringList() << "8_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.centos.org/\">https://www.centos.org</a><br/>"
 	"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 	"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-"4" << "4_x64" << "5" << "5_x64" << "6" << "6_x64" << "6_Live" << "6_Live_x64"));
+"4" << "4_x64" << "5" << "5_x64" << "6" << "6_x64" << "6_Live" << "6_Live_x64" << "7_Live" << "7_Live_x64" << "8_Live" << "8_Live_x64"));
 distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://clonezilla.org/\">https://clonezilla.org/</a><br/>"
 	"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
@@ -66,11 +67,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.elivecd.org/\">https://ww
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "26_Live_x64" <<
+distroselect->addItem("Fedora", (QStringList() << "30_Live_x64" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://getfedora.org/\">https://getfedora.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-	"24_NetInstall" << "24_NetInstall_x64" << "24_Live" << "24_Live_x64" << "25_NetInstall" << "25_NetInstall_x64" << "25_Live" << "25_Live_x64" << "26_NetInstall_x64" << "26_Live_x64" << "Rawhide_NetInstall_x64"));
+	"24_NetInstall" << "24_NetInstall_x64" << "24_Live" << "24_Live_x64" << "25_NetInstall" << "25_NetInstall_x64" << "25_Live" << "25_Live_x64" << "26_NetInstall_x64" << "26_Live_x64" << "27_NetInstall_x64" << "27_Live_x64" << "28_NetInstall_x64" << "28_Live_x64" << "29_NetInstall_x64" << "29_Live_x64" << "30_NetInstall_x64" << "30_Live_x64" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.freebsd.org/\">https://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -134,11 +135,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"https://linuxconsole.org/\">https://l
  "<b>Description:</b> LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .<br/>"
  "<b>Install Notes:</b> The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).") <<
  "1.0.2010-cd"));
-    distroselect->addItem("Linux Mint", (QStringList() << "17.2_Live" <<
+    distroselect->addItem("Linux Mint", (QStringList() << "19.2_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://linuxmint.com/\">https://linuxmint.com</a><br/>"
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-    "17_Live" << "17_Live_x64" << "17.1_Live" << "17.1_Live_x64" << "17.2_Live" << "17.2_Live_x64"));
+    "19.2_Live" << "19.2_Live_x64"));
 distroselect->addItem("Lubuntu", (QStringList() << "18.04_Live_x64" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.lubuntu.net/\">https://www.lubuntu.net</a><br/>"
 	"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"
