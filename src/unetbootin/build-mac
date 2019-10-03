@@ -15,8 +15,10 @@ qtmacd="$(pwd)/qt4-mac"
 #lupdate unetbootin.pro
 $qtmacd/bin/lrelease unetbootin.pro
 ./qmake-mac
+sed -i '' 's/-arch i386//g' Makefile
+sed -i '' 's/i386//g' Makefile
 make
-#./fix-unetbootin-frameworkpaths.rb
+./fix-unetbootin-frameworkpaths.rb
 #mv unetbootin.app unetbootin-old.app
 #ditto --arch i386 unetbootin-old.app unetbootin.app
 #rm -r unetbootin-old.app
