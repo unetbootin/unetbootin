@@ -2,6 +2,7 @@
 Version=1.0
 Name=UNetbootin
 Comment=Tool for creating Live USB drives
+Comment[ru]=Инструмент для создания устройств Live USB
 Categories=Application;System;
 Exec=/usr/bin/unetbootin_asroot
 Terminal=false
