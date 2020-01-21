@@ -362,7 +362,29 @@ int main(int argc, char **argv)
             */
             //qDebug() << QString("osascript -e 'do shell script \"%1 %2\" with administrator privileges'").arg(app.applicationFilePath()).arg(argsconc);
             //QProcess::startDetached(QString("osascript -e 'do shell script \"%1 %2\" with administrator privileges'").arg(app.applicationFilePath()).arg(argsconc));
-            QProcess::startDetached("osascript", QStringList() << "-e" << QString("do shell script \"'%1' %2\" with administrator privileges").arg(app.applicationFilePath()).arg(argsconcSingleQuote));
+			QProcess process;
+			process.start("sw_vers", QStringList() << "-productVersion");
+			process.waitForFinished(-1); // will wait forever until finished
+			QString stdout = QString(process.readAllStandardOutput()).trimmed();
+			bool is_mojave_or_above = false;
+			if (stdout.count('.') == 2) {
+				QStringList version_parts = stdout.split('.');
+				int major_version = version_parts[0].toInt();
+				int sub_version = version_parts[1].toInt();
+				if (major_version == 10 && sub_version >= 14) {
+					is_mojave_or_above = true;
+				} else if (major_version > 10) {
+					is_mojave_or_above = true;
+				}
+			}
+			if (is_mojave_or_above) {
+				QDir resourceDir = QDir(QApplication::applicationDirPath());
+				resourceDir.cdUp();
+				resourceDir.cd("Resources");
+				QProcess::startDetached("bash", QStringList() << "-c" << QString("SUDO_ASKPASS='%1' sudo --askpass '%2' %3").arg(resourceDir.absoluteFilePath("askpass.js")).arg(app.applicationFilePath()).arg(argsconcSingleQuote));
+			} else {
+				QProcess::startDetached("osascript", QStringList() << "-e" << QString("do shell script \"'%1' %2\" with administrator privileges").arg(app.applicationFilePath()).arg(argsconcSingleQuote));
+			}
             return 0;
 #endif
 		}
