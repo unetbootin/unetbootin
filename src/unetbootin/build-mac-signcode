@@ -1,0 +1,24 @@
+#!/bin/bash
+
+revno=$(./vcs-revno)
+if [ ! -d "release/unetbootin.app" ]
+then
+echo "missing release/unetbootin.app"
+exit
+fi
+
+if [ -d unetbootin-mac-dmg/unetbootin.app ]
+then
+rm -rf unetbootin-mac-dmg/unetbootin.app
+fi
+
+cp -r release/unetbootin.app unetbootin-mac-dmg/unetbootin.app
+
+if [ -f "release/unetbootin-mac-$revno.dmg" ]
+then
+rm release/unetbootin-mac-$revno.dmg
+fi
+
+hdiutil create -volname UNetbootin -srcfolder unetbootin-mac-dmg -ov -format UDZO release/unetbootin-mac-$revno.dmg
+rm -rf unetbootin-mac-dmg/unetbootin.app
+rm -rf release/unetbootin.app
