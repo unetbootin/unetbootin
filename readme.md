@@ -33,5 +33,5 @@ GNU GPL v2 and above
 
 ### Contact
 
-[Geza Kovacs](http://gkovacs.com)
+[Geza Kovacs](https://gkovacs.com)
 
