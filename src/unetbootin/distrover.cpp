@@ -9,11 +9,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef ubuntuverlist
 #define ubuntuverlist \
-"14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
 "16.04_NetInstall" << "16.04_NetInstall_x64" << "16.04_HdMedia" << "16.04_HdMedia_x64" << "16.04_Live" << "16.04_Live_x64" << \
 "18.04_NetInstall" << "18.04_NetInstall_x64" << "18.04_HdMedia" << "18.04_HdMedia_x64" << "18.04_Live_x64" << \
-"19.04_NetInstall" << "19.04_NetInstall_x64" << "19.04_HdMedia" << "19.04_HdMedia_x64" << "19.04_Live_x64" << \
-"19.10_NetInstall" << "19.10_NetInstall_x64" << "19.10_HdMedia" << "19.10_HdMedia_x64" << "19.10_Live_x64" << \
+"19.10_NetInstall_x64" << "19.10_HdMedia_x64" << "19.10_Live_x64" << \
+"20.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
