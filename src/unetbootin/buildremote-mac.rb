@@ -46,10 +46,10 @@ system(build)
 download = <<EOR
 sftp unetbootin-build-mac <<EOT
 cd unetbootin-#{revno}/release
-get unetbootin-mac-#{revno}.dmg unetbootin-mac-#{revno}-unsigned.dmg
+get unetbootin-mac-#{revno}.dmg
 EOT
 EOR
 
 system(download)
-Dir.chdir("..")
-system("./build-mac-signcode")
+#Dir.chdir("..")
+#system("./build-mac-signcode")
