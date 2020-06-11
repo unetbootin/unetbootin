@@ -51,4 +51,5 @@ EOT
 EOR
 
 system(download)
+Dir.chdir("..")
 system("./build-mac-signcode")
