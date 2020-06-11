@@ -1,9 +1,22 @@
 #!/bin/bash
 
 revno=$(./vcs-revno)
-if [ ! -d "release/unetbootin.app" ]
+
+if [ ! -f "release/unetbootin-mac-$revno-unsigned.dmg" ]
 then
-echo "missing release/unetbootin.app"
+echo "missing release/unetbootin-mac-$revno-unsigned.dmg"
+exit
+fi
+
+cd release
+
+7z x unetbootin-mac-$revno-unsigned.dmg
+
+cd ..
+
+if [ ! -d "release/UNetbootin/unetbootin.app" ]
+then
+echo "missing release/UNetbootin/unetbootin.app"
 exit
 fi
 
@@ -12,7 +25,18 @@ then
 rm -rf unetbootin-mac-dmg/unetbootin.app
 fi
 
-cp -r release/unetbootin.app unetbootin-mac-dmg/unetbootin.app
+rm -rf release/UNetbootin/unetbootin.app/Contents/Frameworks/Qt*
+
+echo "signing releases/UNetbootin/unetbootin.app/Contents/MacOS/unetbootin"
+codesign --deep --entitlements entitlements.xml  --force --verify --verbose --sign "Developer ID Application: Geza Kovacs" --options runtime release/UNetbootin/unetbootin.app/Contents/MacOS/unetbootin
+echo "done signing releases/UNetbootin/unetbootin.app/Contents/MacOS/unetbootin"
+echo "signing releases/UNetbootin/unetbootin.app"
+codesign --deep --entitlements entitlements.xml  --force --verify --verbose --sign "Developer ID Application: Geza Kovacs" --options runtime release/UNetbootin/unetbootin.app
+echo "done signing releases/UNetbootin/unetbootin.app"
+cp -r unetbootin.app/Contents/Frameworks/Qt* release/UNetbootin/unetbootin.app/Contents/Frameworks/
+mv release/UNetbootin/unetbootin.app unetbootin-mac-dmg/unetbootin.app
+chmod -R +x unetbootin-mac-dmg/unetbootin.app
+rm -rf release/UNetbootin
 
 if [ -f "release/unetbootin-mac-$revno.dmg" ]
 then
@@ -21,4 +45,3 @@ fi
 
 hdiutil create -volname UNetbootin -srcfolder unetbootin-mac-dmg -ov -format UDZO release/unetbootin-mac-$revno.dmg
 rm -rf unetbootin-mac-dmg/unetbootin.app
-rm -rf release/unetbootin.app
