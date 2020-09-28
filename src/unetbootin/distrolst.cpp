@@ -285,14 +285,14 @@ if (nameDistro == "CloneZilla")
 if (nameDistro == "Damn Small Linux")
 {
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/" << 
+//	"ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/" <<
 	"http://ibiblio.org/pub/Linux/distributions/damnsmall/current/" << 
-	"ftp://gd.tuwien.ac.at/opsys/linux/damnsmall/current/" << 
+//	"ftp://gd.tuwien.ac.at/opsys/linux/damnsmall/current/" <<
 	"http://gd.tuwien.ac.at/opsys/linux/damnsmall/current/" << 
-	"ftp://ftp.is.co.za/linux/distributions/damnsmall/current/" << 
+//	"ftp://ftp.is.co.za/linux/distributions/damnsmall/current/" <<
 //	"ftp://ftp.belnet.be/packages/damnsmalllinux/current/" << 
 	"http://ftp.belnet.be/packages/damnsmalllinux/current/" << 
-	"ftp://ftp.heanet.ie/mirrors/damnsmalllinux.org/current/" << 
+//	"ftp://ftp.heanet.ie/mirrors/damnsmalllinux.org/current/" <<
 	"http://ftp.heanet.ie/mirrors/damnsmalllinux.org/current/"
 //	"ftp://ftp.oss.cc.gatech.edu/pub/linux/distributions/damnsmall/current/" << 
 //	"http://ftp.oss.cc.gatech.edu/pub/linux/distributions/damnsmall/current/" <<
@@ -340,9 +340,9 @@ if (nameDistro == "Debian")
 if (nameDistro == "Dreamlinux")
 {
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"ftp://ftp.nluug.nl/pub/os/Linux/distr/dreamlinux/stable/" << 
+//	"ftp://ftp.nluug.nl/pub/os/Linux/distr/dreamlinux/stable/" <<
 	"http://ftp.nluug.nl/pub/os/Linux/distr/dreamlinux/stable/" << 
-	"ftp://ftp.surfnet.nl/pub/os/Linux/distr/dreamlinux/stable/" << 
+//	"ftp://ftp.surfnet.nl/pub/os/Linux/distr/dreamlinux/stable/" <<
 	"http://ftp.surfnet.nl/pub/os/Linux/distr/dreamlinux/stable/"
 	, 524288000, 1048576000, QList<QRegExp>() << 
 	QRegExp(".iso$", Qt::CaseInsensitive) << 
@@ -474,16 +474,16 @@ if (nameDistro == "Frugalware")
 	QStringList frugalwaremirrorsL = QStringList() <<
 //	"ftp://ftp5.frugalware.org/packages/frugalware/pub/frugalware-"+relname+"/boot/" <<
 //	"http://www5.frugalware.org/packages/frugalware/pub/frugalware-"+relname+"/boot/" <<
-	"ftp://ftp8.frugalware.org/distro/frugalware/frugalware-"+relname+"/boot/" <<
+//	"ftp://ftp8.frugalware.org/distro/frugalware/frugalware-"+relname+"/boot/" <<
 	"http://www8.frugalware.org/distro/frugalware/frugalware-"+relname+"/boot/" <<
-	"ftp://ftp10.frugalware.org/pub/linux/frugalware/frugalware-"+relname+"/boot/" <<
+//	"ftp://ftp10.frugalware.org/pub/linux/frugalware/frugalware-"+relname+"/boot/" <<
 	"http://www10.frugalware.org/pub/linux/frugalware/frugalware-"+relname+"/boot/" <<
-	"ftp://ftp12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
+//	"ftp://ftp12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
 	"http://www12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
-	"ftp://ftp4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
-	"http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
-	"ftp://ftp2.frugalware.org/frugalware/pub/frugalware/frugalware-"+relname+"/boot/" <<
-	"ftp://ftp3.frugalware.org/mirrors/frugalware/pub/frugalware/frugalware-"+relname+"/boot/";
+//	"ftp://ftp4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
+	"http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/"; //<<
+//	"ftp://ftp2.frugalware.org/frugalware/pub/frugalware/frugalware-"+relname+"/boot/" <<
+//	"ftp://ftp3.frugalware.org/mirrors/frugalware/pub/frugalware/frugalware-"+relname+"/boot/";
 	downloadfile(fileFilterNetDir(frugalwaremirrorsL
 	, 307200, 104857600, QList<QRegExp>() << 
 	QRegExp("vmlinuz", Qt::CaseInsensitive) <<
@@ -557,8 +557,8 @@ if (nameDistro == "Kaspersky Rescue Disk")
 	{
 		downloadfile(fileFilterNetDir(QStringList() <<
 		"http://devbuilds.kaspersky-labs.com/devbuilds/RescueDisk/" <<
-		"http://ftp.kaspersky.com/devbuilds/RescueDisk/" <<
-		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
+		"http://ftp.kaspersky.com/devbuilds/RescueDisk/" //<<
+//		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
 		, 9288000, 1048576000, QList<QRegExp>() <<
 		QRegExp(".iso$", Qt::CaseInsensitive) <<
 		QRegExp("k\\S{0,}.iso$", Qt::CaseInsensitive)
@@ -568,8 +568,8 @@ if (nameDistro == "Kaspersky Rescue Disk")
 	{
 		downloadfile(fileFilterNetDir(QStringList() <<
 		"http://devbuilds.kaspersky-labs.com/devbuilds/RescueDisk10/" <<
-		"http://ftp.kaspersky.com/devbuilds/RescueDisk10/" <<
-		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk10/"
+		"http://ftp.kaspersky.com/devbuilds/RescueDisk10/" //<<
+//		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk10/"
 		, 9288000, 1048576000, QList<QRegExp>() <<
 		QRegExp(".iso$", Qt::CaseInsensitive) <<
 		QRegExp("k\\S{0,}.iso$", Qt::CaseInsensitive)
@@ -631,11 +631,11 @@ if (nameDistro == "Linux Mint")
 	QString("http://mirror.sov.uk.goscomb.net/linuxmint.com/stable/%1/").arg(relname) <<
 	QString("http://mirror.csclub.uwaterloo.ca/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://mirror.aarnet.edu.au/pub/linuxmint/stable/%1/").arg(relname) <<
-	QString("http://mirror.waia.asn.au/pub/linux/linuxmint/linuxmint-isos/linuxmint.com/stable/%1/").arg(relname) <<
-	QString("ftp://mirrors.secution.com/linuxmint.com/stable/%1/").arg(relname) <<
-	QString("ftp://ftp.is.co.za/mirror/linuxmint.com/stable/%1/").arg(relname) <<
-	QString("ftp://ftp.tpnet.pl/pub/linux/linuxmint/isos/stable/%1/").arg(relname) <<
-	QString("ftp://mirror.unej.ac.id/pub/iso/linux-mint/stable/%1/").arg(relname)
+	QString("http://mirror.waia.asn.au/pub/linux/linuxmint/linuxmint-isos/linuxmint.com/stable/%1/").arg(relname) //<<
+//	QString("ftp://mirrors.secution.com/linuxmint.com/stable/%1/").arg(relname) <<
+//	QString("ftp://ftp.is.co.za/mirror/linuxmint.com/stable/%1/").arg(relname) <<
+//	QString("ftp://ftp.tpnet.pl/pub/linux/linuxmint/isos/stable/%1/").arg(relname) <<
+//	QString("ftp://mirror.unej.ac.id/pub/iso/linux-mint/stable/%1/").arg(relname)
 	, 61440000, 1048576000, mintregex), isotmpf);
 	extractiso(isotmpf);
 }
@@ -682,11 +682,11 @@ if (nameDistro == "MEPIS")
 	if (relname == "antix")
 	{
 		downloadfile(fileFilterNetDir(QStringList() << 
-		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/antix/" << 
+//		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/antix/" <<
 		"http://distro.ibiblio.org/pub/linux/distributions/mepis/released/antix/" <<
-		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/antix/" << 
+//		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/antix/" <<
 		"http://ftp.uwsg.indiana.edu/linux/mepis/released/antix/" <<
-		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/antix/" <<
+//		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/antix/" <<
 		"http://mirror.cs.vt.edu/pub/MEPIS/antix/"
 		, 61440000, 1048576000, QList<QRegExp>() << 
 		QRegExp("antiX\\S{0,}.iso$", Qt::CaseInsensitive) << 
@@ -696,11 +696,11 @@ if (nameDistro == "MEPIS")
 	else
 	{
 		downloadfile(fileFilterNetDir(QStringList() << 
-		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/" << 
+//		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/" <<
 		"http://distro.ibiblio.org/pub/linux/distributions/mepis/released/" <<
-		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/" << 
+//		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/" <<
 		"http://ftp.uwsg.indiana.edu/linux/mepis/released/" <<
-		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/" <<
+//		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/" <<
 		"http://mirror.cs.vt.edu/pub/MEPIS/"
 		, 61440000, 1048576000, QList<QRegExp>() << 
 		QRegExp("MEPIS\\S{0,}.iso$", Qt::CaseInsensitive) << 
@@ -812,9 +812,9 @@ if (nameDistro == "PCLinuxOS")
 if (nameDistro == "Puppy Linux")
 {
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"ftp://ibiblio.org/pub/linux/distributions/puppylinux/" << 
+//	"ftp://ibiblio.org/pub/linux/distributions/puppylinux/" <<
 	"http://distro.ibiblio.org/pub/linux/distributions/puppylinux/" <<
-	"ftp://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/" << 
+//	"ftp://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/" <<
 	"http://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/"
 	, 61440000, 1048576000, QList<QRegExp>() << 
 	QRegExp(".iso$", Qt::CaseInsensitive) << 
@@ -1025,7 +1025,7 @@ if (nameDistro == "Ubuntu")
 			downloadfile(fileFilterNetDir(QStringList() << 
 			"http://releases.ubuntu.com/"+relname << 
 			"http://releases.ubuntu.com/releases/"+relname <<
-			"ftp://releases.ubuntu.com/releases/.pool/" << 
+//			"ftp://releases.ubuntu.com/releases/.pool/" <<
 			"http://mirrors.gigenet.com/ubuntu/"+relname <<
 			"http://mirrors.easynews.com/linux/ubuntu-releases/"+relname <<
 			"http://www.gtlib.gatech.edu/pub/ubuntu-releases/"+relname <<

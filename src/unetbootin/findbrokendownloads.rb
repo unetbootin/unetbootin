@@ -1,20 +1,15 @@
-#!/usr/bin/ruby1.9
+#!/usr/bin/ruby
 
 # Supply as command line arg the path to the UNetbootin executable
 # Outputs distribution:version tuples that failed to download
 
-if `whoami`.strip != 'root'
-puts 'Must be run as root'
-exit()
-end
-
 unetbootin = ARGV[0]
 
-distrolist = `#{unetbootin} action=listdistros`.split("\n")
+distrolist = `#{unetbootin} rootcheck=n action=listdistros`.split("\n")
 distrolist.each {|distro|
-  versions = `#{unetbootin} distribution="#{distro}" action=listversions`.split("\n")
+  versions = `#{unetbootin} rootcheck=n distribution="#{distro}" action=listversions`.split("\n")
   versions.each {|version|
-  exitstatus = `#{unetbootin} method=distribution installtype=HDD distribution="#{distro}" version="#{version}" testingdownload=y autoinstall=y`
+  exitstatus = `#{unetbootin} rootcheck=n method=distribution installtype=HDD distribution="#{distro}" version="#{version}" testingdownload=y autoinstall=y`
   if exitstatus.include? 'downloadfailed'
     puts distro + ':' + version
   end

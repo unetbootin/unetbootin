@@ -9,6 +9,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #include "unetbootin.h"
 
+#include <QMessageBox>
+
 #ifdef Q_OS_WIN32
 
 void configsysUndo(QString uninstPathL)
@@ -403,18 +405,16 @@ int main(int argc, char **argv)
 		uninstmsgb.setIcon(QMessageBox::Information);
 		uninstmsgb.setWindowTitle(uninstaller::tr("%1 Uninstaller").arg(UNETBOOTINB));
 		uninstmsgb.setText(uninstaller::tr("%1 is currently installed. Remove the existing version?").arg(UNETBOOTINB));
- 		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
- 		switch (uninstmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
- 			{
- 				ubnUninst();
-			}
-			case QMessageBox::Cancel:
-				break;
-	 		default:
-				break;
- 		}
+		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+		switch (uninstmsgb.exec())
+		{
+		case QMessageBox::Ok:
+			ubnUninst();
+			break;
+		case QMessageBox::Cancel:
+		default:
+			break;
+		}
 		return 0;
 	}
 #endif
