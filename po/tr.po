@@ -597,7 +597,7 @@ msgid ""
 msgstr ""
 "<b>Anasayfa:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Tanım:</b> BackTrack "
-"ağ çözümlemesi ve nüfuz testine odaklanmış bir dağıtımdır.<br/><b>Kurulum "
+"ağ analizi ve sızma testi odaklı bir dağıtımdır.<br/><b>Kurulum "
 "notları:</b> BackTrack canlı modda önyükleme yapılır ve çalıştırılır; "
 "kullanmak için kurulum gerektirmez."
 
