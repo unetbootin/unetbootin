@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rvern="$(./vcs-revno)"
-qtx11d="$(pwd)/qt4-x11"
+qtx11d="$(pwd)/qt5-x11"
 
 if [ ! -d release ]
 then

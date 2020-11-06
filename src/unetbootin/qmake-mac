@@ -1,5 +1,5 @@
 #!/bin/sh
 
-qtmacd="$(pwd)/qt4-mac"
+qtmacd="$(pwd)/qt5-mac"
 
 $qtmacd/bin/qmake -config release -spec $qtmacd/mkspecs/macx-g++ "QMAKE_INCDIR_QT = $qtmacd/include" "QMAKE_LIBDIR_QT = $qtmacd/lib" "QMAKE_QMAKE = $qtmacd/bin/qmake" "QMAKE_MOC = $qtmacd/bin/moc" "QMAKE_UIC = $qtmacd/bin/uic" "QMAKE_RCC = $qtmacd/bin/rcc" "CONFIG += x86_64" "$@"
