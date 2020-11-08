@@ -11,8 +11,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define ubuntuverlist \
 "16.04_NetInstall" << "16.04_NetInstall_x64" << "16.04_HdMedia" << "16.04_HdMedia_x64" << "16.04_Live" << "16.04_Live_x64" << \
 "18.04_NetInstall" << "18.04_NetInstall_x64" << "18.04_HdMedia" << "18.04_HdMedia_x64" << "18.04_Live_x64" << \
-"19.10_NetInstall_x64" << "19.10_HdMedia_x64" << "19.10_Live_x64" << \
 "20.04_Live_x64" << \
+"20.10_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
