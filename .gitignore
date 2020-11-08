@@ -42,5 +42,7 @@ src/unetbootin/qt4-mac
 src/unetbootin/qt5-win
 src/unetbootin/qt5-x11
 src/unetbootin/qt5-mac
+src/unetbootin/.qmake.stash
+src/unetbootin/unetbootin_plugin_import.cpp
 /node_modules
 .getsecret.yaml
