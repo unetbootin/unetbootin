@@ -1107,7 +1107,7 @@ bool unetbootin::checkifoutofspace(QString destindir)
 	ULARGE_INTEGER FreeBytesAvailable;
 	ULARGE_INTEGER TotalNumberOfBytes;
 	ULARGE_INTEGER TotalNumberOfFreeBytes;
-	if (GetDiskFreeSpaceExA(destindir.toAscii(), &FreeBytesAvailable, &TotalNumberOfBytes, &TotalNumberOfFreeBytes))
+	if (GetDiskFreeSpaceExA(destindir.toUtf8(), &FreeBytesAvailable, &TotalNumberOfBytes, &TotalNumberOfFreeBytes))
 	{
 		if (FreeBytesAvailable.QuadPart < 1024)
 			outofspace = true;
@@ -3219,7 +3219,7 @@ void unetbootin::installsvzip()
 
 void unetbootin::configsysEdit()
 {
-	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toAscii(), FILE_ATTRIBUTE_NORMAL);
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toUtf8(), FILE_ATTRIBUTE_NORMAL);
 	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
 	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
 	QFile confignwFile(QString("%1confignw.txt").arg(targetPath));
