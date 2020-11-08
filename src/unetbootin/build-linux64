@@ -13,5 +13,5 @@ $qtx11d/bin/lrelease unetbootin.pro
 make
 strip --strip-all unetbootin
 mv unetbootin release/unetbootin-linux64-$rvern.bin
-./upx64 --lzma release/unetbootin-linux64-$rvern.bin
+./upx64 --best --lzma release/unetbootin-linux64-$rvern.bin
 
