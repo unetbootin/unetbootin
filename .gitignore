@@ -44,5 +44,6 @@ src/unetbootin/qt5-x11
 src/unetbootin/qt5-mac
 src/unetbootin/.qmake.stash
 src/unetbootin/unetbootin_plugin_import.cpp
+src/unetbootin/moc_predefs.h
 /node_modules
 .getsecret.yaml

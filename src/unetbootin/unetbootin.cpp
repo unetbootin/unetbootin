@@ -2608,7 +2608,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	return QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> >();
 }
 
-void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=524288)
+void unetbootin::downloadfile(QString fileurl, QString targetfile, long minsize=524288)
 {
 	if (fileurl.isEmpty())
 	{
@@ -2774,7 +2774,7 @@ QString unetbootin::downloadpagecontents(QUrl pageurl)
 	return result;
 }
 
-QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize)
+QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize)
 {
 	qDebug() << "lstFtpDirFiles called for " << ldfDirStringUrl;
 	return {};
@@ -2823,7 +2823,7 @@ QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
 	return relativefilelinksL;
 }
 
-QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize)
+QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize)
 {
 	if (!ldfDirStringUrl.endsWith('/'))
 		ldfDirStringUrl += '/';
@@ -2837,7 +2837,7 @@ QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, int ldfMinSize, 
 	}
 }
 
-QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
 {
 	if (!ldfDirStringUrl.endsWith('/'))
 		ldfDirStringUrl += '/';
@@ -2849,7 +2849,7 @@ QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, in
 	return qMakePair(ldfDirStringUrl+relativeFileUrl.first, relativeFileUrl.second);
 }
 
-QString unetbootin::fileFilterNetDir(QStringList ldfDirStringUrlList, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+QString unetbootin::fileFilterNetDir(QStringList ldfDirStringUrlList, long ldfMinSize, long ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
 {
 	QPair<QString, int> curRemoteFileUrlSP;
 	int hRegxMatch = 0;

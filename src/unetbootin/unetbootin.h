@@ -273,13 +273,13 @@ public:
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforincludesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
 	QString searchforgrub2includesfile(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforgrub2includesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
-	void downloadfile(QString fileurl, QString targetfile, int minsize);
+	void downloadfile(QString fileurl, QString targetfile, long minsize);
 	QString downloadpagecontents(QUrl pageurl);
-	QStringList lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);
+	QStringList lstFtpDirFiles(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize);
 	QStringList lstHttpDirFiles(QString ldfDirStringUrl);
-	QStringList lstNetDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);
-	QPair<QString, int> weightedFilterNetDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
-	QString fileFilterNetDir(QStringList ldfDirStringUrlList, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
+	QStringList lstNetDirFiles(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize);
+	QPair<QString, int> weightedFilterNetDir(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
+	QString fileFilterNetDir(QStringList ldfDirStringUrlList, long ldfMinSize, long ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
 	QPair<QString, int> filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList);
 	static QString callexternapp(QString xexecFile, QString xexecParm);
 	static QString callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin);
