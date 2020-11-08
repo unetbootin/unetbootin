@@ -2,8 +2,8 @@
 
 rvern="$(./vcs-revno)"
 mingwb="$(ls /usr/ | grep mingw32 | grep -v amd64 | head --lines 1)"
-qtwind="$(pwd)/qt4-win"
-qtx11d="$(pwd)/qt4-x11"
+qtwind="$(pwd)/qt5-win"
+qtx11d="$(pwd)/qt5-x11"
 
 if [ ! -d release ]
 then

@@ -37,8 +37,8 @@ build = <<EOR
 ssh unetbootin-build-linux <<EOT
 unzip unetbootin-source-#{revno}.zip -d unetbootin-#{revno}
 cd unetbootin-#{revno}
-ln -s ~/qt4-win
-ln -s ~/qt4-x11
+ln -s ~/qt5-win
+ln -s ~/qt5-x11
 ./build-windows
 EOT
 EOR
