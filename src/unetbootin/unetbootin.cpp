@@ -2608,7 +2608,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	return QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> >();
 }
 
-void unetbootin::downloadfile(QString fileurl, QString targetfile, long minsize=524288)
+void unetbootin::downloadfile(QString fileurl, QString targetfile, qint64 minsize=524288)
 {
 	if (fileurl.isEmpty())
 	{
@@ -2728,8 +2728,8 @@ void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 	if(oldsec != time.second())
 	{
 		oldsec = time.second();
-		tprogress->setValue(dlbytes);
-		tprogress->setMaximum(maxbytes);
+		tprogress->setValue(10000 * dlbytes / maxbytes);
+		tprogress->setMaximum(10000);
 		// display the downloaded size with suffix
 		pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
 	}
@@ -2743,8 +2743,8 @@ void unetbootin::cpprogressupdate64(qint64 dlbytes, qint64 maxbytes)
  if(oldsec != time.second())
  {
    oldsec = time.second();
-	 tprogress->setValue(dlbytes);
-	 tprogress->setMaximum(maxbytes);
+	 tprogress->setValue(10000 * dlbytes / maxbytes);
+	 tprogress->setMaximum(10000);
    // display the downloaded size with suffix
 	 pdesc1->setText(tr("<b>Copied:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
  }
@@ -2774,7 +2774,7 @@ QString unetbootin::downloadpagecontents(QUrl pageurl)
 	return result;
 }
 
-QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize)
+QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, qint64 ldfMinSize, qint64 ldfMaxSize)
 {
 	qDebug() << "lstFtpDirFiles called for " << ldfDirStringUrl;
 	return {};
@@ -2823,7 +2823,7 @@ QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
 	return relativefilelinksL;
 }
 
-QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize)
+QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, qint64 ldfMinSize, qint64 ldfMaxSize)
 {
 	if (!ldfDirStringUrl.endsWith('/'))
 		ldfDirStringUrl += '/';
@@ -2837,7 +2837,7 @@ QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, long ldfMinSize,
 	}
 }
 
-QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, long ldfMinSize, long ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, qint64 ldfMinSize, qint64 ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
 {
 	if (!ldfDirStringUrl.endsWith('/'))
 		ldfDirStringUrl += '/';
@@ -2849,7 +2849,7 @@ QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, lo
 	return qMakePair(ldfDirStringUrl+relativeFileUrl.first, relativeFileUrl.second);
 }
 
-QString unetbootin::fileFilterNetDir(QStringList ldfDirStringUrlList, long ldfMinSize, long ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+QString unetbootin::fileFilterNetDir(QStringList ldfDirStringUrlList, qint64 ldfMinSize, qint64 ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
 {
 	QPair<QString, int> curRemoteFileUrlSP;
 	int hRegxMatch = 0;
