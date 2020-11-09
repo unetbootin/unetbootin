@@ -3,7 +3,6 @@
 rvern="$(./vcs-revno)"
 mingwb="$(ls /usr/ | grep mingw32 | grep -v amd64 | head --lines 1)"
 qtwind="$(pwd)/qt5-win"
-qtx11d="$(pwd)/qt5-x11"
 
 if [ ! -d release ]
 then
@@ -22,7 +21,7 @@ mv 7z.dll sevnz.dll
 7z e -y sevenzip-extra.7z 7zS.sfx
 fi
 
-$qtx11d/bin/lrelease unetbootin.pro
+$qtwind/bin/lrelease unetbootin.pro
 ./qmake-windows
 make
 $mingwb-strip --strip-all release/unetbootin.exe

@@ -296,7 +296,7 @@ int main(int argc, char **argv)
             argsconcSingleQuote += "'rootcheck=no'";
 #ifdef Q_OS_LINUX
             QString gksuarg1;
-            gksuarg1 += QString("bash -c '");
+            gksuarg1 += QString("bash -c 'QT_X11_NO_MITSHM=1 ");
             gksuarg1 += QString("%1 %2").arg(app.applicationFilePath()).arg(argsconc);
             gksuarg1 += QString("'");
             QStringList gksuargs;
@@ -333,7 +333,7 @@ int main(int argc, char **argv)
 			rootmsgb.setIcon(QMessageBox::Warning);
 			rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
 			rootmsgb.setTextFormat(Qt::RichText);
-            rootmsgb.setText(uninstaller::tr("%2 must be run as root. Run it from the command line using:<br/><b>sudo %1</b><br/>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
+            rootmsgb.setText(uninstaller::tr("%2 must be run as root. Run it from the command line using:<br/><b>sudo QT_X11_NO_MITSHM=1 %1</b><br/>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
 			rootmsgb.setStandardButtons(QMessageBox::Ok);
 			switch (rootmsgb.exec())
 			{
