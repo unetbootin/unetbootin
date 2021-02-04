@@ -369,7 +369,7 @@ int main(int argc, char **argv)
 			process.waitForFinished(-1); // will wait forever until finished
 			QString stdout = QString(process.readAllStandardOutput()).trimmed();
 			bool is_mojave_or_above = false;
-			if (stdout.count('.') == 2) {
+			if (stdout.count('.') >= 1) {
 				QStringList version_parts = stdout.split('.');
 				int major_version = version_parts[0].toInt();
 				int sub_version = version_parts[1].toInt();
