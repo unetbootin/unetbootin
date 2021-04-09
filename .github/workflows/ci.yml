@@ -1,0 +1,29 @@
+name: Build
+
+on: [push, pull_request]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Debug
+  PLATFORM: EEEUBUNTU # FIXME: This is just a placeholder. CMake does not respect this kind of defines yet
+
+jobs:
+  build_ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set Up Build Environment
+      working-directory: ${{github.workspace}}/src/unetbootin
+      shell: bash
+      run: |
+        sudo apt-get install -y build-essential cmake qtbase5-dev qttools5-dev
+        mkdir -p build_tmp
+
+    - name: Build UNetbootin
+      working-directory: ${{github.workspace}}/src/unetbootin/build_tmp
+      shell: bash
+      run: |
+        cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DPLATFORM=$PLATFORM
+        make
