@@ -8,6 +8,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 */
 
 #include "unetbootin.h"
+#include "UbUtilities.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
@@ -73,8 +74,9 @@ static const QString SALT_DETECTED = "*SaLT*";
 
 void callexternappT::run()
 {
+    qWarning() << "callexternappT::run() called; execFile: " << execFile <<"; execParm:"<<execParm<<"; ";
 	#ifdef Q_OS_WIN32
-	SHELLEXECUTEINFO ShExecInfo = {0};
+    SHELLEXECUTEINFO ShExecInfo = {0};
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
 	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
 	ShExecInfo.hwnd = NULL;
@@ -96,11 +98,12 @@ void callexternappT::run()
 	retnValu = "";
 	#endif
 	#ifdef Q_OS_UNIX
-	QProcess lnexternapp;
+    QProcess lnexternapp;
     lnexternapp.start("\"" + execFile + "\" " + execParm);
 	lnexternapp.waitForFinished(-1);
 	retnValu = QString(lnexternapp.readAll());
 	#endif
+
 }
 
 void callexternappWriteToStdinT::run()
@@ -173,6 +176,7 @@ unetbootin::unetbootin(QWidget *parent)
 	setupUi(this);
 }
 
+
 bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 {
     skipExtraction = false;
@@ -189,8 +193,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	testingDownload = false;
 	issalt = false;
 	persistenceSpaceMB = 0;
-    logFile = 0;
-    logStream = 0;
+    UbUtilities::initClass () ; // init logging
 #ifdef Q_OS_MAC
 	ignoreoutofspace = true;
 #endif
@@ -779,11 +782,13 @@ void unetbootin::on_CfgFileSelector_clicked()
 
 void unetbootin::on_cancelbutton_clicked()
 {
-	close();
+    UbUtilities::shutdownClass() ; // flush logging
+    close();
 }
 
 void unetbootin::on_okbutton_clicked()
 {
+    qWarning() << "on_okbutton_clicked()";
     if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty() && !testingDownload)
 	{
 		QMessageBox unotenoughinputmsgb;
@@ -3536,6 +3541,7 @@ void unetbootin::runinst()
 	}
 	else if (radioManual->isChecked())
 	{
+        qWarning() << "runinst() " <<"targetPath: " << targetPath<< "; KernelPath: " << KernelPath ;
 		if (!KernelPath->text().startsWith("http://") && !KernelPath->text().startsWith("ftp://"))
 			QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
 		else
@@ -3550,7 +3556,9 @@ void unetbootin::runinst()
 	{
 		nameDistro = distroselect->currentText();
 		nameVersion = dverselect->currentText();
-		if (nameVersion.contains("_Live"))
+        qWarning() << "runinst() " <<"targetPath: " << targetPath<< "; KernelPath: " << KernelPath << "; nameDistro: "<< nameDistro
+                   << "; nameVersion" << nameVersion;
+        if (nameVersion.contains("_Live"))
 		{
 			nameVersion.remove("_Live");
 			islivecd = true;
@@ -3990,37 +3998,6 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 	.trimmed();
 }
 
-void unetbootin::logText(const QString &text)
-{
-    return;
-    /*
-    if (targetPath.isNull() || targetPath.isEmpty())
-    {
-        loggedLinesNotYetWritten.append(text);
-        return;
-    }
-    if (logStream == 0)
-    {
-        logFile = new QFile(QString("%1unetbootin-log.txt").arg(targetPath));
-        logFile->open(QIODevice::WriteOnly | QIODevice::Text);
-        logStream = new QTextStream(logFile);
-        for (int i = 0; i < loggedLinesNotYetWritten.size(); ++i)
-        {
-            *logStream << loggedLinesNotYetWritten.at(i) << endl;
-        }
-        loggedLinesNotYetWritten.clear();
-    }
-    *logStream << text << endl;
-    */
-}
-
-void unetbootin::finishLogging()
-{
-    if (logFile != 0)
-    {
-        logFile->close();
-    }
-}
 
 void unetbootin::writeTextToFile(const QString &text, const QString &filePath)
 {
@@ -4228,6 +4205,8 @@ void unetbootin::runinstusb()
 
 void unetbootin::killApplication()
 {
+    UbUtilities::shutdownClass() ; // flush logging
+
 	exit(0);
 }
 
@@ -4296,7 +4275,7 @@ void unetbootin::fininstall()
 		rebootmsgtext->setText(tr("After rebooting, hold the option key and select your USB drive to boot from it.%1").arg(postinstmsg));
 #endif
 	}
-    finishLogging();
+    UbUtilities::shutdownClass(); // finish logging
 	if (exitOnCompletion)
 	{
 		QTextStream out(stdout);
