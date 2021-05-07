@@ -49,6 +49,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_zh_TW.ts \
     unetbootin_fr.ts \
     unetbootin_ja.ts \
+    unetbootin_ko.ts \
     unetbootin_vi.ts \
     unetbootin_uk.ts \
     unetbootin_be.ts \
@@ -68,4 +69,3 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_pl.ts \
     unetbootin_fa.ts \
     unetbootin_si.ts
-RESOURCES += unetbootin.qrc
