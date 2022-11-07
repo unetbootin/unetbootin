@@ -1,8 +1,6 @@
 #!/bin/bash
 
 rvern="$(./vcs-revno)"
-mingwb="$(ls /usr/ | grep mingw32 | grep -v amd64 | head --lines 1)"
-qtwind="$(pwd)/qt5-win"
 qtx11d="$(pwd)/qt5-x11"
 
 if [ ! -d release ]
@@ -13,6 +11,6 @@ fi
 $qtx11d/bin/lrelease unetbootin.pro
 ./qmake-linux
 make
-$mingwb-strip --strip-all unetbootin
+strip --strip-all unetbootin
 mv unetbootin release/unetbootin-linux-$rvern.bin
 ./upx --best --lzma release/unetbootin-linux-$rvern.bin
