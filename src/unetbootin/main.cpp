@@ -224,11 +224,12 @@ int main(int argc, char **argv)
 		if (!applocfiles.filter("unetbootin").isEmpty())
 		{
 			custqmfilepath = applocfiles.filter("unetbootin").at(0);
-			if (!applocfiles.filter("unetbootin").filter(tnapplang).isEmpty())
+            QStringList filterapplang = applocfiles.filter("unetbootin").filter(tnapplang);
+			if (!filterapplang.isEmpty())
 			{
-				custqmfilepath = applocfiles.filter("unetbootin").filter(tnapplang).at(0);
-				if (!tnappcoun.isEmpty() && !applocfiles.filter("unetbootin").filter(tnapplang).filter(tnappcoun).isEmpty())
-					custqmfilepath = applocfiles.filter("unetbootin").filter(tnapplang).filter(tnappcoun).at(0);
+				custqmfilepath = filterapplang.at(0);
+				if (!tnappcoun.isEmpty() && !filterapplang.filter(tnappcoun).isEmpty())
+					custqmfilepath = filterapplang.filter(tnappcoun).at(0);
 			}
 		}
 		if (custranldr.load(custqmfilepath, app.applicationDirPath()))
