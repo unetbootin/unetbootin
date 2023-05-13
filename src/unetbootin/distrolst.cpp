@@ -18,6 +18,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+    .replace("23.04", "lunar") \
+    .replace("22.10", "kinetic") \
+    .replace("22.04", "jammy") \
+    .replace("21.10", "impish") \
+    .replace("21.04", "hirsute") \
     .replace("20.10", "groovy") \
     .replace("20.04", "focal") \
     .replace("19.10", "eoan") \
