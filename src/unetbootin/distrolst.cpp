@@ -612,7 +612,6 @@ if (nameDistro == "Linux Mint")
         QRegExp("^((?!nocodecs).)*$", Qt::CaseInsensitive) <<
         QRegExp("cinnamon", Qt::CaseInsensitive);
 	downloadfile(fileFilterNetDir(QStringList() <<
-	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
 	QString("http://ftp.jaist.ac.jp/pub/Linux/linuxmint/isos/stable/%1/").arg(relname) <<
 	QString("http://ftp.riken.jp/pub/Linux/linuxmint/isos/stable/%1/").arg(relname) <<
 	QString("http://ftp.mgts.by/pub/linuxmint/isos/stable/%1/").arg(relname) <<
