@@ -613,12 +613,12 @@ if (nameDistro == "Linux Mint")
         QRegExp("cinnamon", Qt::CaseInsensitive);
 	downloadfile(fileFilterNetDir(QStringList() <<
 	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
-	QString("http://ftp.jaist.ac.jp/pub/Linux/LinuxMint-ISO/stable/%1/").arg(relname) <<
-	QString("http://ftp.riken.jp/pub/Linux/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://ftp.jaist.ac.jp/pub/Linux/linuxmint/isos/stable/%1/").arg(relname) <<
+	QString("http://ftp.riken.jp/pub/Linux/linuxmint/isos/stable/%1/").arg(relname) <<
 	QString("http://ftp.mgts.by/pub/linuxmint/isos/stable/%1/").arg(relname) <<
 	QString("http://ftp.klid.dk/ftp/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://ftp5.gwdg.de/pub/linux/debian/mint/stable/%1/").arg(relname) <<
-	QString("http://mirror.netcologne.de/mint/stable/%1/").arg(relname) <<
+	QString("http://mirror.netcologne.de/linuxmint/iso/stable/%1/").arg(relname) <<
 	QString("http://ftp.cc.uoc.gr/mirrors/linux/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
 	QString("http://mirror.csclub.uwaterloo.ca/linuxmint/stable/%1/").arg(relname) <<
