@@ -622,6 +622,14 @@ if (nameDistro == "Linux Mint")
 	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
 	QString("http://mirror.csclub.uwaterloo.ca/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://mirror.aarnet.edu.au/pub/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://free.nchc.org.tw/linuxmint/isos/stable/%1/").arg(relname) <<
+	QString("http://ftp.kaist.ac.kr/linuxmint-iso/stable/%1/").arg(relname) <<
+	QString("http://ftp.acc.umu.se/mirror/linuxmint.com/iso/stable/%1/").arg(relname) <<
+	QString("http://mirror.yandex.ru/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://www.mirrorservice.org/sites/www.linuxmint.com/pub/linuxmint.com/stable/%1/").arg(relname) <<
+	QString("http://ftp.icm.edu.pl/pub/Linux/dist/linuxmint/isos/stable/%1/").arg(relname) <<
+	QString("http://ftp.fau.de/mint/iso/stable/%1/").arg(relname) <<
+	QString("http://mirrors.ocf.berkeley.edu/linux-mint/stable/%1/").arg(relname) <<
 //	QString("ftp://mirrors.secution.com/linuxmint.com/stable/%1/").arg(relname) <<
 //	QString("ftp://ftp.is.co.za/mirror/linuxmint.com/stable/%1/").arg(relname) <<
 //	QString("ftp://ftp.tpnet.pl/pub/linux/linuxmint/isos/stable/%1/").arg(relname) <<
