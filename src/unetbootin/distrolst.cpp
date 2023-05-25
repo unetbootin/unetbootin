@@ -1032,7 +1032,6 @@ if (nameDistro == "Ubuntu")
 			"http://releases.ubuntu.com/releases/"+relname <<
 //			"ftp://releases.ubuntu.com/releases/.pool/" <<
 			"http://mirrors.gigenet.com/ubuntu/"+relname <<
-			"http://mirrors.easynews.com/linux/ubuntu-releases/"+relname <<
 			"http://www.gtlib.gatech.edu/pub/ubuntu-releases/"+relname <<
 			"http://ftp.wayne.edu/linux_distributions/ubuntu/"+relname <<
 			"http://ubuntu.mirrors.proxad.net/"+relname
