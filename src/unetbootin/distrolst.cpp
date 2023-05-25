@@ -1034,6 +1034,17 @@ if (nameDistro == "Ubuntu")
 			"http://mirrors.gigenet.com/ubuntu/"+relname <<
 			"http://www.gtlib.gatech.edu/pub/ubuntu-releases/"+relname <<
 			"http://ftp.wayne.edu/ubuntu/releases/"+relname <<
+			"http://ftp.kaist.ac.kr/ubuntu-cd/"+relname <<
+			"http://free.nchc.org.tw/ubuntu-cd/"+relname <<
+			"http://ftp.ubuntu-tw.org/ubuntu-releases/"+relname <<
+			"http://mirrors.kernel.org/ubuntu-releases/"+relname <<
+			"http://mirrors.mit.edu/ubuntu-releases/"+relname <<
+			"http://mirror.umd.edu/ubuntu-iso/"+relname <<
+			"http://mirror.uoregon.edu/ubuntu-releases/"+relname <<
+			"http://ftp.jaist.ac.jp/pub/Linux/ubuntu-releases/"+relname <<
+			"http://mirror.csclub.uwaterloo.ca/ubuntu-releases/"+relname <<
+			"http://ubuntu.mirrors.ovh.net/ubuntu-releases/"+relname <<
+			"http://mirror.ox.ac.uk/sites/releases.ubuntu.com/releases/"+relname <<
 			"http://ubuntu.mirrors.proxad.net/"+relname
 			, 524288000, 1048576000, QList<QRegExp>() << 
 			QRegExp(".iso$", Qt::CaseInsensitive) << 
