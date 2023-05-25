@@ -1033,7 +1033,7 @@ if (nameDistro == "Ubuntu")
 //			"ftp://releases.ubuntu.com/releases/.pool/" <<
 			"http://mirrors.gigenet.com/ubuntu/"+relname <<
 			"http://www.gtlib.gatech.edu/pub/ubuntu-releases/"+relname <<
-			"http://ftp.wayne.edu/linux_distributions/ubuntu/"+relname <<
+			"http://ftp.wayne.edu/ubuntu/releases/"+relname <<
 			"http://ubuntu.mirrors.proxad.net/"+relname
 			, 524288000, 1048576000, QList<QRegExp>() << 
 			QRegExp(".iso$", Qt::CaseInsensitive) << 
