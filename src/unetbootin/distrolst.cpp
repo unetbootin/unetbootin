@@ -11,8 +11,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define debianrelnamereplace \
 	relname \
 	.replace("unstable", "sid") \
-    .replace("testing", "bullseye") \
-    .replace("stable", "buster");
+    .replace("testing", "bookworm") \
+    .replace("stable", "bullseye");
 #endif
 
 #ifndef ubunturelnamereplace
