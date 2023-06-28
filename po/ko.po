@@ -1,0 +1,1406 @@
+# Korean translation for unetbootin
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the unetbootin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unetbootin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-04-21 03:48-0400\n"
+"PO-Revision-Date: 2017-02-28 08:47+0000\n"
+"Last-Translator: minwook shin <Unknown>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2019-12-13 01:20+0000\n"
+"X-Generator: Launchpad (build c597c3229eb023b1e626162d5947141bf7befb13)\n"
+
+#. ts-context QObject
+#: main.cpp:266
+msgid "LeftToRight"
+msgstr "왼쪽에서 오른쪽으로"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4323
+msgid "Hard Disk"
+msgstr "하드 디스크"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4327
+msgid "USB Drive"
+msgstr "USB 드라이브"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3549
+msgid "ISO"
+msgstr "ISO"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3541
+msgid "Floppy"
+msgstr "플로피 디스크"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:302
+msgid "either"
+msgstr "어느 한 쪽"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:281
+msgid "LiveUSB persistence"
+msgstr "LiveUSB 속성"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:296
+msgid "FAT32-formatted USB drive"
+msgstr "FAT32로 포맷된 USB 드라이브"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:300
+msgid "EXT2-formatted USB drive"
+msgstr "EXT2로 포맷된 USB 드라이브"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:676
+msgid "Open Disk Image File"
+msgstr "디스크 이미지 파일 열기"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:676
+msgid "All Files"
+msgstr "모든 파일"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:710
+msgid "All Files (*)"
+msgstr "모든 파일 (*)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:694
+msgid "Open Kernel File"
+msgstr "커널 파일 열기"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:702
+msgid "Open Initrd File"
+msgstr "Initrd 파일 열기"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:710
+msgid "Open Bootloader Config File"
+msgstr "부트 로더 설정 파일 열기"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:732
+msgid "Insert a USB flash drive"
+msgstr "USB 메모리를 연결하십시오."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:733
+msgid ""
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
+msgstr "USB 메모리를 찾지 못했습니다. 만일 이미 연결하셨다면, 그 드라이브를 FAT32로 포맷해보십시오."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:752
+msgid "%1 not mounted"
+msgstr "%1이(가) 마운트되지 않음"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:753
+msgid ""
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
+msgstr ""
+"먼저 USB 메모리 %1을(를) 파일 시스템에 마운트해야 합니다. 대부분의 배포판에서는 이 작업을 드라이브를 연결 해제한 후 다시 연결할 "
+"때 자동으로 해줍니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:768
+msgid "Select a distro"
+msgstr "배포판 선택"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:769
+msgid "You must select a distribution to load."
+msgstr "불러올 배포판을 선택해야 합니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:783
+msgid "Select a disk image file"
+msgstr "디스크 이미지 파일 선택"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:784
+msgid "You must select a disk image file to load."
+msgstr "불러올 디스크 이미지 파일을 선택해야 합니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:798
+msgid "Select a kernel and/or initrd file"
+msgstr "커널이나 initrd 파일 선택"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:799
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "불러올 커널이나 initrd 파일을 선택해야 합니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:813
+msgid "Diskimage file not found"
+msgstr "디스크 이미지 파일을 찾지 못함"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:814
+msgid "The specified diskimage file %1 does not exist."
+msgstr "선택한 디스크 이미지 파일 %1이 존재하지 않습니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:828
+msgid "Kernel file not found"
+msgstr "커널 파일을 찾지 못함"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:829
+msgid "The specified kernel file %1 does not exist."
+msgstr "선택한 커널 파일 %1이 존재하지 않습니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:843
+msgid "Initrd file not found"
+msgstr "initrd 파일을 찾지 못함"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:844
+msgid "The specified initrd file %1 does not exist."
+msgstr "선택한 initrd 파일 %1이 존재하지 않습니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:948
+msgid "%1 exists, overwrite?"
+msgstr "%1은 이미 존재합니다. 덮어씌우겠습니까?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:949
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+"파일 %1은 이미 존재합니다. '모두 예'를 누르면 덮어씌우고 앞으로 다시 경고 없이 덮어씌웁니다. '예'를 누르면 이 파일만 "
+"덮어씌웁니다. '아니오'를 누르면 드라이브에 있던 파일을 그대로 사용합니다. 어떻게 해야 할 지 모를 경우, '모두 예'를 선택하는 것이 "
+"좋습니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:975
+msgid "%1 is out of space, abort installation?"
+msgstr "%1에 공간이 부족합니다. 설치를 취소하시겠습니까?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:976
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+"디렉토리 %1에 공간이 부족합니다. '예'를 누르면 설치를 취소하고, '아니오'를 누르면 이 오류를 무시하고 설치를 계속 합니다. '모두 "
+"아니오'를 누르면 공간 부족 문제를 전부 무시합니다."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1070
+msgid "Locating kernel file in %1"
+msgstr "%1에서 커널 파일 찾는 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1121
+msgid "Copying kernel file from %1"
+msgstr "%1(으)로부터 커널 파일 복사 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1127
+msgid "Locating initrd file in %1"
+msgstr "%1에서 initrd 파일 찾는 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1168
+msgid "Copying initrd file from %1"
+msgstr "%1(으)로부터 initrd 파일 복사 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1263
+msgid "Extracting bootloader configuration"
+msgstr "부트로더 설정 추출 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1521
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr "<b>ISO 파일 압축 푸는 중:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1785
+msgid "Copying file, please wait..."
+msgstr "파일을 복사하는 중입니다, 잠시만 기다려 주십시오..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2602
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>원본:</b> <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2603
+msgid "<b>Destination:</b> %1"
+msgstr "<b>대상:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1788
+msgid "<b>Copied:</b> 0 bytes"
+msgstr "<b>복사됨:</b> 0 바이트"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1826
+msgid "Extracting files, please wait..."
+msgstr "파일의 압축을 푸는 중입니다, 잠시 기다려 주십시오..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1827
+msgid "<b>Archive:</b> %1"
+msgstr "<b>아카이브:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1828
+msgid "<b>Source:</b>"
+msgstr "<b>원본:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1829
+msgid "<b>Destination:</b>"
+msgstr "<b>대상:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1830
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>압축해제됨:</b> 0 of %1 files"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1833
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>원본:</b> %1 (%2)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1834
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>대상:</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1835
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "%2 중 %1 파일 압축 해제 완료"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2601
+msgid "Downloading files, please wait..."
+msgstr "파일을 내려받는 중입니다, 잠시만 기다려 주십시오..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2604
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>다운로드됨:</b> 0 바이트"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2728
+msgid ""
+"Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
+"the website directly and supply it via the diskimage option."
+msgstr ""
+"%3에서 %1 %2를 다운로드하지 못했습니다. "
+"웹 사이트에서 직접 ISO 파일을 다운로드하여 diskimage 옵션을 통해 제공하십시오."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2766
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr "<b>다운로드됨:</b> %2 중 %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2781
+msgid "<b>Copied:</b> %1 of %2"
+msgstr "%2 중 %1 복사 완료"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2872
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "<a href=\"%1\">%1</a>에서 검색 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2876
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3149
+msgid "%1 not found"
+msgstr "%1을 찾지 못했음"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3150
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1을 찾지 못했습니다. 이것은 %2의 설치 모드에 필요합니다.\n"
+"\"%3\" 패키지 혹은 당신의 배포판에서 대응되는 것을 설치하십시오."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3441
+msgid "(Current)"
+msgstr "(현재)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3442
+msgid "(Done)"
+msgstr "(완료)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3734
+msgid "Configuring grub2 on %1"
+msgstr "%1에 grub2 설정 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3746
+msgid "Configuring grldr on %1"
+msgstr "%1에 grldr 설정 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3774
+msgid "Configuring grub on %1"
+msgstr "%1에 grub 설정 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4069
+msgid "Installing syslinux to %1"
+msgstr "%1에 syslinux 설치 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4104
+msgid "Installing extlinux to %1"
+msgstr "%1에 extlinux 설치 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4275
+msgid "Syncing filesystems"
+msgstr "파일 시스템 동기화 중"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4280
+msgid "Setting up persistence"
+msgstr "지속성 설정하기"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4325
+msgid "After rebooting, select the "
+msgstr "재부팅후, 선택하세요 "
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4330
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1"
+msgstr ""
+"재부팅 후 BIOS에서 USB로 부팅하도록 설정하십시오.%1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4333
+msgid ""
+"The created USB device will not boot off a Mac. Insert it into a PC, and "
+"select the USB boot option in the BIOS boot menu.%1"
+msgstr ""
+"이 USB는 매킨토시에서 부팅되지 않습니다. PC에 연결한 후 BIOS의 부팅 메뉴에서 USB로 부팅하도록 설정하십시오.%1"
+
+#. ts-context unetbootin
+#: distrolst.cpp:47
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
+"install iso file on the root directory of your hard drive or USB drive. "
+"These can be obtained from cdimage.ubuntu.com"
+msgstr ""
+"\n"
+"* 중요 * 재부팅하기 전에 하드 드라이브 또는 USB 드라이브의 루트 디렉토리에 Ubuntu 대체 (데스크탑 아님) 설치 iso 파일을 "
+"저장하십시오. 이들은 cdimage.ubuntu.com에서 구할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrolst.cpp:261
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'mirrors.kernel.org' when prompted for a server, and enter "
+"'/centos/%1/os/%2' when asked for the folder."
+msgstr ""
+"\n"
+"* 중요 * 재부팅 후 오류 메시지를 무시하고 CD를 묻는 메시지가 표시되면 다시 선택한 다음 기본 메뉴로 이동하여 "
+"'설치 시작'옵션을 선택하고 소스로 '네트워크'를 선택한 다음 프로토콜로 'HTTP'를 선택하고 'mirrors.kernel.org'를 입력하십시오. "
+"서버를 묻는 메시지가 나타나면 폴더를 물을 때 '/ centos / % 1 / os / % 2 '를 입력하십시오."
+
+#. ts-context unetbootin
+#: distrolst.cpp:318
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
+"directory of your hard drive or USB drive. These can be obtained from "
+"cdimage.debian.org"
+msgstr ""
+"\n"
+"* 중요 * 재부팅하기 전에 하드 드라이브 나 USB 드라이브의 루트 디렉토리에 데비안 설치 iso 파일을 저장하십시오. 이들은 "
+"cdimage.debian.org에서 구할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrolst.cpp:395
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/development/%1/os' when asked for the folder."
+msgstr ""
+"\n"
+"* 중요 * 재부팅 후 오류 메시지를 무시하고 CD를 묻는 메시지가 나타나면 다시 선택하고 주 메뉴로 이동하여 '설치 시작'옵션을 "
+"선택하고 원본으로 '네트워크'를 선택한 다음 프로토콜로 'HTTP' 서버에 대한 프롬프트가 표시되면 "
+"'download.fedora.redhat.com'을 입력하고 폴더를 묻는 메시지가 "
+"표시되면/pub/fedora/linux/development/%1/os''를 입력하십시오."
+
+#. ts-context unetbootin
+#: distrolst.cpp:401
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
+msgstr ""
+"\n"
+"* 중요 * 재부팅 후 오류 메시지를 무시하고 CD를 묻는 메시지가 나타나면 다시 선택하고 주 메뉴로 이동하여 '설치 시작'옵션을 "
+"선택하고 원본으로 '네트워크'를 선택한 다음 프로토콜로 'HTTP' 서버에 대한 프롬프트가 표시되면 "
+"'download.fedora.redhat.com'을 입력하고 폴더를 묻는 메시지가 표시되면  "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' 를 입력하십시오."
+
+#. ts-context unetbootin
+#: distrolst.cpp:756
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/factory/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"* 중요 * 재부팅 후 오류 메시지를 무시하고 CD를 묻는 메시지가 나타나면 다시 선택하고 주 메뉴로 이동하여 '설치 시작'옵션을 "
+"선택하고 원본으로 '네트워크'를 선택한 다음 프로토콜로 'HTTP' 서버를 묻는 메시지가 나타나면 "
+"'download.opensuse.org'를 입력하고 폴더를 묻는 메시지가 표시되면 '/ factory / repo / oss'를 "
+"입력하십시오."
+
+#. ts-context unetbootin
+#: distrolst.cpp:762
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/distribution/%1/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"* 중요 * 재부팅 후 오류 메시지를 무시하고 CD를 묻는 메시지가 나타나면 다시 선택하고 주 메뉴로 이동하여 '설치 시작'옵션을 "
+"선택하고 원본으로 '네트워크'를 선택한 다음 프로토콜로 'HTTP' 서버에 대한 프롬프트가 표시되면 "
+"'download.opensuse.org'를 입력하고 폴더를 묻는 메시지가 표시되면 '/distribution/%1/repo/oss' 를 "
+"입력하십시오."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:764
+msgid "== Select Distribution =="
+msgstr "== 배포판 선택 =="
+
+#. ts-context unetbootin
+#: distrover.cpp:24
+msgid "== Select Version =="
+msgstr "== 버전 선택 =="
+
+#. ts-context unetbootin
+#: distrover.cpp:23
+msgid ""
+"Welcome to <a href=\"https://unetbootin.github.io/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
+"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
+"<li>Select an installation type, and press OK to begin installing.</li></ol>"
+
+msgstr ""
+"범용 Netboot 설치 프로그램 "
+"<a href=\"https://unetbootin.github.io/\">UNetbootin</a>에 오신 것을 환영합니다.<br/>"
+"사용법:<ol><li>위 목록에서 다운로드 할 배포판 및 버전을 선택하거나 "
+"아래에서 로드 할 파일을 수동으로 지정하십시오.</li>"
+"<li>설치 유형을 선택하고 확인을 눌러 설치를 시작하십시오.</li></ol>"
+
+#. ts-context unetbootin
+#: distrover.cpp:28
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.archlinux.org/\">https://www.archlinux.org</a><br/>"
+"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
+"<b>Install Notes:</b> The default version allows for installation over the internet (FTP)."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.archlinux.org/\">https://www.archlinux.org</a><br/>"
+"<b>설명 :</b> 아치 리눅스는 속도와 유연성에 최적화 된 가벼운 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 기본 버전은 인터넷 (FTP)을 통한 설치를 허용합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:33
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.backtrack-linux.org/\">https://www.backtrack-linux.org/</a><br/>"
+"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
+"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.backtrack-linux.org/\">https://www.backtrack-linux.org/</a><br/>"
+"<b>설명 :</b> BackTrack은 네트워크 분석 및 침투 테스트에 중점을 둔 배포판입니다.<br/>"
+"<b>설치 정보 :</b> BackTrack이 부팅되고 라이브 모드로 실행됩니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:38
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.centos.org/\">https://www.centos.org</a><br/>"
+"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
+"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.centos.org/\">https://www.centos.org</a><br/>"
+"<b>설명 :</b> CentOS는 Red Hat Enterprise Linux의 무료버전 입니다.<br/>"
+"<b>설치 정보 :</b> 기본 버전은 인터넷 (FTP)을 통한 설치 또는 사전 다운로드 된 설치 ISO 파일을 사용한 오프라인 설치를 모두 허용합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:43
+msgid ""
+"<b>Homepage:</b> <a href=\"https://clonezilla.org/\">https://clonezilla.org/</a><br/>"
+"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
+"<b>Install Notes:</b> CloneZilla is booted and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://clonezilla.org/\">https://clonezilla.org/</a><br/>"
+"<b>설명 :</b> CloneZilla는 디스크 백업 및 이미징에 사용되는 배포판입니다.<br/>"
+"<b>설치 정보 :</b> CloneZilla는 부팅되어 라이브 모드로 실행됩니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:48
+msgid ""
+"<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
+"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
+"<b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
+"<b>설명 :</b> Damn Small Linux는 구형 컴퓨터 용으로 설계된 미니멀리스트 배포판입니다.<br/>"
+"<b>설치 정보 :</b> Live 버전은 전체 시스템을 RAM으로 로드하고 메모리에서 부팅합니다. 따라서 설치는 필요하지 않으며, 선택 사항입니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:53
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.debian.org/\">https://www.debian.org</a><br/>"
+"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
+"<b>Install Notes:</b> The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.debian.org/\">https://www.debian.org</a><br/>"
+"<b>설명 :</b> 데비안은 다양한 아키텍처를 지원하고 대규모 패키지 저장소를 제공하는 커뮤니티 개발 Linux 배포판입니다.<br/>"
+"<b>설치 정보 :</b> NetInstall 버전은 FTP를 통한 설치를 허용합니다. 사전 다운로드 된 설치 iso를 사용하려면 HdMedia 옵션을 사용한 다음 설치 iso 파일을 하드 드라이브 또는 USB 드라이브의 루트 디렉토리에 두십시오."
+
+#. ts-context unetbootin
+#: distrover.cpp:59
+msgid ""
+"<b>Description:</b> Dreamlinux is a user-friendly Debian-based distribution.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched."
+
+msgstr ""
+"<b>설명 :</b> Dreamlinux는 사용자 친화적인 데비안 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수 있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:64
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.freedrweb.com/livecd\">https://www.freedrweb.com/livecd</a><br/>"
+"<b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.freedrweb.com/livecd\">https://www.freedrweb.com/livecd</a><br/>"
+"<b>설명 :</b> Dr.Web AntiVirus는 바이러스 백신 응급 키트로 맬웨어로 인해 손상된 시스템을 복원합니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 맬웨어 검사를 시작할 수있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:69
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/>"
+"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.elivecd.org/\">https://www.elivecd.org</a><br/>"
+"<b>설명 :</b> Elive는 Enlightenment 창 관리자를 갖춘 데비안 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:74
+msgid ""
+"<b>Homepage:</b> <a href=\"https://getfedora.org/\">https://getfedora.org</a><br/>"
+"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://fedoraproject.org/\">https://fedoraproject.org</a><br/>"
+"<b>설명 :</b> Fedora는 Red Hat이 후원하는 커뮤니티 배포판으로 최신 무료 / 오픈 소스 소프트웨어를 보여줍니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다. "
+"NetInstall 버전을 사용하면 인터넷 (FTP)을 통한 설치 또는 사전 다운로드 된 설치 ISO 파일을 사용한 오프라인 설치가 가능합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:79
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.freebsd.org/\">https://www.freebsd.org</a><br/>"
+"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
+"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.freebsd.org/\">https://www.freebsd.org</a><br/>"
+"<b>설명 :</b> FreeBSD는 확장성과 성능을 위해 설계된 범용 Unix와 유사한 운영 체제입니다.<br/>"
+"<b>설치 정보 :</b> 기본 버전은 인터넷 (FTP)을 통한 설치 또는 사전 다운로드 된 설치 ISO 파일을 사용한 오프라인 설치를 모두 허용합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:84
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.freedos.org/\">https://www.freedos.org</a><br/>"
+"<b>Description:</b> FreeDOS is a free MS-DOS compatible operating system.<br/>"
+"<b>Install Notes:</b> See the <a href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for installation details."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.freedos.org/\">https://www.freedos.org</a><br/>"
+"<b>설명 :</b> FreeDOS는 무료 MS-DOS 호환 운영 체제입니다.<br/>"
+"<b>설치 정보 :</b> 설치 세부 사항은 <a href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">매뉴얼</a>을 참조하십시오."
+
+#. ts-context unetbootin
+#: distrover.cpp:89
+msgid ""
+"<b>Homepage:</b> <a href=\"https://freenas.org/\">https://www.freenas.org</a><br/>"
+"<b>Description:</b> FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.<br/>"
+"<b>Install Notes:</b> The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://freenas.org/\">https://www.freenas.org</a><br/>"
+"<b>설명 :</b> FreeNAS는 FreeBSD를 기반으로하는 임베디드 오픈 소스 NAS (Network-Attached Storage) 배포판입니다.<br/>"
+"<b>설치 정보 :</b> LiveCD 버전은 FreeNAS 용 RAM 드라이브를 만들고 FAT 형식의 플로피 디스크 또는 USB 키를 사용하여 구성 파일을 저장합니다. "
+"내장 버전을 사용하면 하드 디스크에 설치할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:94
+msgid ""
+"<b>Homepage:</b> <a href=\"https://frugalware.org/\">https://frugalware.org</a><br/>"
+"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
+"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://frugalware.org/\">https://frugalware.org</a><br/>"
+"<b>설명 :</b> Frugalware는 고급 사용자를위한 범용 슬랙웨어 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 기본 옵션은 인터넷 (FTP)을 통한 설치 또는 사전 다운로드 된 설치 ISO 파일을 사용한 오프라인 설치를 모두 허용합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:103
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.geexbox.org/\">https://www.geexbox.org</a><br/>"
+"<b>Description:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.geexbox.org/\">https://www.geexbox.org</a><br/>"
+"<b>설명 :</b> GeeXboX는 임베디드 Linux Media Center 배포판입니다<br/>"
+
+#. ts-context unetbootin
+#: distrover.cpp:117
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with "
+"all non-free components removed.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/>"
+"<b>설명 :</b> gNewSense는 Ubuntu를 기반으로하는 FSF 인증 배포판으로, 모든 상용 구성 요소가 제거되었습니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:122
+msgid ""
+"<b>Homepage:</b> <a href=\"https://sourceforge.net/projects/gujin/\">https://sourceforge.net/projects/gujin</a><br/>"
+"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
+"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://gujin.sourceforge.net/\">https://gujin.sourceforge.net</a><br/>"
+"<b>설명 :</b> Gujin은 다양한 볼륨과 파일을 부트 스트랩 할 수있는 그래픽 부트 관리자입니다.<br/>"
+"<b>설치 정보 :</b> Gujin은 간단한 부팅과 구동입니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:127
+msgid ""
+"<b>Homepage:</b> <a href=\"https://support.kaspersky.com/14229/\">https://support.kaspersky.com/14229</a><br/>"
+"<b>Description:</b> Kaspersky Rescue Disk detects and removes malware from your Windows installation.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://support.kaspersky.com/14229/\">https://support.kaspersky.com/14229</a><br/>"
+"<b>설명 :</b> Kaspersky Rescue Disk는 Windows에서 맬웨어를 탐지하고 제거합니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 맬웨어 검사를 시작할 수있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:132
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.kubuntu.org/\">https://www.kubuntu.org</a><br/>"
+"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.kubuntu.org/\">https://www.kubuntu.org</a><br/>"
+"<b>설명 :</b> Kubuntu는 KDE 데스크탑을 갖춘 공식 우분투 파생 상품입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수 있는 라이브 모드로 부팅 할 수 있습니다. "
+"NetInstall 버전은 FTP를 통한 설치가 가능하며 Kubuntu 및 기타 공식 Ubuntu 파생 제품을 설치할 수 있습니다. "
+"데스크탑이 아닌 사전 다운로드된 대체 설치 iso를 사용하려면 HdMedia 옵션을 사용한 다음 대체 설치 iso 파일을 하드 드라이브 "
+"또는 USB 드라이브의 루트 디렉토리에 배치하십시오."
+
+#. ts-context unetbootin
+#: distrover.cpp:137
+msgid ""
+"<b>Homepage:</b> <a href=\"https://linuxconsole.org/\">https://linuxconsole.org</a><br/>"
+ "<b>Description:</b> LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .<br/>"
+ "<b>Install Notes:</b> The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel)."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://linuxconsole.org/\">https://linuxconsole.org</a><br/>"
+"<b>설명 :</b> LinuxConsole은 게임, 설치, 사용 및 부팅이 빠른 데스크탑 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 1.0.2010은 최신 1.0으로, 이제 롤링 릴리스에서 사용할 수 있습니다 (모듈 및 커널을 업데이트하려면 liveuptate를 실행하십시오)."
+
+#. ts-context unetbootin
+#: distrover.cpp:142
+msgid ""
+"<b>Homepage:</b> <a href=\"https://linuxmint.com/\">https://linuxmint.com</a><br/>"
+"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://linuxmint.com/\">https://linuxmint.com</a><br/>"
+"<b>설명 :</b> Linux Mint는 기본적으로 추가적인 독점 코덱 및 기타 소프트웨어를 포함하는 사용자 친화적 인 Ubuntu 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:147
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.lubuntu.net/\">https://www.lubuntu.net</a><br/>"
+"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.lubuntu.net/\">https://www.lubuntu.net</a><br/>"
+"<b>설명 :</b> 루분투는 LXDE 데스크탑을 특징으로하는 공식 우분투 파생 상품입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다. "
+"NetInstall 버전은 FTP를 통한 설치가 가능하며 Kubuntu 및 기타 공식 Ubuntu 파생 제품을 설치할 수 있습니다. "
+"데스크탑이 아닌 사전 다운로드된 대체 설치 iso를 사용하려면 HdMedia 옵션을 사용한 다음 대체 설치 iso 파일을 하드 드라이브 "
+"또는 USB 드라이브의 루트 디렉토리에 배치하십시오."
+
+#. ts-context unetbootin
+#: distrover.cpp:152
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.openmandriva.org/\">https://www.openmandriva.org/</a><br/>"
+"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.mandriva.com/\">https://www.mandriva.com/</a><br/>"
+"<b>설명 :</b> Mandriva는 이전에 Mandrake Linux로 알려진 사용자 친화적 인 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수 있는 라이브 모드로 부팅 할 수 있습니다. "
+"NetInstall 버전을 사용하면 인터넷 (FTP) 또는 사전 다운로드 된 <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso 이미지 파일</a>을 통해 설치할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:157
+msgid ""
+"<b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.<br/>"
+"<b>Install Notes:</b> MEPIS supports booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>설명 :</b> MEPIS는 데비안 기반 배포판입니다. SimplyMEPIS는 KDE 기반의 사용자 친화적 인 버전이며 AntiX는 이전 컴퓨터의 경량 버전입니다.<br/>"
+"<b>설치 정보 :</b> MEPIS는 설치 프로그램을 선택적으로 시작할 수 있는 라이브 모드에서의 부팅을 지원합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:162
+msgid ""
+"<b>Homepage:</b> <a href=\"https://netbootcd.us/\">https://netbootcd.us/</a><br/>"
+"<b>Description:</b> NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.<br/>"
+"<b>Install Notes:</b> NetbootCD boots and runs in live mode."
+
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://netbootcd.us/\">http://netbootcd.us</a><br/>"
+"<b>설명 :</b> NetbootCD는 다른 배포용 네트워크 기반 설치 프로그램을 다운로드하고 부팅하는 작은 부팅 CD입니다.<br/>"
+"<b>설치 정보 :</b> NetbootCD가 부팅되고 라이브 모드에서 실행됩니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:172
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/>"
+"<b>설명 :</b> NimbleX는 작고 다양한 슬랙웨어 기반 배포판입니다. linux-live 스크립트를 사용하여 빌드되며 KDE 데스크탑이 특징입니다. CD 또는 플래시 메모리 (USB 펜 또는 MP3 플레이어)에서 부팅 할 수 있으며 쉽게 사용자 정의하고 확장 할 수 있습니다.<br/>"
+"<b>설치 정보 :</b> 라이브 모드에서 NimbleX가 부팅됩니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:177
+msgid ""
+"<b>Homepage:</b> <a href=\"https://pogostick.net/~pnh/ntpasswd/\">https://pogostick.net/~pnh/ntpasswd/</a><br/>"
+"<b>Description:</b> The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.<br/>"
+"<b>Install Notes:</b> NTPasswd is booted and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://pogostick.net/~pnh/ntpasswd/\">https://pogostick.net/~pnh/ntpasswd/</a><br/>"
+"<b>설명 :</b> 오프라인 NT 암호 및 레지스트리 편집기는 Windows 2000-Vista에서 Windows 암호를 재설정하고 레지스트리를 편집 할 수 있습니다.<br/>"
+"<b>설치 정보 :</b> NTPasswd가 부팅되고 라이브 모드로 실행됩니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:182
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.opensuse.org/\">https://www.opensuse.org</a><br/>"
+"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
+"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.opensuse.org/\">https://www.opensuse.org</a><br/>"
+"<b>설명 :</b> openSUSE는 사용자 친화적인 Novell 후원 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 기본 버전은 인터넷 (FTP)을 통한 설치 또는 사전 다운로드 된 설치 ISO 파일을 사용한 오프라인 설치를 모두 허용합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:187
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Description:</b> Ophcrack can crack Windows "
+"passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/>"
+"<b>설명 :</b> Ophcrack은 Windows 암호를 해독 할 수 있습니다.<br/>"
+"<b>설치 정보 :</b> Ophcrack은 부팅되어 라이브 모드로 실행됩니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:192
+msgid ""
+"<b>Homepage:</b> <a href=\"https://partedmagic.com/\">https://partedmagic.com</a><br/>"
+"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
+"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://partedmagic.com/\">https://partedmagic.com</a><br/>"
+"<b>설명 :</b> Parted Magic에는 GParted 파티션 관리자 및 디스크 파티션의 크기를 조정, 복사, 백업 및 조작 할 수있는 기타 시스템 유틸리티가 포함됩니다.<br/>"
+"<b>설치 정보 :</b> Parted Magic이 부팅되고 라이브 모드로 실행됩니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:202
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
+"ription:</b> Puppy Linux is a lightweight distribution designed for older "
+"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
+"<b>설명 :</b> Puppy 리눅스는 구형 컴퓨터를 위해 설계된 가벼운 배포판입니다.<br/>"
+"<b>설치 정보 :</b> Live 버전은 전체 시스템을 RAM으로 로드하고 메모리에서 부팅합니다. 따라서 설치는 필요하지 않지만 선택 사항입니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:207
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.sabayon.org/\">https://www.sabayon.org</a><br/>"
+"<b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.sabayon.org/\">https://www.sabayon.org</a><br/>"
+"<b>설명 :</b> Sabayon Linux는 소스 기반 포티지 외에 Entropy 바이너리 패키지 관리자가있는 Gentoo 기반 라이브 DVD 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다. "
+"LiteMCE 버전은 2GB이며 정식 버전에는 8GB USB 드라이브가 필요합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:214
+msgid ""
+"<b>Homepage:</b> <a href=\"https://salixos.org\">https://salixos.org</a><br/>"
+"<b>Description:</b> Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.<br/>"
+"Like a bonsai, Salix is small, light & the product of infinite care.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.<br/>"
+"Default root password is <b>live</b>."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://salixos.org\">https://salixos.org</a><br/>"
+"<b>설명 :</b> Salix는 간단하고 빠르고 사용하기 쉬운 Slackware (완전히 호환되는)를 기반으로하는 GNU / Linux 배포판입니다.<br/>"
+"분재와 마찬가지로 Salix는 작고 가벼우며 무한한 관리의 산물입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다.<br/>"
+"기본 루트 비밀번호는 <b>live</b> 입니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:224
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.slax.org/\">https://www.slax.org</a><br/>"
+"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.slax.org/\">https://www.slax.org</a><br/>"
+"<b>설명 :</b> Slax는 KDE 데스크탑을 특징으로하는 Slackware 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수 있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:229
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
+"<b>Description:</b> SliTaz is a lightweight, desktop-oriented micro distribution.<br/>"
+"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
+"<b>설명 :</b> SliTaz는 경량의 데스크탑 지향 마이크로 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전은 전체 시스템을 RAM으로로드하고 메모리에서 부팅합니다. 따라서 설치는 필요하지 않지만 선택 사항입니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:234
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Description:</b> Smart Boot Manager is a bootloader "
+"which can overcome some boot-related BIOS limitations and "
+"bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
+"is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/>"
+"<b>설명 :</b> Smart Boot Manager는 부트 관련 BIOS 제한 사항 및 버그를 극복 할 수 있는 부트 로더입니다.<br/>"
+"<b>설치 정보 :</b> SBM은 단순히 부팅하고 실행합니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:14
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.supergrubdisk.org\">https://www.supergrubdisk.org</a><br/>"
+"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
+"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.supergrubdisk.org\">https://www.supergrubdisk.org</a><br/>"
+"<b>설명 :</b> Super Grub Disk는 다양한 MBR 및 부트 로더 복구 작업을 수행 할 수 있는 부트 로더입니다.<br/>"
+"<b>설치 정보 :</b> SGD는 단순히 부팅하고 실행합니다. 사용하기 위해 설치가 필요하지 않습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:244
+msgid ""
+"<b>Description:</b> Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>설명 :</b> Super OS는 기본적으로 추가 소프트웨어를 포함하는 Ubuntu의 비공식 파생 제품입니다. 설치하려면 2GB USB 드라이브가 필요합니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 라이브 모드에서 부팅 할 수 있습니다. "
+"여기서 설치 프로그램을 선택적으로 시작할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:254
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.ubuntu.com/\">https://www.ubuntu.com</a><br/>"
+"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.ubuntu.com/\">https://www.ubuntu.com</a><br/>"
+"<b>설명 :</b> 우분투는 데비안 기반 배포판입니다. 현재 가장 널리 사용되는 Linux 데스크탑 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다. "
+"NetInstall 버전은 FTP를 통한 설치가 가능하며 Kubuntu 및 기타 공식 Ubuntu 파생 제품을 설치할 수 있습니다. "
+"데스크탑이 아닌 사전 다운로드 된 대체 설치 iso를 사용하려면 HdMedia 옵션을 사용한 다음 대체 설치 iso 파일을 하드 드라이브 "
+"또는 USB 드라이브의 루트 디렉토리에 배치하십시오."
+
+#. ts-context unetbootin
+#: distrover.cpp:259
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
+"<b>설명 :</b> xPUD는 웹 브라우저 및 미디어 플레이어와 간단한 키오스크와 유사한 인터페이스를 갖춘 경량 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전은 전체 시스템을 RAM으로 로드 하고 메모리에서 부팅합니다."
+
+#. ts-context unetbootin
+#: distrover.cpp:264
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.xubuntu.org/\">https://www.xubuntu.org</a><br/>"
+"<b>Description:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.xubuntu.org/\">https://www.xubuntu.org</a><br/>"
+"<b>설명 :</b> Xubuntu는 XFCE 데스크탑을 갖춘 공식 우분투 파생 제품입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다. "
+"NetInstall 버전은 FTP를 통한 설치가 가능하며 Kubuntu 및 기타 공식 Ubuntu 파생 제품을 설치할 수 있습니다. "
+"데스크탑이 아닌 사전 다운로드 된 대체 설치 iso를 사용하려면 HdMedia 옵션을 사용한 다음 대체 설치 iso 파일을 하드 드라이브 "
+"또는 USB 드라이브의 루트 디렉토리에 배치하십시오."
+
+#. ts-context unetbootin
+#: distrover.cpp:269
+msgid ""
+"<b>Homepage:</b> <a href=\"https://zenwalkgnulinux.blogspot.com/\">https://zenwalkgnulinux.blogspot.com</a><br/>"
+"<b>Description:</b> Zenwalk is a Slackware-based distribution featuring the XFCE desktop.<br/>"
+"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://zenwalkgnulinux.blogspot.com/\">https://zenwalkgnulinux.blogspot.com</a><br/>"
+"<b>설명 :</b> Zenwalk는 XFCE 데스크탑을 특징으로 하는 슬랙웨어 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:36
+msgid ""
+"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based "
+"distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
+"media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/eeepclos.png\" /><br/><b>홈페이지 :</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/>"
+"<b>설명 :</b> EeePCLinuxOS는 EeePC를 위한 사용자 친화적인 PCLinuxOS 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 설치를 진행하기 전에 설치 미디어가 비어 있고 포맷되어 있는지 확인하십시오."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:44
+msgid ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Description:</b> Ubuntu Eee is not only Ubuntu optimized "
+"for the Asus Eee PC. It's an operating system, using the Netbook Remix "
+"interface, which favors the best software available instead of open source "
+"alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
+"sure install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/>"
+"<b>설명 :</b> 우분투의 Eee은 우분투 아수스의 Eee PC에 최적화 되지 않습니다. Netbook Remix 인터페이스를 사용하는 운영 체제로서 오픈 소스 대안 대신 사용 가능한 최상의 소프트웨어를 선호합니다 (예 : Ekiga 대신 Skype).<br/>"
+"<b>설치 정보 :</b> 설치를 진행하기 전에 설치 미디어가 비어 있고 포맷되어 있는지 확인하십시오."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:56
+msgid ""
+"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<img src=\":/elive.png\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
+"<b>설명 :</b> Elive는 Enlightenment 창 관리자를 갖춘 데비안 기반 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전을 사용하면 설치 프로그램을 선택적으로 시작할 수 있는 라이브 모드로 부팅 할 수 있습니다."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:64
+msgid ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Descri"
+"ption:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, "
+"Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
+"install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/>"
+"<b>설명 :</b> Kiwi Linux는 주로 루마니아어, 헝가리어 및 영어 사용자를 위해 만든 우분투 파생 상품입니다.<br/>"
+"<b>설치 정보 :</b> 설치를 진행하기 전에 설치 미디어가 비어 있고 포맷되어 있는지 확인하십시오."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:72
+msgid ""
+"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is a high-quality GNU/Linux distribution that extends "
+"and improves Ubuntu to create a completely free operating system without any "
+"binary blobs or package trees that contain proprietary "
+"software.<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
+msgstr ""
+"<img src=\":/gnewsense.png\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/>"
+"<b>설명 :</b> gNewSense는 우분투를 확장 및 개선하여 독점 소프트웨어가 포함 된 바이너리 blob 또는 패키지 트리 없이 완전 무료 운영 체제를 생성하는 고품질 GNU / Linux 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 설치를 진행하기 전에 설치 미디어가 비어 있고 포맷되어 있는지 확인하십시오."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:80
+msgid ""
+"<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+"<img src=\":/nimblex.png\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/>"
+"<b>설명 :</b> NimbleX는 작고 다양한 슬랙웨어 기반 배포판입니다. linux-live 스크립트를 사용하여 빌드되며 KDE 데스크탑이 특징입니다. "
+"CD 또는 플래시 메모리 (USB 펜 또는 MP3 플레이어)에서 부팅 할 수 있으며 쉽게 사용자 정의하고 확장 할 수 있습니다.<br/>"
+"<b>설치 정보 :</b> 라이브 모드에서 NimbleX 부팅"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:88
+msgid ""
+"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgstr ""
+"<img src=\":/slitaz.png\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
+"<b>설명 :</b> SliTaz는 경량의 데스크탑 지향 마이크로 배포판입니다.<br/>"
+"<b>설치 정보 :</b> Live 버전은 전체 시스템을 RAM으로로드하고 메모리에서 부팅하므로 설치가 필요하지 않지만 선택 사항입니다. 이 설치 관리자는 <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>을 기반으로합니다."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:96
+msgid ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>홈페이지 :</b> "
+"<a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
+"<b>설명 :</b> xPUD는 웹 브라우저 및 미디어 플레이어와 간단한 키오스크와 유사한 인터페이스를 갖춘 경량 배포판입니다.<br/>"
+"<b>설치 정보 :</b> 라이브 버전은 전체 시스템을 RAM으로로드하고 메모리에서 부팅합니다."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:274
+msgid ""
+"<b>Homepage:</b> <a href=\"https://www.3cx.com/\">https://www.3cx.com</a><br/>"
+"<b>Description:</b> 3CX is a specialist, Debian-based Linux distribution designed to run a complete unified communications platform. "
+"It provides a complete open standards-based IP PBX and phone system that works with popular SIP trunks and IP phones. "
+"It will automatically configure all supported peripherals and it also comes with clients for Windows, OS X, iOS and Android. The ISO image includes a free license for the 3CX PBX edition.<br/>"
+msgstr ""
+"<b>홈페이지 :</b> <a href=\"https://www.3cx.com/\">https://www.3cx.com</a><br/>"
+"<b>설명 :</b> 3CX는 완전한 통합 커뮤니케이션 플랫폼을 실행하도록 설계된 데비안 기반 Linux 전문가입니다. "
+"널리 사용되는 SIP 트렁크 및 IP 전화와 작동하는 완벽한 개방형 표준 기반 IP PBX 및 전화 시스템을 제공합니다. "
+"지원되는 모든 주변 장치를 자동으로 구성하며 Windows, OS X, iOS 및 Android 용 클라이언트도 함께 제공됩니다. "
+"ISO 이미지에는 3CX PBX 에디션에 대한 무료 라이센스가 포함되어 있습니다.<br/>"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:20
+msgid "Unetbootin"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:65
+msgid "Select from a list of supported distributions"
+msgstr "목록에서 지원되는 배포판 선택"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:47
+msgid "&Distribution"
+msgstr "배포 버전 선택(&d)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:131
+msgid "Specify a disk image file to load"
+msgstr "로드 할 디스크 이미지 파일을 지정하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:134
+msgid "Disk&image"
+msgstr "디스크이미지(&i)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:147
+msgid "Manually specify a kernel and initrd to load"
+msgstr "커널과 initrd를 수동으로 지정하여로드"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:150
+msgid "&Custom"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:430
+msgid ""
+"Space to reserve for user files which are preserved across reboots. Works "
+"only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
+"capacity, the maximum space available will be used."
+msgstr ""
+"다시 부팅해도 보존되는 사용자 파일을위한 공간입니다. "
+"Ubuntu 및 파생 제품의 LiveUSB에만 작동합니다. "
+"값이 드라이브 용량을 초과하면 사용 가능한 최대 공간이 사용됩니다."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:417
+msgid "Space used to preserve files across reboots (Ubuntu only):"
+msgstr "재부팅시 파일을 보존하는 데 사용되는 공간 (우분투 만 해당)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:440
+msgid "MB"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:503
+msgid "OK"
+msgstr "확인"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:506
+msgid "Return"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:513
+msgid "Cancel"
+msgstr "취소"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:516
+msgid "Esc"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:561
+msgid "Reboot Now"
+msgstr "시스템 재시작"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:568
+msgid "Exit"
+msgstr "종료"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:660
+msgid "1. Downloading Files"
+msgstr "1. 다운로드 파일"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:667
+msgid "2. Extracting and Copying Files"
+msgstr "2. 파일 추출 및 복사"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:674
+msgid "3. Installing Bootloader"
+msgstr "3. 부트로더 설치"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:681
+msgid "4. Installation Complete"
+msgstr "4. 설치 완료"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:496
+msgid "Select the target drive to install to"
+msgstr "설치할 대상 드라이브를 선택하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:480
+msgid "Dri&ve:"
+msgstr "드라이브(&v)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:470
+msgid "Select the installation target type"
+msgstr "설치 대상 유형을 선택하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:454
+msgid "&Type:"
+msgstr "타입(&t):"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:81
+msgid "Select the distribution version"
+msgstr "배포판을 선택하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:347
+msgid "Select disk image file"
+msgstr "디스크 이미지 파일 선택"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:400
+msgid "..."
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:188
+msgid "Select the disk image type"
+msgstr "디스크 이미지 유형을 선택하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:243
+msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
+msgstr "플로피 / 하드 디스크 이미지 또는로드 할 CD 이미지 (ISO) 파일을 지정하십시오."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:258
+msgid "Specify a kernel file to load"
+msgstr "로드 할 커널 파일을 지정하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:283
+msgid "Select kernel file"
+msgstr "커널 파일을 선택하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:312
+msgid "Specify an initrd file to load"
+msgstr "로드 할 initrd 파일을 지정하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:372
+msgid "Select initrd file"
+msgstr "initrd 파일을 선택하십시오"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:397
+msgid "Select syslinux.cfg or isolinux.cfg file"
+msgstr "syslinux.cfg 또는 isolinux.cfg 파일을 선택하십시오."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:321
+msgid "Specify parameters and options to pass to the kernel"
+msgstr "커널에 전달할 매개 변수 및 옵션 지정"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:210
+msgid "&Kernel:"
+msgstr "커널(&K):"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:296
+msgid "Init&rd:"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:229
+msgid "&Options:"
+msgstr "옵션(&O):"
+
+#. ts-context uninstaller
+#: main.cpp:156
+msgid "Uninstallation Complete"
+msgstr "제거 완료"
+
+#. ts-context uninstaller
+#: main.cpp:157
+msgid "%1 has been uninstalled."
+msgstr "%1 제거되었습니다."
+
+#. ts-context uninstaller
+#: main.cpp:322
+msgid "Must run as root"
+msgstr "루트로 실행해야합니다"
+
+#. ts-context uninstaller
+#: main.cpp:324
+msgid ""
+"%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
+msgstr ""
+"%2 루트로 실행해야합니다. 닫고 다음 중 하나를 사용하여 다시 실행하십시오:<br/><b>sudo "
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
+
+#. ts-context uninstaller
+#: main.cpp:361
+msgid "%1 Uninstaller"
+msgstr "%1 언인스톨러"
+
+#. ts-context uninstaller
+#: main.cpp:362
+msgid "%1 is currently installed. Remove the existing version?"
+msgstr "%1 현재 설치되어 있습니다. 기존 버전을 제거 하시겠습니까?"
