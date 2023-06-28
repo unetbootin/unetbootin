@@ -14,7 +14,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <QtGui>
 #include <QtNetwork>
 #include <time.h>
-//#include <QtDebug>
 
 #include "ui_unetbootin.h"
 
@@ -324,9 +323,7 @@ public:
 	#endif
 	void runinsthdd();
 	void runinstusb();
-    void logText(const QString &text);
-    void finishLogging();
-    void writeTextToFile(const QString &text, const QString &filePath);
+     void writeTextToFile(const QString &text, const QString &filePath);
 	void fininstall();
 	void rmFile(const QString &fn);
 	void rmFile(QFile &fn);
