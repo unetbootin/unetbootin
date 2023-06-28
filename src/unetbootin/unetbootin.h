@@ -246,10 +246,10 @@ public:
 	bool ignoreoutofspaceprompt(QString destindir);
 	bool extractfile(QString filepath, QString destinfileL, QString archivefile);
 	bool checkifoutofspace(QString destindir);
-	QString locatekernel(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts);
-	bool extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
-	QString locateinitrd(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts);
-	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
+	QString locatekernel(QString archivefile, const QPair<QStringList, QList<quint64> >& archivefileconts);
+	bool extractkernel(QString archivefile, QString kernoutputfile, const QPair<QStringList, QList<quint64> >& archivefileconts);
+	QString locateinitrd(QString archivefile, QPair<QStringList, const QList<quint64> >& archivefileconts);
+	bool extractinitrd(QString archivefile, QString initoutputfile, const QPair<QStringList, QList<quint64> >& archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgL(QString archivefile, QStringList archivefileconts);
 	QString getfullarchivepath(QString relativefilepath, QStringList archivefile);
@@ -260,7 +260,7 @@ public:
 	void extractiso_krd10(QString isofile);
 	void copyfilegui(QString src, QString dst);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
-	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist, QStringList outputfilelist);
+	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, const QList<quint64> >& filesizelist, QStringList outputfilelist);
 	QString getgrubcfgargs(QString cfgfile);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrubcfgargsL(QString cfgfile);
 	QString getFirstTextBlock(QString fulltext);
