@@ -70,7 +70,7 @@ distroselect->addItem("Fedora", (QStringList() << "30_Live_x64" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://getfedora.org/\">https://getfedora.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-	"24_NetInstall" << "24_NetInstall_x64" << "24_Live" << "24_Live_x64" << "25_NetInstall" << "25_NetInstall_x64" << "25_Live" << "25_Live_x64" << "26_NetInstall_x64" << "26_Live_x64" << "27_NetInstall_x64" << "27_Live_x64" << "28_NetInstall_x64" << "28_Live_x64" << "29_NetInstall_x64" << "29_Live_x64" << "30_NetInstall_x64" << "30_Live_x64" << "Rawhide_NetInstall_x64"));
+	"42_Live_aarch64" << "41_Live_x64" << "42_Live_x64" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"https://www.freebsd.org/\">https://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
