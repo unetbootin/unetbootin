@@ -176,6 +176,8 @@ if(WIN32)
 endif()
 
 if(LINUX)
+   # extract the bundled syslinux/extlinux (ubnsylnx/ubnexlnx) at install time, like qmake-linux does
+   add_definitions(-DSTATICLINUX)
    if(CMAKE_SIZEOF_VOID_P EQUAL 4)
       # 32 bit
       qt5_add_resources(QRC_FILES ${CMAKE_SOURCE_DIR}/unetbootin-linux.qrc)
