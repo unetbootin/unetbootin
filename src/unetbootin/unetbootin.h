@@ -196,6 +196,7 @@ public:
 	bool searchsymlinks;
 	bool ignoreoutofspace;
 	bool dontgeneratesyslinuxcfg;
+	bool isdracutlive;
 	bool downloadFailed;
 	bool exitOnCompletion;
 	bool testingDownload;

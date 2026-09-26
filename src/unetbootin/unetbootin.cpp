@@ -60,11 +60,12 @@ static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp(".exe$", Qt::CaseInsensitive)
 << QRegExp(".deb$", Qt::CaseInsensitive)
 << QRegExp(".udeb$", Qt::CaseInsensitive)
-<< QRegExp("system.map", Qt::CaseInsensitive);
+<< QRegExp("system\\S{0,}\\.map", Qt::CaseInsensitive);
 
 static const QList<QRegExp> ignoredtypeskernelRL = QList<QRegExp>()
-<< QRegExp("initrd.gz$", Qt::CaseInsensitive)
-<< QRegExp("initrd.img$", Qt::CaseInsensitive);
+<< QRegExp("initrd", Qt::CaseInsensitive)
+<< QRegExp("initramfs", Qt::CaseInsensitive)
+<< QRegExp(".igz$", Qt::CaseInsensitive);
 
 static const QList<QRegExp> ignoredtypesinitrdRL = QList<QRegExp>()
 << QRegExp("bzImage$", Qt::CaseInsensitive);
@@ -195,6 +196,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	ignoreoutofspace = true;
 #endif
 	dontgeneratesyslinuxcfg = false;
+	isdracutlive = false;
 	#ifdef Q_OS_UNIX
 	isext2 = false;
 	#endif
@@ -1147,7 +1149,7 @@ QString unetbootin::locatekernel(QString archivefile, QPair<QStringList, QList<q
 //		{
 //			continue;
 //		}
-		if (archivefileconts.second.at(i) > 614400 && archivefileconts.second.at(i) < 20971520) // between 600 KB and 20 MB
+		if (archivefileconts.second.at(i) > 614400 && archivefileconts.second.at(i) < 67108864) // between 600 KB and 64 MB
 		{
 			tnarchivefileconts.append(archivefileconts.first.at(i));
 		}
@@ -1649,6 +1651,8 @@ void unetbootin::extractiso(QString isofile)
 			}
 		}
 	}
+	// dracut live images (Fedora, openSUSE KIWI, ...) keep their root filesystem in LiveOS/squashfs.img
+	isdracutlive = filepathnames.contains(QDir::toNativeSeparators("LiveOS/squashfs.img"), Qt::CaseInsensitive);
 	if (!dontgeneratesyslinuxcfg)
 	{
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
@@ -2186,7 +2190,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			}
 			continue;
 		}
-		if (cfgfileCL.contains(QRegExp("^menuentry\\s{1,}\".{1,}\"", Qt::CaseInsensitive)))
+		QRegExp menuentrytitle("^menuentry\\s{1,}(?:\"([^\"]{1,})\"|'([^']{1,})')", Qt::CaseInsensitive);
+		if (menuentrytitle.indexIn(cfgfileCL) != -1)
 		{
 			if (kernelpassed)
 			{
@@ -2197,7 +2202,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				titleandparams.second.append("");
 				kernelpassed = false;
 			}
-			titleandparams.first[curindex] = QString(cfgfileCL).remove("menuentry", Qt::CaseInsensitive).remove("\"").remove("{").remove("}").trimmed();
+			titleandparams.first[curindex] = (menuentrytitle.cap(1) + menuentrytitle.cap(2)).trimmed();
 			continue;
 		}
 		if (cfgfileCL.contains(QRegExp("^initrd\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
@@ -2630,13 +2635,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, qint64 minsiz
 	pdesc2->setText(tr("<b>Destination:</b> %1").arg(targetfile));
 	pdesc1->setText(tr("<b>Downloaded:</b> 0 bytes"));
 
-	QUrl redirectUrl;
 	bool downloadFailed = false;
 	QNetworkReply::NetworkError errorCode;
 
 	connect(networkReply, &QNetworkReply::finished, &dlewait, &QEventLoop::quit);
 	connect(networkReply, &QNetworkReply::downloadProgress, this, &unetbootin::dlprogressupdate64);
-	connect(networkReply, &QNetworkReply::redirected, [&](const QUrl &url){ redirectUrl = url; });
 	connect(networkReply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error),
 			[&](QNetworkReply::NetworkError code){ downloadFailed = true; errorCode = code; });
 
@@ -2657,10 +2660,13 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, qint64 minsiz
 
 	dlewait.exec();
 
+	// Qt 5 does not follow redirects by default, so follow them manually
+	QUrl redirectUrl = networkReply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 	if (!redirectUrl.isEmpty())
 	{
 		networkReply->deleteLater();
-		downloadfile(redirectUrl.toString(), targetfile, minsize);
+		dloutfile.remove();
+		downloadfile(QUrl(fileurl).resolved(redirectUrl).toString(), targetfile, minsize);
 		return;
 	}
 
@@ -2724,8 +2730,8 @@ void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 {
 	QTime time = QTime::currentTime();
 	static int oldsec = 0;
-	// refresh the progress bar every second
-	if(oldsec != time.second())
+	// refresh the progress bar every second; the total is unknown (0 or -1) e.g. for redirect responses
+	if(oldsec != time.second() && maxbytes > 0)
 	{
 		oldsec = time.second();
 		tprogress->setValue(10000 * dlbytes / maxbytes);
@@ -2740,7 +2746,7 @@ void unetbootin::cpprogressupdate64(qint64 dlbytes, qint64 maxbytes)
  QTime time = QTime::currentTime();
  static int oldsec = 0;
  // refresh the progress bar every second
- if(oldsec != time.second())
+ if(oldsec != time.second() && maxbytes > 0)
  {
    oldsec = time.second();
 	 tprogress->setValue(10000 * dlbytes / maxbytes);
@@ -2756,14 +2762,15 @@ QString unetbootin::downloadpagecontents(QUrl pageurl)
 	QNetworkRequest dlurl(pageurl);
 	QNetworkReply * networkReply = manager.get(dlurl);
 	QEventLoop pgwait;
-	QUrl redirectUrl;
 	connect(networkReply, &QNetworkReply::finished, &pgwait, &QEventLoop::quit);
-	connect(networkReply, &QNetworkReply::redirected, [&redirectUrl](const QUrl &url){ redirectUrl = url; });
 
 	pgwait.exec();
 
+	// Qt 5 does not follow redirects by default, so follow them manually
+	QUrl redirectUrl = networkReply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 	if (!redirectUrl.isEmpty())
 	{
+		redirectUrl = pageurl.resolved(redirectUrl);
 		networkReply->deleteLater();
 		return downloadpagecontents(redirectUrl);
 	}
@@ -2799,26 +2806,13 @@ QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, qint64 ldfMinSiz
 QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
 {
 	QStringList relativefilelinksL;
-	QStringList relativelinksLPreFilter =
-		downloadpagecontents(QUrl(ldfDirStringUrl))
-		.replace(">", ">\n")
-		.replace("<", "\n<")
-		.split("\n");
-	QStringList relativelinksLPart1 =
-		relativelinksLPreFilter
-		.filter(QRegExp("<a href=\"(?!\\?)\\S{1,}\">", Qt::CaseInsensitive))
-		.replaceInStrings(QRegExp("<a href=\"", Qt::CaseInsensitive), "")
-		.replaceInStrings("\">", "");
-	QStringList relativelinksLPart2 =
-		relativelinksLPreFilter
-		.filter(QRegExp("<a href=\'(?!\\?)\\S{1,}\'>", Qt::CaseInsensitive))
-		.replaceInStrings(QRegExp("<a href=\'", Qt::CaseInsensitive), "")
-		.replaceInStrings("\'>", "");
-	QStringList relativelinksL = relativelinksLPart1 << relativelinksLPart2;
-	for (int i = 0; i < relativelinksL.size(); ++i)
+	QString pagecontents = downloadpagecontents(QUrl(ldfDirStringUrl));
+	// match the href of every link, also when the tag has other attributes (e.g. nginx fancyindex adds title=)
+	QRegExp linkexp("<a\\s[^>]*href=[\"']([^\"'?\\s][^\"'\\s]*)[\"']", Qt::CaseInsensitive);
+	for (int pos = 0; (pos = linkexp.indexIn(pagecontents, pos)) != -1; pos += linkexp.matchedLength())
 	{
-		if (!relativelinksL.at(i).endsWith('/'))
-			relativefilelinksL.append(relativelinksL.at(i));
+		if (!linkexp.cap(1).endsWith('/'))
+			relativefilelinksL.append(linkexp.cap(1));
 	}
 	return relativefilelinksL;
 }
@@ -3944,8 +3938,15 @@ void unetbootin::setLabel(QString devname, QString newlabel)
 #endif
 }
 
-QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
+QString unetbootin::fixkernelbootoptions(const QString &origcfgfileCL)
 {
+	QString cfgfileCL = origcfgfileCL;
+	// dracut live images without a root= option (e.g. openSUSE Leap's installer) have root=live:LABEL=<ISO label>
+	// built into their initrd; a FAT label can't hold that, so name the USB drive explicitly (the kernel command line wins)
+	if (isdracutlive && !cfgfileCL.contains("root=") && !cfgfileCL.trimmed().isEmpty())
+	{
+		cfgfileCL.append(" root=live:CDLABEL=ISO rd.live.image");
+	}
 	if (cfgfileCL.contains("archisolabel=") && (this->devlabel == "" || this->devlabel == "None"))
 	{
 		this->devlabel = this->getlabel(this->targetDev);
@@ -3972,9 +3973,15 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
     QString ncfgfileCL = cfgfileCL;
     if (ncfgfileCL.contains("root=live:CDLABEL"))
     {
+        // keep the CDLABEL form: KIWI (openSUSE) only accepts root=live:CDLABEL=, dmsquash-live (Fedora) accepts it too
+        QString livelabel = this->getlabel(this->targetDev);
+        if (livelabel.isEmpty() || livelabel == "None")
+        {
+            setLabel(this->targetDev, "LIVE");
+            livelabel = "LIVE";
+        }
         ncfgfileCL = QString(ncfgfileCL)
-        .replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=live:%1").arg(devluid))
-        .replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=live:%1").arg(devluid));
+        .replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=live:CDLABEL=%1").arg(livelabel));
     }
     else
     {
@@ -3987,7 +3994,11 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
     .replace("theme:sabayon", "theme:sabayon cdroot_type=vfat")
 	.replace("pmedia=cd", "pmedia=usbflash")
 	.replace(QRegExp("archisolabel=\\S{0,}"), QString("archisolabel=%1").arg(devlabel))
-	.trimmed();
+	// grub variables (e.g. ${isoboot}) are not expanded by syslinux
+	.remove(QRegExp("\\$\\{\\S{1,}\\}"))
+	// KIWI would try to create a persistent write partition on the drive
+	.remove(QRegExp("rd\\.live\\.overlay\\.(persistent|cowfs=\\S{0,})"))
+	.simplified();
 }
 
 void unetbootin::logText(const QString &text)

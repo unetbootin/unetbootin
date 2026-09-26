@@ -11,8 +11,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define debianrelnamereplace \
 	relname \
 	.replace("unstable", "sid") \
-    .replace("testing", "bookworm") \
-    .replace("stable", "bullseye");
+    .replace("testing", "forky") \
+    .replace("stable", "trixie");
 #endif
 
 #ifndef ubunturelnamereplace
@@ -211,6 +211,23 @@ if (nameDistro == "xPUD")
 
 #ifdef STDUNETBOOTIN
 
+if (nameDistro == "AlmaLinux")
+{
+	cpuarch = "x86_64";
+	if (islivecd)
+	{
+		downloadfile(QString("https://repo.almalinux.org/almalinux/%1/live/%2/AlmaLinux-%1-latest-%2-Live-GNOME.iso").arg(relname, cpuarch), isotmpf);
+		extractiso(isotmpf);
+	}
+	else
+	{
+		QString repourl = QString("https://repo.almalinux.org/almalinux/%1/BaseOS/%2/os/").arg(relname, cpuarch);
+		downloadfile(repourl + "images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+		downloadfile(repourl + "images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+		kernelOpts = "inst.repo=" + repourl;
+	}
+}
+
 if (nameDistro == "Arch Linux")
 {
 	if (isarch64)
@@ -251,34 +268,11 @@ if (nameDistro == "BackTrack")
 
 if (nameDistro == "CentOS")
 {
-	if (isarch64)
-	{
-		cpuarch = "x86_64";
-	}
-	else
-	{
-		cpuarch = "i386";
-	}
-	if (islivecd)
-	{
-		downloadfile(fileFilterNetDir(QStringList() <<
-		QString("http://mirrors.kernel.org/centos/%1/isos/%2/").arg(relname, cpuarch) <<
-		QString("http://mirror.stanford.edu/yum/pub/centos/%1/isos/%2/").arg(relname, cpuarch) <<
-		QString("http://ftp.osuosl.org/pub/centos/%1/isos/%2/").arg(relname, cpuarch) <<
-		QString("http://mirrors.usc.edu/pub/linux/distributions/centos/%1/isos/%2/").arg(relname, cpuarch)
-		, 524288000, 1048576000, QList<QRegExp>() <<
-		QRegExp(".iso$", Qt::CaseInsensitive) <<
-		QRegExp("LiveCD\\S{0,}.iso$", Qt::CaseInsensitive)
-		), isotmpf);
-		extractiso(isotmpf);
-	}
-	else
-	{
-		downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/%1/os/%2' when asked for the folder.").arg(nameVersion, cpuarch);
-		kernelOpts = "splash=silent showopts";
-	}
+	cpuarch = "x86_64";
+	QString repourl = QString("https://mirror.stream.centos.org/%1/BaseOS/%2/os/").arg(relname, cpuarch);
+	downloadfile(repourl + "images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+	downloadfile(repourl + "images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	kernelOpts = "inst.repo=" + repourl;
 }
 
 if (nameDistro == "CloneZilla")
@@ -325,8 +319,13 @@ if (nameDistro == "Debian")
 	}
 	if (islivecd)
 	{
-		debianrelnamereplace
-		downloadfile(QString("http://live.debian.net/cdimage/%1-builds/current/%2/debian-live-%1-%2-gnome-desktop.iso").arg(relname, cpuarch), isotmpf);
+		downloadfile(fileFilterNetDir(QStringList() <<
+		"http://cdimage.debian.org/debian-cd/current-live/"+cpuarch+"/iso-hybrid/"
+		, 524288000, 4294967296LL, QList<QRegExp>() <<
+		QRegExp(".iso$", Qt::CaseInsensitive) <<
+		QRegExp("^debian-live-", Qt::CaseInsensitive) <<
+		QRegExp("-gnome.iso$", Qt::CaseInsensitive)
+		), isotmpf);
 		extractiso(isotmpf);
 	}
 	else if (ishdmedia)
@@ -529,15 +528,13 @@ if (nameDistro == "GeeXboX")
 
 if (nameDistro == "Gentoo")
 {
-	if (isarch64)
-	{
-		cpuarch = "amd64";
-	}
-	else
-	{
-		cpuarch = "x86";
-	}
-	downloadfile(QString("http://bouncer.gentoo.org/fetch/gentoo-%1-livecd/%2/").arg(relname, cpuarch), isotmpf);
+	QString isoname = islivecd ? "livegui-amd64" : "install-amd64-minimal";
+	downloadfile(fileFilterNetDir(QStringList() <<
+	"http://distfiles.gentoo.org/releases/amd64/autobuilds/current-"+isoname+"/"
+	, 524288000, 4294967296LL, QList<QRegExp>() <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
+	QRegExp("^"+isoname+"-\\S{1,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf);
 }
 
@@ -552,6 +549,18 @@ if (nameDistro == "gNewSense")
 	QRegExp("livecd\\S{0,}.iso$", Qt::CaseInsensitive) <<
 	QRegExp("gnewsense\\S{0,}.iso$", Qt::CaseInsensitive) <<
 	QRegExp(".iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf);
+}
+
+if (nameDistro == "Kali Linux")
+{
+	downloadfile(fileFilterNetDir(QStringList() <<
+	"http://kali.download/base-images/current/"
+	, 524288000, 8589934592LL, QList<QRegExp>() <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
+	QRegExp("^kali-linux-\\S{1,}-amd64.iso$", Qt::CaseInsensitive) <<
+	QRegExp(isnetinstall ? "-installer-netinst-amd64.iso$" : "-installer-amd64.iso$", Qt::CaseInsensitive)
 	), isotmpf);
 	extractiso(isotmpf);
 }
@@ -748,35 +757,16 @@ if (nameDistro == "NTPasswd")
 
 if (nameDistro == "openSUSE")
 {
-	if (isarch64)
+	if (relname == "tumbleweed")
 	{
-		cpuarch = "x86_64";
+		downloadfile(QString("https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-%1-x86_64-Current.iso").arg(isnetinstall ? "NET" : "GNOME-Live"), isotmpf);
 	}
 	else
 	{
-		cpuarch = "i386";
+		QString leapversion = relname.section('-', 1);
+		downloadfile(QString("https://download.opensuse.org/distribution/leap/%1/offline/Leap-%1-%2-installer-x86_64.install.iso").arg(leapversion, isnetinstall ? "online" : "offline"), isotmpf);
 	}
-	if (islivecd)
-	{
-		downloadfile(QString("http://download.opensuse.org/distribution/%1/iso/cd/openSUSE-%1-GM-GNOME-Live-%2.iso").arg(relname, cpuarch), isotmpf);
-		extractiso(isotmpf);
-	}
-	else
-	{
-		if (relname == "factory")
-		{
-			downloadfile(QString("http://download.opensuse.org/factory/repo/oss/boot/%1/loader/linux").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://download.opensuse.org/factory/repo/oss/boot/%1/loader/initrd").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/factory/repo/oss' when asked for the folder.");
-		}
-		else
-		{
-			downloadfile(QString("http://download.opensuse.org/distribution/%1/repo/oss/boot/%2/loader/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://download.opensuse.org/distribution/%1/repo/oss/boot/%2/loader/initrd").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/%1/repo/oss' when asked for the folder.").arg(relname);
-			}
-		kernelOpts = "splash=silent showopts";
-	}
+	extractiso(isotmpf);
 }
 
 if (nameDistro == "Ophcrack")
@@ -820,6 +810,23 @@ if (nameDistro == "Puppy Linux")
 	QRegExp("^puppy-4\\S{1,}.iso$", Qt::CaseInsensitive)
 	), isotmpf);
 	extractiso(isotmpf);
+}
+
+if (nameDistro == "Rocky Linux")
+{
+	cpuarch = "x86_64";
+	if (islivecd)
+	{
+		downloadfile(QString("https://download.rockylinux.org/pub/rocky/%1/live/%2/Rocky-%1-Workstation-%2-latest.iso").arg(relname, cpuarch), isotmpf);
+		extractiso(isotmpf);
+	}
+	else
+	{
+		QString repourl = QString("https://download.rockylinux.org/pub/rocky/%1/BaseOS/%2/os/").arg(relname, cpuarch);
+		downloadfile(repourl + "images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+		downloadfile(repourl + "images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+		kernelOpts = "inst.repo=" + repourl;
+	}
 }
 
 if (nameDistro == "Sabayon Linux")
@@ -1199,6 +1206,21 @@ if (nameDistro == "Xubuntu")
 if (nameDistro == "Zenwalk")
 {
 	downloadfile(QString("ftp://zenwalk.mirrors.tds.net/pub/linux/zenlive/zenwalk-live-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf);
+}
+
+if (nameDistro == "Zorin OS")
+{
+	QString edition = relname.contains("lite") ? "Lite" : "Core";
+	QString major = relname.section('-', 0, 0);
+	downloadfile(fileFilterNetDir(QStringList() <<
+	"http://mirrors.edge.kernel.org/zorinos-isos/"+major+"/" <<
+	"http://ftp.halifax.rwth-aachen.de/zorinos/"+major+"/"
+	, 524288000, 4294967296LL, QList<QRegExp>() <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
+	QRegExp("-"+edition+"-64-bit.iso$", Qt::CaseInsensitive) <<
+	QRegExp("^Zorin-OS-[0-9]{1,}\\.[0-9]{1,}-"+edition+"-64-bit.iso$", Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf);
 }
 
