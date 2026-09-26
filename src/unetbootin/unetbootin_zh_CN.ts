@@ -283,7 +283,7 @@
     <message>
         <location filename="unetbootin.cpp" line="2728"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation>从 % 下载 %1 %2 失败. 请直接从官方Web站点下载ISO文件,并通过diskimage选项指定.</translation>
+        <translation>从 %3 下载 %1 %2 失败. 请直接从官方Web站点下载ISO文件,并通过diskimage选项指定.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2766"/>

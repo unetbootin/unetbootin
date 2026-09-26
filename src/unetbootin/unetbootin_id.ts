@@ -268,7 +268,7 @@
     <message>
         <location filename="unetbootin.cpp" line="1835"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Terekstrak:&lt;/b&gt; 1% dari %2 berkas</translation>
+        <translation>&lt;b&gt;Terekstrak:&lt;/b&gt; %1 dari %2 berkas</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2601"/>
@@ -283,7 +283,7 @@
     <message>
         <location filename="unetbootin.cpp" line="2728"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation>Unduhan %1 %1 dari %3 gagal. Silahkan mencoba mengunduh berkas ISO langsung dari situs Web dan masukkan pada isian Citra Disk.</translation>
+        <translation>Unduhan %1 %2 dari %3 gagal. Silahkan mencoba mengunduh berkas ISO langsung dari situs Web dan masukkan pada isian Citra Disk.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2766"/>

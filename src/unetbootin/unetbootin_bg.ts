@@ -98,7 +98,7 @@
     <message>
         <location filename="unetbootin.cpp" line="753"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Първо трябва да монтирате устройството USB 1% към точка за монтиране. Повечето дистрибуции ще направи това автоматично, след като премахнете и поставете отново USB устройството.</translation>
+        <translation>Първо трябва да монтирате устройството USB %1 към точка за монтиране. Повечето дистрибуции ще направи това автоматично, след като премахнете и поставете отново USB устройството.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="768"/>

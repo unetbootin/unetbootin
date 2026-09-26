@@ -208,7 +208,7 @@
     <message>
         <location filename="unetbootin.cpp" line="1521"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>Αποσυμπίεση του ISO:</translation>
+        <translation>&lt;b&gt;Αποσυμπίεση του ISO:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1785"/>

@@ -98,7 +98,7 @@
     <message>
         <location filename="unetbootin.cpp" line="753"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Deve montar o dispositivo USB. A maioria das distribuições faz isto automaticamente após a remoção e reinserção do dispositivo.</translation>
+        <translation>Deve montar o dispositivo USB %1. A maioria das distribuições faz isto automaticamente após a remoção e reinserção do dispositivo.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="768"/>
@@ -907,7 +907,7 @@ Reiniciar agora?</translation>
     <message>
         <location filename="main.cpp" line="324"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation>Deve executar %s como root. Feche a aplicação e utilize: &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su - -c %1&lt;/b&gt;</translation>
+        <translation>Deve executar %2 como root. Feche a aplicação e utilize: &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="361"/>

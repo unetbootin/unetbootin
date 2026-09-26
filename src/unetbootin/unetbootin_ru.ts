@@ -173,7 +173,7 @@
     <message>
         <location filename="unetbootin.cpp" line="975"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>% не хватает свободного места, отменить установку?</translation>
+        <translation>%1 не хватает свободного места, отменить установку?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="976"/>

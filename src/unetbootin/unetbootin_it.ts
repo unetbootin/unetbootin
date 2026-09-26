@@ -372,12 +372,13 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la distribuzione
         <location filename="unetbootin.cpp" line="4330"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Dopo il riavvio selezionare nel BIOS l&apos;opzione di avvio da USB. Riavviare ora?</translation>
+        <translation>Dopo il riavvio selezionare nel BIOS l&apos;opzione di avvio da USB.%1
+Riavviare ora?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4333"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation>L&apos;unità USB creata non effettuerà il boot in Mac. Inserirla in un PC, e selezionare il boot da USB nel menu del BIOS.</translation>
+        <translation>L&apos;unità USB creata non effettuerà il boot in Mac. Inserirla in un PC, e selezionare il boot da USB nel menu del BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="47"/>

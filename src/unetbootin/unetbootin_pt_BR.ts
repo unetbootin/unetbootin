@@ -258,7 +258,7 @@
     <message>
         <location filename="unetbootin.cpp" line="1833"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Origem&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Origem:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1834"/>

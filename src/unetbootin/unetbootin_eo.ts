@@ -208,7 +208,7 @@
     <message>
         <location filename="unetbootin.cpp" line="1521"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>bonvolu atendi....</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1785"/>

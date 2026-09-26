@@ -93,12 +93,12 @@
     <message>
         <location filename="unetbootin.cpp" line="752"/>
         <source>%1 not mounted</source>
-        <translation>1% රාමු ගත කොට නැත</translation>
+        <translation>%1 රාමු ගත කොට නැත</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="753"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>ඔබ පළමුව USB ෆ්ලෑෂ් ධාවකය 1% ක් රාමු ස්ථානයට රාමු ගත කිරීම සිදු කල යුතුය. ඔබ USB ෆ්ලෑෂ් ධාවකය ඉවත් කර නැවත ඇතුලත් කිරීමේදී බොහෝ බෙදාහැරීම වර්ග ඉබේම මෙය සිදු කරයි.</translation>
+        <translation>ඔබ පළමුව USB ෆ්ලෑෂ් ධාවකය %1 ක් රාමු ස්ථානයට රාමු ගත කිරීම සිදු කල යුතුය. ඔබ USB ෆ්ලෑෂ් ධාවකය ඉවත් කර නැවත ඇතුලත් කිරීමේදී බොහෝ බෙදාහැරීම වර්ග ඉබේම මෙය සිදු කරයි.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="768"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="unetbootin.cpp" line="814"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>නිරූපිත ඩිස්ක රූප කොපි ගොනුව තුල 1% ක් නොපවතී.</translation>
+        <translation>නිරූපිත ඩිස්ක රූප කොපි ගොනුව තුල %1 ක් නොපවතී.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="828"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="unetbootin.cpp" line="829"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>නිරූපිත කර්නල ගොනුව තුල 1% ක් නොපවතී</translation>
+        <translation>නිරූපිත කර්නල ගොනුව තුල %1 ක් නොපවතී</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="843"/>
@@ -158,17 +158,17 @@
     <message>
         <location filename="unetbootin.cpp" line="844"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>නිරූපිත initrd ගොනුව තුල 1% නොපවතී</translation>
+        <translation>නිරූපිත initrd ගොනුව තුල %1 නොපවතී</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="948"/>
         <source>%1 exists, overwrite?</source>
-        <translation>1% ක් පවතී, උඩින් ලිවීම සිදු කල යුතුද ?</translation>
+        <translation>%1 ක් පවතී, උඩින් ලිවීම සිදු කල යුතුද ?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="949"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>ගොනුවෙහි 1% ක් දැනටමත් පවතී.  උඩින් ලිවීම සිදු කිරීම හා නැවත ප්‍රේරක නොවීමට &apos;සියල්ලටම ඔව්&apos; ඔබන්න. තනි තනි වශයෙන් උඩින් ලිවීම සිදු කිරීම සදහා &apos;ඔව්&apos; ඔබන්න හෝ පවත්නා අනුවාදය රඳවා ගැනීම සදහා &apos;නැත&apos; ඔබන්න.  සැකයක් තිබේ නම් සියල්ලටම ඔව්&apos; ඔබන්න</translation>
+        <translation>ගොනුවෙහි %1 ක් දැනටමත් පවතී.  උඩින් ලිවීම සිදු කිරීම හා නැවත ප්‍රේරක නොවීමට &apos;සියල්ලටම ඔව්&apos; ඔබන්න. තනි තනි වශයෙන් උඩින් ලිවීම සිදු කිරීම සදහා &apos;ඔව්&apos; ඔබන්න හෝ පවත්නා අනුවාදය රඳවා ගැනීම සදහා &apos;නැත&apos; ඔබන්න.  සැකයක් තිබේ නම් සියල්ලටම ඔව්&apos; ඔබන්න</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="975"/>
@@ -183,22 +183,22 @@
     <message>
         <location filename="unetbootin.cpp" line="1070"/>
         <source>Locating kernel file in %1</source>
-        <translation>කර්නල ගොනුව 1% ක් ස්ථාන ගත කරමින් පවතී</translation>
+        <translation>කර්නල ගොනුව %1 ක් ස්ථාන ගත කරමින් පවතී</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1121"/>
         <source>Copying kernel file from %1</source>
-        <translation>කර්නල ගොනුව 1% ක් පිටපත් කරමින් පවතී</translation>
+        <translation>කර්නල ගොනුව %1 ක් පිටපත් කරමින් පවතී</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1127"/>
         <source>Locating initrd file in %1</source>
-        <translation>initrd ගොනුව 1% ක් ස්ථාන ගත කරමින් පවතී</translation>
+        <translation>initrd ගොනුව %1 ක් ස්ථාන ගත කරමින් පවතී</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1168"/>
         <source>Copying initrd file from %1</source>
-        <translation>initrd ගොනුව 1% පිටපත් කරමින් පවතී</translation>
+        <translation>initrd ගොනුව %1 පිටපත් කරමින් පවතී</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1263"/>
@@ -283,7 +283,7 @@
     <message>
         <location filename="unetbootin.cpp" line="2728"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation>බා ගත කොට ඇති 3% න්  %1 %2 ක් අසමත් වී ඇත. කරුණාකර වෙබ් අඩවියට කෙලින්ම ගොස් ISO ගොනුව බාගත කර ගන්න. ඉන් අනතුරුව ඩිස්ක රූප කොපි විකල්පය හරහා එය සපයන්න.</translation>
+        <translation>බා ගත කොට ඇති %3 න්  %1 %2 ක් අසමත් වී ඇත. කරුණාකර වෙබ් අඩවියට කෙලින්ම ගොස් ISO ගොනුව බාගත කර ගන්න. ඉන් අනතුරුව ඩිස්ක රූප කොපි විකල්පය හරහා එය සපයන්න.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2766"/>

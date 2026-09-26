@@ -377,7 +377,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="4333"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation>Створений USB-пристрій не завантажеться на комп&apos;ютерах Mac. Вставте його в ПК і виберіть у BIOS опцію &apos;Завантаження з USB-пристрою&apos;</translation>
+        <translation>Створений USB-пристрій не завантажеться на комп&apos;ютерах Mac. Вставте його в ПК і виберіть у BIOS опцію &apos;Завантаження з USB-пристрою&apos;.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="47"/>

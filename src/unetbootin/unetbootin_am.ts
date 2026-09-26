@@ -93,7 +93,7 @@
     <message>
         <location filename="unetbootin.cpp" line="752"/>
         <source>%1 not mounted</source>
-        <translation>1% ማውንት አልተደረገም</translation>
+        <translation>%1 ማውንት አልተደረገም</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="753"/>
