@@ -1648,6 +1648,16 @@ void unetbootin::extractiso(QString isofile)
 				}
 			}
 		}
+#ifndef NOSTATIC
+		// The bundled syslinux is 4.x, which cannot load modules built for syslinux 5 or later
+		// (those ISOs ship ldlinux.c32), so generate our own config for them instead
+		if (dontgeneratesyslinuxcfg && !filepathnames.filter(QRegExp("ldlinux\\.c32$", Qt::CaseInsensitive)).isEmpty())
+		{
+			dontgeneratesyslinuxcfg = false;
+			newersyslinuxcfgfiles = locatedsyslinuxcfgfiles;
+			locatedsyslinuxcfgfiles.clear();
+		}
+#endif
 	}
 	if (!dontgeneratesyslinuxcfg)
 	{
@@ -1699,6 +1709,13 @@ void unetbootin::extractiso(QString isofile)
     QStringList extractedfiles;
     if (!skipExtraction)
       extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first, filepathnames);
+	// syslinux looks in boot/syslinux/ and syslinux/ before the root, so remove the ISO's
+	// syslinux 5+ configs that would otherwise be used instead of the generated one
+	for (int i = 0; i < newersyslinuxcfgfiles.size(); ++i)
+	{
+		if (newersyslinuxcfgfiles.at(i) != "syslinux.cfg")
+			rmFile(QString("%1%2").arg(targetPath).arg(newersyslinuxcfgfiles.at(i)));
+	}
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(targetPath)));
 	if (ubnfilelF.exists())
 	{
@@ -2246,6 +2263,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 	QString cfgfileCL;
 	QString includesfile;
 	QString searchincfrs;
+	bool modulelabel = false;
 	while (!cfgfileS.atEnd())
 	{
 		cfgfileCL = cfgfileS.readLine().trimmed();
@@ -2253,9 +2271,15 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
 		}
-		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		if (cfgfileCL.contains(QRegExp("^label\\s", Qt::CaseInsensitive)))
+			modulelabel = false;
+		// the APPEND of a COM32 module entry (e.g. whichsys.c32) holds module arguments, not kernel options
+		if (cfgfileCL.contains(QRegExp("^(com32\\s|(kernel|linux)\\s{1,}\\S{1,}\\.c32$)", Qt::CaseInsensitive)))
+			modulelabel = true;
+		// PXE configs never apply when booting from a USB drive
+		if (!archivefileconts.isEmpty() && QRegExp("^(include|config)\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL) && !cfgfileCL.contains("pxe", Qt::CaseInsensitive))
 		{
-			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
+			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^(include|config)\\s{1,}", Qt::CaseInsensitive))).trimmed();
 			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts, visitedincludes).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
@@ -2267,7 +2291,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
-		else if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
+		else if (!modulelabel && cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
 		{
 			return fixkernelbootoptions(QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)));
 		}
@@ -2303,6 +2327,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	titleandparams.second.append("");
 	QString includesfile;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchincfrs;
+	bool modulelabel = false;
 	while (!cfgfileS.atEnd())
 	{
 		cfgfileCL = cfgfileS.readLine().trimmed();
@@ -2310,9 +2335,20 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
 		}
-		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		if (cfgfileCL.contains(QRegExp("^label\\s", Qt::CaseInsensitive)))
+			modulelabel = false;
+		// COM32 module entries (e.g. whichsys.c32) are not kernels; skip them and their APPEND
+		if (cfgfileCL.contains(QRegExp("^(com32\\s|(kernel|linux)\\s{1,}\\S{1,}\\.c32$)", Qt::CaseInsensitive)))
 		{
-			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
+			modulelabel = true;
+			continue;
+		}
+		if (modulelabel && cfgfileCL.contains(QRegExp("^append\\s", Qt::CaseInsensitive)))
+			continue;
+		// PXE configs never apply when booting from a USB drive
+		if (!archivefileconts.isEmpty() && QRegExp("^(include|config)\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL) && !cfgfileCL.contains("pxe", Qt::CaseInsensitive))
+		{
+			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^(include|config)\\s{1,}", Qt::CaseInsensitive))).trimmed();
 			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts, visitedincludes);
 			if (!searchincfrs.first.first.isEmpty())
 			{
@@ -2370,7 +2406,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			titleandparams.first[curindex] = QString(cfgfileCL).remove(QRegExp("^label", Qt::CaseInsensitive)).trimmed();
 			continue;
 		}
-		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		if (cfgfileCL.contains(QRegExp("^(kernel|linux)\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
 			if (kernelpassed)
 			{
@@ -2381,7 +2417,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				titleandparams.second.append("");
 //				kernelpassed = false;
 			}
-			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
+			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^(kernel|linux)", Qt::CaseInsensitive)).trimmed());
 //			if (kernelandinitrd.first.at(curindex).isEmpty())
 //				kernelandinitrd.first[curindex] = kernelLoc;
 //			else if (!kernelandinitrd.first.at(curindex).contains('/'))
